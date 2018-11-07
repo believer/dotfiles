@@ -94,7 +94,6 @@ set expandtab
 
 "" Save on loose focus
 au FocusGained,BufEnter * :silent! !
-au FocusLost,WinLeave * :silent! w
 
 "" Line numbers
 set number relativenumber
