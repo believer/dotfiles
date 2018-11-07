@@ -1,12 +1,12 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 
- Plug 'itchyny/lightline.vim'
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
  Plug '/usr/local/opt/fzf'
  Plug 'junegunn/fzf.vim'
  Plug 'mattn/emmet-vim'
  Plug 'w0rp/ale'
- Plug 'skywind3000/asyncrun.vim'
  Plug 'scrooloose/nerdtree'
  Plug 'terryma/vim-multiple-cursors'
  Plug 'tpope/vim-surround'
@@ -20,7 +20,6 @@ call plug#begin('~/.vim/plugged')
 
  " Deoplete
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
- Plug 'wokalski/autocomplete-flow'
  Plug 'Shougo/neosnippet'
  Plug 'Shougo/neosnippet-snippets'
  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
@@ -36,9 +35,13 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
+" Airline
+let g:airline_theme='deus'
+let g:airline#extensions#ale#enabled = 1
+
 " ReasonML
 let g:LanguageClient_serverCommands = {
-      \ 'reason': ['/Users/rickardlaurin/Documents/Projects/lsp/reason-language-server.exe']
+      \ 'reason': ['/Users/rickardlaurin/Documents/Projects/lsp/reason-language-server.exe'],
       \ }
 
 " Deoplete
@@ -46,38 +49,47 @@ set completeopt+=noinsert
 set completeopt+=noselect
 set completeopt=menu,preview
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#flow#flow_bin = 'flow'
-
-set laststatus=2
-let g:lightline = {
-			\ 'colorscheme': 'wombat',
-			\ }
 
 let g:user_emmet_settings = {
       \ 'javascript': {
       \ 'extends': 'jsx',
-      \ },
-      \ }
+      \ }}
 
 " Ale
-let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 highlight clear ALEErrorSign
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
-let g:ale_fixers = {
- \ '*': ['remove_trailing_lines', 'trim_whitespace'],
- \ 'javascript': ['prettier', 'eslint'],
- \ }
+highlight clear ALEWarningSign
+let g:ale_sign_error = '🔥'
+let g:ale_sign_warning = '⚠️'
+
+let g:ale_lint_on_enter = 1
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --semi false'
+let g:ale_sign_column_always = 1
+let g:ale_linters = {
+      \ 'javascript': ['eslint'],
+      \ }
+let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'javascript': ['prettier', 'eslint'],
+      \ 'reason': ['refmt'],
+      \ }
 
 " JS
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
+" Flow - use locally installed flow
+let local_flow = finddir('node_modules', '.;') . '/.bin/flow'
+if matchstr(local_flow, "^\/\\w") == ''
+    let local_flow= getcwd() . "/" . local_flow
+endif
+if executable(local_flow)
+  let g:flow#flowpath = local_flow
+endif
+
 " Editor
+set laststatus=2
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-set signcolumn=yes
 set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
