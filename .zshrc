@@ -2,7 +2,7 @@
 source "$HOME/.config/zsh/docker"
 
 # Aliases
-source "$HOME/.config/zsh/aliases"
+source "$HOME/.dotfiles/aliases"
 
 # ENV
 export GOPATH=$HOME/Documents/Projects/go
