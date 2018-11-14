@@ -29,6 +29,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'pangloss/vim-javascript'
  Plug 'mxw/vim-jsx'
  Plug 'reasonml-editor/vim-reason-plus'
+ Plug 'leafgarland/typescript-vim'
 
  " Themes
  Plug 'ayu-theme/ayu-vim'
@@ -67,10 +68,12 @@ let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --s
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
+      \ 'typescript': ['tslint'],
       \ }
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'javascript': ['prettier', 'eslint'],
+      \ 'typescript': ['prettier', 'tslint'],
       \ 'reason': ['refmt'],
       \ }
 
@@ -96,6 +99,7 @@ colorscheme ayu
 highlight clear SignColumn
 set ignorecase
 set smartcase
+set autoread
 
 "" Tabs
 set tabstop=2
