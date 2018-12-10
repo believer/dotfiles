@@ -41,6 +41,7 @@ ZSH_THEME=""
 plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+eval $(thefuck --alias)
 
 # Pure prompt
 autoload -U promptinit; promptinit
@@ -61,6 +62,16 @@ itermprofile () {
 wejay () {
   ssh iteam@wejay.iteam.local
 }
+
+shorten-url () {
+  if [ -n "$1" ]
+  then
+    pushd ~/code/personal/rlaur.in && npm run shorten $1 $2 && popd
+  else
+    echo "Missing parameters"
+  fi
+}
+
 
 # added by travis gem
 [ -f /Users/rickardlaurin/.travis/travis.sh ] && source /Users/rickardlaurin/.travis/travis.sh

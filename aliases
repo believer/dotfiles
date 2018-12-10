@@ -1,14 +1,14 @@
 # Aliases
 # https://codeburst.io/7-super-useful-aliases-to-make-your-development-life-easier-fef1ee7f9b73
-alias nr="npm run "
-alias nis="npm install --save "
-alias nisd="npm install --save-dev "
-alias nout="npm outdated"
-alias nchecku="npx npm-check-updates -u "
-alias gac="git add . && git commit -a -m "
+alias nr='npm run '
+alias nis='npm install --save '
+alias nisd='npm install --save-dev '
+alias nout='npm outdated'
+alias nchecku='npx npm-check-updates -u '
+alias gac='git add . && git commit -a -m '
 alias hs='history | grep'
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
-alias myip="curl http://ipecho.net/plain; echo"
+alias myip='curl http://ipecho.net/plain; echo'
 
 # Git
 alias gck='git checkout $1'
@@ -24,3 +24,8 @@ alias zshrc='nvim ~/.dotfiles/.zshrc'
 alias zshaliases='nvim ~/.config/zsh/aliases'
 alias zshdocker='nvim ~/.config/zsh/docker'
 alias source-zsh='source ~/.dotfiles/.zshrc'
+
+# Folders
+alias af='cd ~/code/af'
+alias vimla='cd ~/code/vimla'
+alias dotfiles='cd ~/.dotfiles'
