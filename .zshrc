@@ -1,3 +1,13 @@
+# Antigen
+source /usr/local/Cellar/antigen/2.2.3/share/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+export NVM_AUTO_USE=true
+antigen bundle lukechilds/zsh-nvm
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply
+
 # Docker environments
 source "$HOME/.config/zsh/docker"
 
@@ -5,42 +15,28 @@ source "$HOME/.config/zsh/docker"
 source "$HOME/.dotfiles/aliases"
 
 # ENV
-export GOPATH=$HOME/Documents/Projects/go
 export REACT_EDITOR=vim
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export FZF_DEFAULT_COMMAND='fd --type f'
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
-# Path
-export PATH="$HOME/.fastlane/bin:$PATH"
-export PATH="/Users/rickardlaurin/Documents/Projects/personal/flutter/bin:$PATH"
-export PATH="$JAVA_HOME/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin"
+export TERM=xterm-256color
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
+# 10ms for key sequences
+KEYTIMEOUT=1
 
 # Android SDK
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/rickardlaurin/.oh-my-zsh
+# Path
+export PATH="$HOME/.fastlane/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH"
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.rvm/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=""
-
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 
 # CDPATH ALTERATIONS
@@ -52,6 +48,7 @@ prompt pure
 
 # Custom functions
 git-prune () { git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D }
+git-tag-diff () { git compare v$1..v$2 }
 pgsql-restore () { pg_restore --verbose --clean -Fc -h $1 -p 5432 -U $2 -d $3 -C $4 }
 itermprofile () { echo -e "\033]50;SetProfile=$1\a" }
 wejay () { ssh iteam@wejay.iteam.local }
@@ -68,3 +65,6 @@ shorten-url () {
 
 # added by travis gem
 [ -f /Users/rickardlaurin/.travis/travis.sh ] && source /Users/rickardlaurin/.travis/travis.sh
+
+# Hub
+eval "$(hub alias -s)"

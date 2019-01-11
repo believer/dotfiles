@@ -13,10 +13,15 @@ alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 alias c='nvim'
 alias ll='ls -1a'
 alias flush-npm='rm -rf node_modules && npm i'
+alias tmux='tmux -2'
 
 # Git
 function gc { git commit -m "$@"; }
 alias git=hub
+alias g='git'
+alias gp='git push'
+alias ga='git add'
+alias gss='git status --short'
 alias gck='git checkout $1'
 alias gckf='gck feature/$1'
 alias gckb='gck bugfix/$1'
@@ -27,8 +32,8 @@ alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}
 # Dotfiles
 alias vimrc='nvim ~/.dotfiles/.vimrc'
 alias zshrc='nvim ~/.dotfiles/.zshrc'
-alias zshaliases='nvim ~/.config/zsh/aliases'
-alias zshdocker='nvim ~/.config/zsh/docker'
+alias zshaliases='nvim ~/.dotfiles/aliases'
+alias zshdocker='nvim ~/.dotfiles/docker'
 alias source-zsh='source ~/.dotfiles/.zshrc'
 
 # Folders

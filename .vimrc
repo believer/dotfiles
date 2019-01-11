@@ -1,10 +1,9 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 
+ Plug 'justinmk/vim-sneak'
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
- Plug '/usr/local/opt/fzf'
- Plug 'junegunn/fzf.vim'
  Plug 'mattn/emmet-vim'
  Plug 'w0rp/ale'
  Plug 'scrooloose/nerdtree'
@@ -13,100 +12,101 @@ call plug#begin('~/.vim/plugged')
  Plug 'Galooshi/vim-import-js'
  Plug 'tpope/vim-commentary'
  Plug 'tpope/vim-fugitive'
- Plug 'autozimu/LanguageClient-neovim', {
-       \ 'branch': 'next',
-       \ 'do': 'install.sh'
-       \ }
-
- " Deoplete
+ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+ Plug 'junegunn/fzf.vim'
+ Plug 'easymotion/vim-easymotion'
+ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
- Plug 'Shougo/neosnippet'
- Plug 'Shougo/neosnippet-snippets'
- Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+ Plug 'jiangmiao/auto-pairs'
 
  " Syntax
- Plug 'jparise/vim-graphql'
  Plug 'pangloss/vim-javascript'
  Plug 'mxw/vim-jsx'
+ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+ Plug 'jparise/vim-graphql'
  Plug 'reasonml-editor/vim-reason-plus'
+
+ Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': './install.sh',
+  \ }
+
  Plug 'leafgarland/typescript-vim'
+ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+ Plug 'Quramy/tsuquyomi'
 
  " Themes
- Plug 'ayu-theme/ayu-vim'
-
+ Plug 'haishanh/night-owl.vim'
 call plug#end()
 
-" Airline
-let g:airline_theme='deus'
-let g:airline#extensions#ale#enabled = 1
 
-" ReasonML
-let g:LanguageClient_serverCommands = {
-      \ 'reason': ['/Users/rickardlaurin/Documents/Projects/lsp/reason-language-server.exe'],
-      \ }
+" Prettier
+let g:prettier#autoformat = 0
+let g:prettier#config#semi = 'false'
+let g:prettier#config#trailing_comma = 'es5'
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-" Deoplete
-set completeopt+=noinsert
-set completeopt+=noselect
-set completeopt=menu,preview
-let g:deoplete#enable_at_startup = 1
-
-let g:user_emmet_settings = {
-      \ 'javascript': {
-      \ 'extends': 'jsx',
-      \ }}
-
-" Ale
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 let g:ale_sign_error = '🔥'
 let g:ale_sign_warning = '⚠️'
 
 let g:ale_lint_on_enter = 1
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --semi false'
 let g:ale_sign_column_always = 1
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'typescript': ['tslint'],
       \ }
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'javascript': ['prettier', 'eslint'],
-      \ 'typescript': ['prettier', 'tslint'],
+      \ 'javascript': ['eslint'],
       \ 'reason': ['refmt'],
       \ }
 
+" Language Client
+let g:LanguageClient_serverCommands = {
+  \ 'reason': ['/Users/rickardlaurin/code/lsp/reason-language-server.exe'],
+  \ }
+let g:deoplete#enable_at_startup = 1
+
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
+nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
+nnoremap <silent> <cr> :call LanguageClient_textDocument_hover()<cr>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<cr>
+
 " JS
-let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
-" Flow - use locally installed flow
-let local_flow = finddir('node_modules', '.;') . '/.bin/flow'
-if matchstr(local_flow, "^\/\\w") == ''
-    let local_flow= getcwd() . "/" . local_flow
-endif
-if executable(local_flow)
-  let g:flow#flowpath = local_flow
-endif
+" Sneak
+let g:sneak#s_next = 1
 
 " Editor
 set laststatus=2
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 set termguicolors
-let ayucolor="mirage"
-colorscheme ayu
-highlight clear SignColumn
+syntax enable
+set background=dark
+set t_Co=256
+
+"" Set Vim-specific sequences for RGB colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+colorscheme night-owl
 set ignorecase
+highlight clear SignColumn
 set smartcase
 set autoread
+au FocusGained * :checktime
 
 "" Tabs
 set tabstop=2
 set shiftwidth=2
 set autoindent
-set smartindent
 set expandtab
+set smartindent
 
 "" Save on loose focus
 au FocusGained,BufEnter * :silent! !
@@ -115,8 +115,9 @@ au FocusGained,BufEnter * :silent! !
 set number relativenumber
 
 " Remaps
+nnoremap <SPACE> <Nop>
+let mapleader="\<Space>"
 map ; :Files<CR>
-map <C-o> :NERDTreeToggle<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
@@ -125,6 +126,12 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Remove arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Move lines
 nnoremap <A-j> :m .+1<CR>==
