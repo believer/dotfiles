@@ -1,16 +1,22 @@
 # Aliases
 # https://codeburst.io/7-super-useful-aliases-to-make-your-development-life-easier-fef1ee7f9b73
+alias ni='npm install'
 alias nr='npm run '
+alias nrs='npm run start'
+alias nrd='npm run dev'
+alias nrt='npm run test'
 alias nis='npm install --save '
 alias nisd='npm install --save-dev '
 alias nout='npm outdated'
-alias nchecku='npx npm-check-updates -u '
-alias gac='git add . && git commit -a -m '
-alias hs='history | grep'
+alias nchecku='npx npm-check -u'
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
-alias myip='curl http://ipecho.net/plain; echo'
+alias c='nvim'
+alias ll='ls -1a'
+alias flush-npm='rm -rf node_modules && npm i'
 
 # Git
+function gc { git commit -m "$@"; }
+alias git=hub
 alias gck='git checkout $1'
 alias gckf='gck feature/$1'
 alias gckb='gck bugfix/$1'
@@ -29,3 +35,8 @@ alias source-zsh='source ~/.dotfiles/.zshrc'
 alias af='cd ~/code/af'
 alias vimla='cd ~/code/vimla'
 alias dotfiles='cd ~/.dotfiles'
+
+# Rarely/never used
+alias myip='curl http://ipecho.net/plain; echo'
+alias gac='git add . && git commit -a -m '
+alias hs='history | grep'
