@@ -43,25 +43,19 @@ plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 
+# CDPATH ALTERATIONS
+CDPATH=.:$HOME:$HOME/code
+
 # Pure prompt
 autoload -U promptinit; promptinit
 prompt pure
 
-git-prune () {
-  git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
-}
-
-pgsql-restore () {
-  pg_restore --verbose --clean -Fc -h $1 -p 5432 -U $2 -d $3 -C $4
-}
-
-itermprofile () {
-  echo -e "\033]50;SetProfile=$1\a"
-}
-
-wejay () {
-  ssh iteam@wejay.iteam.local
-}
+# Custom functions
+git-prune () { git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D }
+pgsql-restore () { pg_restore --verbose --clean -Fc -h $1 -p 5432 -U $2 -d $3 -C $4 }
+itermprofile () { echo -e "\033]50;SetProfile=$1\a" }
+wejay () { ssh iteam@wejay.iteam.local }
+killport() { lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9; }
 
 shorten-url () {
   if [ -n "$1" ]
@@ -71,7 +65,6 @@ shorten-url () {
     echo "Missing parameters"
   fi
 }
-
 
 # added by travis gem
 [ -f /Users/rickardlaurin/.travis/travis.sh ] && source /Users/rickardlaurin/.travis/travis.sh
