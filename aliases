@@ -16,9 +16,9 @@ alias flush-npm='rm -rf node_modules && npm i'
 alias tmux='tmux -2'
 
 # Git
-function gc { git commit -m "$@"; }
 alias git=hub
 alias g='git'
+alias gc='git commit'
 alias gp='git push'
 alias ga='git add'
 alias gss='git status --short'
@@ -28,6 +28,7 @@ alias gckb='gck bugfix/$1'
 
 # Docker
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}"'
+alias ds='clear && docker service ps --format "table {{.Name}}\t{{.Image}}\t{{.CurrentState}}"'
 
 # Dotfiles
 alias vimrc='nvim ~/.dotfiles/.vimrc'

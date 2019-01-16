@@ -41,6 +41,7 @@ call plug#end()
 
 
 " Prettier
+let g:prettier#config#print_width = 80
 let g:prettier#autoformat = 0
 let g:prettier#config#semi = 'false'
 let g:prettier#config#trailing_comma = 'es5'
