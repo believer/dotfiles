@@ -14,15 +14,13 @@ call plug#begin('~/.vim/plugged')
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
  Plug 'junegunn/fzf.vim'
  Plug 'easymotion/vim-easymotion'
- Plug 'prettier/vim-prettier', { 'do': 'npm install' }
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
  Plug 'jiangmiao/auto-pairs'
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
 
  " Syntax
- Plug 'pangloss/vim-javascript'
- Plug 'mxw/vim-jsx'
+ Plug 'chemzqm/vim-jsx-improve'
  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
  Plug 'jparise/vim-graphql'
  Plug 'reasonml-editor/vim-reason-plus'
@@ -48,13 +46,7 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 nmap <leader>ne :NERDTree<CR>
 nmap <leader>nf :NERDTreeFind<CR>
 
-" Prettier
-let g:prettier#config#print_width = 80
-let g:prettier#autoformat = 0
-let g:prettier#config#semi = 'false'
-let g:prettier#config#trailing_comma = 'es5'
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
+" ALE
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 let g:ale_sign_error = '🔥'
@@ -64,13 +56,15 @@ let g:ale_lint_on_enter = 1
 let g:ale_sign_column_always = 1
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --semi false'
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'typescript': ['tslint'],
       \ }
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'javascript': ['eslint'],
+      \ 'css': ['prettier'],
+      \ 'javascript': ['eslint', 'prettier'],
       \ 'reason': ['refmt'],
       \ }
 
