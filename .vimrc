@@ -1,7 +1,6 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 
- Plug 'justinmk/vim-sneak'
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
  Plug 'mattn/emmet-vim'
@@ -18,6 +17,8 @@ call plug#begin('~/.vim/plugged')
  Plug 'prettier/vim-prettier', { 'do': 'npm install' }
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
  Plug 'jiangmiao/auto-pairs'
+ Plug 'SirVer/ultisnips'
+ Plug 'honza/vim-snippets'
 
  " Syntax
  Plug 'pangloss/vim-javascript'
@@ -39,6 +40,13 @@ call plug#begin('~/.vim/plugged')
  Plug 'haishanh/night-owl.vim'
 call plug#end()
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+
+" NERDTree
+nmap <leader>ne :NERDTree<CR>
+nmap <leader>nf :NERDTreeFind<CR>
 
 " Prettier
 let g:prettier#config#print_width = 80
