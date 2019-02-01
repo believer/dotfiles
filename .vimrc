@@ -15,12 +15,11 @@ call plug#begin('~/.vim/plugged')
  Plug 'junegunn/fzf.vim'
  Plug 'easymotion/vim-easymotion'
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
- Plug 'jiangmiao/auto-pairs'
+ " Plug 'jiangmiao/auto-pairs'
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
 
  " Syntax
- Plug 'chemzqm/vim-jsx-improve'
  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
  Plug 'jparise/vim-graphql'
  Plug 'reasonml-editor/vim-reason-plus'
@@ -30,7 +29,9 @@ call plug#begin('~/.vim/plugged')
   \ 'do': './install.sh',
   \ }
 
+ Plug 'pangloss/vim-javascript'
  Plug 'leafgarland/typescript-vim'
+ Plug 'maxmellon/vim-jsx-pretty'
  Plug 'Shougo/vimproc.vim', { 'do': 'make' }
  Plug 'Quramy/tsuquyomi'
 
@@ -38,13 +39,16 @@ call plug#begin('~/.vim/plugged')
  Plug 'haishanh/night-owl.vim'
 call plug#end()
 
+" TypeScript
+nnoremap <Leader>th :echo tsuquyomi#hint()<CR>
+
 " UltiSnips
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 
 " NERDTree
-nmap <leader>ne :NERDTree<CR>
-nmap <leader>nf :NERDTreeFind<CR>
+nmap <Leader><Leader>ne :NERDTree<CR>
+nmap <leader><Leader>nf :NERDTreeFind<CR>
 
 " ALE
 highlight clear ALEErrorSign
@@ -59,12 +63,13 @@ let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --semi false'
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
-      \ 'typescript': ['tslint'],
+      \ 'typescript': ['eslint'],
       \ }
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'css': ['prettier'],
       \ 'javascript': ['eslint', 'prettier'],
+      \ 'typescript': ['prettier'],
       \ 'reason': ['refmt'],
       \ }
 
