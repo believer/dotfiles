@@ -36,12 +36,13 @@ alias vimrc='nvim ~/.dotfiles/.vimrc'
 alias zshrc='nvim ~/.dotfiles/.zshrc'
 alias zshaliases='nvim ~/.dotfiles/aliases'
 alias zshdocker='nvim ~/.dotfiles/docker'
-alias source-zsh='source ~/.dotfiles/.zshrc'
+alias szsh='source ~/.dotfiles/.zshrc'
 
 # Folders
 alias af='cd ~/code/af'
 alias vimla='cd ~/code/vimla'
 alias dotfiles='cd ~/.dotfiles'
+alias wid='cd ~/Dropbox/Dokument/what-i-did && nvim'
 
 # Rarely/never used
 alias myip='curl http://ipecho.net/plain; echo'
