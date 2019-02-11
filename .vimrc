@@ -48,7 +48,7 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 
 " NERDTree
 nmap <Leader><Leader>ne :NERDTree<CR>
-nmap <leader><Leader>nf :NERDTreeFind<CR>
+nmap <Leader><Leader>nf :NERDTreeFind<CR>
 
 " ALE
 highlight clear ALEErrorSign
