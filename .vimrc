@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
  Plug 'jparise/vim-graphql'
  Plug 'reasonml-editor/vim-reason-plus'
+ Plug 'plasticboy/vim-markdown'
 
  Plug 'autozimu/LanguageClient-neovim', {
   \ 'branch': 'next',
@@ -108,6 +109,9 @@ highlight clear SignColumn
 set smartcase
 set autoread
 au FocusGained * :checktime
+
+"" Markdown
+set conceallevel=2
 
 "" Tabs
 set tabstop=2
