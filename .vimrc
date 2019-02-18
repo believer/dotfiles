@@ -24,7 +24,6 @@ call plug#begin('~/.vim/plugged')
  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
  Plug 'jparise/vim-graphql'
  Plug 'reasonml-editor/vim-reason-plus'
- Plug 'plasticboy/vim-markdown'
 
  Plug 'autozimu/LanguageClient-neovim', {
   \ 'branch': 'next',
@@ -49,8 +48,8 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 
 " NERDTree
-nmap <Leader><Leader>ne :NERDTree<CR>
-nmap <Leader><Leader>nf :NERDTreeFind<CR>
+nmap <Leader><Leader><Leader>ne :NERDTree<CR>
+nmap <Leader><Leader><Leader>nf :NERDTreeFind<CR>
 
 " ALE
 highlight clear ALEErrorSign
@@ -113,7 +112,11 @@ set autoread
 au FocusGained * :checktime
 
 "" Markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 set conceallevel=2
+set concealcursor=c
+let g:markdown_syntax_conceal = 1
+let g:markdown_folding = 1
 
 "" Tabs
 set tabstop=2
