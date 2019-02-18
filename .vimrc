@@ -92,6 +92,7 @@ let g:jsx_ext_required = 0
 let g:sneak#s_next = 1
 
 " Editor
+set textwidth=80
 set laststatus=2
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 set termguicolors
