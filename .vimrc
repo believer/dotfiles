@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'Galooshi/vim-import-js'
  Plug 'tpope/vim-commentary'
  Plug 'tpope/vim-fugitive'
+ Plug 'tpope/vim-tbone'
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
  Plug 'junegunn/fzf.vim'
  Plug 'easymotion/vim-easymotion'
