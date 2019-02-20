@@ -15,8 +15,10 @@ call plug#begin('~/.vim/plugged')
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
  Plug 'junegunn/fzf.vim'
  Plug 'easymotion/vim-easymotion'
+ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+ Plug 'HerringtonDarkholme/yats.vim'
+ Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
- " Plug 'jiangmiao/auto-pairs'
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
 
@@ -31,10 +33,10 @@ call plug#begin('~/.vim/plugged')
   \ }
 
  Plug 'pangloss/vim-javascript'
- Plug 'leafgarland/typescript-vim'
+ " Plug 'leafgarland/typescript-vim'
  Plug 'maxmellon/vim-jsx-pretty'
- Plug 'Shougo/vimproc.vim', { 'do': 'make' }
- Plug 'Quramy/tsuquyomi'
+ " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+ " Plug 'Quramy/tsuquyomi'
 
  " Themes
  Plug 'haishanh/night-owl.vim'
@@ -70,7 +72,7 @@ let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'css': ['prettier'],
       \ 'javascript': ['eslint', 'prettier'],
-      \ 'typescript': ['prettier'],
+      \ 'typescript': ['eslint', 'prettier'],
       \ 'reason': ['refmt'],
       \ }
 
@@ -79,17 +81,18 @@ let g:LanguageClient_serverCommands = {
   \ 'reason': ['/Users/rickardlaurin/code/lsp/reason-language-server.exe'],
   \ }
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 0
 
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
-nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<cr>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<cr>
+nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+autocmd FileType typescript nnoremap <silent> K :TSType<CR>
+autocmd FileType typescript nnoremap <silent> gd :TSDef<CR>
+autocmd FileType reason nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+autocmd FileType reason nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 
 " JS
 let g:jsx_ext_required = 0
-
-" Sneak
-let g:sneak#s_next = 1
 
 " Editor
 set textwidth=80
