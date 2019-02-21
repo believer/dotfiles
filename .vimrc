@@ -16,7 +16,6 @@ call plug#begin('~/.vim/plugged')
  Plug 'junegunn/fzf.vim'
  Plug 'easymotion/vim-easymotion'
  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
- Plug 'HerringtonDarkholme/yats.vim'
  Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
  Plug 'SirVer/ultisnips'
@@ -26,24 +25,17 @@ call plug#begin('~/.vim/plugged')
  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
  Plug 'jparise/vim-graphql'
  Plug 'reasonml-editor/vim-reason-plus'
+ Plug 'leafgarland/typescript-vim'
+ Plug 'maxmellon/vim-jsx-pretty'
 
  Plug 'autozimu/LanguageClient-neovim', {
   \ 'branch': 'next',
   \ 'do': './install.sh',
   \ }
 
- Plug 'pangloss/vim-javascript'
- " Plug 'leafgarland/typescript-vim'
- Plug 'maxmellon/vim-jsx-pretty'
- " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
- " Plug 'Quramy/tsuquyomi'
-
  " Themes
  Plug 'haishanh/night-owl.vim'
 call plug#end()
-
-" TypeScript
-nnoremap <Leader>th :echo tsuquyomi#hint()<CR>
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger='<tab>'
