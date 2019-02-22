@@ -48,6 +48,7 @@ nmap <Leader><Leader><Leader>nf :NERDTreeFind<CR>
 " ALE
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
+let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_error = '🔥'
 let g:ale_sign_warning = '⚠️'
 

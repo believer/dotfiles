@@ -1,4 +1,5 @@
 # Antibody
+export ZSH="${HOME}/.oh-my-zsh"
 source <(antibody init)
 antibody bundle < ~/.dotfiles/.zsh_plugins.txt
 
