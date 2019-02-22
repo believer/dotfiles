@@ -25,6 +25,9 @@ export PYTHON_CONFIGURE_OPTS="--enable-framework"
 # 10ms for key sequences
 KEYTIMEOUT=1
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Android SDK
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 
@@ -68,3 +71,6 @@ shorten-url () {
 
 # Hub
 eval "$(hub alias -s)"
+
+# opam
+test -r /Users/rickardlaurin/.opam/opam-init/init.zsh && . /Users/rickardlaurin/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
