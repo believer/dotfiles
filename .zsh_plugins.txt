@@ -1,0 +1,5 @@
+# Oh My Zsh
+robbyrussell/oh-my-zsh
+
+# Syntax highlighting
+zsh-users/zsh-syntax-highlighting
