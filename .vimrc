@@ -21,6 +21,9 @@ call plug#begin('~/.vim/plugged')
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
 
+ " Test runner
+ Plug 'janko-m/vim-test'
+
  " Syntax
  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
  Plug 'jparise/vim-graphql'
@@ -101,11 +104,13 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 colorscheme night-owl
-set ignorecase
 highlight clear SignColumn
-set smartcase
 set autoread
 au FocusGained * :checktime
+
+"" Make commands ignore casing
+set ignorecase
+set smartcase
 
 "" Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
