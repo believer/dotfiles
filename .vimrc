@@ -41,7 +41,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Fugitive (Git)
-nnoremap <silent> :gss :Gstatus<CR>
+nmap <silent> :gss :Gstatus<CR>
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger='<tab>'
