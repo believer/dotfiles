@@ -40,6 +40,9 @@ call plug#begin('~/.vim/plugged')
  Plug 'haishanh/night-owl.vim'
 call plug#end()
 
+" Fugitive (Git)
+nnoremap <silent> :gss :Gstatus<CR>
+
 " UltiSnips
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
