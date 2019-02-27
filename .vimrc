@@ -69,6 +69,7 @@ let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'css': ['prettier'],
       \ 'javascript': ['eslint', 'prettier'],
+      \ 'markdown': ['prettier'],
       \ 'typescript': ['eslint', 'prettier'],
       \ 'reason': ['refmt'],
       \ }
