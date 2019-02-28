@@ -68,9 +68,9 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'css': ['prettier'],
-      \ 'javascript': ['eslint', 'prettier'],
+      \ 'javascript': ['prettier', 'eslint'],
       \ 'markdown': ['prettier'],
-      \ 'typescript': ['eslint', 'prettier'],
+      \ 'typescript': ['prettier', 'eslint'],
       \ 'reason': ['refmt'],
       \ }
 
