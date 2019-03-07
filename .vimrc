@@ -18,12 +18,14 @@ call plug#begin('~/.vim/plugged')
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
+ Plug 'wakatime/vim-wakatime'
 
  " Test runner
  Plug 'janko-m/vim-test'
 
  " Syntax
  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+ Plug 'pangloss/vim-javascript'
  Plug 'jparise/vim-graphql'
  Plug 'reasonml-editor/vim-reason-plus'
  Plug 'leafgarland/typescript-vim'
@@ -73,6 +75,7 @@ let g:ale_fixers = {
       \ 'typescript': ['prettier', 'eslint'],
       \ 'reason': ['refmt'],
       \ }
+let g:ale_virtualtext_cursor = 1
 
 " Language Client
 let g:LanguageClient_serverCommands = {
@@ -93,6 +96,7 @@ autocmd FileType reason nnoremap <silent> K :call LanguageClient_textDocument_ho
 let g:jsx_ext_required = 0
 
 " Editor
+set foldmethod=syntax
 set textwidth=80
 set laststatus=2
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
