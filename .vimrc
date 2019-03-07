@@ -97,6 +97,7 @@ let g:jsx_ext_required = 0
 
 " Editor
 set foldmethod=syntax
+set foldlevelstart=99
 set textwidth=80
 set laststatus=2
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
