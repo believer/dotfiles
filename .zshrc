@@ -40,10 +40,6 @@ eval $(thefuck --alias)
 # CDPATH ALTERATIONS
 CDPATH=.:$HOME:$HOME/code
 
-# Pure prompt
-autoload -U promptinit; promptinit
-prompt pure
-
 # Custom functions
 git-prune () { git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D }
 git-tag-diff () { git compare v$1..v$2 }
@@ -103,4 +99,8 @@ set_fnm_version
 
 # https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-xv
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+defaults write -g KeyRepeat -int 3 # normal minimum is 2 (30 ms)
+
+# Pure prompt
+autoload -U promptinit; promptinit
+prompt pure
