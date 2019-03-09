@@ -1,0 +1,15 @@
+snippet slr "Stateless component" b
+let s = ReasonReact.string;
+let component = ReasonReact.statelessComponent(__MODULE__);
+
+let make = _children => {
+	...component,
+	render: _self => {
+		<div>{s("Test")}</div>
+	}
+};
+endsnippet
+
+snippet clog "Console log"
+Js.log(${1:data});
+endsnippet
