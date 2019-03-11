@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
  Plug 'vim-airline/vim-airline-themes'
  Plug 'mattn/emmet-vim'
  Plug 'w0rp/ale'
- Plug 'scrooloose/nerdtree'
  Plug 'tpope/vim-surround'
  Plug 'tpope/vim-commentary'
  Plug 'tpope/vim-fugitive'
@@ -19,6 +18,10 @@ call plug#begin('~/.vim/plugged')
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
  Plug 'wakatime/vim-wakatime'
+
+ " NERDTree
+ Plug 'scrooloose/nerdtree'
+ Plug 'Xuyuanp/nerdtree-git-plugin'
 
  " Test runner
  Plug 'janko-m/vim-test'
