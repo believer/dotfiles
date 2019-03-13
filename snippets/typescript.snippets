@@ -1,0 +1,41 @@
+snippet rtest "React test using react-testing-library" b
+import * as React from 'react'
+import { render } from 'test-utils'
+import $1 from '../$1'
+
+test('$2', () => {
+	const { debug } = render(<$1 />)
+
+	debug()
+})
+endsnippet
+
+snippet clog "console.log"
+console.log(${1:data})
+endsnippet
+
+snippet imr "Import React" b
+import React from 'react'
+endsnippet
+
+snippet imra "Import React" b
+import * as React from 'react'
+endsnippet
+
+snippet slr "Functional component" b
+const ${1:`!v expand('%:t:r')`} = () => {
+	return ($0)
+}
+endsnippet
+
+snippet test "Jest test" b
+test('${1:should}', () => {
+	$0
+})
+endsnippet
+
+snippet styc "Styled component" b
+const $1 = styled.$2\`
+	$3
+\`
+endsnippet
