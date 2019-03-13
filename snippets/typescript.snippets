@@ -28,6 +28,16 @@ const ${1:`!v expand('%:t:r')`} = () => {
 }
 endsnippet
 
+snippet fslr "Full functional component" b
+import * as React from 'react'
+
+const `!v expand('%:t:r')` = () => {
+	return <div>${1:Test}</div>
+}
+
+export default `!v expand('%:t:r')`
+endsnippet
+
 snippet test "Jest test" b
 test('${1:should}', () => {
 	$0
@@ -38,4 +48,8 @@ snippet styc "Styled component" b
 const $1 = styled.$2\`
 	$3
 \`
+endsnippet
+
+snippet tp "Styled component theme"
+$1: ${({ theme }) => theme.$2};
 endsnippet
