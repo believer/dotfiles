@@ -1,3 +1,4 @@
+# Testing
 snippet rtest "React test using react-testing-library" b
 import * as React from 'react'
 import { render } from 'test-utils'
@@ -10,10 +11,32 @@ test('$2', () => {
 })
 endsnippet
 
+snippet stest "Simple test setup" b
+import $1 from '../$1'
+
+test('$2', () => {
+	$3
+})
+endsnippet
+
+snippet test "Jest test" b
+test('${1:should}', () => {
+	$0
+})
+endsnippet
+
+snippet test "Jest mock" b
+jest.mock('${1:should}', () => ({
+	$0
+}))
+endsnippet
+
+# Logging
 snippet clog "console.log"
 console.log(${1:data})
 endsnippet
 
+# React
 snippet imr "Import React" b
 import React from 'react'
 endsnippet
@@ -38,12 +61,7 @@ const `!v expand('%:t:r')` = () => {
 export default `!v expand('%:t:r')`
 endsnippet
 
-snippet test "Jest test" b
-test('${1:should}', () => {
-	$0
-})
-endsnippet
-
+# Stylings
 snippet styc "Styled component" b
 const $1 = styled.$2\`
 	$3
@@ -52,4 +70,10 @@ endsnippet
 
 snippet tp "Styled component theme"
 $1: ${({ theme }) => theme.$2};
+endsnippet
+
+snippet inter "Interface" b
+interface $1 {
+	$2
+}
 endsnippet
