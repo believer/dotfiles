@@ -111,6 +111,12 @@ syntax enable
 set background=dark
 set t_Co=256
 
+"" Use vertical splits for diffs
+set diffopt+=vertical
+
+"" Disable scratch window preview
+set completeopt-=preview
+
 "" Set Vim-specific sequences for RGB colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
