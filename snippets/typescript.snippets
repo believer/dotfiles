@@ -19,14 +19,20 @@ test('$2', () => {
 })
 endsnippet
 
+snippet desc "Jest describe" b
+describe('$1', () => {
+	$0
+})
+endsnippet
+
 snippet test "Jest test" b
 test('${1:should}', () => {
 	$0
 })
 endsnippet
 
-snippet test "Jest mock" b
-jest.mock('${1:should}', () => ({
+snippet mock "Jest mock" b
+jest.mock('${1:pkg}', () => ({
 	$0
 }))
 endsnippet

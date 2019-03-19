@@ -33,6 +33,7 @@ export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.rvm/bin:$PATH"
+export PATH="$HOME/.wejay:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
 eval $(thefuck --alias)
@@ -45,7 +46,7 @@ git-prune () { git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xarg
 git-tag-diff () { git compare v$1..v$2 }
 pgsql-restore () { pg_restore --verbose --clean -Fc -h $1 -p 5432 -U $2 -d $3 -C $4 }
 itermprofile () { echo -e "\033]50;SetProfile=$1\a" }
-wejay () { ssh iteam@wejay.iteam.local }
+wejay-ssh () { ssh iteam@wejay.iteam.local }
 killport() { lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9; }
 
 shorten-url () {
