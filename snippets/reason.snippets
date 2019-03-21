@@ -10,6 +10,74 @@ let make = _children => {
 };
 endsnippet
 
+snippet rslr "Reducer component" b
+type state = {
+	$1
+};
+
+type action =
+	| $2;
+
+let s = ReasonReact.string;
+let component = ReasonReact.reducerComponent(__MODULE__);
+
+let reducer = (_action, _state) => {
+	ReasonReact.NoUpdate
+};
+
+let make = _children => {
+	...component,
+	reducer,
+	initialState: () => {$1},
+	render: _self => {
+		<div>{s("Test")}</div>
+	}
+};
+endsnippet
+
+snippet swc "Switch statement"
+switch ($1) {
+| $2 => $3
+}
+endsnippet
+
 snippet clog "Console log"
 Js.log(${1:data});
+endsnippet
+
+# Styling
+snippet style "Style module" b
+module Style = {
+	open Emotion;
+
+	let $1 = [%css [$2]];
+}
+endsnippet
+
+snippet css "CSS class" b
+let $1 = [%css [$2]];
+endsnippet
+
+# Testing
+snippet rtest "Basic test setup"
+open Jest;
+open Expect;
+
+describe("$1", () => {
+	test("$2", () => {
+		$3
+	});
+});
+endsnippet
+
+snippet desc "Describe"
+describe("$1", () => {
+	$2
+});
+endsnippet
+
+snippet test "Test"
+test("$1", () => {
+	$2
+});
 endsnippet
