@@ -17,6 +17,8 @@ export LANG=en_US.UTF-8
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export TERM=xterm-256color
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
+export GOPATH="$HOME/code/go"
+
 # 10ms for key sequences
 KEYTIMEOUT=1
 
