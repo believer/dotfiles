@@ -25,6 +25,14 @@ describe('$1', () => {
 })
 endsnippet
 
+snippet desct "Jest describe with test" b
+describe('$1', () => {
+	test('${2:should}', () => {
+		$0
+	})
+})
+endsnippet
+
 snippet test "Jest test" b
 test('${1:should}', () => {
 	$0

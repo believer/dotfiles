@@ -48,14 +48,14 @@ endsnippet
 # Styling
 snippet style "Style module" b
 module Style = {
-	open Emotion;
+	open Css;
 
-	let $1 = [%css [$2]];
-}
+	let $1 = style([$2]);
+};
 endsnippet
 
 snippet css "CSS class" b
-let $1 = [%css [$2]];
+let $1 = style([$2]);
 endsnippet
 
 # Testing
