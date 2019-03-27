@@ -33,6 +33,8 @@ call plug#begin('~/.vim/plugged')
  Plug 'reasonml-editor/vim-reason-plus'
  Plug 'leafgarland/typescript-vim'
  Plug 'maxmellon/vim-jsx-pretty'
+ " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+ " Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 
  Plug 'autozimu/LanguageClient-neovim', {
   \ 'branch': 'next',
@@ -88,6 +90,7 @@ let g:LanguageClient_serverCommands = {
   \ }
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 0
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 
 nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
@@ -110,6 +113,9 @@ set termguicolors
 syntax enable
 set background=dark
 set t_Co=256
+
+"" Always display sign column (where errors are displayed)
+set signcolumn=yes
 
 "" Use vertical splits for diffs
 set diffopt+=vertical
