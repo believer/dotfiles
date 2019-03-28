@@ -163,6 +163,13 @@ map ; :Files<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" Git diffs
+" Start by doing :Gdiff, from vim-fugitive, on a conflicted file
+"" Diffget from the left pane (merge branch)
+nnoremap gdh :diffget //2<CR>
+"" Diffget from right pane (target branch)
+nnoremap gdl :diffget //3<CR>
+
 " Split panes
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
