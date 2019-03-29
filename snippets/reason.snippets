@@ -21,7 +21,7 @@ type action =
 let s = ReasonReact.string;
 let component = ReasonReact.reducerComponent(__MODULE__);
 
-let reducer = (_action, _state) => {
+let reducer = (_action: action, _state: state) => {
 	ReasonReact.NoUpdate
 };
 
@@ -33,6 +33,10 @@ let make = _children => {
 		<div>{s("Test")}</div>
 	}
 };
+endsnippet
+
+snippet upd "Reducer update"
+ReasonReact.Update({ $1 })
 endsnippet
 
 snippet swc "Switch statement"
@@ -73,6 +77,14 @@ endsnippet
 snippet desc "Describe"
 describe("$1", () => {
 	$2
+});
+endsnippet
+
+snippet desct "Describe and test"
+describe("$1", () => {
+	test("$2", () => {
+		$3
+	});
 });
 endsnippet
 
