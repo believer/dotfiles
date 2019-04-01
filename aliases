@@ -33,6 +33,7 @@ alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}
 alias ds='clear && docker service ps --format "table {{.Name}}\t{{.Image}}\t{{.CurrentState}}"'
 
 # Dotfiles
+alias tmuxconf='nvim ~/.dotfiles/.tmux.conf'
 alias vimrc='nvim ~/.dotfiles/.vimrc'
 alias zshrc='nvim ~/.dotfiles/.zshrc'
 alias zshaliases='nvim ~/.dotfiles/aliases'
