@@ -37,6 +37,7 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.rvm/bin:$PATH"
 export PATH="$HOME/.wejay:$PATH"
 export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/code/flutter/bin:$PATH"
 
 eval $(thefuck --alias)
 
