@@ -47,6 +47,7 @@ call plug#end()
 
 " Fugitive (Git)
 nmap <silent> :gss :Gstatus<CR>
+nmap <silent> :Gss :Gstatus<CR>
 
 " UltiSnips
 let g:UltiSnipsSnippetsDir='~/.dotfiles/snippets'
