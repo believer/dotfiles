@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
  Plug 'w0rp/ale'
  Plug 'tpope/vim-surround'
  Plug 'tpope/vim-commentary'
- Plug 'tpope/vim-fugitive'
  Plug 'tpope/vim-tbone'
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
  Plug 'junegunn/fzf.vim'
@@ -18,6 +17,10 @@ call plug#begin('~/.vim/plugged')
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
  Plug 'wakatime/vim-wakatime'
+
+ " Git
+ Plug 'tpope/vim-fugitive'
+ Plug 'idanarye/vim-merginal'
 
  " NERDTree
  Plug 'scrooloose/nerdtree'
