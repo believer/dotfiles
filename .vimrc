@@ -52,6 +52,9 @@ call plug#end()
 nmap <silent> :gss :Gstatus<CR>
 nmap <silent> :Gss :Gstatus<CR>
 
+" Merginal
+let g:merginal_windowWidth = '100'
+
 " UltiSnips
 let g:UltiSnipsSnippetsDir='~/.dotfiles/snippets'
 let g:UltiSnipsSnippetDirectories=['UltiSnips', $HOME.'/.dotfiles/snippets']
