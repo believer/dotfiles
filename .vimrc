@@ -56,8 +56,6 @@ call plug#end()
 " Fugitive (Git)
 nmap <silent> :gss :Gstatus<CR>
 nmap <silent> :Gss :Gstatus<CR>
-nmap <silent> :gp :Gpush<CR>
-nmap <silent> :Gp :Gpush<CR>
 
 " Merginal
 let g:merginal_windowWidth = '100'
