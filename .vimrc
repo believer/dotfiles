@@ -26,6 +26,11 @@ call plug#begin('~/.vim/plugged')
  Plug 'scrooloose/nerdtree'
  Plug 'Xuyuanp/nerdtree-git-plugin'
 
+ " EasyMotion
+ let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfjö'
+ map / <Plug>(easymotion-sn)
+ omap / <Plug>(easymotion-tn)
+
  " Test runner
  Plug 'janko-m/vim-test'
 
