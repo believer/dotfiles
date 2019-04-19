@@ -1,48 +1,39 @@
 snippet slr "Stateless component" b
-let s = ReasonReact.string;
-let component = ReasonReact.statelessComponent(__MODULE__);
-
-let make = _children => {
-	...component,
-	render: _self => {
-		<div>{s("Test")}</div>
-	}
+[@react.component]
+let make = () => {
+	<div>{React.string("Test")}</div>
 };
 endsnippet
 
 snippet rslr "Reducer component" b
-type state = {
-	$1
-};
+[@react.component]
+let make = () => {
+	let (test, setTest) = React.useState(() => "Test");
 
-type action =
-	| $2;
-
-let s = ReasonReact.string;
-let component = ReasonReact.reducerComponent(__MODULE__);
-
-let reducer = (_action: action, _state: state) => {
-	ReasonReact.NoUpdate
-};
-
-let make = _children => {
-	...component,
-	reducer,
-	initialState: () => {$1},
-	render: _self => {
-		<div>{s("Test")}</div>
-	}
+	<div>{React.string(test)}</div>
 };
 endsnippet
 
-snippet upd "Reducer update"
-ReasonReact.Update({ $1 })
+snippet usestate "Use state hook"
+let ($1, $2) = React.useState(() => $3);
+endsnippet
+
+snippet usereducer "Use reducer hooks"
+let (state, dispatch) = React.useReducer((state, action) => {
+	switch (action) {
+	| $1 => $2
+	}
+}, $3);
+endsnippet
+
+snippet enc "Encoded string"
+{j|$1|j}
 endsnippet
 
 snippet swc "Switch statement"
-switch ($1) {
+{switch ($1) {
 | $2 => $3
-}
+}}
 endsnippet
 
 snippet clog "Console log"
