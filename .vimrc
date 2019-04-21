@@ -35,6 +35,8 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.ts set filetype=typescript
+autocmd BufNewFile,BufRead *.ts set syntax=javascript
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 autocmd BufNewFile,BufRead *.tsx,*.jsx set syntax=javascript.jsx
 
