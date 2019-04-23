@@ -24,21 +24,33 @@ call plug#begin('~/.vim/plugged')
  Plug 'Xuyuanp/nerdtree-git-plugin'
 
  " Syntax
+ Plug 'gerw/vim-HiLinkTrace'
+ Plug 'luochen1990/rainbow'
  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
  Plug 'pangloss/vim-javascript'
  Plug 'jparise/vim-graphql'
  Plug 'reasonml-editor/vim-reason-plus'
  Plug 'maxmellon/vim-jsx-pretty'
+ Plug 'sheerun/vim-polyglot'
 
  " Themes
  Plug 'haishanh/night-owl.vim'
 call plug#end()
 
+" Rainbow
+let g:rainbow_active = 1
+
+let g:rainbow_conf = {
+\	'guifgs': ['gold', 'orchid', 'lightskyblue'],
+\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan'],
+\}
+
+
 " set filetypes as typescriptreact
 autocmd BufNewFile,BufRead *.ts set filetype=typescript
-autocmd BufNewFile,BufRead *.ts set syntax=javascript
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
-autocmd BufNewFile,BufRead *.tsx,*.jsx set syntax=javascript.jsx
+autocmd BufNewFile,BufRead *.ts set syntax=typescript
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set syntax=typescript.tsx
 
 " CoC
 nmap <silent> gd <Plug>(coc-type-definition) 
