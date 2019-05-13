@@ -25,7 +25,7 @@ call plug#begin('~/.vim/plugged')
 
  " Syntax
  Plug 'gerw/vim-HiLinkTrace'
- " Plug 'luochen1990/rainbow'
+ Plug 'luochen1990/rainbow'
  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
  Plug 'jparise/vim-graphql'
  Plug 'reasonml-editor/vim-reason-plus'
@@ -33,11 +33,13 @@ call plug#begin('~/.vim/plugged')
 
  " Themes
  Plug 'haishanh/night-owl.vim'
+ Plug '~/code/personal/night-owl'
  Plug '~/code/personal/reasonml-vim'
 call plug#end()
 
 " YATS
 let g:yats_host_keyword = 1
+autocmd BufNewFile,BufRead *.js set syntax=typescript
 
 function! Syn()
   for id in synstack(line("."), col("."))
@@ -48,12 +50,12 @@ endfunction
 command! -nargs=0 Syn call Syn()
 
 " Rainbow
-" let g:rainbow_active = 0
+let g:rainbow_active = 1
 
-" let g:rainbow_conf = {
-" \	'guifgs': ['gold', 'orchid', 'lightskyblue'],
-" \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan'],
-" \}
+let g:rainbow_conf = {
+\	'guifgs': ['gold', 'orchid', 'lightskyblue'],
+\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan'],
+\}
 
 " CoC
 nmap <silent> gd <Plug>(coc-type-definition) 
