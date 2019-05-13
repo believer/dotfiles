@@ -108,3 +108,5 @@ defaults write -g KeyRepeat -int 3 # normal minimum is 2 (30 ms)
 # Pure prompt
 autoload -U promptinit; promptinit
 prompt pure
+
+PS1="⚡️ "
