@@ -20,15 +20,11 @@ if spotify_state is equal to "playing" then
 		set player_position to player position
 		set track_duration to (duration of current track) / 1000
 		
-		--Nedräknande tid
-		set minus_time to round (track_duration - player_position) / 60 rounding down
-		set minus_seconds to round (track_duration - player_position) - (60 * minus_time)
-		
-		--Totaltid
+		-- Set total times
 		set total_minutes to round (track_duration / 60) rounding down
 		set total_seconds to round ((track_duration / 60) - total_minutes) * 60
-
-    if player_position is less than 60 then
+		
+		if player_position is less than 60 then
 			set player_position to round player_position rounding down
 		end if
 		
@@ -37,7 +33,7 @@ if spotify_state is equal to "playing" then
 			set total_minutes to total_minutes + 1
 		end if
 		
-		--Uppräknande tid
+		-- Calculate minutes
 		set minutes to 0
 		repeat while player_position is greater than 59
 			if player_position is greater than 59 then
@@ -45,12 +41,30 @@ if spotify_state is equal to "playing" then
 				set player_position to round (player_position - 60) rounding down
 			end if
 		end repeat
-
-    if player_position is less than 10 then
+		
+		-- Add leading zeroes
+		if player_position is less than 10 then
 			set player_position to "0" & player_position
 		end if
 		
-		return "♫ #[bold]" & artist_name & "#[nobold] - " & track_name & " (" & minutes & ":" & player_position & " / " & total_minutes & ":" & total_seconds & ")"
+		if total_seconds is less than 10 then
+			set total_seconds to "0" & total_seconds
+		end if
+		
+		-- Add player state emojis
+		if shuffling then
+			set is_shuffle to " 🔀"
+		else
+			set is_shuffle to ""
+		end if
+		
+		if repeating then
+			set is_repeat to " 🔁"
+		else
+			set is_repeat to ""
+		end if
+		
+		return "♫ " & artist_name & " - " & track_name & " (" & minutes & ":" & player_position & " / " & total_minutes & ":" & total_seconds & ")" & is_shuffle & is_repeat
 	end tell
 else if itunes_state is equal to "playing" then
 	tell application "iTunes"
