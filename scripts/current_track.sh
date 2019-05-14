@@ -47,7 +47,7 @@ if spotify_state is equal to "playing" then
 			set player_position to "0" & player_position
 		end if
 		
-		if total_seconds is less than 10 then
+		if total_seconds is less than 10 and total_seconds is not equal to "00" then
 			set total_seconds to "0" & total_seconds
 		end if
 		
