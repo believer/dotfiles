@@ -19,65 +19,87 @@ if spotify_state is equal to "playing" then
 		set play_count to played count of current track
 		set player_position to player position
 		set track_duration to (duration of current track) / 1000
+		set is_shuffle to shuffling
+		set is_repeat to repeating
 		
-		-- Set total times
-		set total_minutes to round (track_duration / 60) rounding down
-		set total_seconds to round ((track_duration / 60) - total_minutes) * 60
+		set track_position to my track_time(player_position, track_duration)
+		set track_data to artist_name & " - " & track_name & track_position
 		
-		if player_position is less than 60 then
-			set player_position to round player_position rounding down
-		end if
-		
-		if total_seconds is equal to 60 then
-			set total_seconds to "00"
-			set total_minutes to total_minutes + 1
-		end if
-		
-		-- Calculate minutes
-		set minutes to 0
-		repeat while player_position is greater than 59
-			if player_position is greater than 59 then
-				set minutes to minutes + 1
-				set player_position to round (player_position - 60) rounding down
-			end if
-		end repeat
-		
-		-- Add leading zeroes
-		if player_position is less than 10 then
-			set player_position to "0" & player_position
-		end if
-		
-		if total_seconds is less than 10 and total_seconds is not equal to "00" then
-			set total_seconds to "0" & total_seconds
-		end if
-		
-		-- Add player state emojis
-		if shuffling then
-			set is_shuffle to " 🔀"
-		else
-			set is_shuffle to ""
-		end if
-		
-		if repeating then
-			set is_repeat to " 🔁"
-		else
-			set is_repeat to ""
-		end if
-		
-		return "♫ " & artist_name & " - " & track_name & " (" & minutes & ":" & player_position & " / " & total_minutes & ":" & total_seconds & ")" & is_shuffle & is_repeat
+		return my track_meta(track_data, is_shuffle, is_repeat)
 	end tell
 else if itunes_state is equal to "playing" then
 	tell application "iTunes"
 		set track_name to name of current track
 		set artist_name to artist of current track
-		return "#[bold]" & artist_name & "#[nobold] - " & track_name
+		set player_position to player position
+		set track_duration to (duration of current track)
+		set is_shuffle to shuffle enabled
+		set is_repeat to true
+		set repeat_mode to song repeat
+		
+		if repeat_mode is equal to off then
+			set is_repeat to false
+		end if
+		
+		set track_position to my track_time(player_position, track_duration)
+		set track_data to artist_name & " - " & track_name & track_position
+		
+		return my track_meta(track_data, is_shuffle, is_repeat)
 	end tell
 else
 	return "Nothing playing :("
 end if
 
-on track_time(position, duration)
-	return duration
+on track_meta(track_data, is_shuffle, is_repeat)
+	-- Add player state emojis
+	if is_shuffle then
+		set shuffle_str to " 🔀"
+	else
+		set shuffle_str to ""
+	end if
+	
+	if is_repeat then
+		set repeat_str to " 🔁"
+	else
+		set repeat_str to ""
+	end if
+	
+	return "♫ " & track_data & shuffle_str & repeat_str
+end track_meta
+
+on track_time(player_position, track_duration)
+	-- Set total times
+	set total_minutes to round (track_duration / 60) rounding down
+	set total_seconds to round ((track_duration / 60) - total_minutes) * 60
+	
+	if player_position is less than 60 then
+		set player_position to round player_position rounding down
+	end if
+	
+	if total_seconds is equal to 60 then
+		set total_seconds to "00"
+		set total_minutes to total_minutes + 1
+	end if
+	
+	-- Calculate minutes
+	set player_minutes to 0
+	repeat while player_position is greater than 59
+		if player_position is greater than 59 then
+			set player_minutes to player_minutes + 1
+			set player_position to round (player_position - 60) rounding down
+		end if
+	end repeat
+	
+	-- Add leading zeroes
+	if player_position is less than 10 then
+		set player_position to "0" & player_position
+	end if
+	
+	if total_seconds is less than 10 and total_seconds is not equal to "00" then
+		set total_seconds to "0" & total_seconds
+	end if
+	
+	return " (" & player_minutes & ":" & player_position & " / " & total_minutes & ":" & total_seconds & ")"
 end track_time
 
 on is_app_running(app_name)
