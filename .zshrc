@@ -38,6 +38,7 @@ export PATH="$HOME/.rvm/bin:$PATH"
 export PATH="$HOME/.wejay:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/code/flutter/bin:$PATH"
+export PATH="$HOME/.pub-cache/bin:$PATH"
 
 eval $(thefuck --alias)
 
