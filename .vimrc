@@ -1,41 +1,49 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
- Plug 'vim-airline/vim-airline'
- Plug 'vim-airline/vim-airline-themes'
- Plug 'mattn/emmet-vim'
- Plug 'tpope/vim-surround'
- Plug 'tpope/vim-commentary'
- Plug 'tpope/vim-tbone'
- Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
- Plug 'junegunn/fzf.vim'
- Plug 'easymotion/vim-easymotion'
- Plug 'SirVer/ultisnips'
- Plug 'wakatime/vim-wakatime'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'mattn/emmet-vim'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-tbone'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'SirVer/ultisnips'
+  Plug 'wakatime/vim-wakatime'
 
- " Autocomplete
- Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+  " Autocomplete
+  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
- " Git
- Plug 'tpope/vim-fugitive'
- Plug 'idanarye/vim-merginal'
+  " Git
+  Plug 'tpope/vim-fugitive'
+  Plug 'idanarye/vim-merginal'
 
- " NERDTree - File explorer
- Plug 'scrooloose/nerdtree'
- Plug 'Xuyuanp/nerdtree-git-plugin'
+  " NERDTree - File explorer
+  Plug 'scrooloose/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
 
- " Syntax
- Plug 'gerw/vim-HiLinkTrace'
- Plug 'luochen1990/rainbow'
- Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
- Plug 'jparise/vim-graphql'
- Plug 'reasonml-editor/vim-reason-plus'
- Plug 'HerringtonDarkholme/yats.vim'
+  " Syntax
+  Plug 'gerw/vim-HiLinkTrace'
+  Plug 'luochen1990/rainbow'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'jparise/vim-graphql'
+  Plug 'reasonml-editor/vim-reason-plus'
+  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'dart-lang/dart-vim-plugin'
+  Plug 'thosakwe/vim-flutter'
 
- " Themes
- Plug 'haishanh/night-owl.vim'
- Plug '~/code/personal/night-owl'
- Plug '~/code/personal/reasonml-vim'
+  " Themes
+  Plug 'haishanh/night-owl.vim'
+  Plug '~/code/personal/night-owl'
+  Plug '~/code/personal/reasonml-vim'
 call plug#end()
+
+" Flutter
+nnoremap <leader>fa :FlutterRun<cr>
+nnoremap <leader>fq :FlutterQuit<cr>
+nnoremap <leader>fr :FlutterHotReload<cr>
+nnoremap <leader>fR :FlutterHotRestart<cr>
 
 " YATS
 let g:yats_host_keyword = 1
