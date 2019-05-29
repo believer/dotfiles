@@ -11,6 +11,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'easymotion/vim-easymotion'
   Plug 'SirVer/ultisnips'
   Plug 'wakatime/vim-wakatime'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'Yggdroot/indentLine'
 
   " Autocomplete
   Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -39,13 +41,10 @@ call plug#begin('~/.vim/plugged')
   Plug '~/code/personal/reasonml-vim'
 call plug#end()
 
-" Flutter
-nnoremap <leader>fa :FlutterRun<cr>
-nnoremap <leader>fq :FlutterQuit<cr>
-nnoremap <leader>fr :FlutterHotReload<cr>
-nnoremap <leader>fR :FlutterHotRestart<cr>
+" Auto pairs
+let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''"}
 
-" YATS
+"" YATS
 let g:yats_host_keyword = 1
 autocmd BufNewFile,BufRead *.js set syntax=typescript
 
@@ -178,3 +177,12 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+" Flutter
+let dart_format_on_save = 1
+
+nnoremap <leader>fa :FlutterRun<cr>
+nnoremap <leader>fq :FlutterQuit<cr>
+nnoremap <leader>fr :FlutterHotReload<cr>
+nnoremap <leader>fR :FlutterHotRestart<cr>
+
