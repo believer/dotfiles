@@ -11,6 +11,10 @@ test('$2', () => {
 })
 endsnippet
 
+snippet asmock "Create function as a Jest mock"
+;($1 as jest.Mock).mockImplementation(() => $2)
+endsnippet
+
 snippet stest "Simple test setup" b
 import $1 from '../$1'
 
