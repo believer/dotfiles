@@ -158,6 +158,7 @@ set number relativenumber
 nnoremap <SPACE> <Nop>
 let mapleader="\<Space>"
 map ; :Files<CR>
+nnoremap q: <Nop>
 
 " Git diffs
 " Start by doing :Gdiff, from vim-fugitive, on a conflicted file
