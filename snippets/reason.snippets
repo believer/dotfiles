@@ -14,6 +14,79 @@ let make = () => {
 };
 endsnippet
 
+snippet qslr "Query component" b
+module $1 = [%graphql
+{|
+	$2
+|}
+];
+
+module $1Query = ReasonApollo.CreateQuery($1);
+
+[@react.component]
+let make = () => {
+	let query = $1.make(~id, ());
+
+	<$1Query variables=query##variables>
+		...{({result}) =>
+			switch (result) {
+			| Loading => <div> {React.string("Loading")} </div>
+			| Error(error) => <div> {React.string(error##message)} </div>
+			| Data(_response) => <div>{React.string("Test")}</div>
+			}
+		}
+	</$1Query>;
+};
+endsnippet
+
+snippet form "Re-formality form" b
+module $1Form = {
+	open Formality;
+
+	type field = 
+		| $2;
+
+	type state = {
+		$3: $4
+	};
+
+	type message = string;
+	type submissionError = unit;
+
+	module $2Field = {
+		let update = (state, $3) => {...state, $3};
+	};
+
+	let validators = [];
+};
+
+module $1FormHook = Formality.Make($1Form);
+
+[@react.component]
+let make = () => {
+	let form =
+		$1FormHook.useForm(
+			~initialState=
+				$1Form.{
+					$3: $5
+				},
+			~onSubmit=(state, _form) =>
+			Js.log2("Submit", state)
+		);
+
+
+	let handleChange = (field, fieldUpdater, event) => {
+		form.change(
+			field,
+			fieldUpdater(form.state, event->ReactEvent.Form.target##value),
+		);
+	};
+
+	<div>{React.string("Test")}</div>
+};
+
+endsnippet
+
 snippet str "React.string"
 {React.string($1)}
 endsnippet
