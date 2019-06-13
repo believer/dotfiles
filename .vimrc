@@ -38,7 +38,6 @@ call plug#begin('~/.vim/plugged')
   " Themes
   Plug 'haishanh/night-owl.vim'
   Plug '~/code/personal/night-owl'
-  Plug '~/code/personal/reasonml-vim'
 call plug#end()
 
 " Auto pairs

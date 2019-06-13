@@ -48,7 +48,7 @@ else if itunes_state is equal to "playing" then
 		return my track_meta(track_data, is_shuffle, is_repeat)
 	end tell
 else
-	return "Nothing playing :("
+  do shell script "python ~/.dotfiles/scripts/current_track.py"
 end if
 
 on track_meta(track_data, is_shuffle, is_repeat)
