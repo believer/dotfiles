@@ -25,16 +25,15 @@ module $1Query = ReasonApollo.CreateQuery($1);
 
 [@react.component]
 let make = () => {
-	let query = $1.make(~id, ());
+	let variables = $1.make(~id, ())##variables;
 
-	<$1Query variables=query##variables>
-		...{({result}) =>
+	<$1Query variables>
+		{({result}) =>
 			switch (result) {
 			| Loading => <div> {React.string("Loading")} </div>
 			| Error(error) => <div> {React.string(error##message)} </div>
 			| Data(_response) => <div>{React.string("Test")}</div>
-			}
-		}
+			}}
 	</$1Query>;
 };
 endsnippet
