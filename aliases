@@ -16,6 +16,7 @@ alias ll='l'
 alias flush-npm='rm -rf node_modules && npm i'
 alias tmux='tmux -2'
 alias f='fzf | xargs bat'
+alias supremereason='~/.dotfiles/scripts/supreme.sh'
 
 # Git
 alias git=hub
