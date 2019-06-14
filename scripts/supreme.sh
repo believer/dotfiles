@@ -29,7 +29,7 @@ cd $1
 # Overwrite base package.json
 cat >package.json <<EOL
 {
-  "name": "your-react-app",
+  "name": "$PROJECTNAME",
   "version": "0.1.0",
   "scripts": {
     "build": "bsb -make-world",
@@ -116,7 +116,7 @@ EOL
 # Overwrite bsconfig
 cat >bsconfig.json <<EOL
 {
-  "name": "react-hooks-template",
+  "name": "$PROJECTNAME",
   "reason": {
     "react-jsx": 3
   },
