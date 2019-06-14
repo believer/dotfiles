@@ -7,14 +7,13 @@ DEFAULT="\033[0m"
 
 PROJECTNAME=$1
 
-if [ -z "$1" ]
-  then
-    echo -e "
-    You are missing the first parameter 
+if [[ -z "$1" ]] ; then
+  echo -e "
+  You are missing the first parameter 
 
-    ${GRAYTEXT}Example: ${DEFAULT}supremereason ${GREENTEXT}reponame"
+  ${GRAYTEXT}Example: ${DEFAULT}supremereason ${GREENTEXT}reponame"
 
-    exit 1
+  exit 1
 fi
 
 echo -e "
