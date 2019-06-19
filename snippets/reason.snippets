@@ -1,3 +1,37 @@
+# ----------------------------------------------------------
+# Hooks
+# ----------------------------------------------------------
+snippet ush "useState"
+let ($1, $2) = React.useState(() => ${3:initialValue});
+endsnippet
+
+snippet ueh "useEffect"
+React.useEffect0(() => {
+	$1
+
+	None;
+});
+endsnippet
+
+snippet ueh1 "useEffect"
+React.useEffect1(() => {
+	$1
+
+	None;
+}, [|$2|]);
+endsnippet
+
+snippet urh "useReducer"
+let (state, dispatch) = React.useReducer((state, action) => {
+		switch(action) {
+		| $1 => $2
+		}
+}, ${3:initialState});
+endsnippet
+
+# ----------------------------------------------------------
+# Components
+# ----------------------------------------------------------
 snippet slr "Stateless component" b
 [@react.component]
 let make = () => {
@@ -5,12 +39,25 @@ let make = () => {
 };
 endsnippet
 
-snippet rslr "Reducer component" b
+snippet usc "useState component" b
 [@react.component]
 let make = () => {
 	let (test, setTest) = React.useState(() => "Test");
 
 	<div>{React.string(test)}</div>
+};
+endsnippet
+
+snippet urc "useReducer component" b
+[@react.component]
+let make = () => {
+	let (state, _dispatch) = React.useReducer((state, action) => {
+			switch(action) {
+			| $1 => $2
+			}
+	}, ${3:initialState});
+
+	<div>{React.string(state)}</div>
 };
 endsnippet
 
@@ -90,18 +137,6 @@ snippet str "React.string"
 {React.string($1)}
 endsnippet
 
-snippet usestate "Use state hook"
-let ($1, $2) = React.useState(() => $3);
-endsnippet
-
-snippet usereducer "Use reducer hooks"
-let (state, dispatch) = React.useReducer((state, action) => {
-	switch (action) {
-	| $1 => $2
-	}
-}, $3);
-endsnippet
-
 snippet enc "Encoded string"
 {j|$1|j}
 endsnippet
@@ -116,7 +151,9 @@ snippet clog "Console log"
 Js.log(${1:data});
 endsnippet
 
-# Styling
+# ----------------------------------------------------------
+# Testing
+# ----------------------------------------------------------
 snippet style "Style module" b
 module Style = {
 	open Css;
@@ -129,7 +166,9 @@ snippet css "CSS class" b
 let $1 = style([$2]);
 endsnippet
 
+# ----------------------------------------------------------
 # Testing
+# ----------------------------------------------------------
 snippet rtest "Basic test setup"
 open Jest;
 open Expect;
