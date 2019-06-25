@@ -29,6 +29,9 @@ alias gck='git checkout $1'
 alias gckf='gck feature/$1'
 alias gckb='gck bugfix/$1'
 
+# Kubernetes
+alias k='kubectl -n v2'
+
 # Docker
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}"'
 alias ds='clear && docker service ps --format "table {{.Name}}\t{{.Image}}\t{{.CurrentState}}"'

@@ -18,6 +18,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export TERM=xterm-256color
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
 export GOPATH="$HOME/code/go"
+export EDITOR="nvim"
 
 # 10ms for key sequences
 KEYTIMEOUT=1
@@ -109,5 +110,11 @@ defaults write -g KeyRepeat -int 3 # normal minimum is 2 (30 ms)
 # Pure prompt
 autoload -U promptinit; promptinit
 prompt pure
+
+# Tmuxinator
+source ~/code/tmuxinator.zsh
+
+# Kubectl
+source <(kubectl completion zsh)
 
 PS1="⚡️ "
