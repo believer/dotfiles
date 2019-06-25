@@ -159,8 +159,6 @@ let mapleader="\<Space>"
 map ; :Files<CR>
 nnoremap q: <Nop>
 
-nmap <CR> O<Esc>j
-
 " Git diffs
 " Start by doing :Gdiff, from vim-fugitive, on a conflicted file
 "" Diffget from the left pane (merge branch)
