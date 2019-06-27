@@ -101,8 +101,14 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 
 " NERDTree
-nmap <Leader><Leader><Leader>ne :NERDTree<CR>
-nmap <Leader><Leader><Leader>nf :NERDTreeFind<CR>
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+
+nnoremap <silent> <Leader>n :NERDTree<CR>
+nnoremap <silent> <Leader>c :NERDTreeCWD<CR>
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 
 " Editor
 set foldmethod=syntax
