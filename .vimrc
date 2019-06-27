@@ -34,11 +34,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'dart-lang/dart-vim-plugin'
   Plug 'thosakwe/vim-flutter'
+  Plug 'rust-lang/rust.vim'
 
   " Themes
   Plug 'haishanh/night-owl.vim'
   Plug '~/code/personal/night-owl'
 call plug#end()
+
+" Rust
+let g:rustfmt_autosave = 1
 
 " Auto pairs
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''"}
