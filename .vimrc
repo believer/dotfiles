@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'mattn/emmet-vim'
   Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-tbone'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -24,6 +23,9 @@ call plug#begin('~/.vim/plugged')
   " NERDTree - File explorer
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
+
+  " Comments
+  Plug 'scrooloose/nerdcommenter'
 
   " Syntax
   Plug 'gerw/vim-HiLinkTrace'
@@ -106,9 +108,9 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 
-nnoremap <silent> <Leader>n :NERDTree<CR>
-nnoremap <silent> <Leader>c :NERDTreeCWD<CR>
-nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+nnoremap <silent> <Leader>nt :NERDTree<CR>
+nnoremap <silent> <Leader>nc :NERDTreeCWD<CR>
+nnoremap <silent> <Leader>ntf :NERDTreeFind<CR>
 
 " Editor
 set foldmethod=syntax
