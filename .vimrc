@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'mattn/emmet-vim'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-tbone'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -105,7 +106,6 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 " NERDTree
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
-let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 
 nnoremap <silent> <Leader>nt :NERDTree<CR>
@@ -147,7 +147,7 @@ set smartcase
 
 "" Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-set conceallevel=2
+set conceallevel=0
 set concealcursor=c
 let g:markdown_syntax_conceal = 1
 let g:markdown_folding = 1
