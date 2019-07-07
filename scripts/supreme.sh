@@ -147,7 +147,7 @@ module.exports = {
   mode: isProd ? "production" : "development",
   output: {
     path: outputDir,
-    filename: "index.js"
+    filename: "index.[hash].js"
   },
   plugins: [
     new HtmlWebpackPlugin({
