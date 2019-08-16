@@ -38,11 +38,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'dart-lang/dart-vim-plugin'
   Plug 'thosakwe/vim-flutter'
   Plug 'rust-lang/rust.vim'
+  Plug 'elzr/vim-json'
 
   " Themes
   Plug 'haishanh/night-owl.vim'
   Plug '~/code/personal/night-owl'
 call plug#end()
+
+" JSON
+let g:vim_json_syntax_conceal = 0
 
 " Rust
 let g:rustfmt_autosave = 1
@@ -147,8 +151,8 @@ set smartcase
 
 "" Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-set conceallevel=0
-set concealcursor=c
+"set conceallevel = 0
+"set concealcursor = c
 let g:markdown_syntax_conceal = 1
 let g:markdown_folding = 1
 
