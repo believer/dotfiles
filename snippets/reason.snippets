@@ -127,8 +127,10 @@ let make = () => {
 			fieldUpdater(form.state, event->ReactEvent.Form.target##value),
 		);
 	};
-
-	<div>{React.string("Test")}</div>
+	
+	<form className="mb-6" onSubmit={form.submit->Formality.Dom.preventDefault}>
+		<div> {React.string("Test")} </div>
+	</form>;
 };
 
 endsnippet
