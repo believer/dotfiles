@@ -19,6 +19,7 @@ export TERM=xterm-256color
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
 export GOPATH="$HOME/code/go"
 export EDITOR="nvim"
+export NODE_ICU_DATA="~/.fnm/node-versions/v12.8.0/installation/lib/node_modules/full-icu"
 
 # 10ms for key sequences
 KEYTIMEOUT=1
