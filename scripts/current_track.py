@@ -7,14 +7,17 @@ if __name__ == '__main__':
     track = sonos.get_current_track_info()
     state = sonos.get_current_transport_info()
 
-    artist = track['artist'].decode('utf-8')
-    name = track['title'].decode('utf-8')
-    album = track['album'].decode('utf-8')
+    artist = track['artist']
+    name = track['title']
+    album = track['album']
     position = track['position'][2:]
     duration = track['duration'][2:]
 
+    nothing = "Nothing playing :("
+    np = artist + " - " + name + " (" + album + ") (" + position + " / " + duration + ")"
+
     if state['current_transport_state'] == "STOPPED":
-        print "Nothing playing :("
+        print(nothing)
     else:
-        print artist + " - " + name + " (" + album + ") (" + position + " / " + duration + ")"
+        print(np)
 
