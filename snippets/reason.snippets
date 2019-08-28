@@ -29,6 +29,25 @@ let (state, dispatch) = React.useReducer((state, action) => {
 }, ${3:initialState});
 endsnippet
 
+snippet um "useMutation" b
+module $1 = [%graphql
+{|
+	$2
+|}
+];
+
+module $1Mutation = ReasonApolloHooks.Mutation.Make($1);
+
+[@react.component]
+let make = () => {
+	let (mutation, _, _) = $1Mutation.use();
+	let variables = $1.make(~id, ())##variables;
+
+	mutation(~variables, ()) |> ignore;
+};
+endsnippet
+
+
 # ----------------------------------------------------------
 # Components
 # ----------------------------------------------------------
