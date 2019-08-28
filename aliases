@@ -49,6 +49,7 @@ alias af='cd ~/code/af'
 alias vimla='cd ~/code/vimla'
 alias dotfiles='cd ~/.dotfiles'
 alias wid='cd ~/Dropbox/Dokument/what-i-did && nvim'
+alias swap='cd ~/.local/share/nvim/swap'
 
 # Rarely/never used
 alias myip='curl http://ipecho.net/plain; echo'
