@@ -128,6 +128,9 @@ syntax enable
 colorscheme night-owl
 set t_Co=256
 
+"" Custom colors
+hi CocCodeLens guifg=#40505E
+
 "" Always display sign column (where errors are displayed)
 set signcolumn=yes
 
