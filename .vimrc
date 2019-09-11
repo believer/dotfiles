@@ -19,7 +19,6 @@ call plug#begin('~/.vim/plugged')
 
   " Git
   Plug 'tpope/vim-fugitive'
-  Plug 'idanarye/vim-merginal'
 
   " NERDTree - File explorer
   Plug 'scrooloose/nerdtree'
