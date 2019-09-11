@@ -89,8 +89,8 @@ function! s:show_documentation()
 endfunction
 
 " Fugitive (Git)
-nmap <silent> :gss :Gstatus<CR>
-nmap <silent> :Gss :Gstatus<CR>
+nmap <silent> :gss :G<CR>
+nmap <silent> :Gss :G<CR>
 
 " EasyMotion
 let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfjö'
