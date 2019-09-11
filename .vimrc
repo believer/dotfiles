@@ -24,6 +24,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
 
+  " Marks
+  Plug 'kshenoy/vim-signature'
+  
   " Comments
   Plug 'scrooloose/nerdcommenter'
 
@@ -183,6 +186,9 @@ nnoremap q: <Nop>
 nnoremap gdh :diffget //2<CR>
 "" Diffget from right pane (target branch)
 nnoremap gdl :diffget //3<CR>
+
+" Marks
+nnoremap ' `
 
 " Split panes
 nnoremap <C-J> <C-W><C-J>
