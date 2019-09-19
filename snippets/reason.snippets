@@ -141,8 +141,10 @@ let make = () => {
 				$1Form.{
 					$3: $5
 				},
-			~onSubmit=(state, _form) =>
-			Js.log2("Submit", state)
+			~onSubmit=(state, form) => {
+				Js.log2("Submit", state);
+				form.notifyOnSuccess(None);
+			},
 		);
 
 
