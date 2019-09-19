@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'thosakwe/vim-flutter'
   Plug 'rust-lang/rust.vim'
   Plug 'elzr/vim-json'
+  Plug 'elmcast/elm-vim'
 
   " Themes
   Plug 'haishanh/night-owl.vim'
@@ -121,7 +122,6 @@ nnoremap <silent> <Leader>ntf :NERDTreeFind<CR>
 " Editor
 set foldmethod=syntax
 set foldlevelstart=99
-set textwidth=80
 set laststatus=2
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 set background=dark
@@ -129,6 +129,11 @@ set termguicolors
 syntax enable
 colorscheme night-owl
 set t_Co=256
+
+" Text wrapping
+set textwidth=80
+set formatoptions-=l
+set wrap linebreak nolist
 
 "" Custom colors
 hi CocCodeLens guifg=#40505E
