@@ -36,16 +36,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
   Plug 'reasonml-editor/vim-reason-plus'
+  Plug 'pangloss/vim-javascript'
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'dart-lang/dart-vim-plugin'
   Plug 'thosakwe/vim-flutter'
   Plug 'rust-lang/rust.vim'
   Plug 'elzr/vim-json'
-  Plug 'elmcast/elm-vim'
+  Plug 'ElmCast/elm-vim'
 
   " Themes
   Plug 'haishanh/night-owl.vim'
-  Plug '~/code/personal/night-owl'
 call plug#end()
 
 " JSON
@@ -59,7 +59,8 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""'
 
 "" YATS
 let g:yats_host_keyword = 1
-autocmd BufNewFile,BufRead *.js set syntax=typescript
+autocmd BufNewFile,BufRead *.ts set syntax=javascript
+autocmd BufNewFile,BufRead *d.ts set syntax=typescript
 
 function! Syn()
   for id in synstack(line("."), col("."))
@@ -155,6 +156,10 @@ highlight clear SignColumn
 set autoread
 au FocusGained * :checktime
 
+"" Display tabs, non-breaking space and trailing whitespace
+set listchars=tab:>~,nbsp:_,trail:.
+set list
+
 "" Make commands ignore casing
 set ignorecase
 set smartcase
@@ -182,6 +187,7 @@ set number relativenumber
 " Remaps
 nnoremap <SPACE> <Nop>
 let mapleader="\<Space>"
+let maplocalleader="\\"
 map ; :Files<CR>
 nnoremap q: <Nop>
 
