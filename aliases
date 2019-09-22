@@ -1,10 +1,10 @@
 # Aliases
 # https://codeburst.io/7-super-useful-aliases-to-make-your-development-life-easier-fef1ee7f9b73
-alias ni='npm install'
 alias nr='npm run '
 alias nrs='npm run start'
 alias nrd='npm run dev'
 alias nrt='npm run test'
+alias ni='npm install --save-exact'
 alias nis='npm install --save --save-exact '
 alias nisd='npm install --save-dev --save-exact '
 alias nout='npm outdated'
