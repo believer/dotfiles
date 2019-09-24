@@ -193,7 +193,8 @@ nnoremap q: <Nop>
 
 " Git diffs
 " Start by doing :Gdiff, from vim-fugitive, on a conflicted file
-"" Diffget from the left pane (merge branch)
+nnoremap <leader>gd :Gvdiff<CR>
+" Diffget from the left pane (merge branch)
 nnoremap gdh :diffget //2<CR>
 "" Diffget from right pane (target branch)
 nnoremap gdl :diffget //3<CR>
