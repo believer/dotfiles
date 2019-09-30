@@ -34,15 +34,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'gerw/vim-HiLinkTrace'
   Plug 'luochen1990/rainbow'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'jparise/vim-graphql'
-  Plug 'reasonml-editor/vim-reason-plus'
-  Plug 'pangloss/vim-javascript'
-  Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'dart-lang/dart-vim-plugin'
   Plug 'thosakwe/vim-flutter'
-  Plug 'rust-lang/rust.vim'
-  Plug 'elzr/vim-json'
-  Plug 'ElmCast/elm-vim'
+  "" Installs a bunch of languages
+  Plug 'sheerun/vim-polyglot'
 
   " Themes
   Plug 'haishanh/night-owl.vim'
@@ -60,6 +54,7 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""'
 "" YATS
 let g:yats_host_keyword = 1
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
+autocmd BufNewFile,BufRead *.tsx set syntax=javascript.jsx
 autocmd BufNewFile,BufRead *d.ts set syntax=typescript
 
 function! Syn()
