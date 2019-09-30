@@ -49,6 +49,12 @@ test('${1:should}', async () => {
 })
 endsnippet
 
+snippet it "Jest test" b
+it('${1:should}', () => {
+	$0
+})
+endsnippet
+
 snippet mock "Jest mock" b
 jest.mock('${1:pkg}', () => ({
 	$0
