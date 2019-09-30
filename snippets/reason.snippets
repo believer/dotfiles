@@ -13,12 +13,20 @@ React.useEffect0(() => {
 });
 endsnippet
 
-snippet ueh1 "useEffect"
+snippet ueh1 "useEffect 1"
 React.useEffect1(() => {
-	$1
+	$2
 
 	None;
-}, [|$2|]);
+}, [|$1|]);
+endsnippet
+
+snippet ueh2 "useEffect 2"
+React.useEffect2(() => {
+	$3
+
+	None;
+}, ($1, $2));
 endsnippet
 
 snippet urh "useReducer"
@@ -29,7 +37,7 @@ let (state, dispatch) = React.useReducer((state, action) => {
 }, ${3:initialState});
 endsnippet
 
-snippet um "useMutation" b
+snippet umh "useMutation" b
 module $1 = [%graphql
 {|
 	$2
