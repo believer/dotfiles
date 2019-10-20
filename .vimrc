@@ -39,7 +39,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
 
   " Themes
-  Plug 'haishanh/night-owl.vim'
+  "Plug 'haishanh/night-owl.vim'
+  Plug '~/code/personal/night-owl.vim'
 call plug#end()
 
 " JSON
@@ -53,9 +54,6 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""'
 
 "" YATS
 let g:yats_host_keyword = 1
-autocmd BufNewFile,BufRead *.ts set syntax=javascript
-autocmd BufNewFile,BufRead *.tsx set syntax=javascript.jsx
-autocmd BufNewFile,BufRead *d.ts set syntax=typescript
 
 function! Syn()
   for id in synstack(line("."), col("."))
