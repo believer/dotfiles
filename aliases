@@ -10,13 +10,9 @@ alias nisd='npm install --save-dev --save-exact '
 alias nout='npm outdated'
 alias nchecku='npx npm-check --update --save-exact'
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
-alias c='nvim'
 alias l='ls -1a'
 alias ll='l'
 alias flush-npm='rm -rf node_modules && npm i'
-alias tmux='tmux -2'
-alias f='fzf | xargs bat'
-alias supremereason='~/.dotfiles/scripts/supreme.sh'
 
 # Git
 alias git=hub
@@ -44,9 +40,13 @@ alias zshaliases='nvim ~/.dotfiles/aliases'
 alias zshdocker='nvim ~/.dotfiles/docker'
 alias szsh='source ~/.dotfiles/.zshrc'
 
+# App
+alias c='nvim'
+alias vim='nvim'
+alias tmux='tmux -2'
+alias f='fzf | xargs bat'
+
 # Folders
-alias af='cd ~/code/af'
-alias vimla='cd ~/code/vimla'
 alias dotfiles='cd ~/.dotfiles'
 alias wid='cd ~/Dropbox/Dokument/what-i-did && nvim'
 alias swap='cd ~/.local/share/nvim/swap'
