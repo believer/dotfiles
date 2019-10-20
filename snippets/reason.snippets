@@ -31,9 +31,9 @@ endsnippet
 
 snippet urh "useReducer"
 let (state, dispatch) = React.useReducer((state, action) => {
-		switch(action) {
-		| $1 => $2
-		}
+	switch(action) {
+	| $1 => $2
+	}
 }, ${3:initialState});
 endsnippet
 
@@ -55,6 +55,30 @@ let make = () => {
 };
 endsnippet
 
+snippet uqh "useQuery" b
+module $1 = [%graphql
+{|
+	$2
+|}
+];
+
+module $1Query = ReasonApolloHooks.Query.Make($1);
+
+[@react.component]
+let make = () => {
+	let variables = $1.make(~id, ())##variables;
+	let (result, _full) = $1Query.use(~variables, ());
+
+	<div>
+	{switch(result) {
+		| Loading => <p>{React.string("Loading...")}</p>
+		| Data(data) => <p>{React.string(data##currentUser##name)}</p>
+		| NoData
+		| Error(_) => <p>{React.string("Get off my lawn!")}</p>
+	}}
+	</div>
+};
+endsnippet
 
 # ----------------------------------------------------------
 # Components
@@ -69,52 +93,6 @@ snippet slr "Stateless component" b
 [@react.component]
 let make = () => {
 	<div>{React.string("Test")}</div>
-};
-endsnippet
-
-snippet usc "useState component" b
-[@react.component]
-let make = () => {
-	let (test, setTest) = React.useState(() => "Test");
-
-	<div>{React.string(test)}</div>
-};
-endsnippet
-
-snippet urc "useReducer component" b
-[@react.component]
-let make = () => {
-	let (state, _dispatch) = React.useReducer((state, action) => {
-			switch(action) {
-			| $1 => $2
-			}
-	}, ${3:initialState});
-
-	<div>{React.string(state)}</div>
-};
-endsnippet
-
-snippet qslr "Query component" b
-module $1 = [%graphql
-{|
-	$2
-|}
-];
-
-module $1Query = ReasonApollo.CreateQuery($1);
-
-[@react.component]
-let make = () => {
-	let variables = $1.make(~id, ())##variables;
-
-	<$1Query variables>
-		{({result}) =>
-			switch (result) {
-			| Loading => <div> {React.string("Loading")} </div>
-			| Error(error) => <div> {React.string(error##message)} </div>
-			| Data(_response) => <div>{React.string("Test")}</div>
-			}}
-	</$1Query>;
 };
 endsnippet
 
@@ -155,7 +133,6 @@ let make = () => {
 			},
 		);
 
-
 	let handleChange = (field, fieldUpdater, event) => {
 		form.change(
 			field,
@@ -167,7 +144,6 @@ let make = () => {
 		<div> {React.string("Test")} </div>
 	</form>;
 };
-
 endsnippet
 
 snippet str "React.string"
@@ -188,8 +164,19 @@ snippet swc "Switch statement"
 }}
 endsnippet
 
+# ----------------------------------------------------------
+# Logging
+# ----------------------------------------------------------
 snippet clog "Console log"
 Js.log(${1:data});
+endsnippet
+
+snippet clog2 "Console log 2"
+Js.log2(${1:data}, ${2:data});
+endsnippet
+
+snippet clog3 "Console log 3"
+Js.log3(${1:data}, ${2:data}, ${3:data});
 endsnippet
 
 # ----------------------------------------------------------
@@ -239,4 +226,16 @@ snippet test "Test"
 test("$1", () => {
 	$2
 });
+endsnippet
+
+snippet	exp "Jest - Expect toEqual"
+expect($1) |> toEqual($2)
+endsnippet
+
+snippet	expb "Jest - Expect toBe"
+expect($1) |> toBe($2)
+endsnippet
+
+snippet	expm "Jest - Expect toMatchSnapshot"
+expect($1) |> toMatchSnapshot($2)
 endsnippet

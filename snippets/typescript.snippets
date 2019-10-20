@@ -1,4 +1,6 @@
+# ----------------------------------------------------------
 # Testing
+# ----------------------------------------------------------
 snippet rtest "React test using react-testing-library" b
 import * as React from 'react'
 import { render } from 'test-utils'
@@ -61,12 +63,28 @@ jest.mock('${1:pkg}', () => ({
 }))
 endsnippet
 
+snippet exp "Jest - Expect toEqual" b
+expect($1).toEqual($2)
+endsnippet
+
+snippet expb "Jest - Expect toBe" b
+expect($1).toBe($2)
+endsnippet
+
+snippet expm "Jest - Expect toMatchSnapshot" b
+expect($1).toMatchSnapshot($2)
+endsnippet
+
+# ----------------------------------------------------------
 # Logging
+# ----------------------------------------------------------
 snippet clog "console.log"
 console.log(${1:data})
 endsnippet
 
+# ----------------------------------------------------------
 # React
+# ----------------------------------------------------------
 snippet imr "Import React" b
 import React from 'react'
 endsnippet
@@ -91,7 +109,9 @@ const `!v expand('%:t:r')` = () => {
 export default `!v expand('%:t:r')`
 endsnippet
 
-# Stylings
+# ----------------------------------------------------------
+# Styling
+# ----------------------------------------------------------
 snippet styc "Styled component" b
 const $1 = styled.$2\`
 	$3
@@ -102,6 +122,9 @@ snippet tp "Styled component theme"
 $1: ${({ theme }) => theme.$2};
 endsnippet
 
+# ----------------------------------------------------------
+# TypeScript
+# ----------------------------------------------------------
 snippet inter "Interface" b
 interface $1 {
 	$2
