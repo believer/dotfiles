@@ -1,3 +1,31 @@
+pathadd() {
+  newelement=${1%/}
+  if [ -d "$1" ] && ! echo $PATH | grep -E -q "(^|:)$newelement($|:)" ; then
+    if [ "$2" = "after" ] ; then
+      PATH="$PATH:$newelement"
+    else
+      PATH="$newelement:$PATH"
+    fi
+  fi
+}
+
+pathrm() {
+  PATH="$(echo $PATH | sed -e "s;\(^\|:\)${1%/}\(:\|\$\);\1\2;g" -e 's;^:\|:$;;g' -e 's;::;:;g')"
+}
+
+# Path
+pathadd "/usr/local/bin"
+pathadd "/usr/bin"
+pathadd "/bin"
+pathadd "$HOME/.fastlane/bin"
+pathadd "$JAVA_HOME/bin"
+pathadd "$ANDROID_HOME/tools"
+pathadd "$ANDROID_HOME/platform-tools"
+pathadd "$HOME/.yarn/bin"
+pathadd "$HOME/.rvm/bin"
+pathadd "$HOME/code/flutter/bin"
+pathadd "$HOME/.pub-cache/bin"
+
 # Antibody
 export ZSH="${HOME}/.oh-my-zsh"
 source <(antibody init)
@@ -29,18 +57,6 @@ KEYTIMEOUT=1
 # Android SDK
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 
-# Path
-export PATH="$HOME/.fastlane/bin:$PATH"
-export PATH="$JAVA_HOME/bin:$PATH"
-export PATH="$ANDROID_HOME/tools:$PATH"
-export PATH="$ANDROID_HOME/platform-tools:$PATH"
-export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="$HOME/.rvm/bin:$PATH"
-export PATH="$HOME/.wejay:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/code/flutter/bin:$PATH"
-export PATH="$HOME/.pub-cache/bin:$PATH"
-
 eval $(thefuck --alias)
 
 # CDPATH ALTERATIONS
@@ -69,11 +85,8 @@ shorten-url () {
 # Hub
 eval "$(hub alias -s)"
 
-# opam
-test -r /Users/rickardlaurin/.opam/opam-init/init.zsh && . /Users/rickardlaurin/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
 # fnm
-export PATH=$HOME/.fnm:$PATH
+pathadd $HOME/.fnm
 eval `fnm env --multi`
 
 function chpwd {
@@ -118,3 +131,5 @@ source ~/code/tmuxinator.zsh
 source <(kubectl completion zsh)
 
 PS1="⚡️ "
+
+export PATH
