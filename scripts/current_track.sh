@@ -7,8 +7,8 @@ set itunes_state to false
 if is_app_running("Spotify") then
 	tell application "Spotify" to set spotify_state to (player state as text)
 end if
-if is_app_running("iTunes") then
-	tell application "iTunes" to set itunes_state to (player state as text)
+if is_app_running("Music") then
+	tell application "Music" to set itunes_state to (player state as text)
 end if
 
 if spotify_state is equal to "playing" then
@@ -28,7 +28,7 @@ if spotify_state is equal to "playing" then
 		return my track_meta(track_data, is_shuffle, is_repeat)
 	end tell
 else if itunes_state is equal to "playing" then
-	tell application "iTunes"
+	tell application "Music"
 		set track_name to name of current track
 		set artist_name to artist of current track
 		set album_name to album of current track
