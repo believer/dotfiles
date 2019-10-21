@@ -1,0 +1,35 @@
+# /Users/rickardlaurin/.config/tmuxinator/ebre.yml
+
+name: ebre
+root: ~/code/ebre/ebre-api
+
+on_project_start:
+  - docker-compose up -d
+
+on_project_stop:
+  - docker-compose stop
+
+windows:
+  - ebre-frontend:
+      layout: main-vertical
+      root: ~/code/ebre/ebre-frontend
+      panes:
+        - nvim
+        - nrt 
+        - nrs
+  - ebre-api:
+      layout: main-vertical
+      root: ~/code/ebre/ebre-api
+      panes:
+        - nvim
+        - nrt
+        - nrd
+  - ebre-eim:
+      root: ~/code/ebre/ebre-eim
+      panes:
+        - ./gradlew run
+  - ebre-importer:
+      root: ~/code/ebre/ebre-importer
+      panes:
+        -
+

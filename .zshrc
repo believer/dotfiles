@@ -125,7 +125,7 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # Tmuxinator
-source ~/code/tmuxinator.zsh
+source "$HOME/.dotfiles/scripts/tmuxinator.zsh"
 
 # Kubectl
 source <(kubectl completion zsh)

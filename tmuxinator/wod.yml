@@ -1,0 +1,13 @@
+# /Users/rickardlaurin/.config/tmuxinator/wod.yml
+
+name: wod
+root: ~/code/personal/wod
+
+windows:
+  - wod-client:
+      layout: main-vertical
+      panes:
+        - nvim
+        - nrt
+        - nrs
+        - npm run server

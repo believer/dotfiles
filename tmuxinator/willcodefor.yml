@@ -1,0 +1,11 @@
+# /Users/rickardlaurin/.config/tmuxinator/willcodefor.yml
+
+name: willcodefor
+root: ~/code/personal/willcodeforbeer
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - nvim
+        - nrd

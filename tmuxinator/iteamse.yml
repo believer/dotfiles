@@ -1,0 +1,20 @@
+# /Users/rickardlaurin/.config/tmuxinator/iteamse.yml
+
+name: iteamse
+root: ~/code/iteam/iteam.se
+
+windows:
+  - iteam-frontend:
+      layout: main-vertical
+      root: ~/code/iteam/iteam.se/packages/iteam-se
+      panes:
+        - nvim
+        - nrt
+        - nrs
+  - iteam-cms:
+      layout: main-vertical
+      root: ~/code/iteam/iteam.se/packages/iteam-cms
+      panes:
+        - nvim
+        - nrt
+        - nrd

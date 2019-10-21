@@ -1,0 +1,17 @@
+# /Users/rickardlaurin/.config/tmuxinator/wejay.yml
+
+name: wejay
+root: ~/code/wejay/sonos-wejay
+
+windows:
+  - wejay:
+      layout: main-vertical
+      panes:
+        - nvim
+        - nrt
+        - nrs
+        - nrd
+  - ngrok:
+      layout: main-vertical
+      panes:
+        - npx ngrok http 3000

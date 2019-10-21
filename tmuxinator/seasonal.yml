@@ -1,0 +1,27 @@
+# /Users/rickardlaurin/.config/tmuxinator/seasonal.yml
+
+name: seasonal
+root: ~/code/personal/seasonal/packages/api
+
+on_project_start: 
+  - docker-compose up -d
+
+on_project_stop:
+  - docker-compose stop
+
+windows:
+  - seasonal-client:
+      layout: main-vertical
+      root: ~/code/personal/seasonal/packages/client
+      panes:
+        - nvim
+        - nrs
+        - npm run server
+  - seasonal-api:
+      layout: main-vertical
+      root: ~/code/personal/seasonal/packages/api
+      panes:
+        - nvim
+        - nrs
+        - 
+        - 

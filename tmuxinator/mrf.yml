@@ -1,0 +1,43 @@
+# /Users/rickardlaurin/.config/tmuxinator/mrf.yml
+
+name: mrf
+root: ~/code/mrf/vim
+
+# https://github.com/tmuxinator/tmuxinator/issues/651
+on_project_start: 
+  - docker-compose up -d
+  - $(sleep 1 && tmux select-layout -t 1 366e,284x74,0,0\{219x74,0,0,0,64x74,220,0\[64x27,220,0,4,64x41,220,28,5,64x4,220,70,6\]\})
+  # Set Node full ICU for complete i18n support
+  - export NODE_ICU_DATA=~/.fnm/node-versions/v12.8.0/installation/lib/node_modules/full-icu
+
+on_project_stop:
+  - docker-compose stop
+
+windows:
+  - vim-frontend:
+      layout: 366e,284x74,0,0{219x74,0,0,0,64x74,220,0[64x27,220,0,4,64x41,220,28,5,64x4,220,70,6]}
+      root: ~/code/mrf/vim/web
+      panes:
+        - nvim
+        - nrt 
+        - nrs
+        - nr server
+  - vim-api:
+      layout: 1af4,284x74,0,0{219x74,0,0,1,64x74,220,0[64x36,220,0,7,64x37,220,37,8]}
+      root: ~/code/mrf/vim/api
+      panes:
+        - nvim
+        - nrt
+        - nrd
+  - vim-cabas:
+      root: ~/code/mrf/vim/cabby
+      panes:
+        - nrd
+  - vim-pdf:
+      root: ~/code/mrf/vim/pdf
+      panes:
+        - nrd
+  - vim-fortnox:
+      root: ~/code/mrf/vim/fortnox
+      panes:
+        - nvim
