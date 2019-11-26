@@ -14,6 +14,10 @@ test('$2', () => {
 endsnippet
 
 snippet asmock "Create function as a Jest mock"
+;($1 as jest.Mock).mockResolvedValueOnce($2)
+endsnippet
+
+snippet asmocki "Create function as a Jest mock"
 ;($1 as jest.Mock).mockImplementation(() => $2)
 endsnippet
 
@@ -107,6 +111,16 @@ const `!v expand('%:t:r')` = () => {
 }
 
 export default `!v expand('%:t:r')`
+endsnippet
+
+snippet uqh "Query hook" b
+const [state, setState] = React.useState($1)
+endsnippet
+
+snippet ueh1 "Use Effect 1" b
+React.useEffect(() => {
+	$2
+},[$1])
 endsnippet
 
 # ----------------------------------------------------------
