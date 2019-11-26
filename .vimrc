@@ -29,6 +29,9 @@ call plug#begin('~/.vim/plugged')
   
   " Comments
   Plug 'scrooloose/nerdcommenter'
+  
+  " Python formatter
+  Plug 'psf/black'
 
   " Syntax
   Plug 'gerw/vim-HiLinkTrace'
@@ -85,6 +88,37 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" if hidden is not set, TextEdit might fail.
+set hidden
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=1
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Fugitive (Git)
 nmap <silent> :gss :G<CR>
@@ -159,10 +193,10 @@ set smartcase
 
 "" Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-"set conceallevel = 0
+set conceallevel=0
 "set concealcursor = c
-let g:markdown_syntax_conceal = 1
-let g:markdown_folding = 1
+"let g:markdown_syntax_conceal = 1
+"let g:markdown_folding = 1
 
 "" Tabs
 set tabstop=2
