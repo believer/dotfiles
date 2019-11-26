@@ -1,0 +1,17 @@
+# /Users/rickardlaurin/.dotfiles/tmuxinator/cas.yml
+
+name: cas
+root: ~/code/cas/ar-test/ViroSample
+
+windows:
+  - cas-app:
+      layout: main-vertical
+      panes:
+        - nvim
+        - nr bs:start
+        - nrs
+  - cas-video: 
+      layout: main-vertical
+      root: ~/code/cas/opencv
+      panes:
+        -
