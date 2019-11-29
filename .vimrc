@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'wakatime/vim-wakatime'
   Plug 'jiangmiao/auto-pairs'
   Plug 'Yggdroot/indentLine'
+  Plug 'terryma/vim-expand-region'
 
   " Autocomplete
   Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
