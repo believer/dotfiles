@@ -1,0 +1,11 @@
+# /Users/rickardlaurin/.dotfiles/tmuxinator/v3vo.yml
+
+name: v3vo
+root: ~/code/v3vo
+
+windows:
+  - v3vo-app:
+      layout: main-vertical
+      panes:
+        - nvim
+        - nrs

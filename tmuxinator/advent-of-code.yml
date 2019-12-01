@@ -1,0 +1,18 @@
+# /Users/rickardlaurin/.dotfiles/tmuxinator/advent-of-code.yml
+
+name: advent-of-code
+root: ~/code/personal/advent-of-code/2019
+
+windows:
+  - 2019:
+      layout: main-vertical
+      panes:
+        - nvim
+        - nrt
+        - nrs
+  - 2018:
+      layout: main-vertical
+      root: ~/code/personal/advent-of-code/2018
+      panes:
+        - nvim
+        - nrs
