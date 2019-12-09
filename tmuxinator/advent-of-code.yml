@@ -10,9 +10,3 @@ windows:
         - nvim
         - nrt
         - nrs
-  - 2018:
-      layout: main-vertical
-      root: ~/code/personal/advent-of-code/2018
-      panes:
-        - nvim
-        - nrs

@@ -1,11 +1,27 @@
 # /Users/rickardlaurin/.dotfiles/tmuxinator/v3vo.yml
 
 name: v3vo
-root: ~/code/v3vo
+root: ~/code/v3vo/monorepo
+
+on_project_start: 
+  - docker-compose up -d postgres
+
+on_project_stop:
+  - docker-compose stop
 
 windows:
   - v3vo-app:
       layout: main-vertical
+      root: ~/code/v3vo/monorepo/app
       panes:
         - nvim
+        - nrt
         - nrs
+        - nrd
+  - v3vo-api:
+      layout: main-vertical
+      root: ~/code/v3vo/monorepo/api
+      panes:
+        - nvim
+        - nrt
+        - nrd
