@@ -133,7 +133,7 @@ let g:merginal_windowWidth = '100'
 
 " UltiSnips
 let g:UltiSnipsSnippetsDir='~/.dotfiles/snippets'
-let g:UltiSnipsSnippetDirectories=['UltiSnips', $HOME.'/.dotfiles/snippets']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 
