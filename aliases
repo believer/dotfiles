@@ -50,6 +50,7 @@ alias f='fzf | xargs bat'
 alias dotfiles='cd ~/.dotfiles'
 alias wid='cd ~/Dropbox/Dokument/what-i-did && nvim'
 alias swap='cd ~/.local/share/nvim/swap'
+alias node-prune='find . -name "node_modules" -type d -prune -exec rm -rf '{}' +'
 
 # Rarely/never used
 alias myip='curl http://ipecho.net/plain; echo'
