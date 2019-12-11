@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'easymotion/vim-easymotion'
   Plug 'SirVer/ultisnips'
   Plug 'wakatime/vim-wakatime'
-  Plug 'jiangmiao/auto-pairs'
   Plug 'Yggdroot/indentLine'
 
   " Autocomplete
