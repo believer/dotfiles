@@ -17,7 +17,6 @@ pathrm() {
 pathadd "/usr/local/bin"
 pathadd "/usr/bin"
 pathadd "/bin"
-pathadd "$HOME/.fastlane/bin"
 pathadd "$JAVA_HOME/bin"
 pathadd "$ANDROID_HOME/tools"
 pathadd "$ANDROID_HOME/platform-tools"
