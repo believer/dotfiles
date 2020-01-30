@@ -25,3 +25,9 @@ windows:
         - nvim
         - nrt
         - nrd
+  - v3vo-web:
+      layout: main-vertical
+      root: ~/code/v3vo/monorepo/web
+      panes:
+        - nvim
+        - nrd

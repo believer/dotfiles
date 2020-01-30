@@ -17,9 +17,9 @@ windows:
       root: ~/code/personal/soundtrackdb/packages/web
       panes:
         - nvim
-        - nrs
-        - nr relay:watch
-        - nr server
+        - yarn start
+        - yarn relay:watch
+        - yarn server
   - soundtrackdb-api:
       layout: main-vertical
       root: ~/code/personal/soundtrackdb/packages/api
