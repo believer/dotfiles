@@ -29,8 +29,11 @@ call plug#begin('~/.vim/plugged')
   " Comments
   Plug 'scrooloose/nerdcommenter'
   
-  " Python formatter
+  " Formatter
+  " Python
   Plug 'psf/black'
+  " Ruby
+  Plug 'ruby-formatter/rufo-vim'
 
   " Syntax
   Plug 'gerw/vim-HiLinkTrace'
@@ -49,6 +52,7 @@ let g:vim_json_syntax_conceal = 0
 
 " Rust
 let g:rustfmt_autosave = 1
+let g:rufo_auto_formatting = 1
 
 " Auto pairs
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''"}
