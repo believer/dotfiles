@@ -11,7 +11,7 @@ on_project_stop:
 
 windows:
   - v3vo-app:
-      layout: main-vertical
+      layout: c1d6,284x79,0,0{210x79,0,0,0,73x79,211,0[73x26,211,0,3,73x40,211,27,4,73x11,211,68,5]}
       root: ~/code/v3vo/monorepo/app
       panes:
         - nvim
@@ -19,14 +19,14 @@ windows:
         - nrs
         - nrd
   - v3vo-api:
-      layout: main-vertical
+      layout: 0be2,284x79,0,0{205x79,0,0,1,78x79,206,0[78x39,206,0,6,78x39,206,40,7]}
       root: ~/code/v3vo/monorepo/api
       panes:
         - nvim
-        - nrt
+        - nrt -- --watch
         - nrd
   - v3vo-web:
-      layout: main-vertical
+      layout: aa9d,284x79,0,0{210x79,0,0,2,73x79,211,0,8}
       root: ~/code/v3vo/monorepo/web
       panes:
         - nvim

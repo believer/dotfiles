@@ -5,13 +5,8 @@ root: ~/code/cas/ar-test/ViroSample
 
 windows:
   - cas-app:
-      layout: main-vertical
+      layout: 12bb,284x79,0,0{205x79,0,0,0,78x79,206,0[78x69,206,0,3,78x9,206,70,2]}
       panes:
         - nvim
         - nr bs:start
         - nrs
-  - cas-video: 
-      layout: main-vertical
-      root: ~/code/cas/opencv
-      panes:
-        -
