@@ -1,12 +1,26 @@
 # /Users/rickardlaurin/.dotfiles/tmuxinator/cas.yml
 
 name: cas
-root: ~/code/cas/ar-test/ViroSample
+root: ~/code/cas/cas/packages/api
+
+on_project_start: 
+  - docker-compose up -d
+
+on_project_stop:
+  - docker-compose stop
 
 windows:
   - cas-app:
-      layout: 12bb,284x79,0,0{205x79,0,0,0,78x79,206,0[78x69,206,0,3,78x9,206,70,2]}
+      layout: e855,284x79,0,0{189x79,0,0,0,94x79,190,0[94x54,190,0,6,94x24,190,55,7]}
+      root: ~/code/cas/cas/packages/app
       panes:
         - nvim
-        - nr bs:start
         - nrs
+        - nrd
+  - cas-api:
+      layout: main-vertical
+      root: ~/code/cas/cas/packages/api
+      panes:
+        - nvim
+        - nrt
+        - nrd
