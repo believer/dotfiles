@@ -10,6 +10,15 @@ on_project_stop:
   - docker-compose stop
 
 windows:
+  - podcaster-app:
+      layout: a7ff,284x79,0,0{212x79,0,0,4,71x79,213,0[71x32,213,0,16,71x39,213,33,17,71x6,213,73,18]}
+      root: ~/code/personal/podcaster/packages/Podcaster
+      panes:
+        - nvim
+        - nrs
+        - nrd
+        -
+
   - podcaster-api:
       layout: e855,284x79,0,0{189x79,0,0,0,94x79,190,0[94x54,190,0,6,94x24,190,55,7]}
       root: ~/code/personal/podcaster/packages/api
