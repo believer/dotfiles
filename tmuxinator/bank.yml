@@ -1,0 +1,18 @@
+# /Users/rickardlaurin/.dotfiles/tmuxinator/bank.yml
+
+name: bank
+root: ~/code/personal/import-seb-to-actual
+
+windows:
+  - importer:
+      layout: main-vertical
+      panes:
+        - nvim
+        - nrd
+        -
+  - bindings:
+      layout: main-vertical
+      root: ~/code/personal/re-actual
+      panes:
+        - nvim
+        - nrs
