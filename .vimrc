@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'SirVer/ultisnips'
   Plug 'wakatime/vim-wakatime'
   Plug 'Yggdroot/indentLine'
+  Plug 'jiangmiao/auto-pairs'
 
   " Autocomplete
   Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -29,9 +30,7 @@ call plug#begin('~/.vim/plugged')
   " Comments
   Plug 'scrooloose/nerdcommenter'
   
-  " Formatter
-  " Python
-  Plug 'psf/black'
+  " Formatters
   " Ruby
   Plug 'ruby-formatter/rufo-vim'
 
