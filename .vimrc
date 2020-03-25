@@ -81,6 +81,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <silent> :tso :CocCommand editor.action.organizeImport<CR>
 
 function! s:show_documentation()
   if &filetype == 'vim'
