@@ -3,20 +3,14 @@
 name: podcaster
 root: ~/code/personal/podcaster/packages/api
 
-on_project_start: 
-  - docker-compose up -d
-
-on_project_stop:
-  - docker-compose stop
-
 windows:
-  - podcaster-app:
+  - podcaster-web:
       layout: a7ff,284x79,0,0{212x79,0,0,4,71x79,213,0[71x32,213,0,16,71x39,213,33,17,71x6,213,73,18]}
-      root: ~/code/personal/podcaster/packages/Podcaster
+      root: ~/code/personal/podcaster/packages/web
       panes:
         - nvim
         - nrs
-        - nrd
+        - nr server
         -
 
   - podcaster-api:
