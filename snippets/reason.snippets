@@ -38,36 +38,34 @@ let (state, dispatch) = React.useReducer((state, action) => {
 endsnippet
 
 snippet umh "useMutation" b
+open ApolloHooks;
+
 module $1 = [%graphql
 {|
 	$2
 |}
 ];
 
-module $1Mutation = ReasonApolloHooks.Mutation.Make($1);
-
 [@react.component]
 let make = () => {
-	let (mutation, _, _) = $1Mutation.use();
-	let variables = $1.make(~id, ())##variables;
+	let (mutation, _, _) = useMutation($1.definition);
 
 	mutation(~variables, ()) |> ignore;
 };
 endsnippet
 
 snippet uqh "useQuery" b
+open ApolloHooks;
+
 module $1 = [%graphql
 {|
 	$2
 |}
 ];
 
-module $1Query = ReasonApolloHooks.Query.Make($1);
-
 [@react.component]
 let make = () => {
-	let variables = $1.make(~id, ())##variables;
-	let (result, _full) = $1Query.use(~variables, ());
+	let (result, _full) = useQuery($1.definition);
 
 	<div>
 	{switch(result) {
