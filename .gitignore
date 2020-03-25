@@ -1,2 +1,3 @@
 *.zwc
 .DS_Store
+node_modules
