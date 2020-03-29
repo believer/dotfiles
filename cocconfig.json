@@ -43,11 +43,6 @@
     "kotlin": {
       "command": "~/code/lsp/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
       "filetypes": ["kotlin"]
-    },
-    "ocaml-lsp": {
-      "command": "opam",
-      "args": ["config", "exec", "--", "ocamllsp"],
-      "filetypes": ["ocaml", "reason"]
     }
   },
   "python.jediEnabled": false
