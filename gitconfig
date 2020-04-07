@@ -1,3 +1,7 @@
+[user]
+  name = Rickard Laurin
+  email = rickard.laurin@gmail.com
+
 [alias]
   co = checkout
   s = switch
