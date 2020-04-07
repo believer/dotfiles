@@ -6,4 +6,3 @@
   co = checkout
   s = switch
   up = pull --rebase --autostash
-
