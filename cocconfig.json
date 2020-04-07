@@ -3,12 +3,9 @@
   "typescript.suggest.autoImports": true,
   "javascript.validate.enable": false,
   "coc.preferences.formatOnSaveFiletypes": [
-    "elixir",
     "svelte",
     "html",
-    "rust",
     "graphql",
-    "dart",
     "reason",
     "typescript",
     "css",
@@ -21,29 +18,4 @@
   "codeLens.separator": "🕶",
   "codeLens.enable": true,
   "prettier.eslintIntegration": true,
-  "languageserver": {
-    "dart": {
-      "command": "dart",
-      "args": [
-        "/usr/local/opt/dart/libexec/bin/snapshots/analysis_server.dart.snapshot",
-        "--lsp"
-      ],
-      "filetypes": ["dart"],
-      "disableDynamicRegister": true,
-      "trace.server": "verbose"
-    },
-    "elmLS": {
-      "command": "elm-language-server",
-      "filetypes": ["elm"],
-      "rootPatterns": ["elm.json"],
-      "initializationOptions": {
-        "elmAnalyseTrigger": "change"
-      }
-    },
-    "kotlin": {
-      "command": "~/code/lsp/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
-      "filetypes": ["kotlin"]
-    }
-  },
-  "python.jediEnabled": false
 }

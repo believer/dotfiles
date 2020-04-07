@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'easymotion/vim-easymotion'
   Plug 'SirVer/ultisnips'
-  Plug 'wakatime/vim-wakatime'
   Plug 'Yggdroot/indentLine'
   Plug 'jiangmiao/auto-pairs'
 
@@ -43,7 +42,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
 
   " Themes
-  Plug '~/code/personal/night-owl.vim'
+  Plug '~/code/personal/night-owl'
 call plug#end()
 
 " JSON

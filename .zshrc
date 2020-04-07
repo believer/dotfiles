@@ -30,9 +30,6 @@ export ZSH="${HOME}/.oh-my-zsh"
 source <(antibody init)
 antibody bundle < ~/.dotfiles/.zsh_plugins.txt
 
-# Docker environments
-source "$HOME/.config/zsh/docker"
-
 # Aliases
 source "$HOME/.dotfiles/aliases"
 
@@ -55,8 +52,6 @@ KEYTIMEOUT=1
 
 # Android SDK
 export ANDROID_HOME=${HOME}/Library/Android/sdk
-
-eval $(thefuck --alias)
 
 # CDPATH ALTERATIONS
 CDPATH=.:$HOME:$HOME/code
@@ -119,15 +114,8 @@ set_fnm_version
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 3 # normal minimum is 2 (30 ms)
 
-# Pure prompt
-autoload -U promptinit; promptinit
-prompt pure
-
 # Tmuxinator
 source "$HOME/.dotfiles/scripts/tmuxinator.zsh"
-
-# Kubectl
-source <(kubectl completion zsh)
 
 PS1="⚡️ "
 

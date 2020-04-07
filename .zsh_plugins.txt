@@ -1,5 +1,6 @@
 # Oh My Zsh
 robbyrussell/oh-my-zsh
+romkatv/powerlevel10k
 
 # Syntax highlighting
 zsh-users/zsh-syntax-highlighting
