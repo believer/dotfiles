@@ -1,5 +1,4 @@
-pathadd() {
-  newelement=${1%/}
+pathadd() { newelement=${1%/}
   if [ -d "$1" ] && ! echo $PATH | grep -E -q "(^|:)$newelement($|:)" ; then
     if [ "$2" = "after" ] ; then
       PATH="$PATH:$newelement"
@@ -43,6 +42,9 @@ export TERM=xterm-256color
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
 export GOPATH="$HOME/code/go"
 export EDITOR="nvim"
+
+# Work
+source ~/.dotfiles/.hemnetrc
 
 # 10ms for key sequences
 KEYTIMEOUT=1
