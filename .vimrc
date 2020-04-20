@@ -140,6 +140,9 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 
 " NERDTree
+set wildignore+=*.bs.js
+
+let g:NERDTreeRespectWildIgnore = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeAutoDeleteBuffer = 1
@@ -158,6 +161,9 @@ set termguicolors
 syntax enable
 colorscheme night-owl
 set t_Co=256
+
+"" Toggle *conceallevel*
+nnoremap <Leader>co :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
 
 " Text wrapping
 set textwidth=80
@@ -195,9 +201,6 @@ set smartcase
 "" Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 set conceallevel=0
-"set concealcursor = c
-"let g:markdown_syntax_conceal = 1
-"let g:markdown_folding = 1
 
 "" Tabs
 set tabstop=2
