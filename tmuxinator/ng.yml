@@ -1,0 +1,12 @@
+# /Users/rickardlaurin/.dotfiles/tmuxinator/ng.yml
+
+name: ng
+root: ~/code/hemnet/hemnet-ng
+
+windows:
+  - code:
+      layout: main-vertical
+      panes:
+        - nvim
+        - yarn test --watch
+        - make dev
