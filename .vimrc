@@ -147,9 +147,9 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 
-nnoremap <silent> <Leader>nt :NERDTree<CR>
-nnoremap <silent> <Leader>nc :NERDTreeCWD<CR>
-nnoremap <silent> <Leader>ntf :NERDTreeFind<CR>
+nnoremap <silent> <Leader><Leader>nt :NERDTree<CR>
+nnoremap <silent> <Leader><Leader>nc :NERDTreeCWD<CR>
+nnoremap <silent> <Leader><Leader>ntf :NERDTreeFind<CR>
 
 " Editor
 set foldmethod=syntax
