@@ -31,7 +31,9 @@ call plug#begin('~/.vim/plugged')
   
   " Formatters
   " Ruby
-  Plug 'ruby-formatter/rufo-vim'
+  Plug 'tpope/vim-rails'
+  Plug 'thoughtbot/vim-rspec'
+  Plug 'ngmy/vim-rubocop'
 
   " Syntax
   Plug 'gerw/vim-HiLinkTrace'
@@ -54,6 +56,12 @@ let g:rufo_auto_formatting = 1
 
 " Auto pairs
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''"}
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 "" YATS
 let g:yats_host_keyword = 1
