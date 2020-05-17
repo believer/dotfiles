@@ -1,4 +1,4 @@
-" Plugins
+" -------- Plugins (vim-plug) -------- "
 call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -29,7 +29,6 @@ call plug#begin('~/.vim/plugged')
   " Comments
   Plug 'scrooloose/nerdcommenter'
   
-  " Formatters
   " Ruby
   Plug 'tpope/vim-rails'
   Plug 'thoughtbot/vim-rspec'
@@ -82,7 +81,7 @@ let g:rainbow_conf = {
 \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan'],
 \}
 
-" CoC
+" -------- CoC -------- "
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -98,21 +97,13 @@ function! s:show_documentation()
   endif
 endfunction
 
-" if hidden is not set, TextEdit might fail.
-set hidden
-
+set hidden " if hidden is not set, TextEdit might fail.
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
-
-" Better display for messages
-set cmdheight=1
-
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
+set cmdheight=1 " Better display for messages
+set updatetime=300 " You will have a bad experience for diagnostic messages when it's default 4000.
+set shortmess+=c " don't give |ins-completion-menu| messages.
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -134,15 +125,6 @@ inoremap <silent><expr> <C-SPACE> coc#refresh()
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
-
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
@@ -154,9 +136,6 @@ nmap <silent> :Gss :G<CR>
 let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfjö'
 map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-
-" Merginal
-let g:merginal_windowWidth = '100'
 
 " UltiSnips
 let g:UltiSnipsSnippetsDir='~/.dotfiles/snippets'
@@ -172,11 +151,11 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 
-nnoremap <silent> <Leader><Leader>nt :NERDTree<CR>
-nnoremap <silent> <Leader><Leader>nc :NERDTreeCWD<CR>
-nnoremap <silent> <Leader><Leader>ntf :NERDTreeFind<CR>
+nmap <silent> :ne :NERDTree<CR>
+nmap <silent> :nc :NERDTreeCWD<CR>
+nmap <silent> :ntf :NERDTreeFind<CR>
 
-" Editor
+" -------- General editor settings -------- "
 set foldmethod=syntax
 set foldlevelstart=99
 set laststatus=2
