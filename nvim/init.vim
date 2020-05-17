@@ -25,10 +25,10 @@ call plug#begin('~/.vim/plugged')
 
   " Marks
   Plug 'kshenoy/vim-signature'
-  
+
   " Comments
   Plug 'scrooloose/nerdcommenter'
-  
+
   " Ruby
   Plug 'tpope/vim-rails'
   Plug 'thoughtbot/vim-rspec'
