@@ -21,7 +21,7 @@ alias gc='git commit'
 alias gp='git push'
 alias ga='git add'
 alias gss='git status --short'
-alias gck='git checkout $1'
+alias gs='git switch $1'
 alias gckf='gck feature/$1'
 alias gckb='gck bugfix/$1'
 
@@ -33,12 +33,12 @@ alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}
 alias ds='clear && docker service ps --format "table {{.Name}}\t{{.Image}}\t{{.CurrentState}}"'
 
 # Dotfiles
-alias tmuxconf='nvim ~/.dotfiles/.tmux.conf'
-alias vimrc='nvim ~/.dotfiles/.vimrc'
-alias zshrc='nvim ~/.dotfiles/.zshrc'
-alias zshaliases='nvim ~/.dotfiles/aliases'
-alias zshdocker='nvim ~/.dotfiles/docker'
-alias szsh='source ~/.dotfiles/.zshrc'
+alias tmuxconf='nvim $XDG_CONFIG_HOME/.tmux.conf'
+alias vimrc='nvim $XDG_CONFIG_HOME/nvim/init.vim'
+alias zshrc='nvim $XDG_CONFIG_HOME/.zshrc'
+alias zshaliases='nvim $XDG_CONFIG_HOME/aliases'
+alias zshdocker='nvim $XDG_CONFIG_HOME/docker'
+alias szsh='source $XDG_CONFIG_HOME/.zshrc'
 
 # App
 alias c='nvim'

@@ -42,6 +42,7 @@ export TERM=xterm-256color
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
 export GOPATH="$HOME/code/go"
 export EDITOR="nvim"
+export XDG_CONFIG_HOME="$HOME/.dotfiles"
 
 # Work
 source ~/.dotfiles/.hemnetrc
