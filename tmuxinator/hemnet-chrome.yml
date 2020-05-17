@@ -1,0 +1,13 @@
+# /Users/rickardlaurin/.dotfiles/tmuxinator/hemnet-chrome.yml
+
+name: hemnet-chrome
+root: ~/code/hemnet/hemnet-chrome
+
+windows:
+  - hemnet-chrome:
+      layout: f3e2,284x83,0,0{212x83,0,0,68,71x83,213,0[71x41,213,0,69,71x30,213,42,70,71x10,213,73,71]}
+      panes:
+        - nvim
+        - nrt
+        - nrs
+        -
