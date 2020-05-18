@@ -2,3 +2,6 @@
 .DS_Store
 node_modules
 .hemnetrc
+hub
+
+coc/extensions/db.json
