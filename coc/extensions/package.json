@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "coc-css": ">=1.2.3",
     "coc-eslint": ">=1.2.6",
+    "coc-prettier": ">=1.1.12",
     "coc-reason": ">=0.1.1",
+    "coc-tailwindcss": ">=0.6.0",
     "coc-tsserver": ">=1.5.1"
   }
 }
