@@ -6,6 +6,9 @@
   co = checkout
   s = switch
   up = pull --rebase --autostash
+  scb = "!f() { git switch -c fix/\"$1\"; }; f"
+  scf = "!f() { git switch -c feature/\"$1\"; }; f"
+  scc = "!f() { git switch -c chore/\"$1\"; }; f"
 
 [core]
     pager = delta --plus-color="#012800" --minus-color="#340001"
