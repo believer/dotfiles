@@ -1,0 +1,24 @@
+{
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.suggest.autoImports": true,
+  "javascript.validate.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "html",
+    "graphql",
+    "reason",
+    "typescript",
+    "css",
+    "scss",
+    "markdown",
+    "javascript",
+    "json",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "codeLens.separator": "🕶",
+  "codeLens.enable": true,
+  "prettier.eslintIntegration": true,
+  "prettier.stylelineIntegration": true
+}
+
+
