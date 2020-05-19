@@ -27,7 +27,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'kshenoy/vim-signature'
 
   " Comments
-  Plug 'scrooloose/nerdcommenter'
+  " <count>gcc - toggle line(s) comment
+  " gc - comment with motion, e.g. gcap for paragraph
+  " gcgc - uncomment
+  Plug 'tpope/vim-commentary'
 
   " Ruby
   Plug 'tpope/vim-rails'
