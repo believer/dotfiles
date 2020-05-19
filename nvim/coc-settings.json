@@ -18,7 +18,8 @@
   "codeLens.separator": "🕶",
   "codeLens.enable": true,
   "prettier.eslintIntegration": true,
-  "prettier.stylelineIntegration": true
+  "prettier.stylelineIntegration": true,
+  "scss.validate": true
 }
 
 

@@ -7,3 +7,4 @@ hub
 coc/history.json
 coc/extensions/db.json
 configstore
+coc/commands

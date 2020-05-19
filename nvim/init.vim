@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'easymotion/vim-easymotion'
   Plug 'SirVer/ultisnips'
   Plug 'Yggdroot/indentLine'
-  Plug 'jiangmiao/auto-pairs'
 
   " Autocomplete
   Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -54,16 +53,20 @@ let g:vim_json_syntax_conceal = 0
 
 " Rust
 let g:rustfmt_autosave = 1
-let g:rufo_auto_formatting = 1
-
-" Auto pairs
-let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''"}
 
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+" Auto-expands for parens
+inoremap (; (<CR>);<C-c>O
+inoremap (, (<CR>),<C-c>O
+inoremap {; {<CR>};<C-c>O
+inoremap {, {<CR>},<C-c>O
+inoremap [; [<CR>];<C-c>O
+inoremap [, [<CR>],<C-c>O
 
 "" YATS
 let g:yats_host_keyword = 1
