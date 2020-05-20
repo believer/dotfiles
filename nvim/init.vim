@@ -1,4 +1,86 @@
-" -------- Plugins (vim-plug) -------- "
+"------------------------------------------------------------
+" General {{{1
+"
+" Set 'nocompatible' to ward off unexpected things that your distro might
+" have made, as well as sanely reset options when re-sourcing .vimrc
+set nocompatible
+
+"" Syntax highlighting
+syntax enable
+
+"" Always display sign column (where errors are displayed)
+set signcolumn=yes
+
+"" Use vertical splits for diffs
+set diffopt+=vertical
+
+"" Disable scratch window preview
+set completeopt-=preview
+
+"" Display tabs, non-breaking space and trailing whitespace
+set listchars=tab:>~,nbsp:_,trail:.
+set list
+
+"" Make commands ignore casing
+set ignorecase
+set smartcase
+
+"" Markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+set conceallevel=0
+
+"" Tabs
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set expandtab
+set smartindent
+
+"" Save on loose focus
+au FocusGained,BufEnter * :silent! !
+
+"" Line numbers
+set number relativenumber
+
+"" Folding
+set foldmethod=syntax
+set foldlevelstart=99
+
+"" Always display status line
+set laststatus=2
+
+"" Theme and color settings
+colorscheme night-owl
+set termguicolors
+set background=dark
+set t_Co=256
+
+"" Custom highlighting
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+"" Toggle *conceallevel*
+nnoremap <Leader>co :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
+
+" Text wrapping
+set textwidth=80
+set formatoptions-=l
+set wrap linebreak nolist
+
+"" Custom colors
+hi CocCodeLens guifg=#40505E
+
+"" Set Vim-specific sequences for RGB colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+highlight clear SignColumn
+set autoread
+au FocusGained * :checktime
+
+
+"------------------------------------------------------------
+" Plugins {{{1
+"
 call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -40,7 +122,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'gerw/vim-HiLinkTrace'
   Plug 'luochen1990/rainbow'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'thosakwe/vim-flutter'
   "" Installs a bunch of languages
   Plug 'sheerun/vim-polyglot'
 
@@ -48,27 +129,52 @@ call plug#begin('~/.vim/plugged')
   Plug '~/code/personal/night-owl'
 call plug#end()
 
-" JSON
-let g:vim_json_syntax_conceal = 0
 
-" Rust
-let g:rustfmt_autosave = 1
+"------------------------------------------------------------
+" Plugin settings {{{1
+"
+"" Fugitive (tpope/vim-fugitive)
+nmap <silent> :gss :G<CR>
+nmap <silent> :Gss :G<CR>
 
-" RSpec.vim mappings
+"" EasyMotion (easymotion/vim-easymotion)
+let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfjö'
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+"" UltiSnips
+let g:UltiSnipsSnippetsDir='~/.dotfiles/snippets'
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+
+"" NERDTree (SirVer/ultisnips)
+set wildignore+=*.bs.js
+
+let g:NERDTreeRespectWildIgnore = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+
+"" RSpec mappings (thoughtbot/vim-rspec)
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-" Auto-expands for parens
-inoremap (; (<CR>);<C-c>O
-inoremap (, (<CR>),<C-c>O
-inoremap {; {<CR>};<C-c>O
-inoremap {, {<CR>},<C-c>O
-inoremap [; [<CR>];<C-c>O
-inoremap [, [<CR>],<C-c>O
+nmap <silent> :ne :NERDTree<CR>
+nmap <silent> :nc :NERDTreeCWD<CR>
+nmap <silent> :ntf :NERDTreeFind<CR>
 
-"" YATS
+"" Rainbow brackets (luochen1990/rainbow)
+let g:rainbow_active = 1
+
+let g:rainbow_conf = {
+\	'guifgs': ['gold', 'orchid', 'lightskyblue'],
+\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan'],
+\}
+
+"" YATS Typescript (sheerun/vim-polylot)
 let g:yats_host_keyword = 1
 
 function! Syn()
@@ -79,15 +185,10 @@ endfunction
 
 command! -nargs=0 Syn call Syn()
 
-" Rainbow
-let g:rainbow_active = 1
 
-let g:rainbow_conf = {
-\	'guifgs': ['gold', 'orchid', 'lightskyblue'],
-\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan'],
-\}
-
-" -------- CoC -------- "
+"------------------------------------------------------------
+" CoC settings {{{1
+"
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -114,7 +215,7 @@ set shortmess+=c " don't give |ins-completion-menu| messages.
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <M-TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
@@ -134,137 +235,53 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Fugitive (Git)
-nmap <silent> :gss :G<CR>
-nmap <silent> :Gss :G<CR>
 
-" EasyMotion
-let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfjö'
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-
-" UltiSnips
-let g:UltiSnipsSnippetsDir='~/.dotfiles/snippets'
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-
-" NERDTree
-set wildignore+=*.bs.js
-
-let g:NERDTreeRespectWildIgnore = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeAutoDeleteBuffer = 1
-
-nmap <silent> :ne :NERDTree<CR>
-nmap <silent> :nc :NERDTreeCWD<CR>
-nmap <silent> :ntf :NERDTreeFind<CR>
-
-" -------- General editor settings -------- "
-set foldmethod=syntax
-set foldlevelstart=99
-set laststatus=2
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-set background=dark
-set termguicolors
-syntax enable
-colorscheme night-owl
-set t_Co=256
-
-"" Toggle *conceallevel*
-nnoremap <Leader>co :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
-
-" Text wrapping
-set textwidth=80
-set formatoptions-=l
-set wrap linebreak nolist
-
-"" Custom colors
-hi CocCodeLens guifg=#40505E
-
-"" Always display sign column (where errors are displayed)
-set signcolumn=yes
-
-"" Use vertical splits for diffs
-set diffopt+=vertical
-
-"" Disable scratch window preview
-set completeopt-=preview
-
-"" Set Vim-specific sequences for RGB colors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-highlight clear SignColumn
-set autoread
-au FocusGained * :checktime
-
-"" Display tabs, non-breaking space and trailing whitespace
-set listchars=tab:>~,nbsp:_,trail:.
-set list
-
-"" Make commands ignore casing
-set ignorecase
-set smartcase
-
-"" Markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-set conceallevel=0
-
-"" Tabs
-set tabstop=2
-set shiftwidth=2
-set autoindent
-set expandtab
-set smartindent
-
-"" Save on loose focus
-au FocusGained,BufEnter * :silent! !
-
-"" Line numbers
-set number relativenumber
-
-" Remaps
+"------------------------------------------------------------
+" Key mappings {{{1
+"
+"" Set leader key to spacebar
 nnoremap <SPACE> <Nop>
 let mapleader="\<Space>"
 let maplocalleader="\\"
+
+"" Open file search with ;
 map ; :Files<CR>
-nnoremap q: <Nop>
+
 
 " Git diffs
-" Start by doing :Gdiff, from vim-fugitive, on a conflicted file
+"" Start by doing :Gdiff, from vim-fugitive, on a conflicted file
 nnoremap <leader>gd :Gvdiff<CR>
-" Diffget from the left pane (merge branch)
+"" Diffget from the left pane (merge branch)
 nnoremap gdh :diffget //2<CR>
 "" Diffget from right pane (target branch)
 nnoremap gdl :diffget //3<CR>
 
-" Marks
+"" Marks
 nnoremap ' `
 
-" Split panes
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" Remove arrow keys
+"" Remove arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" Flutter
-let dart_format_on_save = 1
+"" Remove things I usally mistype
+nnoremap q: <Nop>
 
-nnoremap <leader>fa :FlutterRun<cr>
-nnoremap <leader>fq :FlutterQuit<cr>
-nnoremap <leader>fr :FlutterHotReload<cr>
-nnoremap <leader>fR :FlutterHotRestart<cr>
+"" Auto-expands for parens
+inoremap (; (<CR>);<C-c>O
+inoremap (, (<CR>),<C-c>O
+inoremap {; {<CR>};<C-c>O
+inoremap {, {<CR>},<C-c>O
+inoremap [; [<CR>];<C-c>O
+inoremap [, [<CR>],<C-c>O
 
+
+"------------------------------------------------------------
+" Misc {{{1
+"
 " https://medium.com/@sidneyliebrand/vim-tip-persistent-undo-2fc78a2973a7
-" guard for distributions lacking the 'persistent_undo' feature.
+" Guard for distributions lacking the 'persistent_undo' feature.
 if has('persistent_undo')
     " define a path to store persistent undo files.
     let target_path = expand('~/.config/vim-persisted-undo/')
