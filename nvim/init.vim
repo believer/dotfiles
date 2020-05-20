@@ -50,7 +50,6 @@ set foldlevelstart=99
 set laststatus=2
 
 "" Theme and color settings
-colorscheme night-owl
 set termguicolors
 set background=dark
 set t_Co=256
@@ -184,6 +183,9 @@ function! Syn()
 endfunction
 
 command! -nargs=0 Syn call Syn()
+
+"" Set theme (personal/night-owl)
+colorscheme night-owl
 
 
 "------------------------------------------------------------
