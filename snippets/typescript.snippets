@@ -1,9 +1,9 @@
 # ----------------------------------------------------------
 # Testing
-# ----------------------------------------------------------
+# 
 snippet rtest "React test using react-testing-library" b
-import * as React from 'react'
-import { render } from 'test-utils'
+import React from 'react'
+import { render } from '@testing-library/react'
 import $1 from '../$1'
 
 test('$2', () => {
@@ -81,14 +81,14 @@ endsnippet
 
 # ----------------------------------------------------------
 # Logging
-# ----------------------------------------------------------
+# 
 snippet clog "console.log"
 console.log(${1:data})
 endsnippet
 
 # ----------------------------------------------------------
 # React
-# ----------------------------------------------------------
+# 
 snippet imr "Import React" b
 import React from 'react'
 endsnippet
@@ -104,7 +104,7 @@ const ${1:`!v expand('%:t:r')`} = () => {
 endsnippet
 
 snippet fslr "Full functional component" b
-import * as React from 'react'
+import React from 'react'
 
 const `!v expand('%:t:r')` = () => {
 	return <div>${1:Test}</div>
@@ -125,7 +125,7 @@ endsnippet
 
 # ----------------------------------------------------------
 # Styling
-# ----------------------------------------------------------
+# 
 snippet styc "Styled component" b
 const $1 = styled.$2\`
 	$3
@@ -138,7 +138,7 @@ endsnippet
 
 # ----------------------------------------------------------
 # TypeScript
-# ----------------------------------------------------------
+# 
 snippet inter "Interface" b
 interface $1 {
 	$2
