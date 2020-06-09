@@ -3,13 +3,13 @@
 # 
 snippet rtest "React test using react-testing-library" b
 import React from 'react'
-import { render } from '@testing-library/react'
-import $1 from '../$1'
+import { render, screen } from '@testing-library/react'
+import $1 from './$1'
 
 test('$2', () => {
-	const { debug } = render(<$1 />)
+	render(<$1 />)
 
-	debug()
+	screen.debug()
 })
 endsnippet
 
@@ -61,6 +61,18 @@ it('${1:should}', () => {
 })
 endsnippet
 
+snippet bef "Jest beforeEach" b
+beforeEach(() => {
+	$0
+})
+endsnippet
+
+snippet aef "Jest afterEach" b
+afterEach(() => {
+	$0
+})
+endsnippet
+
 snippet mock "Jest mock" b
 jest.mock('${1:pkg}', () => ({
 	$0
@@ -77,6 +89,26 @@ endsnippet
 
 snippet expm "Jest - Expect toMatchSnapshot" b
 expect($1).toMatchSnapshot($2)
+endsnippet
+
+snippet expdoc "Jest - Expect toEqual" b
+expect($1).toBeInTheDocument($2)
+endsnippet
+
+snippet expndoc "Jest - Expect toEqual" b
+expect($1).toBeInTheDocument($2)
+endsnippet
+
+snippet sgbt "Testing Library - screen.getByText"
+screen.getByText(/$1/i)
+endsnippet
+
+snippet sgbr "Testing Library - screen.getByRole"
+screen.getByRole($1, { name: /$2/i })
+endsnippet
+
+snippet sgbat "Testing Library - screen.getByAltText"
+screen.getByAltText(/$1/i)
 endsnippet
 
 # ----------------------------------------------------------
@@ -121,6 +153,12 @@ snippet ueh1 "Use Effect 1" b
 React.useEffect(() => {
 	$2
 },[$1])
+endsnippet
+
+snippet imex "Import / Export" b
+import $1 from './$1';
+
+export default $1;
 endsnippet
 
 # ----------------------------------------------------------
