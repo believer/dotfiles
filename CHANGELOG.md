@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/believer/dotfiles/compare/v1.0.0...v1.1.0) (2020-06-09)
+
+
+### Features
+
+* **snippets:** update js/ts testing snippets ([06c1dbd](https://github.com/believer/dotfiles/commit/06c1dbdf649c0510b63852e902790520d8a59813))
+
 # 1.0.0 (2020-05-22)
 
 
