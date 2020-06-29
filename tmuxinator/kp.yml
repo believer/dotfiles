@@ -11,3 +11,7 @@ windows:
         - yarn test --watch
         - make dev
         -
+  - dw-api:
+      layout: main-vertical
+      panes:
+        - hemnet-dw
