@@ -164,6 +164,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 nmap <silent> :ne :NERDTree<CR>
 nmap <silent> :nc :NERDTreeCWD<CR>
 nmap <silent> :ntf :NERDTreeFind<CR>
+nmap <silent> :nq :NERDTreeClose<CR>
 
 "" Rainbow brackets (luochen1990/rainbow)
 let g:rainbow_active = 1
