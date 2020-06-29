@@ -1,3 +1,13 @@
+# [1.2.0](https://github.com/believer/dotfiles/compare/v1.1.0...v1.2.0) (2020-06-29)
+
+
+### Features
+
+* add nerdtreeclose shortcut ([7fc0181](https://github.com/believer/dotfiles/commit/7fc018179f89cc45c951166d5de3456fe1f45f73))
+* **snippets:** add snippets for ruby ([b88ab4f](https://github.com/believer/dotfiles/commit/b88ab4f89aeb1e23756690ce47402270dfcf0953))
+* add swiftformat command ([490e09f](https://github.com/believer/dotfiles/commit/490e09ff647c3e3e087ac4ef4c956043cd000059))
+* add vim-gutentags ([dd97ff4](https://github.com/believer/dotfiles/commit/dd97ff4d614b02470e75540a2fe303f2d28835fa))
+
 # [1.1.0](https://github.com/believer/dotfiles/compare/v1.0.0...v1.1.0) (2020-06-09)
 
 
