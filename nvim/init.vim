@@ -93,6 +93,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'SirVer/ultisnips'
   Plug 'Yggdroot/indentLine'
 
+  " Generate Ctags
+  Plug 'ludovicchabant/vim-gutentags'
+
   " Autocomplete
   Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
@@ -187,6 +190,9 @@ command! -nargs=0 Syn call Syn()
 
 "" Set theme (personal/night-owl)
 colorscheme night-owl
+
+"" Gutentags cache
+let g:gutentags_cache_dir = $HOME.'/.ctags.d/cache'
 
 
 "------------------------------------------------------------
