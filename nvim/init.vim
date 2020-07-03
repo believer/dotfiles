@@ -76,6 +76,9 @@ highlight clear SignColumn
 set autoread
 au FocusGained * :checktime
 
+"" Reason .res highlighting
+au BufReadPost *.res set syntax=reason
+
 
 "------------------------------------------------------------
 " Plugins {{{1
