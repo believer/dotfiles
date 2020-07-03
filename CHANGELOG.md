@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/believer/dotfiles/compare/v1.2.0...v1.3.0) (2020-07-03)
+
+
+### Features
+
+* **snippets:** update typescript testing snippets ([366f54d](https://github.com/believer/dotfiles/commit/366f54dd05590ba2325e7e9b8e028ed0264ceb59))
+* add highlighting for reason .res syntax ([2b2f9ab](https://github.com/believer/dotfiles/commit/2b2f9ab5e3b3e95828cce07e26e6b4752da66ca2))
+
 # [1.2.0](https://github.com/believer/dotfiles/compare/v1.1.0...v1.2.0) (2020-06-29)
 
 
