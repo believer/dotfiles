@@ -291,11 +291,11 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap q: <Nop>
 
 "" Auto-expands for parens
-inoremap (; (<CR>);<C-c>O
+inoremap (; (<CR>)<C-c>O
 inoremap (, (<CR>),<C-c>O
-inoremap {; {<CR>};<C-c>O
+inoremap {; {<CR>}<C-c>O
 inoremap {, {<CR>},<C-c>O
-inoremap [; [<CR>];<C-c>O
+inoremap [; [<CR>]<C-c>O
 inoremap [, [<CR>],<C-c>O
 
 
