@@ -1,3 +1,13 @@
+# [1.4.0](https://github.com/believer/dotfiles/compare/v1.3.0...v1.4.0) (2020-07-16)
+
+
+### Features
+
+* **mux:** add component-library ([6d3bece](https://github.com/believer/dotfiles/commit/6d3bece123a4dc290f66f186502d97ebbf2d8771))
+* **snippets:** add import snippets ([50bfa24](https://github.com/believer/dotfiles/commit/50bfa2419dea2acdf956778eb4f508e099e20482))
+* add highlighting trace command (:hi) ([14f4334](https://github.com/believer/dotfiles/commit/14f43345d49b52d71cc6065291f73b34c76e5c73))
+* update autocompletion without semicolon ([4bc7276](https://github.com/believer/dotfiles/commit/4bc727687ec74ad25021c4e2c0d292d2832bebe9))
+
 # [1.3.0](https://github.com/believer/dotfiles/compare/v1.2.0...v1.3.0) (2020-07-03)
 
 
