@@ -77,7 +77,10 @@ set autoread
 au FocusGained * :checktime
 
 "" Reason .res highlighting
-au BufReadPost *.res set syntax=reason
+au BufNewFile,BufRead *.res set syntax=reason
+au BufNewFile,BufRead *.res set filetype=reason
+au BufNewFile,BufRead *.resi set syntax=reason
+au BufNewFile,BufRead *.resi set filetype=reason
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
