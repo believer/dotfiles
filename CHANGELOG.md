@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/believer/dotfiles/compare/v1.4.0...v1.5.0) (2020-07-23)
+
+
+### Features
+
+* add syntax highlighting for new reason syntax ([a972a81](https://github.com/believer/dotfiles/commit/a972a81fdc7c34adfd0878dbd7f7ddb8c523b92f))
+
 # [1.4.0](https://github.com/believer/dotfiles/compare/v1.3.0...v1.4.0) (2020-07-16)
 
 
