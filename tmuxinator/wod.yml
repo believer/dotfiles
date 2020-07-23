@@ -5,7 +5,7 @@ root: ~/code/personal/wod
 
 windows:
   - wod-client:
-      layout: main-vertical
+      layout: b014,210x64,0,0{148x64,0,0,0,61x64,149,0[61x26,149,0,1,61x30,149,27,2,61x6,149,58,3]}
       panes:
         - nvim
         - nrt
