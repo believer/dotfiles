@@ -5,6 +5,6 @@
     "coc-prettier": ">=1.1.12",
     "coc-reason": ">=0.1.2",
     "coc-tailwindcss": ">=0.6.0",
-    "coc-tsserver": ">=1.5.3"
+    "coc-tsserver": ">=1.5.4"
   }
 }
