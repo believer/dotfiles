@@ -84,14 +84,14 @@ endsnippet
 snippet mod "Module" b
 module $1 = {
 	$2
-};
+}
 endsnippet
 
 snippet slr "Stateless component" b
-[@react.component]
+@react.component
 let make = () => {
-	<div> {React.string("Test")} </div>;
-};
+	<div> {React.string("Test")} </div>
+}
 endsnippet
 
 snippet form "Re-formality form" b
@@ -157,7 +157,7 @@ snippet enc "Encoded string"
 endsnippet
 
 snippet swc "Switch statement"
-{switch ($1) {
+{switch $1 {
 | $2 => $3
 }}
 endsnippet
