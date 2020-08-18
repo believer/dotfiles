@@ -1,3 +1,17 @@
+# [1.6.0](https://github.com/believer/dotfiles/compare/v1.5.0...v1.6.0) (2020-08-18)
+
+
+### Bug Fixes
+
+* remove custom rescript highlighting ([343f6ea](https://github.com/believer/dotfiles/commit/343f6ea20cbdecd0b7bf810d62eeb83c81ffa6ae))
+
+
+### Features
+
+* update reason snippets ([2a3a47a](https://github.com/believer/dotfiles/commit/2a3a47a9b16fff03a022375081be66203f60418c))
+* update ruby snippets ([6610484](https://github.com/believer/dotfiles/commit/661048453dc568b260b8f1a9072422c65b89c3b5))
+* update tmux configs ([9292571](https://github.com/believer/dotfiles/commit/9292571aa893cf779e9ce971b2c8ffcfe01ea3f5))
+
 # [1.5.0](https://github.com/believer/dotfiles/compare/v1.4.0...v1.5.0) (2020-07-23)
 
 
