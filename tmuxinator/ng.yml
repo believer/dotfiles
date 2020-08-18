@@ -3,6 +3,12 @@
 name: ng
 root: ~/code/hemnet/hemnet-ng
 
+on_project_start: 
+  - docker-compose up -d
+
+on_project_stop:
+  - docker-compose stop
+
 windows:
   - hemnet-ng:
       layout: 21c8,284x83,0,0{220x83,0,0,0,63x83,221,0[63x43,221,0,1,63x21,221,44,2,63x17,221,66,5]}

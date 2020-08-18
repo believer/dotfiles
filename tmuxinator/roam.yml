@@ -1,0 +1,10 @@
+# /Users/rickardlaurin/.dotfiles/tmuxinator/roam.yml
+
+name: roam
+root: ~/code/personal/roam-night-owl
+
+windows:
+  - roam:
+      layout: main-vertical
+      panes:
+        - nvim
