@@ -28,6 +28,7 @@ alias gss='git status --short'
 alias k='kubectl -n v2'
 
 # Docker
+alias d="docker"
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}"'
 alias ds='clear && docker service ps --format "table {{.Name}}\t{{.Image}}\t{{.CurrentState}}"'
 
@@ -40,7 +41,7 @@ alias zshdocker='nvim $XDG_CONFIG_HOME/docker'
 alias szsh='source $XDG_CONFIG_HOME/.zshrc'
 
 # App
-alias c='nvim'
+alias e='nvim'
 alias vim='nvim'
 alias tmux='tmux -2'
 alias f='fzf | xargs bat'
