@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/believer/dotfiles/compare/v1.8.0...v1.9.0) (2020-09-04)
+
+
+### Features
+
+* use npm in run script ([1f0292d](https://github.com/believer/dotfiles/commit/1f0292d5996437d98e032e63d9eba29e3a96cd73))
+
 # [1.8.0](https://github.com/believer/dotfiles/compare/v1.7.0...v1.8.0) (2020-09-04)
 
 
