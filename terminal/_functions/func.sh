@@ -33,8 +33,8 @@ run() {
 
 			if [[ -n "$selected_script" ]]; then
 					script_name=$(echo "$selected_script" | awk -F ': ' '{gsub(/"/, "", $1); print $1}' | awk '{$1=$1};1')
-					print -s "yarn run "$script_name;
-					yarn run $script_name;
+					print -s "npm run "$script_name;
+					npm run $script_name;
 			else
 					echo "Exit: You haven't selected any script"
 			fi
