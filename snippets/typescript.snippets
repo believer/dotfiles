@@ -1,13 +1,33 @@
 # ----------------------------------------------------------
 # Testing
 # 
-snippet rtest "React test using react-testing-library" b
+snippet rtest "React test" b
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import $1 from './$1'
 
 test('$2', () => {
 	render(<$1 />)
+
+	screen.debug()
+})
+endsnippet
+
+snippet rtest "React test with setup" b
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import `!v expand('%:t:r:r')` from './`!v expand('%:t:r:r')`'
+
+const setup = (customProps = {}) => {
+	const props = {
+		...customProps
+	}
+
+	return render(<`!v expand('%:t:r:r')` {...props} />)
+}
+
+test('$2', () => {
+	setup()
 
 	screen.debug()
 })
@@ -146,11 +166,50 @@ endsnippet
 snippet fslr "Full functional component" b
 import React from 'react'
 
-const `!v expand('%:t:r')` = () => {
+const `!v expand('%:t:r')` = function `!v expand('%:t:r')`() {
 	return <div>${1:Test}</div>
 }
 
 export default `!v expand('%:t:r')`
+endsnippet
+
+snippet qslr "Full functional component" b
+import React from 'react'
+import { useQuery } from '@apollo/client'
+
+const `!v expand('%:t:r')` = function `!v expand('%:t:r')`() => {
+	const { data, loading, error } = useQuery($1, {
+		variables: {
+			$2		
+		},
+	})
+
+	if (loading) {
+		return null
+	}
+
+	if (error) {
+		throw new Error(error)
+	}
+	
+	return <div>Test</div>
+}
+
+export default `!v expand('%:t:r')`
+endsnippet
+
+snippet prov "Provider context"
+import React from 'react'
+
+export const $1Context = React.createContext($2)
+
+export const $1Provider = function $1Provider({ children }) {
+	return (
+		<$1Context.Provider value={{ $3 }}>
+			{children}
+		</$1Context.Provider>
+	)
+}
 endsnippet
 
 snippet ush "State hook" b
@@ -167,6 +226,22 @@ snippet imex "Import / Export" b
 import $1 from './$1';
 
 export default $1;
+endsnippet
+
+snippet improps "Import PropTypes" b
+import PropTypes from 'prop-types';
+endsnippet
+
+snippet props "PropTypes"
+`!v expand('%:t:r')`.propTypes = {
+	$1: $2
+}
+endsnippet
+
+snippet dprops "Default props"
+`!v expand('%:t:r')`.defaultProps = {
+	$1: $2
+}
 endsnippet
 
 # ----------------------------------------------------------
