@@ -11,9 +11,12 @@ on_project_stop:
 
 windows:
   - hemnet-ng:
-      layout: 21c8,284x83,0,0{220x83,0,0,0,63x83,221,0[63x43,221,0,1,63x21,221,44,2,63x17,221,66,5]}
+      layout: 5277,210x66,0,0{153x66,0,0,39,56x66,154,0,40}
       panes:
         - nvim
         - yarn test --watch
+  - hemnet-ng-server:
+      layout: main-vertical
+      panes:
         - make dev
-        - 
+        -
