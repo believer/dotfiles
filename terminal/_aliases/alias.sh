@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Aliases
 # https://codeburst.io/7-super-useful-aliases-to-make-your-development-life-easier-fef1ee7f9b73
 alias nr='npm run '
