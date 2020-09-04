@@ -1,3 +1,13 @@
+# [1.7.0](https://github.com/believer/dotfiles/compare/v1.6.0...v1.7.0) (2020-09-04)
+
+
+### Features
+
+* **mux:** update ng ([520eba4](https://github.com/believer/dotfiles/commit/520eba44ac3882e620725352752cf7b6c02463eb))
+* **snippets:** alias rescript to reason ([28155e2](https://github.com/believer/dotfiles/commit/28155e24f6172c440cc34ac41e4a4ef20085bc65))
+* **snippets:** update typescript ([2543408](https://github.com/believer/dotfiles/commit/254340873db890d54bb17210a5f11052cbfda688))
+* update terminal structure ([dbc3417](https://github.com/believer/dotfiles/commit/dbc3417d20ee1b65a13cfcc4c1212b1771d0052a))
+
 # [1.6.0](https://github.com/believer/dotfiles/compare/v1.5.0...v1.6.0) (2020-08-18)
 
 
