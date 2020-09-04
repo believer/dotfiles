@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/believer/dotfiles/compare/v1.7.0...v1.8.0) (2020-09-04)
+
+
+### Features
+
+* update aliases ([88b0068](https://github.com/believer/dotfiles/commit/88b0068a192d15ea2ebae671e67f6a20783611b5))
+
 # [1.7.0](https://github.com/believer/dotfiles/compare/v1.6.0...v1.7.0) (2020-09-04)
 
 
