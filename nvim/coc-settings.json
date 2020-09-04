@@ -19,11 +19,5 @@
   "codeLens.enable": true,
   "prettier.eslintIntegration": true,
   "prettier.stylelineIntegration": true,
-  "scss.validate": true,
-  "languageserver": {
-    "rescript": {
-      "command": "/Users/rickardlaurin/code/lsp/rescript-language-server/server/out/server.js",
-      "filetypes": ["rescript"]
-    }
-  }
+  "scss.validate": true
 }
