@@ -1,3 +1,17 @@
+# [1.10.0](https://github.com/believer/dotfiles/compare/v1.9.0...v1.10.0) (2020-09-08)
+
+
+### Bug Fixes
+
+* move key mappings ([76a7932](https://github.com/believer/dotfiles/commit/76a7932cc3d116cccaaa7f795006dd6cdf6453d9))
+
+
+### Features
+
+* **snippet:** update typescript react test ([c5eb008](https://github.com/believer/dotfiles/commit/c5eb008c32fd3f6c2487f0a42d8f5450f56c698a))
+* add mappings for :Commands and :Rg ([a3670ae](https://github.com/believer/dotfiles/commit/a3670ae359435aba746f01cc3424c5692a7095c4))
+* add vim-startify ([a7b0a19](https://github.com/believer/dotfiles/commit/a7b0a19cd1e2bff96fe9cc1745039fce278ec822))
+
 # [1.9.0](https://github.com/believer/dotfiles/compare/v1.8.0...v1.9.0) (2020-09-04)
 
 
