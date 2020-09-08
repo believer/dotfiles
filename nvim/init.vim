@@ -57,9 +57,6 @@ set t_Co=256
 "" Custom highlighting
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
-"" Toggle *conceallevel*
-nnoremap <Leader>co :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
-
 " Text wrapping
 set textwidth=80
 set formatoptions-=l
@@ -79,6 +76,52 @@ au FocusGained * :checktime
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+
+"------------------------------------------------------------
+" Key mappings {{{1
+"
+"" Set leader key to spacebar
+nnoremap <SPACE> <Nop>
+let mapleader="\<Space>"
+let maplocalleader="\\"
+
+"" Fzf
+nmap ; :Files<CR>
+
+" Git diffs
+"" Start by doing :Gdiff, from vim-fugitive, on a conflicted file
+nnoremap <leader>gd :Gvdiff<CR>
+"" Diffget from the left pane (merge branch)
+nnoremap gdh :diffget //2<CR>
+"" Diffget from right pane (target branch)
+nnoremap gdl :diffget //3<CR>
+
+"" Marks
+nnoremap ' `
+
+"" Remove arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+"" Move between split panes
+nnoremap <C-J> <C-W><C-J>	
+nnoremap <C-K> <C-W><C-K>	
+nnoremap <C-L> <C-W><C-L>	
+nnoremap <C-H> <C-W><C-H>
+
+"" Remove things I usally mistype
+nnoremap q: <Nop>
+
+"" Auto-expands for parens
+inoremap (; (<CR>)<C-c>O
+inoremap (, (<CR>),<C-c>O
+inoremap {; {<CR>}<C-c>O
+inoremap {, {<CR>},<C-c>O
+inoremap [; [<CR>]<C-c>O
+inoremap [, [<CR>],<C-c>O
 
 
 "------------------------------------------------------------
@@ -164,10 +207,10 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 
 "" RSpec mappings (thoughtbot/vim-rspec)
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+map <leader>t :call RunCurrentSpecFile()<CR>
+map <leader>s :call RunNearestSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
+map <leader>a :call RunAllSpecs()<CR>
 
 nmap <silent> :ne :NERDTree<CR>
 nmap <silent> :nc :NERDTreeCWD<CR>
@@ -248,53 +291,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-
-"------------------------------------------------------------
-" Key mappings {{{1
-"
-"" Set leader key to spacebar
-nnoremap <SPACE> <Nop>
-let mapleader="\<Space>"
-let maplocalleader="\\"
-
-"" Open file search with ;
-map ; :Files<CR>
-
-
-" Git diffs
-"" Start by doing :Gdiff, from vim-fugitive, on a conflicted file
-nnoremap <leader>gd :Gvdiff<CR>
-"" Diffget from the left pane (merge branch)
-nnoremap gdh :diffget //2<CR>
-"" Diffget from right pane (target branch)
-nnoremap gdl :diffget //3<CR>
-
-"" Marks
-nnoremap ' `
-
-"" Remove arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
-"" Move between split panes
-nnoremap <C-J> <C-W><C-J>	
-nnoremap <C-K> <C-W><C-K>	
-nnoremap <C-L> <C-W><C-L>	
-nnoremap <C-H> <C-W><C-H>
-
-"" Remove things I usally mistype
-nnoremap q: <Nop>
-
-"" Auto-expands for parens
-inoremap (; (<CR>)<C-c>O
-inoremap (, (<CR>),<C-c>O
-inoremap {; {<CR>}<C-c>O
-inoremap {, {<CR>},<C-c>O
-inoremap [; [<CR>]<C-c>O
-inoremap [, [<CR>],<C-c>O
 
 
 "------------------------------------------------------------
