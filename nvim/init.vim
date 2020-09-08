@@ -150,6 +150,7 @@ call plug#begin('~/.vim/plugged')
 
   " Git
   Plug 'tpope/vim-fugitive'
+  Plug 'mhinz/vim-startify'                                       " Start screen
 
   " NERDTree - File explorer
   Plug 'scrooloose/nerdtree'
