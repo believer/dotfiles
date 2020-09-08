@@ -4,10 +4,10 @@
 snippet rtest "React test" b
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import $1 from './$1'
+import `!v expand('%:t:r:r')` from './`!v expand('%:t:r:r')`'
 
 test('$2', () => {
-	render(<$1 />)
+	render(<`!v expand('%:t:r:r')` {...props} />)
 
 	screen.debug()
 })
