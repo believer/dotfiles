@@ -142,22 +142,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'SirVer/ultisnips'
   Plug 'Yggdroot/indentLine'
 
-  " Generate Ctags
-  Plug 'ludovicchabant/vim-gutentags'
-
-  " Autocomplete
-  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-
-  " Git
-  Plug 'tpope/vim-fugitive'
   Plug 'mhinz/vim-startify'                                       " Start screen
+  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}      " CoC.nvim
+  Plug 'tpope/vim-fugitive'                                       " All things git
+  Plug 'kshenoy/vim-signature'                                    " Easier setup for marks
 
   " NERDTree - File explorer
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
-
-  " Marks
-  Plug 'kshenoy/vim-signature'
 
   " Comments
   " <count>gcc - toggle line(s) comment
