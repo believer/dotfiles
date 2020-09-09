@@ -1,3 +1,12 @@
+# [1.11.0](https://github.com/believer/dotfiles/compare/v1.10.0...v1.11.0) (2020-09-09)
+
+
+### Features
+
+* add <leader>s - search and replace word under cursor ([a5d274a](https://github.com/believer/dotfiles/commit/a5d274a21108e78a2752e7068c4e1a805cda8b62))
+* add coc-rescript ([ede3e5f](https://github.com/believer/dotfiles/commit/ede3e5f10f7ccb7aad603fc34bdddb4ca94965a1))
+* **snippets:** update rescript switch snippets ([3cc57bf](https://github.com/believer/dotfiles/commit/3cc57bfcca392088f10f3da33d519ac7f039a8e0))
+
 # [1.10.0](https://github.com/believer/dotfiles/compare/v1.9.0...v1.10.0) (2020-09-08)
 
 
