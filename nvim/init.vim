@@ -1,4 +1,54 @@
 "------------------------------------------------------------
+" Plugins {{{1
+"
+call plug#begin('~/.vim/plugged')
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'mattn/emmet-vim'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-tbone'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'SirVer/ultisnips'
+  Plug 'Yggdroot/indentLine'
+
+  Plug 'mhinz/vim-startify'                                       " Start screen
+  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}      " CoC.nvim
+  Plug 'tpope/vim-fugitive'                                       " All things git
+  Plug 'kshenoy/vim-signature'                                    " Easier setup for marks
+  Plug 'dyng/ctrlsf.vim'                                          " Uses ripgrep for easier editing of multiple places
+
+  " NERDTree - File explorer
+  Plug 'scrooloose/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+
+  " Comments
+  " <count>gcc - toggle line(s) comment
+  " gc - comment with motion, e.g. gcap for paragraph
+  " gcgc - uncomment
+  Plug 'tpope/vim-commentary'
+
+  " Ruby
+  Plug 'tpope/vim-rails'
+  Plug 'thoughtbot/vim-rspec'
+  Plug 'ngmy/vim-rubocop'
+
+  " Syntax
+  Plug 'gerw/vim-HiLinkTrace'
+  Plug 'luochen1990/rainbow'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'amiralies/vim-rescript'
+  "" Installs a bunch of languages
+  Plug 'sheerun/vim-polyglot'
+
+  " Themes
+  Plug '~/code/personal/night-owl'
+call plug#end()
+
+
+"------------------------------------------------------------
 " General {{{1
 "
 " Set 'nocompatible' to ward off unexpected things that your distro might
@@ -125,54 +175,9 @@ inoremap {, {<CR>},<C-c>O
 inoremap [; [<CR>]<C-c>O
 inoremap [, [<CR>],<C-c>O
 
-
-"------------------------------------------------------------
-" Plugins {{{1
-"
-call plug#begin('~/.vim/plugged')
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'mattn/emmet-vim'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-tbone'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
-  Plug 'easymotion/vim-easymotion'
-  Plug 'SirVer/ultisnips'
-  Plug 'Yggdroot/indentLine'
-
-  Plug 'mhinz/vim-startify'                                       " Start screen
-  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}      " CoC.nvim
-  Plug 'tpope/vim-fugitive'                                       " All things git
-  Plug 'kshenoy/vim-signature'                                    " Easier setup for marks
-
-  " NERDTree - File explorer
-  Plug 'scrooloose/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-
-  " Comments
-  " <count>gcc - toggle line(s) comment
-  " gc - comment with motion, e.g. gcap for paragraph
-  " gcgc - uncomment
-  Plug 'tpope/vim-commentary'
-
-  " Ruby
-  Plug 'tpope/vim-rails'
-  Plug 'thoughtbot/vim-rspec'
-  Plug 'ngmy/vim-rubocop'
-
-  " Syntax
-  Plug 'gerw/vim-HiLinkTrace'
-  Plug 'luochen1990/rainbow'
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'amiralies/vim-rescript'
-  "" Installs a bunch of languages
-  Plug 'sheerun/vim-polyglot'
-
-  " Themes
-  Plug '~/code/personal/night-owl'
-call plug#end()
+" CtrlSF
+"" Do search/replace on the word under the cursor
+nmap <leader>c :%s/\<<C-r><C-w>\>/<C-r><C-w>/gi<Left><Left><Left>
 
 
 "------------------------------------------------------------
