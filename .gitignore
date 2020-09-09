@@ -1,9 +1,15 @@
+# Dependencies
+node_modules
+
+# Misc
 *.zwc
 .DS_Store
-node_modules
-.hemnetrc
 hub
 
+# Work setup
+.hemnetrc
+
+# CoC setup
 coc/history.json
 coc/extensions/db.json
 configstore
