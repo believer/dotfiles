@@ -157,8 +157,14 @@ snippet enc "Encoded string"
 endsnippet
 
 snippet swc "Switch statement"
+switch $1 {
+	| $2 => $3
+}
+endsnippet
+
+snippet swcr "Switch statement - React"
 {switch $1 {
-| $2 => $3
+	| $2 => $3
 }}
 endsnippet
 
