@@ -3,7 +3,7 @@
     "coc-css": ">=1.2.4",
     "coc-eslint": ">=1.2.7",
     "coc-prettier": ">=1.1.12",
-    "coc-reason": ">=0.1.2",
+    "coc-rescript": ">=1.1.0",
     "coc-tailwindcss": ">=0.7.0",
     "coc-tsserver": ">=1.5.5"
   }
