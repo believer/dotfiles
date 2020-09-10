@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/believer/dotfiles/compare/v1.11.0...v1.12.0) (2020-09-10)
+
+
+### Features
+
+* add yank to clipboard quick command ([1f60761](https://github.com/believer/dotfiles/commit/1f60761aa5120f28570d38f227c8bd682f7754aa))
+
 # [1.11.0](https://github.com/believer/dotfiles/compare/v1.10.0...v1.11.0) (2020-09-09)
 
 
