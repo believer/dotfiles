@@ -179,6 +179,9 @@ inoremap [, [<CR>],<C-c>O
 "" Do search/replace on the word under the cursor
 nmap <leader>c :%s/\<<C-r><C-w>\>/<C-r><C-w>/gi<Left><Left><Left>
 
+" Yank to clipboard
+vnoremap <leader>y "*y
+
 
 "------------------------------------------------------------
 " Plugin settings {{{1
