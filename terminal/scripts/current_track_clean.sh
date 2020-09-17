@@ -47,25 +47,16 @@ else if itunes_state is equal to "playing" then
 		
 		return my track_meta(track_data, is_shuffle, is_repeat)
 	end tell
+else if spotify_state is equal to "paused" then
+	return "Paused"
+else if itunes_state is equal to "paused" then
+	return "Paused"
 else
   do shell script "python ~/.dotfiles/terminal/scripts/current_track.py"
 end if
 
 on track_meta(track_data, is_shuffle, is_repeat)
-	-- Add player state emojis
-	if is_shuffle then
-		set shuffle_str to " 🔀"
-	else
-		set shuffle_str to ""
-	end if
-	
-	if is_repeat then
-		set repeat_str to " 🔁"
-	else
-		set repeat_str to ""
-	end if
-	
-	return "♫ " & track_data & shuffle_str & repeat_str
+	return track_data
 end track_meta
 
 on track_time(player_position, track_duration)
@@ -109,3 +100,4 @@ end is_app_running
 EOF)
 
 echo $NOW_PLAYING
+
