@@ -139,7 +139,7 @@ let maplocalleader="\\"
 "" Fzf
 nmap ; :Files<CR>
 nmap cc :Commands<CR>
-nmap ?? :Rg!<CR>
+nmap ?? :Rg<CR>
 
 " Git diffs
 "" Start by doing :Gdiff, from vim-fugitive, on a conflicted file
@@ -179,6 +179,9 @@ inoremap [, [<CR>],<C-c>O
 "" Do search/replace on the word under the cursor
 nmap <leader>c :%s/\<<C-r><C-w>\>/<C-r><C-w>/gi<Left><Left><Left>
 
+nmap <leader>a :CtrlSF -R ""<Left>
+nmap <leader>A <Plug>CtrlSFCwordPath -W<CR>
+
 " Yank to clipboard
 vnoremap <leader>y "*y
 
@@ -213,7 +216,6 @@ let g:NERDTreeAutoDeleteBuffer = 1
 map <leader>t :call RunCurrentSpecFile()<CR>
 map <leader>s :call RunNearestSpec()<CR>
 map <leader>l :call RunLastSpec()<CR>
-map <leader>a :call RunAllSpecs()<CR>
 
 nmap <silent> :ne :NERDTree<CR>
 nmap <silent> :nc :NERDTreeCWD<CR>
@@ -255,6 +257,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nmap <silent> :tso :CocCommand editor.action.organizeImport<CR>
+nmap <silent> :cco :CocCommand workspace.showOutput<CR>
 
 function! s:show_documentation()
   if &filetype == 'vim'
