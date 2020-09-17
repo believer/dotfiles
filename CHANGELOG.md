@@ -1,3 +1,17 @@
+# [1.13.0](https://github.com/believer/dotfiles/compare/v1.12.0...v1.13.0) (2020-09-17)
+
+
+### Bug Fixes
+
+* update current track scripts ([be027e0](https://github.com/believer/dotfiles/commit/be027e000de7fb0cdafe0abc5bc85d23a61679d7))
+
+
+### Features
+
+* **snippets:** add snippet for creating snippets ([4b30d3e](https://github.com/believer/dotfiles/commit/4b30d3e8d29f75877078302aa61b3fc92d80dfcb))
+* run command uses query-json ([746e29c](https://github.com/believer/dotfiles/commit/746e29c5a7f59d46d35e342fc871742b3a495204))
+* update vim config with commands ([ffe9533](https://github.com/believer/dotfiles/commit/ffe9533e1f48d7fc0ad010037cdb5252e9c837c2))
+
 # [1.12.0](https://github.com/believer/dotfiles/compare/v1.11.0...v1.12.0) (2020-09-10)
 
 
