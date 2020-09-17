@@ -29,7 +29,7 @@ shorten_url() {
 # https://sancho.dev/blog/better-yarn-npm-run/
 run() {
 	if cat package.json > /dev/null 2>&1; then
-			selected_script=$(cat package.json | jq .scripts | sed '1d;$d' | fzf --cycle --height 40% --header="Press ENTER to run the script. ESC to quit." --history="$HOME/.zhistory");
+			selected_script=$(q ".scripts" package.json | sed '1d;$d' | fzf --cycle --height 40% --header="Press ENTER to run the script. ESC to quit." --history="$HOME/.zhistory");
 
 			if [[ -n "$selected_script" ]]; then
 					script_name=$(echo "$selected_script" | awk -F ': ' '{gsub(/"/, "", $1); print $1}' | awk '{$1=$1};1')
