@@ -255,6 +255,8 @@ colorscheme night-owl
 "" Gutentags cache
 let g:gutentags_cache_dir = $HOME.'/.ctags.d/cache'
 
+"" Startify
+let g:startify_change_to_dir = 0
 
 "------------------------------------------------------------
 " CoC settings {{{1
