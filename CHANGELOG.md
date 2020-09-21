@@ -1,3 +1,11 @@
+## [1.15.2](https://github.com/believer/dotfiles/compare/v1.15.1...v1.15.2) (2020-09-21)
+
+
+### Bug Fixes
+
+* keep cwd when using startify quick commands ([901c65f](https://github.com/believer/dotfiles/commit/901c65f3b941b2db73532301d5b5abe8709f87f5))
+* remove markdown conceal and add markdown spellcheck ([fc37510](https://github.com/believer/dotfiles/commit/fc37510aab7c1f073a5aba5be4e077380d905913))
+
 ## [1.15.1](https://github.com/believer/dotfiles/compare/v1.15.0...v1.15.1) (2020-09-21)
 
 
