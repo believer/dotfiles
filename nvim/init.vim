@@ -77,7 +77,7 @@ set smartcase
 
 "" Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-set conceallevel=0
+autocmd FileType markdown setlocal spell spelllang=en_gb
 
 "" Tabs
 set tabstop=2
@@ -256,7 +256,11 @@ colorscheme night-owl
 let g:gutentags_cache_dir = $HOME.'/.ctags.d/cache'
 
 "" Startify
-let g:startify_change_to_dir = 0
+let g:startify_change_to_dir = 0 " Keep CWD when using actions
+
+"" Markdown
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 "------------------------------------------------------------
 " CoC settings {{{1
