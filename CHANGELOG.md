@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/believer/dotfiles/compare/v1.15.2...v1.16.0) (2020-09-21)
+
+
+### Features
+
+* add goyo ([6d55e80](https://github.com/believer/dotfiles/commit/6d55e808bec91855bb1d5882cd39434b11c21ba5))
+
 ## [1.15.2](https://github.com/believer/dotfiles/compare/v1.15.1...v1.15.2) (2020-09-21)
 
 
