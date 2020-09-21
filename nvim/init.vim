@@ -112,6 +112,9 @@ set textwidth=80
 set formatoptions-=l
 set wrap linebreak nolist
 
+" Display things that will change from a substitute command
+set inccommand=split
+
 "" Custom colors
 hi CocCodeLens guifg=#40505E
 
