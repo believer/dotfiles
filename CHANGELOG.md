@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/believer/dotfiles/compare/v1.14.0...v1.15.0) (2020-09-21)
+
+
+### Features
+
+* add highlighting when yanking text ([ca7998e](https://github.com/believer/dotfiles/commit/ca7998e391ac2d373c9ca120c81981125c286459))
+
 # [1.14.0](https://github.com/believer/dotfiles/compare/v1.13.0...v1.14.0) (2020-09-21)
 
 
