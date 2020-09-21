@@ -1,3 +1,11 @@
+# [1.14.0](https://github.com/believer/dotfiles/compare/v1.13.0...v1.14.0) (2020-09-21)
+
+
+### Features
+
+* **snippets:** add if to typescript ([48b1ce5](https://github.com/believer/dotfiles/commit/48b1ce501810be45810df3bfa30ae252ecc5c886))
+* add inccommand ([c7f82c4](https://github.com/believer/dotfiles/commit/c7f82c4797ba12bc6fcf296deb4eed49a5ecec64))
+
 # [1.13.0](https://github.com/believer/dotfiles/compare/v1.12.0...v1.13.0) (2020-09-17)
 
 
