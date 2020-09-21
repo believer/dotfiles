@@ -133,7 +133,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Highlights the text that I'm yanking
 " Courtesy of TJ DeVries
 " https://youtu.be/apyV4v7x33o?t=2912
-au TextYankPost * silent! lua require'vim.highlight'.on_yank()
+au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
 
 
 "------------------------------------------------------------
