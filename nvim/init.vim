@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'                                       " All things git
   Plug 'kshenoy/vim-signature'                                    " Easier setup for marks
   Plug 'dyng/ctrlsf.vim'                                          " Uses ripgrep for easier editing of multiple places
+  Plug 'junegunn/goyo.vim'                                        " Distraction free writing
 
   " NERDTree - File explorer
   Plug 'scrooloose/nerdtree'
@@ -261,6 +262,9 @@ let g:startify_change_to_dir = 0 " Keep CWD when using actions
 "" Markdown
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
+
+"" Goyo
+map <leader>g :Goyo<CR>
 
 "------------------------------------------------------------
 " CoC settings {{{1
