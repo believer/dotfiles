@@ -46,6 +46,9 @@ call plug#begin('~/.vim/plugged')
 
   " Themes
   Plug '~/code/personal/night-owl'
+
+  " Personal plugins
+  Plug '~/code/personal/cyclist.vim'
 call plug#end()
 
 
@@ -67,10 +70,6 @@ set diffopt+=vertical
 
 "" Disable scratch window preview
 set completeopt-=preview
-
-"" Display tabs, non-breaking space and trailing whitespace
-set listchars=tab:>~,nbsp:_,trail:.
-set list
 
 "" Make commands ignore casing
 set ignorecase
