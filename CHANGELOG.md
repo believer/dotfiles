@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/believer/dotfiles/compare/v1.16.0...v1.16.1) (2020-09-23)
+
+
+### Bug Fixes
+
+* handle listchars with first custom plugin ([730293d](https://github.com/believer/dotfiles/commit/730293db01cc1de1589c7f2453264daf6558da46))
+
 # [1.16.0](https://github.com/believer/dotfiles/compare/v1.15.2...v1.16.0) (2020-09-21)
 
 
