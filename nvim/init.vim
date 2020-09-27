@@ -145,7 +145,8 @@ let mapleader="\<Space>"
 let maplocalleader="\\"
 
 "" Fzf
-nmap ; :Files<CR>
+nmap ; :GFiles<CR>
+nmap <leader>o :Buffers<CR>
 nmap cc :Commands<CR>
 nmap ?? :Rg<CR>
 
