@@ -21,9 +21,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'dyng/ctrlsf.vim'                                          " Uses ripgrep for easier editing of multiple places
   Plug 'junegunn/goyo.vim'                                        " Distraction free writing
 
-  " NERDTree - File explorer
-  Plug 'scrooloose/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
+  " Fern.vim - File explorer
+  Plug 'lambdalisue/fern.vim'
+  Plug 'lambdalisue/fern-git-status.vim'
 
   " Comments
   " <count>gcc - toggle line(s) comment
@@ -50,7 +50,6 @@ call plug#begin('~/.vim/plugged')
   " Personal plugins
   Plug '~/code/personal/cyclist.vim'
 call plug#end()
-
 
 "------------------------------------------------------------
 " General {{{1
@@ -213,23 +212,52 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 
-"" NERDTree (SirVer/ultisnips)
-set wildignore+=*.bs.js
+"" Fern.vim
+let g:fern#disable_default_mappings = 1
+let g:fern#smart_cursor = "hide"
 
-let g:NERDTreeRespectWildIgnore = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeAutoDeleteBuffer = 1
+" Toggle drawer
+noremap <leader>d :Fern . -drawer -width=35 -toggle<CR><C-w>=
+" Open current file in drawer
+noremap <leader>f :Fern . -drawer -reveal=% -width=35<CR><C-w>=
+" Open current buffer's directory in drawer
+noremap <silent> <Leader>. :Fern %:h -drawer -width=35<CR><C-w>=
+
+" Fern setup
+" https://bluz71.github.io/2017/05/21/vim-plugins-i-like.html#fernvim
+function! FernInit() abort
+  nmap <buffer><expr>
+        \ <Plug>(fern-my-open-expand-collapse)
+        \ fern#smart#leaf(
+        \   "\<Plug>(fern-action-open:select)",
+        \   "\<Plug>(fern-action-expand)",
+        \   "\<Plug>(fern-action-collapse)",
+        \ )
+  nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
+  nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
+  nmap <buffer> d <Plug>(fern-action-remove)
+  nmap <buffer> D <Plug>(fern-action-new-dir)
+  nmap <buffer> m <Plug>(fern-action-move)
+  nmap <buffer> n <Plug>(fern-action-new-path)
+  nmap <buffer> N <Plug>(fern-action-new-file)
+  nmap <buffer> r <Plug>(fern-action-reload)
+  nmap <buffer> R <Plug>(fern-action-rename)
+  nmap <buffer> s <Plug>(fern-action-open:split)
+  nmap <buffer> v <Plug>(fern-action-open:vsplit)
+  nmap <buffer> <nowait> h <Plug>(fern-action-hidden:toggle)
+  nmap <buffer> <nowait> < <Plug>(fern-action-leave)
+  nmap <buffer> <nowait> > <Plug>(fern-action-enter)
+endfunction
+
+augroup FernEvents
+  autocmd!
+  autocmd FileType fern call FernInit()
+augroup END
 
 "" RSpec mappings (thoughtbot/vim-rspec)
 map <leader>t :call RunCurrentSpecFile()<CR>
 map <leader>s :call RunNearestSpec()<CR>
 map <leader>l :call RunLastSpec()<CR>
-
-nmap <silent> :ne :NERDTree<CR>
-nmap <silent> :nc :NERDTreeCWD<CR>
-nmap <silent> :ntf :NERDTreeFind<CR>
-nmap <silent> :nq :NERDTreeClose<CR>
 
 "" Rainbow brackets (luochen1990/rainbow)
 let g:rainbow_active = 1
