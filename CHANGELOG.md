@@ -1,3 +1,11 @@
+# [1.17.0](https://github.com/believer/dotfiles/compare/v1.16.1...v1.17.0) (2020-09-27)
+
+
+### Features
+
+* switch from nerdtree to fern ([d581496](https://github.com/believer/dotfiles/commit/d58149630ae24f5dded3d092de5a1a9694dc2e2b))
+* update fzf quick open commands ([e6c563b](https://github.com/believer/dotfiles/commit/e6c563b73e24d3f053cda5b424e50ae062d04db4))
+
 ## [1.16.1](https://github.com/believer/dotfiles/compare/v1.16.0...v1.16.1) (2020-09-23)
 
 
