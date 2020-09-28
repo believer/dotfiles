@@ -10,4 +10,3 @@ windows:
         - nvim
         - nrt -- --watch
         - nr storybook
-        - nr css:watch
