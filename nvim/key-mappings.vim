@@ -16,9 +16,9 @@ nmap ?? :Rg<CR>
 "" Start by doing :Gdiff, from vim-fugitive, on a conflicted file
 nnoremap <leader>gd :Gvdiff<CR>
 "" Diffget from the left pane (merge branch)
-nnoremap gdh :diffget //2<CR>
+nnoremap gdl :diffget //2<CR>
 "" Diffget from right pane (target branch)
-nnoremap gdl :diffget //3<CR>
+nnoremap gdr :diffget //3<CR>
 
 "" Marks
 nnoremap ' `
