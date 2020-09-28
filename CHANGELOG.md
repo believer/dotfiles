@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/believer/dotfiles/compare/v1.17.0...v1.17.1) (2020-09-28)
+
+
+### Bug Fixes
+
+* add toggle to fern commands ([5c6bc41](https://github.com/believer/dotfiles/commit/5c6bc4136247761ad5b8fb4ac514b06153b13445))
+
 # [1.17.0](https://github.com/believer/dotfiles/compare/v1.16.1...v1.17.0) (2020-09-27)
 
 
