@@ -65,3 +65,6 @@ noremap <leader>f :Fern . -drawer -reveal=% -width=35 -toggle<CR><C-w>=
 
 "" Open current buffer's directory in drawer
 noremap <silent> <Leader>. :Fern %:h -drawer -width=35 -toggle<CR><C-w>=
+
+"" Close all buffers except the current
+command! BufOnly silent! execute "%bd|e#|bd#"
