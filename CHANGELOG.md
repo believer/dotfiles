@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/believer/dotfiles/compare/v1.17.1...v1.18.0) (2020-09-28)
+
+
+### Features
+
+* add command to close all buffers except the current ([505a930](https://github.com/believer/dotfiles/commit/505a930bfdd33fd9f3790f22145fe3f9329b6d98))
+
 ## [1.17.1](https://github.com/believer/dotfiles/compare/v1.17.0...v1.17.1) (2020-09-28)
 
 
