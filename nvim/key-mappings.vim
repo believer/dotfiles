@@ -35,7 +35,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>	
 nnoremap <C-H> <C-W><C-H>
 
-"" Remove things I usally mistype
+"" Remap things I usually mistype
 nnoremap q: <Nop>
 noremap :W :w
 
@@ -50,7 +50,6 @@ inoremap [, [<CR>],<C-c>O
 " CtrlSF
 "" Do search/replace on the word under the cursor
 nmap <leader>c :%s/\<<C-r><C-w>\>/<C-r><C-w>/gi<Left><Left><Left>
-
 nmap <leader>a :CtrlSF -R ""<Left>
 nmap <leader>A <Plug>CtrlSFCwordPath -W<CR>
 
@@ -62,7 +61,7 @@ vnoremap <leader>y "*y
 noremap <leader>d :Fern . -drawer -width=35 -toggle<CR><C-w>=
 
 "" Open current file in drawer
-noremap <leader>f :Fern . -drawer -reveal=% -width=35<CR><C-w>=
+noremap <leader>f :Fern . -drawer -reveal=% -width=35 -toggle<CR><C-w>=
 
 "" Open current buffer's directory in drawer
-noremap <silent> <Leader>. :Fern %:h -drawer -width=35<CR><C-w>=
+noremap <silent> <Leader>. :Fern %:h -drawer -width=35 -toggle<CR><C-w>=
