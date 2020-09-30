@@ -10,6 +10,3 @@ let files = [
 for file in files
   execute "source ~/.dotfiles/nvim/" . file . ".vim"
 endfor
-
-
-
