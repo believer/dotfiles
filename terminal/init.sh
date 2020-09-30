@@ -22,7 +22,6 @@ pathadd "$JAVA_HOME/bin"
 pathadd "$ANDROID_HOME/tools"
 pathadd "$ANDROID_HOME/platform-tools"
 pathadd "$HOME/.yarn/bin"
-pathadd "$HOME/.rvm/bin"
 pathadd "$HOME/code/flutter/bin"
 pathadd "$HOME/.pub-cache/bin"
 
