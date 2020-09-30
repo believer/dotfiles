@@ -1,3 +1,15 @@
+# [1.19.0](https://github.com/believer/dotfiles/compare/v1.18.0...v1.19.0) (2020-09-30)
+
+
+### Bug Fixes
+
+* update fern commands to not toggle ([dfe713b](https://github.com/believer/dotfiles/commit/dfe713b77c788dda97a457cb39bbb9d13c2daf1c))
+
+
+### Features
+
+* add quick command for BufOnly ([bfa9b60](https://github.com/believer/dotfiles/commit/bfa9b60a950b566a22e1779b4abde5bbae142f26))
+
 # [1.18.0](https://github.com/believer/dotfiles/compare/v1.17.1...v1.18.0) (2020-09-28)
 
 
