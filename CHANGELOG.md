@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/believer/dotfiles/compare/v1.19.0...v1.20.0) (2020-10-02)
+
+
+### Features
+
+* update path setup ([25c0c90](https://github.com/believer/dotfiles/commit/25c0c90bd00e84a00b3bbd29390748ebe0b0f23b))
+
 # [1.19.0](https://github.com/believer/dotfiles/compare/v1.18.0...v1.19.0) (2020-09-30)
 
 
