@@ -15,15 +15,17 @@ pathrm() {
 }
 
 # Path
-pathadd "/usr/local/bin"
-pathadd "/usr/bin"
-pathadd "/bin"
 pathadd "$JAVA_HOME/bin"
 pathadd "$ANDROID_HOME/tools"
 pathadd "$ANDROID_HOME/platform-tools"
 pathadd "$HOME/.yarn/bin"
 pathadd "$HOME/code/flutter/bin"
 pathadd "$HOME/.pub-cache/bin"
+pathadd "/bin"
+pathadd "/usr/bin"
+pathadd "/usr/local/sbin"
+pathadd "/usr/local/bin"
+pathadd "/usr/local/opt/ruby/bin"
 
 # Aliases
 for aliasToSource in "$DOTFILES_PATH/terminal/_aliases/"*; do source $aliasToSource; done
