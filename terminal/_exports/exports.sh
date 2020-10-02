@@ -13,3 +13,5 @@ export XDG_CONFIG_HOME="$HOME/.dotfiles"
 # Android SDK
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 
+# rbenv
+eval "$(rbenv init -)"
