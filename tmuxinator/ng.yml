@@ -19,5 +19,5 @@ windows:
   - hemnet-ng-server:
       layout: main-vertical
       panes:
-        - make dev
+        - make server
         -
