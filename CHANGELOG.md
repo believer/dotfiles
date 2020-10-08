@@ -1,3 +1,19 @@
+# [1.21.0](https://github.com/believer/dotfiles/compare/v1.20.0...v1.21.0) (2020-10-08)
+
+
+### Bug Fixes
+
+* remove coc json files ([8a6f8e0](https://github.com/believer/dotfiles/commit/8a6f8e0f48303c792add0bef772f783a3666a5e2))
+* use :Files instead of :GFiles ([c909472](https://github.com/believer/dotfiles/commit/c9094729cf9e3fa373caee57b6810febc4ab7d5f))
+
+
+### Features
+
+* add RBENV_VERSION ([193166c](https://github.com/believer/dotfiles/commit/193166cc175fbd7d66057f73f8b52169b8548730))
+* update gitconfig with my new name ([10371ff](https://github.com/believer/dotfiles/commit/10371ff4da2c8fcb39d351cc594476df810eab3f))
+* **snippets:** add rust snippets ([2aeb7ca](https://github.com/believer/dotfiles/commit/2aeb7ca90ebcc804a67cf6e17565aa68070666b6))
+* **tmux:** update ng server command ([6715bf9](https://github.com/believer/dotfiles/commit/6715bf940d8dac340ffc94e2c6b25cfc705c174c))
+
 # [1.20.0](https://github.com/believer/dotfiles/compare/v1.19.0...v1.20.0) (2020-10-02)
 
 
