@@ -10,6 +10,11 @@ hub
 .hemnetrc
 
 # CoC setup
+coc/lists
+coc/list-lists-history.json
+coc/list-commands-history.json
+coc/list-diagnostics-history.json
+coc/list-extensions-history.json
 coc/history.json
 coc/extensions/db.json
 configstore
