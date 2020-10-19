@@ -15,6 +15,9 @@ windows:
       panes:
         - nvim
         - yarn test --watch
+  - kundportalen-server:
+      layout: main-vertical
+      panes:
         - make dev
         -
   - dw-api:
