@@ -3,6 +3,7 @@
   "typescript.suggest.autoImports": true,
   "javascript.validate.enable": true,
   "coc.preferences.formatOnSaveFiletypes": [
+    "dart",
     "html",
     "graphql",
     "reason",
