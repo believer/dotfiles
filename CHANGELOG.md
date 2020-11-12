@@ -1,3 +1,14 @@
+# [1.22.0](https://github.com/believer/dotfiles/compare/v1.21.0...v1.22.0) (2020-11-12)
+
+
+### Features
+
+* add dart to format on save ([c9177ad](https://github.com/believer/dotfiles/commit/c9177ad4171f026a9cc5547934af05ec0a7665c5))
+* **snippets:** update reason ([95d4ce0](https://github.com/believer/dotfiles/commit/95d4ce04c1a20072711ab3aa538862f3653e2aaa))
+* **snippets:** update rust ([7177f9a](https://github.com/believer/dotfiles/commit/7177f9aecbffe9b41fd57d568594c262ec91c934))
+* **snippets:** update typescript testing ([a215da7](https://github.com/believer/dotfiles/commit/a215da7d490871a7f246ac5965c9f0db1b55c49e))
+* add flutter to path ([9f6d64e](https://github.com/believer/dotfiles/commit/9f6d64ec91c488bd56ddbd74dc75daa50be40b8a))
+
 # [1.21.0](https://github.com/believer/dotfiles/compare/v1.20.0...v1.21.0) (2020-10-08)
 
 
