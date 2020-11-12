@@ -9,12 +9,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'Yggdroot/indentLine'                                        " Display line indents
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Search
   Plug 'junegunn/fzf.vim'                                           " Search Ag/Rg
-
   Plug 'mhinz/vim-startify'                                       " Start screen
   Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}      " CoC.nvim
   Plug 'tpope/vim-fugitive'                                       " All things git
   Plug 'kshenoy/vim-signature'                                    " Easier setup for marks
   Plug 'dyng/ctrlsf.vim'                                          " Uses ripgrep for easier editing of multiple places
+  Plug 'Konfekt/FastFold'
 
   " Fern.vim - File explorer
   Plug 'lambdalisue/fern.vim'
