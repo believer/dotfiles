@@ -2,13 +2,9 @@
 " Plugins {{{1
 "
 call plug#begin('~/.vim/plugged')
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
   Plug 'mattn/emmet-vim'
   Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-tbone'
-  Plug 'easymotion/vim-easymotion'
+  Plug 'tpope/vim-repeat'                                            " Enhance . repeat
   Plug 'SirVer/ultisnips'
   Plug 'Yggdroot/indentLine'                                        " Display line indents
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Search
@@ -19,7 +15,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'                                       " All things git
   Plug 'kshenoy/vim-signature'                                    " Easier setup for marks
   Plug 'dyng/ctrlsf.vim'                                          " Uses ripgrep for easier editing of multiple places
-  Plug 'junegunn/goyo.vim'                                        " Distraction free writing
 
   " Fern.vim - File explorer
   Plug 'lambdalisue/fern.vim'
@@ -37,7 +32,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'ngmy/vim-rubocop'
 
   " Syntax
-  Plug 'gerw/vim-HiLinkTrace'
   Plug 'luochen1990/rainbow'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'amiralies/vim-rescript'
@@ -46,6 +40,8 @@ call plug#begin('~/.vim/plugged')
 
   " Themes
   Plug '~/code/personal/night-owl'
+  Plug 'vim-airline/vim-airline'          " Airline status bar
+  Plug 'vim-airline/vim-airline-themes'   " Airline themes
 
   " Personal plugins
   Plug '~/code/personal/cyclist.vim'
