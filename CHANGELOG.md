@@ -1,3 +1,15 @@
+# [1.23.0](https://github.com/believer/dotfiles/compare/v1.22.0...v1.23.0) (2020-11-12)
+
+
+### Bug Fixes
+
+* add augroups around autocmds ([d6e0d4c](https://github.com/believer/dotfiles/commit/d6e0d4c8ef59996dda4303671ad9c2f7441821d2))
+
+
+### Features
+
+* **plugin:** add fastfold ([a13506f](https://github.com/believer/dotfiles/commit/a13506fc94d23e39cb5af6aa0dc2286ec1b7a5ff))
+
 # [1.22.0](https://github.com/believer/dotfiles/compare/v1.21.0...v1.22.0) (2020-11-12)
 
 
