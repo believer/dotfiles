@@ -5,6 +5,8 @@ node_modules
 *.zwc
 .DS_Store
 hub
+nvim/.netrwhist
+tool_state
 
 # Work setup
 .hemnetrc
@@ -19,3 +21,7 @@ coc/history.json
 coc/extensions/db.json
 configstore
 coc/commands
+
+# Lazygit
+jesseduffield
+
