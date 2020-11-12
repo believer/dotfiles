@@ -26,6 +26,7 @@ pathadd "/usr/bin"
 pathadd "/usr/local/sbin"
 pathadd "/usr/local/bin"
 pathadd "/usr/local/opt/ruby/bin"
+pathadd "/Users/rickardlaurin/code/personal/flutter/bin"
 
 # Aliases
 for aliasToSource in "$DOTFILES_PATH/terminal/_aliases/"*; do source $aliasToSource; done
