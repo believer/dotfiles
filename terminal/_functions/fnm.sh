@@ -2,7 +2,7 @@
 
 # fnm
 pathadd $HOME/.fnm
-eval `fnm env --multi`
+eval `fnm env`
 
 function chpwd {
   set_fnm_version
