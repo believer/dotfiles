@@ -1,3 +1,69 @@
 snippet clog "Print"
 println!("{:?}", $1);
 endsnippet
+
+# ----------------------------------------------------------
+# Testing
+# 
+
+snippet rtest "Test module"
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	$2
+}
+endsnippet
+
+snippet test "Test"
+#[test]
+fn $1() {
+	$2
+}
+endsnippet
+
+snippet exp "Assert equal"
+assert_eq!($1, $2)
+endsnippet
+
+# ----------------------------------------------------------
+# Advent of Code
+# 
+
+snippet aoc "Advent of Code"
+use std::io;
+use std::time::Instant;
+
+mod part_01;
+mod part_02;
+
+fn main() -> io::Result<()> {
+		let input = parse_input(include_str!("../input"));
+
+		println!("Results for Day 1");
+		println!("============================");
+
+		// Part 1
+		let now = Instant::now();
+		let part_01_result = "Test"
+
+		println!("Part 1: {:?} ({:.2?})", part_01_result, now.elapsed());
+
+		// Part 2
+		let now = Instant::now();
+		let part_02_fuel = part_02::main(&input)?;
+
+		println!("Part 2: {:?} ({:.2?})", part_02_fuel, now.elapsed());
+
+		Ok(())
+}
+
+fn parse_input(input: &str) -> Vec<i32> {
+		input
+				.lines()
+				.map(|l| l.trim())
+				.filter(|l| !l.is_empty())
+				.map(|l| l.parse::<i32>().unwrap())
+				.collect::<Vec<i32>>()
+}
+endsnippet
