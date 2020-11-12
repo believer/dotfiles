@@ -22,8 +22,11 @@ set ignorecase
 set smartcase
 
 "" Markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd FileType markdown setlocal spell spelllang=en_gb
+augroup markdownCommands
+  autocmd!
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+  autocmd FileType markdown setlocal spell spelllang=en_gb
+augroup END
 
 "" Tabs
 set tabstop=2
@@ -32,15 +35,21 @@ set autoindent
 set expandtab
 set smartindent
 
-"" Save on loose focus
-au FocusGained,BufEnter * :silent! !
+"" Focus
+augroup focusStates
+  autocmd!
+  "" Save on loose focus
+  autocmd FocusGained,BufEnter * :silent! !
+
+  "" Update files saved outside of vim
+  autocmd FocusGained * :checktime
+augroup END
 
 "" Line numbers
 set number relativenumber
 
-"" Folding
-set foldmethod=syntax
-set foldlevelstart=99
+"" Remove syntax highlighting long lines
+set synmaxcol=200
 
 "" Always display status line
 set laststatus=2
@@ -70,7 +79,6 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 highlight clear SignColumn
 set autoread
-au FocusGained * :checktime
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -79,4 +87,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Highlights the text that I'm yanking
 " Courtesy of TJ DeVries
 " https://youtu.be/apyV4v7x33o?t=2912
-au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
+augroup yanking
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
+augroup END
