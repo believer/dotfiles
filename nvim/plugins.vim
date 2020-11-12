@@ -27,7 +27,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'
 
   " Ruby
-  Plug 'tpope/vim-rails'
   Plug 'thoughtbot/vim-rspec'
   Plug 'ngmy/vim-rubocop'
 
