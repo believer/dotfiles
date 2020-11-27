@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/believer/dotfiles/compare/v1.24.0...v1.25.0) (2020-11-27)
+
+
+### Features
+
+* **tmux:** display window name in red when zoomed in ([e3eb1fc](https://github.com/believer/dotfiles/commit/e3eb1fc8b7213d861648aa074fcdd6c00053e934))
+
 # [1.24.0](https://github.com/believer/dotfiles/compare/v1.23.0...v1.24.0) (2020-11-27)
 
 
