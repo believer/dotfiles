@@ -50,3 +50,9 @@ augroup END
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+augroup rescript
+  autocmd!
+  autocmd FileType rescript nnoremap <silent> <buffer> K :RescriptTypeHint<CR>
+  autocmd FileType rescript nnoremap <silent> <buffer> gd :RescriptJumpToDefinition<CR>
+augroup END
