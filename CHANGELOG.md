@@ -1,3 +1,13 @@
+# [1.24.0](https://github.com/believer/dotfiles/compare/v1.23.0...v1.24.0) (2020-11-27)
+
+
+### Features
+
+* add rescript language server ([17706e8](https://github.com/believer/dotfiles/commit/17706e82e78d09e5274bb353a5c3872f3487b443))
+* add rescript shortcuts ([3c2aa98](https://github.com/believer/dotfiles/commit/3c2aa989de54705178452a127a3d6fa35281a806))
+* add tailwind css setting for rescript ([d0c9574](https://github.com/believer/dotfiles/commit/d0c9574c555e7ed5e0fe61cc4124cc5ac3f09db2))
+* move info to gitconfig from global ([cdc1603](https://github.com/believer/dotfiles/commit/cdc160304fc4b667b6ae420a2006e746b93a3db8))
+
 # [1.23.0](https://github.com/believer/dotfiles/compare/v1.22.0...v1.23.0) (2020-11-12)
 
 
