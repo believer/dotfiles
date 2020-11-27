@@ -22,5 +22,14 @@
   "codeLens.enable": true,
   "prettier.eslintIntegration": true,
   "prettier.stylelineIntegration": true,
-  "scss.validate": true
+  "scss.validate": true,
+  "languageserver": {
+    "rescript": {
+      "enable": true,
+      "module": "~/.vim/plugged/vim-rescript/rescript-vscode-1.0.0/extension/server/out/server.js",
+      "args": ["--node-ipc"],
+      "filetypes": ["rescript"],
+      "rootPatterns": ["bsconfig.json"]
+    }
+  }
 }
