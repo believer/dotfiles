@@ -1,6 +1,10 @@
 [user]
   name = Rickard Natt och Dag
-  email = nattochdag@hey.com
+  email = rickard@hey.com
+  signingkey = C3958EFC7F24E8DF
+
+[credential]
+  helper = osxkeychain
 
 [alias]
   co = checkout
@@ -15,3 +19,10 @@
 
 [interactive]
     diffFilter = delta --color-only
+
+[gpg]
+	program = gpg2
+
+[commit]
+  gpgsign = true
+
