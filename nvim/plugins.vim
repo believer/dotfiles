@@ -3,6 +3,7 @@
 "
 call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
+  Plug 'easymotion/vim-easymotion'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'                                            " Enhance . repeat
   Plug 'SirVer/ultisnips'
@@ -33,7 +34,7 @@ call plug#begin('~/.vim/plugged')
   " Syntax
   Plug 'luochen1990/rainbow'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'amiralies/vim-rescript'
+  Plug 'ryyppy/vim-rescript'
   "" Installs a bunch of languages
   Plug 'sheerun/vim-polyglot'
 

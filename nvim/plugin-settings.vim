@@ -87,6 +87,3 @@ let g:startify_change_to_dir = 0 " Keep CWD when using actions
 "" Markdown
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
-
-"" Goyo
-map <leader>g :Goyo<CR>
