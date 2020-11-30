@@ -2,7 +2,7 @@
 from soco import SoCo
 
 if __name__ == '__main__':
-    sonos = SoCo('192.168.110.175') # Pass in the IP of your Sonos speaker
+    sonos = SoCo('192.168.1.57') # Pass in the IP of your Sonos speaker
 
     track = sonos.get_current_track_info()
     state = sonos.get_current_transport_info()
