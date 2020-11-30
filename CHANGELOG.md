@@ -1,3 +1,10 @@
+## [1.25.1](https://github.com/believer/dotfiles/compare/v1.25.0...v1.25.1) (2020-11-30)
+
+
+### Bug Fixes
+
+* **tmux:** sonos now playing ([b351d46](https://github.com/believer/dotfiles/commit/b351d46544a1b5dc848e833139387f0f57dd5873))
+
 # [1.25.0](https://github.com/believer/dotfiles/compare/v1.24.0...v1.25.0) (2020-11-27)
 
 
