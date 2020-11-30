@@ -2,6 +2,12 @@ snippet clog "Print"
 println!("{:?}", $1);
 endsnippet
 
+snippet swc "Match"
+match $1 {
+	$2 => $3,
+}
+endsnippet
+
 # ----------------------------------------------------------
 # Testing
 # 
@@ -31,13 +37,11 @@ endsnippet
 # 
 
 snippet aoc "Advent of Code"
-use std::io;
 use std::time::Instant;
 
-mod part_01;
-mod part_02;
+pub type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
 
-fn main() -> io::Result<()> {
+fn main() -> Result<()> {
 		let input = parse_input(include_str!("../input"));
 
 		println!("Results for Day 1");
@@ -45,15 +49,15 @@ fn main() -> io::Result<()> {
 
 		// Part 1
 		let now = Instant::now();
-		let part_01_result = "Test"
+		let part_01 = day_01::part_01(&input)?;
 
-		println!("Part 1: {:?} ({:.2?})", part_01_result, now.elapsed());
+		println!("Part 1: {:?} ({:.2?})", part_01, now.elapsed());
 
 		// Part 2
 		let now = Instant::now();
-		let part_02_fuel = part_02::main(&input)?;
+		let part_02 = day_01::part_02(&input)?;
 
-		println!("Part 2: {:?} ({:.2?})", part_02_fuel, now.elapsed());
+		println!("Part 2: {:?} ({:.2?})", part_02, now.elapsed());
 
 		Ok(())
 }
@@ -65,5 +69,17 @@ fn parse_input(input: &str) -> Vec<i32> {
 				.filter(|l| !l.is_empty())
 				.map(|l| l.parse::<i32>().unwrap())
 				.collect::<Vec<i32>>()
+}
+endsnippet
+
+snippet aoclib "Advent of Code lib"
+pub type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
+
+pub fn part_01(_input: &Vec<i32>) -> Result<()> {
+		Ok(())
+}
+
+pub fn part_02(_input: &Vec<i32>) -> Result<()> {
+		Ok(())
 }
 endsnippet
