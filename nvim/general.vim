@@ -49,7 +49,7 @@ augroup END
 set number relativenumber
 
 "" Remove syntax highlighting long lines
-set synmaxcol=200
+" set synmaxcol=200
 
 "" Always display status line
 set laststatus=2
