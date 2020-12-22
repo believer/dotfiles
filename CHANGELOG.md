@@ -1,3 +1,15 @@
+# [1.26.0](https://github.com/believer/dotfiles/compare/v1.25.1...v1.26.0) (2020-12-22)
+
+
+### Bug Fixes
+
+* update sonos now playing ([0cd7f5f](https://github.com/believer/dotfiles/commit/0cd7f5f27b35b0c0a89f814c769addcb506ca76f))
+
+
+### Features
+
+* update snippets ([0dac6d2](https://github.com/believer/dotfiles/commit/0dac6d2ceeda3548c13e6c24732cfb6baf090c97))
+
 ## [1.25.1](https://github.com/believer/dotfiles/compare/v1.25.0...v1.25.1) (2020-11-30)
 
 
