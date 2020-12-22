@@ -1,0 +1,168 @@
+priority -50
+
+snippet clog "Print"
+println!("{:?}", $1);
+endsnippet
+
+snippet fmt "format!"
+format!("${1}{${2}}", ${3});
+endsnippet
+
+snippet d "dbg! debugging macro"
+dbg!(${0:${VISUAL}})
+endsnippet
+
+snippet fn "fn name(?) -> ? {}"
+fn ${1:function_name}($2)${3/..*/ -> /}$3 {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet pfn "pub fn name(?) -> ? {}"
+pub fn ${1:function_name}($2)${3/..*/ -> /}$3 {
+	${VISUAL}$0
+}
+endsnippet
+
+# ----------------------------------------------------------
+# Bindings
+# 
+
+snippet let "let variable declaration with type inference"
+let ${1} = ${2};
+endsnippet
+
+snippet lett "let variable declaration with explicit type annotation"
+let ${1}: ${2} = ${3};
+endsnippet
+
+snippet letm "let mut variable declaration with type inference"
+let mut ${1} = ${2};
+endsnippet
+
+snippet lettm "let mut variable declaration with explicit type annotation"
+let mut ${1}: ${2} = ${3};
+endsnippet
+
+# ----------------------------------------------------------
+# Control flow
+# 
+
+snippet swc "Match"
+match $1 {
+	$2 => $3,
+}
+endsnippet
+
+snippet case "Case clause of pattern match"
+	${1:_} => ${2:expression}
+endsnippet
+
+snippet if
+	if ${1} {
+		${0:${VISUAL}}
+	}
+endsnippet
+
+snippet ife "if / else"
+	if ${1} {
+		${2:${VISUAL}}
+	} else {
+		${0}
+	}
+endsnippet
+
+snippet ifl "if let (...)"
+	if let ${1:Some($2)} = $3 {
+		${0:${VISUAL}}
+	}
+endsnippet
+
+snippet el "else"
+	else {
+		${0:${VISUAL}}
+	}
+endsnippet
+
+snippet elif "else if"
+	else if ${1} {
+		${0:${VISUAL}}
+	}
+endsnippet
+
+# ----------------------------------------------------------
+# Testing
+# 
+
+snippet rtest "Test module"
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	$2
+}
+endsnippet
+
+snippet test "Test"
+#[test]
+fn $1() {
+	$2
+}
+endsnippet
+
+snippet exp "Assert equal"
+assert_eq!($1, $2)
+endsnippet
+
+# ----------------------------------------------------------
+# Advent of Code
+# 
+
+snippet aoc "Advent of Code"
+use std::time::Instant;
+
+pub type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
+
+fn main() -> Result<()> {
+		let input = parse_input(include_str!("../input"));
+
+		println!("Results for Day 1");
+		println!("============================");
+
+		// Part 1
+		let now = Instant::now();
+		let part_01 = day_01::part_01(&input)?;
+
+		println!("Part 1: {:?} ({:.2?})", part_01, now.elapsed());
+
+		// Part 2
+		let now = Instant::now();
+		let part_02 = day_01::part_02(&input)?;
+
+		println!("Part 2: {:?} ({:.2?})", part_02, now.elapsed());
+
+		Ok(())
+}
+
+fn parse_input(input: &str) -> Vec<i32> {
+		input
+				.lines()
+				.map(|l| l.trim())
+				.filter(|l| !l.is_empty())
+				.map(|l| l.parse::<i32>().unwrap())
+				.collect::<Vec<i32>>()
+}
+endsnippet
+
+snippet aoclib "Advent of Code lib"
+pub type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
+
+pub fn part_01(_input: &Vec<i32>) -> Result<()> {
+		Ok(())
+}
+
+pub fn part_02(_input: &Vec<i32>) -> Result<()> {
+		Ok(())
+}
+endsnippet
+

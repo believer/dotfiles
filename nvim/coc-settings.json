@@ -7,10 +7,13 @@
     "javascriptreact",
     "reason",
     "rescript",
-    "typescriptreact"
+    "typescriptreact",
+    "html.handlebars",
+    "htmldjango"
   ],
   "coc.preferences.formatOnSaveFiletypes": [
     "dart",
+    "html.handlebars",
     "html",
     "graphql",
     "reason",
@@ -23,7 +26,8 @@
     "javascript",
     "json",
     "typescriptreact",
-    "javascriptreact"
+    "javascriptreact",
+    "eruby"
   ],
   "codeLens.separator": "🕶",
   "codeLens.enable": true,
@@ -33,7 +37,7 @@
   "languageserver": {
     "rescript": {
       "enable": true,
-      "module": "~/.vim/plugged/vim-rescript/rescript-vscode-1.0.0/extension/server/out/server.js",
+      "module": "~/.vim/plugged/vim-rescript/rescript-vscode/extension/server/out/server.js",
       "args": ["--node-ipc"],
       "filetypes": ["rescript"],
       "rootPatterns": ["bsconfig.json"]
