@@ -1,12 +1,12 @@
 # /Users/rickardlaurin/.dotfiles/tmuxinator/advent-of-code.yml
 
 name: advent-of-code
-root: ~/code/personal/advent-of-code/2019
+root: ~/code/personal/advent-of-code/rust/2020
 
 windows:
-  - 2019:
+  - 2020:
       layout: main-vertical
       panes:
-        - nvim
-        - nrt
-        - nrs
+        - e
+        - cargo watch --clear
+        - 

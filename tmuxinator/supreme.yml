@@ -1,12 +1,12 @@
 # /Users/rickardlaurin/.config/tmuxinator/supreme.yml
 
 name: supreme
-root: ~/code/iteam/supreme
+root: ~/code/opendevtools/supreme
 
 windows:
   - supreme:
       layout: main-vertical
       panes:
         - nvim
-        - nrt
-        - nrs
+        - cargo watch --clear
+        - 
