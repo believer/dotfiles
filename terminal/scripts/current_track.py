@@ -1,23 +1,27 @@
 #!/usr/bin/env python
 from soco import SoCo
 
+ip = '192.168.1.55'
+
 if __name__ == '__main__':
-    sonos = SoCo('192.168.1.57') # Pass in the IP of your Sonos speaker
+    nothing = "Nothing playing :("
+    sonos = SoCo(ip) # Pass in the IP of your Sonos speaker
 
     track = sonos.get_current_track_info()
     state = sonos.get_current_transport_info()
+    play_state = state['current_transport_state']
 
-    artist = track['artist']
-    name = track['title']
-    album = track['album']
-    position = track['position'][2:]
-    duration = track['duration'][2:]
-
-    nothing = "Nothing playing :("
-    np = artist + " - " + name + " (" + album + ") (" + position + " / " + duration + ")"
-
-    if state['current_transport_state'] == "STOPPED":
+    if track['position'] == "NOT_IMPLEMENTED" or play_state == "STOPPED" or play_state == "PAUSED_PLAYBACK":
         print(nothing)
     else:
-        print(np)
+        artist = track['artist']
+        name = track['title']
+        album = track['album']
+        position = track['position'][2:]
+        duration = track['duration'][2:]
+
+        print(artist + " - " + name + " (" + album + ") (" + position + " / " + duration + ")")
+
+
+
 
