@@ -20,6 +20,10 @@ nnoremap gdl :diffget //2<CR>
 "" Diffget from right pane (target branch)
 nnoremap gdr :diffget //3<CR>
 
+"" Git push
+nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>up :!git up<CR>
+
 "" Marks
 nnoremap ' `
 
