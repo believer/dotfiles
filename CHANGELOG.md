@@ -1,3 +1,18 @@
+# [1.27.0](https://github.com/believer/dotfiles/compare/v1.26.0...v1.27.0) (2021-02-18)
+
+
+### Bug Fixes
+
+* add cursorhold fix ([e127a7f](https://github.com/believer/dotfiles/commit/e127a7f766b817c798fbee0c8fd1353e2cf03db0))
+
+
+### Features
+
+* **git:** add keymappings for git commands ([7a86484](https://github.com/believer/dotfiles/commit/7a86484b8da2206fb7509e3faa15075091b775c1))
+* **html:** add keymapping to remove html attributes ([1c9726c](https://github.com/believer/dotfiles/commit/1c9726cc6036993d5d55ae6ab36cdd05a4118041))
+* **mux:** add movies project ([d911eda](https://github.com/believer/dotfiles/commit/d911edad9b2e981e348d3f407477931d91ad3050))
+* **snippets:** add snippet for testing library getByLabelText ([b4c3dd3](https://github.com/believer/dotfiles/commit/b4c3dd33ed3621bebf6804398332b630959fdeae))
+
 # [1.26.0](https://github.com/believer/dotfiles/compare/v1.25.1...v1.26.0) (2020-12-22)
 
 
