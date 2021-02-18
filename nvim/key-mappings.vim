@@ -74,3 +74,10 @@ noremap <silent> <Leader>. :Fern %:h -drawer -width=35<CR><C-w>=
 command BufOnly silent! execute "%bd|e#|bd#"
 
 nnoremap <leader>b :BufOnly<CR>
+
+"" Remove HTML attribute
+" diw - Delete inside word to be anywhere in attribute name
+" x - Remove =
+" da" - Remove attribute value
+nnoremap <leader>da diwxda"<Cr>
+
