@@ -19,5 +19,7 @@ windows:
   - hemnet-ng-server:
       layout: main-vertical
       panes:
-        - make server
+        - server:
+          - rbenv shell 2.7.2
+          - make dev
         -
