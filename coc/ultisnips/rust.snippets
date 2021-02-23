@@ -1,93 +1,11 @@
-priority -50
-
 snippet clog "Print"
 println!("{:?}", $1);
 endsnippet
-
-snippet fmt "format!"
-format!("${1}{${2}}", ${3});
-endsnippet
-
-snippet d "dbg! debugging macro"
-dbg!(${0:${VISUAL}})
-endsnippet
-
-snippet fn "fn name(?) -> ? {}"
-fn ${1:function_name}($2)${3/..*/ -> /}$3 {
-	${VISUAL}$0
-}
-endsnippet
-
-snippet pfn "pub fn name(?) -> ? {}"
-pub fn ${1:function_name}($2)${3/..*/ -> /}$3 {
-	${VISUAL}$0
-}
-endsnippet
-
-# ----------------------------------------------------------
-# Bindings
-# 
-
-snippet let "let variable declaration with type inference"
-let ${1} = ${2};
-endsnippet
-
-snippet lett "let variable declaration with explicit type annotation"
-let ${1}: ${2} = ${3};
-endsnippet
-
-snippet letm "let mut variable declaration with type inference"
-let mut ${1} = ${2};
-endsnippet
-
-snippet lettm "let mut variable declaration with explicit type annotation"
-let mut ${1}: ${2} = ${3};
-endsnippet
-
-# ----------------------------------------------------------
-# Control flow
-# 
 
 snippet swc "Match"
 match $1 {
 	$2 => $3,
 }
-endsnippet
-
-snippet case "Case clause of pattern match"
-	${1:_} => ${2:expression}
-endsnippet
-
-snippet if
-	if ${1} {
-		${0:${VISUAL}}
-	}
-endsnippet
-
-snippet ife "if / else"
-	if ${1} {
-		${2:${VISUAL}}
-	} else {
-		${0}
-	}
-endsnippet
-
-snippet ifl "if let (...)"
-	if let ${1:Some($2)} = $3 {
-		${0:${VISUAL}}
-	}
-endsnippet
-
-snippet el "else"
-	else {
-		${0:${VISUAL}}
-	}
-endsnippet
-
-snippet elif "else if"
-	else if ${1} {
-		${0:${VISUAL}}
-	}
 endsnippet
 
 # ----------------------------------------------------------
@@ -119,38 +37,49 @@ endsnippet
 # 
 
 snippet aoc "Advent of Code"
-use std::time::Instant;
+use crate::common;
 
-pub type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
+// Day 14
 
-fn main() -> Result<()> {
-		let input = parse_input(include_str!("../input"));
-
-		println!("Results for Day 1");
-		println!("============================");
-
-		// Part 1
-		let now = Instant::now();
-		let part_01 = day_01::part_01(&input)?;
-
-		println!("Part 1: {:?} ({:.2?})", part_01, now.elapsed());
-
-		// Part 2
-		let now = Instant::now();
-		let part_02 = day_01::part_02(&input)?;
-
-		println!("Part 2: {:?} ({:.2?})", part_02, now.elapsed());
-
-		Ok(())
+#[aoc_generator(day14)]
+pub fn input_generator(input: &str) -> Vec<String> {
+    common::input_vec(input)
 }
 
-fn parse_input(input: &str) -> Vec<i32> {
-		input
-				.lines()
-				.map(|l| l.trim())
-				.filter(|l| !l.is_empty())
-				.map(|l| l.parse::<i32>().unwrap())
-				.collect::<Vec<i32>>()
+/// Your puzzle answer was
+/// ```
+/// use advent_of_code_2020::day_14::*;
+/// let input = include_str!("../input/2020/day14.txt");
+/// assert_eq!(solve_part_01(&input_generator(input)), 0);
+/// ```
+#[aoc(day14, part1)]
+pub fn solve_part_01(_input: &[String]) -> u32 {
+    0
+}
+
+/// Your puzzle answer was
+/// ```
+/// use advent_of_code_2020::day_14::*;
+/// let input = include_str!("../input/2020/day14.txt");
+/// assert_eq!(solve_part_02(&input_generator(input)), 0);
+/// ```
+#[aoc(day14, part2)]
+pub fn solve_part_02(_input: &[String]) -> u32 {
+    0
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // Test example data on part 1
+    #[test]
+    fn test_example_part_1() {
+        let data = "
+";
+
+        assert_eq!(solve_part_01(&input_generator(data)), 1)
+    }
 }
 endsnippet
 
@@ -165,4 +94,3 @@ pub fn part_02(_input: &Vec<i32>) -> Result<()> {
 		Ok(())
 }
 endsnippet
-

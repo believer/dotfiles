@@ -42,5 +42,6 @@
       "filetypes": ["rescript"],
       "rootPatterns": ["bsconfig.json"]
     }
-  }
+  },
+  "snippets.ultisnips.directories": ["~/.dotfiles/snippets"]
 }

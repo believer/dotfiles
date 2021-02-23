@@ -11,8 +11,8 @@ map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
 "" UltiSnips / coc-snippets
-let g:UltiSnipsSnippetsDir='~/.dotfiles/snippets'
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']
+let g:UltiSnipsSnippetsDir='~/.dotfiles/coc/ultisnips'
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/coc/ultisnips']
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 
