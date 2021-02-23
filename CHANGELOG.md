@@ -1,3 +1,15 @@
+# [1.28.0](https://github.com/believer/dotfiles/compare/v1.27.0...v1.28.0) (2021-02-23)
+
+
+### Bug Fixes
+
+* **mux:** add shell to ng ([6434274](https://github.com/believer/dotfiles/commit/6434274d12b38aa65eba0dee7d510bab2cd4379a))
+
+
+### Features
+
+* **mux:** add skolplattformen ([24e7ab1](https://github.com/believer/dotfiles/commit/24e7ab17591bbfc5c16b26c0bdf065cebeef8790))
+
 # [1.27.0](https://github.com/believer/dotfiles/compare/v1.26.0...v1.27.0) (2021-02-18)
 
 
