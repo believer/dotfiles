@@ -14,7 +14,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import `!v expand('%:t:r:r')` from './`!v expand('%:t:r:r')`'
 
-test('${1:What does the test do?}', () => {
+test('${1:What does it test?}', () => {
 	render(<`!v expand('%:t:r:r')` />)
 
 	screen.debug()
@@ -36,7 +36,7 @@ endsnippet
 # We get one test that renders our component and calls `screen.debug()` which
 # will display the DOM structure of our component. This is added as check that
 # the test could render the component.
-snippet rtest "React test with setup" b
+snippet rtest2 "React test with setup" b
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import `!v expand('%:t:r:r')` from './`!v expand('%:t:r:r')`'
@@ -49,7 +49,7 @@ const setup = (customProps = {}) => {
 	return render(<`!v expand('%:t:r:r')` {...props} />)
 }
 
-test('${1:What does the test do?}', () => {
+test('${1:What does it test?}', () => {
 	setup()
 
 	screen.debug()
@@ -58,7 +58,7 @@ endsnippet
 
 # # Basic test
 # 
-# This creates a basic test setup that's useful for testing basic JavaScript
+# This creates a basic test setup that's useful for testing simple JavaScript
 # code like helpers or utilities.
 snippet stest "Simple test setup" b
 import $1 from '../$1'
@@ -68,61 +68,77 @@ test('$2', () => {
 })
 endsnippet
 
-
-snippet asmock "Jest mock"
-;($1 as jest.Mock).mockResolvedValueOnce($2)
-endsnippet
-
-snippet asmocki "Create function as a Jest mock"
-;($1 as jest.Mock).mockImplementation(() => $2)
-endsnippet
-
+# # Jest describe
+#
+# Creates a `describe` block for testing in Jest
 snippet desc "Jest describe" b
-describe('$1', () => {
+describe('${1:What does it describe?}', () => {
 	$0
 })
 endsnippet
 
+# # Jest describe / test
+#
+# Creates a `describe` block and a `test` block for testing in Jest
 snippet desct "Jest describe with test" b
-describe('$1', () => {
-	test('${2:should}', () => {
+describe('${1:What does it describe?}', () => {
+	test('${2:What does it test?}', () => {
 		$0
 	})
 })
 endsnippet
 
+# # Jest test
+#
+# Creates a `test` block for testing in Jest
 snippet test "Jest test" b
-test('${1:should}', () => {
+test('${1:What does it test?}', () => {
 	$0
 })
 endsnippet
 
+# # Jest async test
+#
+# Creates an asynchronous `test` block for testing in Jest
 snippet testa "Jest test async" b
-test('${1:should}', async () => {
+test('${1:What does it test?}', async () => {
 	$0
 })
 endsnippet
 
-snippet it "Jest test" b
-it('${1:should}', () => {
-	$0
-})
-endsnippet
-
+# # Jest beforeEach
+#
+# Creates a `beforeEach` block for doing some **setup** before each test in Jest
 snippet bef "Jest beforeEach" b
 beforeEach(() => {
 	$0
 })
 endsnippet
 
+# # Jest afterEach
+#
+# Creates a `afterEach` block for doing some **cleanup** after each test in Jest
 snippet aef "Jest afterEach" b
 afterEach(() => {
 	$0
 })
 endsnippet
 
+# # Jest automatic mock
+#
+# Create an [automatic
+# mock](https://jestjs.io/docs/en/mock-functions#mocking-modules) of the module
+# or file
+snippet amock "Jest auto mock" b
+jest.mock('${1:package name or path to file}')
+endsnippet
+
+# # Jest mock
+#
+# Creates a mock with an open object for specifying what to mock in the module
+# or file
 snippet mock "Jest mock" b
-jest.mock('${1:pkg}', () => ({
+jest.mock('${1:package name or path to file}', () => ({
 	$0
 }))
 endsnippet
