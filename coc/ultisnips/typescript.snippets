@@ -234,13 +234,14 @@ endsnippet
 # Add a React `useState` hook
 #
 # The name of the setter will be named automatically based on the name of the
-# `state` variable. For example if you change `state` to `displayText`, the setter will
-# automatically be named `setDisplayText`.
+# `state` variable. For example, if you change `state` to `displayText`, the setter will
+# automatically be named `setDisplayText`. This uses Python to
+# uppercase the first letter of `state` variable.
 #
 # - `$1` - Initial state
 # - `$2` - Name of the state variable
 snippet ush "State hook" b
-const [${2:state}, set`!p snip.rv = t[2].title()`] = React.useState(${1:initial state})
+const [${2:state}, set`!p snip.rv = t[2][:1].upper() + t[2][1:]`] = React.useState(${1:initial state})
 endsnippet
 
 # Add a React `useEffect` hook
