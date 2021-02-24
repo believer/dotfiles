@@ -1,5 +1,3 @@
-# # React test
-# 
 # This create a testing setup using `@testing-library/react` for use in Jest.
 # 
 # Jest tests in the setups I work with have the same name as the component they
@@ -9,10 +7,16 @@
 # We get one test that renders our component and calls `screen.debug()` which
 # will display the DOM structure of our component. This is added as check that
 # the test could render the component.
+#
+# ## Explanation of `!v expand('%:t:r:r')`
+# 
+# - `%:t` - Get the entire filename with extensions (`Component.test.js`) 
+# - `%:r` - Strip away one file extension (`Component.test`) 
+# - `%:r` - Strip away one file extension (`Component`) 
 snippet rtest "React test" b
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import `!v expand('%:t:r:r')` from './`!v expand('%:t:r:r')`'
+import `!v expand('%:t:r:r')` from './`!v expand('%:t:r')`'
 
 test('${1:What does it test?}', () => {
 	render(<`!v expand('%:t:r:r')` />)
@@ -21,8 +25,6 @@ test('${1:What does it test?}', () => {
 })
 endsnippet
 
-# # React test
-# 
 # This create a testing setup using `@testing-library/react` for use in Jest.
 # 
 # Jest tests in the setups I work with have the same name as the component they
@@ -36,6 +38,12 @@ endsnippet
 # We get one test that renders our component and calls `screen.debug()` which
 # will display the DOM structure of our component. This is added as check that
 # the test could render the component.
+#
+# ## Explanation of `!v expand('%:t:r:r')`
+# 
+# - `%:t` - Get the entire filename with extensions (`Component.test.js`) 
+# - `%:r` - Strip away one file extension (`Component.test`) 
+# - `%:r` - Strip away one file extension (`Component`) 
 snippet rtest2 "React test with setup" b
 import React from 'react'
 import { render, screen } from '@testing-library/react'
@@ -56,31 +64,25 @@ test('${1:What does it test?}', () => {
 })
 endsnippet
 
-# # Basic test
-# 
-# This creates a basic test setup that's useful for testing simple JavaScript
+# Create a basic test setup that's useful for testing simple JavaScript
 # code like helpers or utilities.
 snippet stest "Simple test setup" b
-import $1 from '../$1'
+import `!v expand('%:t:r:r')` from '../`!v expand('%:t:r:r')`'
 
-test('$2', () => {
+test('${1:What does it test?}', () => {
 	$3
 })
 endsnippet
 
-# # Jest describe
-#
-# Creates a `describe` block for testing in Jest
+# Create a `describe` block for testing in Jest
 snippet desc "Jest describe" b
 describe('${1:What does it describe?}', () => {
 	$0
 })
 endsnippet
 
-# # Jest describe / test
-#
-# Creates a `describe` block and a `test` block for testing in Jest
-snippet desct "Jest describe with test" b
+# Create a `describe` block and a `test` block for testing in Jest
+snippet desct "Jest describe / test" b
 describe('${1:What does it describe?}', () => {
 	test('${2:What does it test?}', () => {
 		$0
@@ -88,44 +90,34 @@ describe('${1:What does it describe?}', () => {
 })
 endsnippet
 
-# # Jest test
-#
-# Creates a `test` block for testing in Jest
+# Create a `test` block for testing in Jest
 snippet test "Jest test" b
 test('${1:What does it test?}', () => {
 	$0
 })
 endsnippet
 
-# # Jest async test
-#
-# Creates an asynchronous `test` block for testing in Jest
-snippet testa "Jest test async" b
+# Create an asynchronous `test` block for testing in Jest
+snippet testa "Jest async test" b
 test('${1:What does it test?}', async () => {
 	$0
 })
 endsnippet
 
-# # Jest beforeEach
-#
-# Creates a `beforeEach` block for doing some **setup** before each test in Jest
+# Create a `beforeEach` block for doing some **setup** before each test in Jest
 snippet bef "Jest beforeEach" b
 beforeEach(() => {
 	$0
 })
 endsnippet
 
-# # Jest afterEach
-#
-# Creates a `afterEach` block for doing some **cleanup** after each test in Jest
+# Create a `afterEach` block for doing some **cleanup** after each test in Jest
 snippet aef "Jest afterEach" b
 afterEach(() => {
 	$0
 })
 endsnippet
 
-# # Jest automatic mock
-#
 # Create an [automatic
 # mock](https://jestjs.io/docs/en/mock-functions#mocking-modules) of the module
 # or file
@@ -133,9 +125,7 @@ snippet amock "Jest auto mock" b
 jest.mock('${1:package name or path to file}')
 endsnippet
 
-# # Jest mock
-#
-# Creates a mock with an open object for specifying what to mock in the module
+# Create a mock with an open object for specifying what to mock in the module
 # or file
 snippet mock "Jest mock" b
 jest.mock('${1:package name or path to file}', () => ({
@@ -195,16 +185,12 @@ snippet fclick "Testing Library - fireEvent.click"
 fireEvent.click($1)
 endsnippet
 
+# Call to console.log
+#
+# Probably my most used snippet. The name `clog` is so stuck in my head for "I
+# want to print something" that I usually create a `clog` snippet in every new language I use.
 snippet clog "console.log"
 console.log(${1:data})
-endsnippet
-
-snippet imr "Import React" b
-import React from 'react'
-endsnippet
-
-snippet imra "Import React" b
-import * as React from 'react'
 endsnippet
 
 snippet slr "Functional component" b
@@ -213,41 +199,24 @@ const ${1:`!v expand('%:t:r')`} = () => {
 }
 endsnippet
 
-snippet fslr "Full functional component" b
+# Create a simple React component. With the help of `!v expand('%:t:r')` we get
+# the filename automatically expanded when we trigger the snippet
+#
+# ## Explanation of `!v expand('%:t:r')`
+# 
+# - `%:t` - Get the entire filename with extensions (`Component.js`) 
+# - `%:r` - Strip away one file extension (`Component`) 
+snippet fslr "React component" b
 import React from 'react'
 
-const `!v expand('%:t:r')` = function `!v expand('%:t:r')`() {
-	return <div>${1:Test}</div>
+const `!v expand('%:t:r')` = () => {
+	return <div>${1:Component content}</div>
 }
 
 export default `!v expand('%:t:r')`
 endsnippet
 
-snippet qslr "Full functional component" b
-import React from 'react'
-import { useQuery } from '@apollo/client'
-
-const `!v expand('%:t:r')` = function `!v expand('%:t:r')`() => {
-	const { data, loading, error } = useQuery($1, {
-		variables: {
-			$2		
-		},
-	})
-
-	if (loading) {
-		return null
-	}
-
-	if (error) {
-		throw new Error(error)
-	}
-	
-	return <div>Test</div>
-}
-
-export default `!v expand('%:t:r')`
-endsnippet
-
+# Add a React Context
 snippet prov "Provider context"
 import React from 'react'
 
@@ -262,40 +231,45 @@ export const $1Provider = function $1Provider({ children }) {
 }
 endsnippet
 
+# Add a React `useState` hook
 snippet ush "State hook" b
-const [state, setState] = React.useState($1)
+const [${2:state}, ${3:setState}] = React.useState(${1:initial state})
 endsnippet
 
-snippet ueh1 "Use Effect 1" b
+# Add a React `useEffect` hook
+snippet ueh1 "Use effect" b
 React.useEffect(() => {
 	$2
-},[$1])
+}, [${1:dependencies}])
 endsnippet
 
-snippet imex "Import / Export" b
-import $1 from './$1';
-
-export default $1;
-endsnippet
-
-snippet improps "Import PropTypes" b
-import PropTypes from 'prop-types';
-endsnippet
-
+# Add `propTypes` for a component. Auto-expands with the filename
+#
+# ## Explanation of `!v expand('%:t:r')`
+# 
+# - `%:t` - Get the entire filename with extensions (`Component.js`) 
+# - `%:r` - Strip away one file extension (`Component`) 
 snippet props "PropTypes"
 `!v expand('%:t:r')`.propTypes = {
 	$1: $2
 }
 endsnippet
 
+# Add `defaultProps` for a component. Auto-expands with the filename
+#
+# ## Explanation of `!v expand('%:t:r')`
+# 
+# - `%:t` - Get the entire filename with extensions (`Component.js`) 
+# - `%:r` - Strip away one file extension (`Component`) 
 snippet dprops "Default props"
 `!v expand('%:t:r')`.defaultProps = {
-	$1: $2
+	${1:key}: ${2:value}
 }
 endsnippet
 
+# Create a component using `styled-components`
 snippet styc "Styled component" b
-const $1 = styled.$2\`
+const ${1:ComponentName} = styled.${2:Element}\`
 	$3
 \`
 endsnippet
@@ -310,13 +284,35 @@ interface $1 {
 }
 endsnippet
 
+# Import the **default** export of a package or file
 snippet imp "Import default" b
 import $2 from '$1'
 endsnippet
 
+# Import a **named** export of a package or file
 snippet im "Import named" b
-import { $2 } from '$1'
+import { $2 } from '$1'
 endsnippet
+
+snippet imex "Import / Export" b
+import $1 from './$1';
+
+export default $1;
+endsnippet
+
+snippet improps "Import PropTypes" b
+import PropTypes from 'prop-types';
+endsnippet
+
+# Import React
+snippet imr "Import React" b
+import React from 'react'
+endsnippet
+
+snippet imra "Import React" b
+import * as React from 'react'
+endsnippet
+
 
 snippet if "If"
 if ($1) {
