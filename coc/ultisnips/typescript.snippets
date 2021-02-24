@@ -232,8 +232,15 @@ export const $1Provider = function $1Provider({ children }) {
 endsnippet
 
 # Add a React `useState` hook
+#
+# The name of the setter will be named automatically based on the name of the
+# `state` variable. For example if you change `state` to `displayText`, the setter will
+# automatically be named `setDisplayText`.
+#
+# - `$1` - Initial state
+# - `$2` - Name of the state variable
 snippet ush "State hook" b
-const [${2:state}, ${3:setState}] = React.useState(${1:initial state})
+const [${2:state}, set`!p snip.rv = t[2].title()`] = React.useState(${1:initial state})
 endsnippet
 
 # Add a React `useEffect` hook
