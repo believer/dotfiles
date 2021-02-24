@@ -1,3 +1,10 @@
+## [1.28.1](https://github.com/believer/dotfiles/compare/v1.28.0...v1.28.1) (2021-02-24)
+
+
+### Bug Fixes
+
+* **snippets:** rescript string inside word ([bbe4a87](https://github.com/believer/dotfiles/commit/bbe4a87d026cf148de67cfa1e7d5861e0306a7a0))
+
 # [1.28.0](https://github.com/believer/dotfiles/compare/v1.27.0...v1.28.0) (2021-02-23)
 
 
