@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/believer/dotfiles/compare/v1.28.1...v1.29.0) (2021-02-25)
+
+
+### Features
+
+* add function to remove .DS_Store files ([bc4c4ff](https://github.com/believer/dotfiles/commit/bc4c4ff7d8478eafe5dce762063b30a3d5ec1d58))
+
 ## [1.28.1](https://github.com/believer/dotfiles/compare/v1.28.0...v1.28.1) (2021-02-24)
 
 
