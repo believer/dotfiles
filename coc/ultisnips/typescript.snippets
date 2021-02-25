@@ -74,6 +74,11 @@ endsnippet
 
 # Create a basic test setup that's useful for testing simple JavaScript
 # code like helpers or utilities.
+#
+# **Jump sequence:**
+#
+# - `$1` - Test description
+# - `$0` - Test content
 snippet stest "Simple test setup" b
 import `!v expand('%:t:r:r')` from '../`!v expand('%:t:r:r')`'
 
@@ -83,6 +88,11 @@ test('${1:What does it test?}', () => {
 endsnippet
 
 # Create a `describe` block for testing in Jest
+#
+# **Jump sequence:**
+#
+# - `$1` - Describe description
+# - `$0` - Describe content
 snippet desc "Jest describe" b
 describe('${1:What does it describe?}', () => {
 	$0
@@ -90,6 +100,12 @@ describe('${1:What does it describe?}', () => {
 endsnippet
 
 # Create a `describe` block and a `test` block for testing in Jest
+#
+# **Jump sequence:**
+#
+# - `$1` - Describe description
+# - `$2` - Test description
+# - `$0` - Test content
 snippet desct "Jest describe / test" b
 describe('${1:What does it describe?}', () => {
 	test('${2:What does it test?}', () => {
@@ -99,6 +115,11 @@ describe('${1:What does it describe?}', () => {
 endsnippet
 
 # Create a `test` block for testing in Jest
+#
+# **Jump sequence:**
+#
+# - `$1` - Test description
+# - `$0` - Test content
 snippet test "Jest test" b
 test('${1:What does it test?}', () => {
 	$0
@@ -106,6 +127,11 @@ test('${1:What does it test?}', () => {
 endsnippet
 
 # Create an asynchronous `test` block for testing in Jest
+#
+# **Jump sequence:**
+#
+# - `$1` - Test description
+# - `$0` - Test content
 snippet testa "Jest async test" b
 test('${1:What does it test?}', async () => {
 	$0
@@ -113,6 +139,10 @@ test('${1:What does it test?}', async () => {
 endsnippet
 
 # Create a `beforeEach` block for doing some **setup** before each test in Jest
+#
+# **Jump sequence:**
+#
+# - `$0` - `beforeEach` content
 snippet bef "Jest beforeEach" b
 beforeEach(() => {
 	$0
@@ -120,6 +150,10 @@ beforeEach(() => {
 endsnippet
 
 # Create a `afterEach` block for doing some **cleanup** after each test in Jest
+#
+# **Jump sequence:**
+#
+# - `$0` - `afterEach` content
 snippet aef "Jest afterEach" b
 afterEach(() => {
 	$0
@@ -149,47 +183,83 @@ snippet expb "Jest - Expect toBe" b
 expect($1).toBe($2)
 endsnippet
 
-snippet tbcw "Jest - Expect toHaveBeenCalledWith" b
+snippet tbcw "Jest - Expect toHaveBeenCalledWith" bA
 expect($1).toHaveBeenCalledWith($2)
 endsnippet
 
-snippet tbct "Jest - Expect toHaveBeenCalledTimes" b
+snippet tbct "Jest - Expect toHaveBeenCalledTimes" bA
 expect($1).toHaveBeenCalledTimes($2)
 endsnippet
 
-snippet expm "Jest - Expect toMatchSnapshot" b
+snippet expm "Jest - Expect toMatchSnapshot" bA
 expect($1).toMatchSnapshot($2)
 endsnippet
 
+# Asserts that the given value **can** be found in the document. This uses custom
+# matchers from [jest-dom](https://github.com/testing-library/jest-dom) that
+# need to be added to your Jest setup in order to work correctly.
+#
+# **Jump sequence:**
+#
+# - `$1` - DOM element (tip: use `sgbt`)
 snippet expdoc "Jest - Expect toBeInTheDocumento" bA
-expect($1).toBeInTheDocument($2)
+expect($1).toBeInTheDocument()
 endsnippet
 
+# Asserts that the given value **can't** be found in the document. This uses custom
+# matchers from [jest-dom](https://github.com/testing-library/jest-dom) that
+# need to be added to your Jest setup in order to work correctly.
+#
+# **Jump sequence:**
+#
+# - `$1` - DOM element (tip: use `sqbt`)
 snippet expndoc "Jest - Expect not toBeInTheDocument" bA
-expect($1).not.toBeInTheDocument($2)
+expect($1).not.toBeInTheDocument()
 endsnippet
 
+# Like the name implies `getByText` finds an element by it's text. If it can't
+# find an element that matches it'll throw an error. If you need something that
+# won't throw an error look at `sqbt`.
+#
+# **Jump sequence:**
+#
+# - `$1` - Text to find
 snippet sgbt "Testing Library - screen.getByText" wA
 screen.getByText(/$1/i)
 endsnippet
 
-snippet sqbt "Testing Library - screen.queryByText" w
+# `queryByText`, unlike `getByText`, does **not throw an error** if the element
+# can't be found. This make it perfect to use when you expect something to **not
+# exist** in the document (see `expndoc`).
+#
+# **Jump sequence:**
+#
+# - `$1` - Text to find
+snippet sqbt "Testing Library - screen.queryByText" wA
 screen.queryByText(/$1/i)
 endsnippet
 
-snippet sgbr "Testing Library - screen.getByRole" w
-screen.getByRole($1, { name: /$2/i })
+# Useful for getting things like buttons and link by their implicit role in
+# html. This way we also get a free assertion that the element has been set up
+# correctly.
+#
+# **Jump sequence:**
+#
+# - `$1` - ARIA role
+# - `$2` - Name of the element
+snippet sgbr "Testing Library - screen.getByRole" wA
+screen.getByRole('$1', { name: /$2/i })
 endsnippet
 
-snippet sgbat "Testing Library - screen.getByAltText" w
+snippet sgbat "Testing Library - screen.getByAltText" wA
 screen.getByAltText(/$1/i)
 endsnippet
 
-snippet sgbl "Testing Library - screen.getByAltText" w
+snippet sgbl "Testing Library - screen.getByAltText" wA
 screen.getByLabelText(/$1/i)
 endsnippet
 
-snippet fclick "Testing Library - fireEvent.click"
+snippet fclick "Testing Library - fireEvent.click"A
 fireEvent.click($1)
 endsnippet
 
@@ -197,6 +267,10 @@ endsnippet
 #
 # Probably my most used snippet. The name `clog` is so stuck in my head for "I
 # want to print something" that I usually create a `clog` snippet in every new language I use.
+#
+# **Jump sequence:**
+#
+# - `$1` - What to log
 snippet clog "console.log"
 console.log(${1:data})
 endsnippet
@@ -265,6 +339,11 @@ const [${2:state}, set`!p snip.rv = t[2][:1].upper() + t[2][1:]`] = React.useSta
 endsnippet
 
 # Add a React `useEffect` hook
+#
+# **Jump sequence:**
+#
+# - `$1` - Dependencies of the useEffect
+# - `$2` - useEffect content
 snippet ueh1 "Use effect" b
 React.useEffect(() => {
 	$2
@@ -277,6 +356,11 @@ endsnippet
 # 
 # - `%:t` - Get the entire filename with extensions (`Component.js`) 
 # - `%:r` - Strip away one file extension (`Component`) 
+#
+# **Jump sequence:**
+#
+# - `$1` - Key of prop
+# - `$2` - React PropType (tip: use `improps` to import PropTypes)
 snippet props "PropTypes"
 `!v expand('%:t:r')`.propTypes = {
 	$1: $2
@@ -349,6 +433,7 @@ import $1 from './$1';
 export default $1;
 endsnippet
 
+# Import prop-types library
 snippet improps "Import PropTypes" b
 import PropTypes from 'prop-types';
 endsnippet
