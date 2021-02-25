@@ -13,6 +13,10 @@
 # - `%:t` - Get the entire filename with extensions (`Component.test.js`) 
 # - `%:r` - Strip away one file extension (`Component.test`) 
 # - `%:r` - Strip away one file extension (`Component`) 
+#
+# **Jump sequence:**
+#
+# - `$1` - Test description
 snippet rtest "React test" b
 import React from 'react'
 import { render, screen } from '@testing-library/react'
@@ -44,6 +48,10 @@ endsnippet
 # - `%:t` - Get the entire filename with extensions (`Component.test.js`) 
 # - `%:r` - Strip away one file extension (`Component.test`) 
 # - `%:r` - Strip away one file extension (`Component`) 
+#
+# **Jump sequence:**
+#
+# - `$1` - Test description
 snippet rtest2 "React test with setup" b
 import React from 'react'
 import { render, screen } from '@testing-library/react'
@@ -206,6 +214,10 @@ endsnippet
 # 
 # - `%:t` - Get the entire filename with extensions (`Component.js`) 
 # - `%:r` - Strip away one file extension (`Component`) 
+#
+# **Jump sequence:**
+#
+# - `$1` - Content of component
 snippet fslr "React component" b
 import React from 'react'
 
@@ -217,6 +229,12 @@ export default `!v expand('%:t:r')`
 endsnippet
 
 # Add a React Context
+#
+# **Jump sequence:**
+#
+# - `$1` - Context name
+# - `$2` - Default value of context
+# - `$3` - Context value
 snippet prov "Provider context"
 import React from 'react'
 
@@ -237,6 +255,8 @@ endsnippet
 # `state` variable. For example, if you change `state` to `displayText`, the setter will
 # automatically be named `setDisplayText`. This uses Python to
 # uppercase the first letter of `state` variable.
+#
+# **Jump sequence:**
 #
 # - `$1` - Initial state
 # - `$2` - Name of the state variable
@@ -269,6 +289,11 @@ endsnippet
 # 
 # - `%:t` - Get the entire filename with extensions (`Component.js`) 
 # - `%:r` - Strip away one file extension (`Component`) 
+#
+# **Jump sequence:**
+#
+# - `$1` - Key of first prop
+# - `$2` - Value of first prop
 snippet dprops "Default props"
 `!v expand('%:t:r')`.defaultProps = {
 	${1:key}: ${2:value}
@@ -276,8 +301,14 @@ snippet dprops "Default props"
 endsnippet
 
 # Create a component using `styled-components`
+#
+# **Jump sequence:**
+#
+# - `$1` - Component name
+# - `$2` - Element type (div, a, img..)
+# - `$3` - CSS declarations for component
 snippet styc "Styled component" b
-const ${1:ComponentName} = styled.${2:Element}\`
+const ${1:ComponentName} = styled.${2:element}\`
 	$3
 \`
 endsnippet
@@ -293,11 +324,21 @@ interface $1 {
 endsnippet
 
 # Import the **default** export of a package or file
+#
+# **Jump sequence:**
+#
+# - `$1` - Package name or file name
+# - `$2` - Name of **default** import
 snippet imp "Import default" b
 import $2 from '$1'
 endsnippet
 
 # Import a **named** export of a package or file
+#
+# **Jump sequence:**
+#
+# - `$1` - Package name or file name
+# - `$2` - Name of **named** import
 snippet im "Import named" b
 import { $2 } from '$1'
 endsnippet
