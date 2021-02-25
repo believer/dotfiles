@@ -17,6 +17,11 @@ kill_port() {
   lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9;
 }
 
+# Remove any .DS_Store files recursively inside the current directory
+ds_store() {
+  find . -name '.DS_Store' -type f -delete
+}
+
 shorten_url() {
   if [ -n "$1" ]
   then
