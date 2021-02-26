@@ -1,6 +1,6 @@
 {
   "name": "dotfiles",
-  "version": "1.29.0",
+  "version": "1.29.1",
   "description": "My dotfiles",
   "main": "index.js",
   "repository": {

@@ -1,3 +1,10 @@
+## [1.29.1](https://github.com/believer/dotfiles/compare/v1.29.0...v1.29.1) (2021-02-26)
+
+
+### Bug Fixes
+
+* remove t from formatoptions ([96de1b0](https://github.com/believer/dotfiles/commit/96de1b0ad1af28dd7b928e2273148bcee2850f12))
+
 # [1.29.0](https://github.com/believer/dotfiles/compare/v1.28.1...v1.29.0) (2021-02-25)
 
 
