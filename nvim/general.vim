@@ -65,6 +65,7 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 " Text wrapping
 set textwidth=80
 set formatoptions-=l
+set formatoptions-=t
 set wrap linebreak nolist
 
 " Display things that will change from a substitute command
