@@ -1,3 +1,10 @@
+## [1.29.4](https://github.com/believer/dotfiles/compare/v1.29.3...v1.29.4) (2021-03-01)
+
+
+### Bug Fixes
+
+* **snippets:** link to pattern match ([25d3b0b](https://github.com/believer/dotfiles/commit/25d3b0bbc4da4d8969cea79ccde60e7756f5d72b))
+
 ## [1.29.3](https://github.com/believer/dotfiles/compare/v1.29.2...v1.29.3) (2021-03-01)
 
 
