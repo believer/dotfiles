@@ -1,6 +1,3 @@
-# ----------------------------------------------------------
-# Hooks
-# ----------------------------------------------------------
 snippet ush "useState"
 let ($1, $2) = React.useState(() => ${3:initialValue});
 endsnippet
@@ -78,9 +75,6 @@ let make = () => {
 };
 endsnippet
 
-# ----------------------------------------------------------
-# Components
-# ----------------------------------------------------------
 snippet mod "Module" b
 module $1 = {
 	$2
@@ -168,9 +162,6 @@ snippet swcr "Switch statement - React"
 }}
 endsnippet
 
-# ----------------------------------------------------------
-# Logging
-# ----------------------------------------------------------
 snippet clog "Console log"
 Js.log(${1:data});
 endsnippet
@@ -183,9 +174,6 @@ snippet clog3 "Console log 3"
 Js.log3(${1:data}, ${2:data}, ${3:data});
 endsnippet
 
-# ----------------------------------------------------------
-# Styling
-# ----------------------------------------------------------
 snippet style "Style module" b
 module Style = {
 	open Css;
@@ -202,9 +190,6 @@ snippet twc "Tailwind class"
 className=[%tw "$1"]
 endsnippet
 
-# ----------------------------------------------------------
-# Testing
-# ----------------------------------------------------------
 snippet rtest "Basic test setup"
 open Jest;
 open Expect;
@@ -248,19 +233,11 @@ snippet	expm "Jest - Expect toMatchSnapshot"
 expect($1) |> toMatchSnapshot($2)
 endsnippet
 
-# ----------------------------------------------------------
-# React Native 
-# ----------------------------------------------------------
-
 snippet rnstyle "Style"
 style=Style.(
 	style(~$1, ())
 )
 endsnippet
-
-# ----------------------------------------------------------
-# Reason Native 
-# ----------------------------------------------------------
 
 snippet print "Print"
 print_endline($1);

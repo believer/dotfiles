@@ -1,40 +1,62 @@
+# Log a value to the terminal
+#
+# **Jump sequence:**
+#
+# - `$1` - What to log
 snippet clog "Print"
 println!("{:?}", $1);
 endsnippet
 
+# Add a pattern matching setup with one arm
+#
+# **Jump sequence:**
+#
+# - `$1` - Value to match on
+# - `$2` - Matching pattern
+# - `$3` - Expression
 snippet swc "Match"
 match $1 {
 	$2 => $3,
 }
 endsnippet
 
-# ----------------------------------------------------------
-# Testing
-# 
-
+# Add a test module. It imports the outer module using `use super::*` to
+# simplify testing.
+#
+# **Jump sequence:**
+#
+# - `$1` - Test module contents
 snippet rtest "Test module"
 #[cfg(test)]
 mod tests {
 	use super::*;
 
-	$2
+	$1
 }
 endsnippet
 
+# Add a test
+#
+# **Jump sequence:**
+#
+# - `$1` - Test name
+# - `$2` - Test contents
 snippet test "Test"
 #[test]
-fn $1() {
+fn ${1:test_name}() {
 	$2
 }
 endsnippet
 
+# Add an equals assertion
+#
+# **Jump sequence:**
+#
+# - `$1` - Assertion
+# - `$2` - Expected output
 snippet exp "Assert equal"
 assert_eq!($1, $2)
 endsnippet
-
-# ----------------------------------------------------------
-# Advent of Code
-# 
 
 snippet aoc "Advent of Code"
 use crate::common;
