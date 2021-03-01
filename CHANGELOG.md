@@ -1,3 +1,10 @@
+## [1.29.3](https://github.com/believer/dotfiles/compare/v1.29.2...v1.29.3) (2021-03-01)
+
+
+### Bug Fixes
+
+* **snippets:** getByLabelText title ([3df3551](https://github.com/believer/dotfiles/commit/3df35517ae9eb1fd1c984fa7b78128812cb27731))
+
 ## [1.29.2](https://github.com/believer/dotfiles/compare/v1.29.1...v1.29.2) (2021-03-01)
 
 
