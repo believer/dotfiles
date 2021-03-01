@@ -1,29 +1,69 @@
+# Add a React
+# [`useState`](https://reactjs.org/docs/hooks-reference.html#usestate) hook.
+# Note that unlike JavaScript (see [`javascript/ush`](/javascript/ush)) this
+# returns a `tuple`.
+#
+# The name of the setter will be named automatically based on the name of the
+# `state` variable. For example, if you change `state` to `displayText`, the setter will
+# automatically be named `setDisplayText`. This uses Python to
+# uppercase the first letter of `state` variable.
+#
+# **Jump sequence:**
+#
+# - `$1` - Initial state
+# - `$2` - Name of the state variable
 snippet ush "useState"
-let ($1, $2) = React.useState(() => ${3:initialValue});
+let (${2:state}, set`!p snip.rv = t[2][:1].upper() + t[2][1:]`) = React.useState(() => ${1:initialValue})
 endsnippet
 
+# Add a React
+# [`useEffect`](https://reactjs.org/docs/hooks-reference.html#usestate) hook.
+# `useEffect0` maps to the JavaScript version with an **empty array** (`[]`) as the
+# only dependency. This means that it only runs **once** right after mounting.
+#
+# **Jump sequence:**
+#
+# - `$1` - useEffect contents
 snippet ueh "useEffect"
 React.useEffect0(() => {
 	$1
 
-	None;
-});
+	None
+})
 endsnippet
 
+# Add a React
+# [`useEffect`](https://reactjs.org/docs/hooks-reference.html#usestate) hook.
+# `useEffect1` maps to the JavaScript version with **only one** dependency. This
+# means that it will only update when that one prop changes.
+#
+# **Jump sequence:**
+#
+# - `$1` - useEffect dependency
+# - `$2` - useEffect contents
 snippet ueh1 "useEffect 1"
 React.useEffect1(() => {
 	$2
 
-	None;
-}, [|$1|]);
+	None
+}, [$1])
 endsnippet
 
+# Add a React
+# [`useEffect`](https://reactjs.org/docs/hooks-reference.html#usestate) hook.
+# `useEffect2` maps to the JavaScript version with **only two** dependency.
+#
+# **Jump sequence:**
+#
+# - `$1` - First dependency
+# - `$2` - Second dependency
+# - `$3` - useEffect contents
 snippet ueh2 "useEffect 2"
 React.useEffect2(() => {
 	$3
 
-	None;
-}, ($1, $2));
+	None
+}, ($1, $2))
 endsnippet
 
 snippet urh "useReducer"
@@ -150,18 +190,59 @@ snippet enc "Encoded string" w
 {j|$1|j}
 endsnippet
 
+# Add a [pattern
+# matcher](https://rescript-lang.org/docs/manual/latest/pattern-matching-destructuring#switch-based-on-shape-of-data).
+# Works with a bunch of values like strings, arrays, variants (see
+# [`vtype`](/reason/vtype)), polymorphic variants (see
+# [`pvtype`](/reason/pvtype)), and more.
+#
+# Pattern matching is a great part of ReScript that's hard to live without after
+# you've gotten used to it. We also get exhaustiveness checks from the compiler
+# which tells us if we've missed covering any cases.
+#
+# **Jump sequence:**
+#
+# - `$1` - Value to pattern match on
+# - `$2` - Case that matches our pattern
+# - `$3` - Output if the case matches
 snippet swc "Switch statement"
 switch $1 {
 	| $2 => $3
 }
 endsnippet
 
+# Add a [pattern
+# matcher](https://rescript-lang.org/docs/manual/latest/pattern-matching-destructuring#switch-based-on-shape-of-data).
+# Works with a bunch of values like strings, arrays, variants (see
+# [`vtype`](/reason/vtype)), polymorphic variants (see
+# [`pvtype`](/reason/pvtype)), and more.
+#
+# Pattern matching is a great part of ReScript that's hard to live without after
+# you've gotten used to it. We also get exhaustiveness checks from the compiler
+# which tells us if we've missed covering any cases. [`pvtype`](/reason/pvtype)), and more.
+#
+# The pattern match is wrapped in curly brackets so that we can use it inside
+# React JSX.
+#
+# **Jump sequence:**
+#
+# - `$1` - Value to pattern match on
+# - `$2` - Case that matches our pattern
+# - `$3` - Output if the case matches
 snippet swcr "Switch statement - React"
-{switch ($1) {
+{switch $1 {
 	| $2 => $3
 }}
 endsnippet
 
+# Call to console.log
+#
+# Probably my most used snippet. The name `clog` is so stuck in my head for "I
+# want to print something" that I usually create a `clog` snippet in every new language I use.
+#
+# **Jump sequence:**
+#
+# - `$1` - What to log
 snippet clog "Console log"
 Js.log(${1:data});
 endsnippet
@@ -241,4 +322,51 @@ endsnippet
 
 snippet print "Print"
 print_endline($1);
+endsnippet
+
+# Add a type signature. The naming defaults to ReScript's type `t`, which
+# by convention means "the main type of a module".
+#
+# **Jump sequence:**
+#
+# - `$1` - Type name, default `t`
+# - `$2` - Key of type
+# - `$3` - Value of type
+snippet type "Default type" 
+type ${1:t} = {
+	${2:key}: ${3:value}
+}
+endsnippet
+
+# Add a [variant type](https://rescript-lang.org/docs/manual/latest/variant). The naming defaults to ReScript's type `t`, which
+# by convention means "the main type of a module".
+#
+# Variants are amazing together with pattern matching (see
+# [`swc`](/reason/src)). Variant constructors **need** to be capitalized.
+#
+# **Jump sequence:**
+#
+# - `$1` - Type name, default `t`
+# - `$2` - Variant name (needs to be capitalized)
+snippet vtype "Variant type"
+type ${1:t} = ${2:Loading}
+endsnippet
+
+# Add a [polymorphic variant type](https://rescript-lang.org/docs/manual/latest/polymorphic-variant). The naming defaults to ReScript's type `t`, which
+# by convention means "the main type of a module".
+#
+# Polymorphic variants don't need to be defined as a type before you can use them.
+# It would be totally valid to use `#Red` without defining it. This snippet creates a __closed
+# polymorphic variant__ which allows us to define exactly which cases are valid.
+#
+# Variants are amazing together with pattern matching (see
+# [`swc`](/reason/src)). Unline variants (see ([`vtype`](/reason/vtype)),
+# polymorphic variants don't need to capitalized.
+#
+# **Jump sequence:**
+#
+# - `$1` - Type name, default `t`
+# - `$2` - Variant name
+snippet pvtype "Polymorphic variant type"
+type ${1:t} = [ #${2:Red} ]
 endsnippet
