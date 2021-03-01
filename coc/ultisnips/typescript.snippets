@@ -93,7 +93,7 @@ endsnippet
 #
 # - `$1` - Describe description
 # - `$0` - Describe content
-snippet desc "Jest describe" b
+snippet desc "Jest - Describe" b
 describe('${1:What does it describe?}', () => {
 	$0
 })
@@ -106,7 +106,7 @@ endsnippet
 # - `$1` - Describe description
 # - `$2` - Test description
 # - `$0` - Test content
-snippet desct "Jest describe / test" b
+snippet desct "Jest - Describe / test" b
 describe('${1:What does it describe?}', () => {
 	test('${2:What does it test?}', () => {
 		$0
@@ -120,7 +120,7 @@ endsnippet
 #
 # - `$1` - Test description
 # - `$0` - Test content
-snippet test "Jest test" b
+snippet test "Jest - Test" b
 test('${1:What does it test?}', () => {
 	$0
 })
@@ -143,7 +143,7 @@ endsnippet
 # **Jump sequence:**
 #
 # - `$0` - `beforeEach` content
-snippet bef "Jest beforeEach" b
+snippet bef "Jest - beforeEach" b
 beforeEach(() => {
 	$0
 })
@@ -154,7 +154,7 @@ endsnippet
 # **Jump sequence:**
 #
 # - `$0` - `afterEach` content
-snippet aef "Jest afterEach" b
+snippet aef "Jest - afterEach" b
 afterEach(() => {
 	$0
 })
@@ -163,13 +163,13 @@ endsnippet
 # Create an [automatic
 # mock](https://jestjs.io/docs/en/mock-functions#mocking-modules) of the module
 # or file
-snippet amock "Jest auto mock" b
+snippet amock "Jest - Auto mock library" b
 jest.mock('${1:package name or path to file}')
 endsnippet
 
 # Create a mock with an open object for specifying what to mock in the module
 # or file
-snippet mock "Jest mock" b
+snippet mock "Jest - Mock library" b
 jest.mock('${1:package name or path to file}', () => ({
 	$0
 }))
@@ -368,7 +368,8 @@ React.useEffect(() => {
 }, [${1:dependencies}])
 endsnippet
 
-# Add `propTypes` for a component. Auto-expands with the filename
+# Add React
+# [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html) for a component. Auto-expands with the filename
 #
 # ## Explanation of `!v expand('%:t:r')`
 # 
