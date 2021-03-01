@@ -218,8 +218,8 @@ expect($1).not.toBeInTheDocument()
 endsnippet
 
 # Like the name implies `getByText` finds an element by it's text. If it can't
-# find an element that matches it'll throw an error. If you need something that
-# won't throw an error look at `sqbt`.
+# find an element that matches it'll **throw an error**. If you need something that
+# won't throw an error look at [`sqbt`](/javascript/sqbt).
 #
 # **Jump sequence:**
 #
@@ -239,9 +239,9 @@ snippet sqbt "Testing Library - screen.queryByText" wA
 screen.queryByText(/$1/i)
 endsnippet
 
-# Useful for getting things like buttons and link by their implicit role in
-# html. This way we also get a free assertion that the element has been set up
-# correctly.
+# Useful for getting things like buttons and links by their implicit role in
+# HTML. This way we also get a free assertion that the element has been set up
+# correctly in regards to accessibility.
 #
 # **Jump sequence:**
 #
@@ -251,14 +251,32 @@ snippet sgbr "Testing Library - screen.getByRole" wA
 screen.getByRole('$1', { name: /$2/i })
 endsnippet
 
+# `getByAltText` finds an image by it's `alt` text. This will help with
+# accessibility.
+#
+# **Jump sequence:**
+#
+# - `$1` - Image alt attribute
 snippet sgbat "Testing Library - screen.getByAltText" wA
 screen.getByAltText(/$1/i)
 endsnippet
 
+# `getByLabelText` is perfect when testing forms. By getting form inputs using
+# their associated label you get free assertions that your form is accessible.
+#
+# **Jump sequence:**
+#
+# - `$1` - Label text
 snippet sgbl "Testing Library - screen.getByAltText" wA
 screen.getByLabelText(/$1/i)
 endsnippet
 
+# Click an element in the DOM. Use this together with for instance
+# [`sgbt`](/javascript/sgbt) or [`sgbr`](/javascript/sgbr).
+#
+# **Jump sequence:**
+#
+# - `$1` - Element selector
 snippet fclick "Testing Library - fireEvent.click" A
 fireEvent.click($1)
 endsnippet
