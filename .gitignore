@@ -21,6 +21,7 @@ coc/history.json
 coc/extensions/db.json
 configstore
 coc/commands
+coc/snippets-mru
 
 # Lazygit
 jesseduffield
