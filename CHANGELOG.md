@@ -1,3 +1,10 @@
+## [1.29.2](https://github.com/believer/dotfiles/compare/v1.29.1...v1.29.2) (2021-03-01)
+
+
+### Bug Fixes
+
+* run function ([75b20b0](https://github.com/believer/dotfiles/commit/75b20b0963d7aa6b7f822f4d13f87482ce3bc98f))
+
 ## [1.29.1](https://github.com/believer/dotfiles/compare/v1.29.0...v1.29.1) (2021-02-26)
 
 
