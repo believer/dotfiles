@@ -61,6 +61,9 @@ nmap <leader>A <Plug>CtrlSFCwordPath -W<CR>
 vnoremap <leader>y "*y
 
 " Fern.vim
+let hide_dirs  = '^\%(\.git\|node_modules\)$'
+let g:fern#default_exclude = hide_dirs
+
 "" Toggle drawer
 noremap <leader>d :Fern . -drawer -width=35 -toggle<CR><C-w>=
 
@@ -79,5 +82,5 @@ nnoremap <leader>b :BufOnly<CR>
 " diw - Delete inside word to be anywhere in attribute name
 " x - Remove =
 " da" - Remove attribute value
-nnoremap <leader>da diwxda"<Cr>
+nnoremap <leader>ad diwxda"<Cr>
 
