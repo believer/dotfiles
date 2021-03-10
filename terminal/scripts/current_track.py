@@ -20,8 +20,10 @@ if __name__ == '__main__':
         position = track['position'][2:]
         duration = track['duration'][2:]
 
-        print(artist + " - " + name + " (" + album + ") (" + position + " / " + duration + ")")
-
+        if album:
+            print(artist + " - " + name + " (" + album + ") (" + position + " / " + duration + ")")
+        else:
+            print(artist + " - " + name + " (" + position + " / " + duration + ")")
 
 
 
