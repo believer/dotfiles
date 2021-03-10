@@ -1,3 +1,11 @@
+## [1.29.5](https://github.com/believer/dotfiles/compare/v1.29.4...v1.29.5) (2021-03-10)
+
+
+### Bug Fixes
+
+* change delete attribute to <leader>ad ([ffcd078](https://github.com/believer/dotfiles/commit/ffcd07882b1a148091349627d4ba2bd7f3d50253))
+* **sonos:** remove album if it doesnt exist in now playing ([15fe26d](https://github.com/believer/dotfiles/commit/15fe26dd103e3fcd896a448fbd661711247bd15c))
+
 ## [1.29.4](https://github.com/believer/dotfiles/compare/v1.29.3...v1.29.4) (2021-03-01)
 
 
