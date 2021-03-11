@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/believer/dotfiles/compare/v1.29.5...v1.30.0) (2021-03-11)
+
+
+### Features
+
+* add alias for yarn upgrade ([14b28b5](https://github.com/believer/dotfiles/commit/14b28b52558c43ee01b71de017179331f28894e1))
+
 ## [1.29.5](https://github.com/believer/dotfiles/compare/v1.29.4...v1.29.5) (2021-03-10)
 
 
