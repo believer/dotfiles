@@ -118,3 +118,12 @@ let g:startify_change_to_dir = 0 " Keep CWD when using actions
 "" Markdown
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
+
+"" FastFold
+set sessionoptions-=folds
+
+let g:markdown_folding = 1
+let g:xml_syntax_folding = 1
+let g:javaScript_fold = 1
+let g:ruby_fold = 1
+let g:rust_fold = 1
