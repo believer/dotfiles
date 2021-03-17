@@ -1,3 +1,10 @@
+## [1.30.1](https://github.com/believer/dotfiles/compare/v1.30.0...v1.30.1) (2021-03-17)
+
+
+### Bug Fixes
+
+* enable fastfold ([cf0983c](https://github.com/believer/dotfiles/commit/cf0983c37d9952663495d913185e8da2e7b7fb32))
+
 # [1.30.0](https://github.com/believer/dotfiles/compare/v1.29.5...v1.30.0) (2021-03-11)
 
 
