@@ -55,3 +55,7 @@ augroup rescript
   autocmd FileType rescript nnoremap <silent> <buffer> K :RescriptTypeHint<CR>
   autocmd FileType rescript nnoremap <silent> <buffer> gd :RescriptJumpToDefinition<CR>
 augroup END
+
+" Code actions
+xmap <leader>i <Plug>(coc-codeaction-line)
+nmap <leader>i <Plug>(coc-codeaction-line)
