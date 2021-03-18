@@ -1,3 +1,15 @@
+# [1.31.0](https://github.com/believer/dotfiles/compare/v1.30.1...v1.31.0) (2021-03-18)
+
+
+### Bug Fixes
+
+* **snippets:** fix rtest snippet ([c58c366](https://github.com/believer/dotfiles/commit/c58c3666fa12fcbe774414def13f1cd9109d6d02))
+
+
+### Features
+
+* **coc:** add mapping for code action on line ([16a2c14](https://github.com/believer/dotfiles/commit/16a2c1414d6f5c7ec6ea0b7acc86d8dc0437d03e))
+
 ## [1.30.1](https://github.com/believer/dotfiles/compare/v1.30.0...v1.30.1) (2021-03-17)
 
 
