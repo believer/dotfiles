@@ -162,6 +162,27 @@ afterEach(() => {
 })
 endsnippet
 
+snippet asmock "Create function as a Jest mock"
+;($1 as jest.Mock).mockResolvedValueOnce($2)
+endsnippet
+
+snippet asmocki "Create function as a Jest mock"
+;($1 as jest.Mock).mockImplementation(() => $2)
+endsnippet
+
+# TypeScript will complain that the original implementation doesn't contain
+# values for mocked functions. This casts the mocked function as a `jest.Mock`
+# and we get access to all functions on the mock.
+# 
+# **Jump sequence:**
+#
+# - `$1` - Name of the function that is mocked
+# - `$2` - Data to return
+snippet asmockr "Create mock implementation as a Jest mock"
+;(${1:function} as jest.Mock).mockReturnValue(${2:data})
+endsnippet
+
+
 # Create an [automatic
 # mock](https://jestjs.io/docs/en/mock-functions#mocking-modules) of the module
 # or file
