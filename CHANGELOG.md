@@ -1,3 +1,10 @@
+## [1.31.1](https://github.com/believer/dotfiles/compare/v1.31.0...v1.31.1) (2021-03-19)
+
+
+### Bug Fixes
+
+* **plugins:** restore vim-easymotion ([25aff35](https://github.com/believer/dotfiles/commit/25aff353d132b94e5ea1be27416511c4fbd1ea96))
+
 # [1.31.0](https://github.com/believer/dotfiles/compare/v1.30.1...v1.31.0) (2021-03-18)
 
 
