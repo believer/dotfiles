@@ -1,3 +1,10 @@
+# [1.32.0](https://github.com/believer/dotfiles/compare/v1.31.1...v1.32.0) (2021-03-19)
+
+
+### Features
+
+* **snippets:** add asmockr to typescript ([fde5120](https://github.com/believer/dotfiles/commit/fde5120f05fa32d80a810fed5bf7a90513264621))
+
 ## [1.31.1](https://github.com/believer/dotfiles/compare/v1.31.0...v1.31.1) (2021-03-19)
 
 
