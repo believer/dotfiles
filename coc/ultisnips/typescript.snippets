@@ -173,6 +173,9 @@ endsnippet
 # TypeScript will complain that the original implementation doesn't contain
 # values for mocked functions. This casts the mocked function as a `jest.Mock`
 # and we get access to all functions on the mock.
+#
+# **Example:** `;(myMockedFunction as jest.Mock).mockReturnValue({
+# data: 'test' })`
 # 
 # **Jump sequence:**
 #
