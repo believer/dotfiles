@@ -3,6 +3,7 @@
 "
 call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim' " Easy html
+  Plug 'easymotion/vim-easymotion' " Jump easily through the buffer and better search
   Plug 'tpope/vim-surround' " Surround words something
   Plug 'tpope/vim-repeat' " Enhance . repeat
   Plug 'SirVer/ultisnips' " Snippets
