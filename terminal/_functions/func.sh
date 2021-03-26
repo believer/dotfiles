@@ -31,19 +31,6 @@ shorten_url() {
   fi
 }
 
-# https://sancho.dev/blog/better-yarn-npm-run/
 run() {
-  if cat package.json > /dev/null 2>&1; then
-    selected_script=$(query-json ".scripts" package.json | sed '1d;$d' | fzf --cycle --height 40% --header="Press ENTER to run the script. ESC to quit." --history="$HOME/.zhistory");
-
-    if [[ -n "$selected_script" ]]; then
-      script_name=$(echo "$selected_script" | awk -F ': ' '{gsub(/"/, "", $1); print $1}' | awk '{$1=$1};1')
-      print -s "npm run "$script_name;
-      npm run $script_name;
-    else
-      echo "Exit: You haven't selected any script"
-    fi
-  else
-    echo "Error: There's no package.json"
-  fi
+  supreme run
 }
