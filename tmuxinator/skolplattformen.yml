@@ -1,12 +1,12 @@
 # /Users/rickardlaurin/.dotfiles/tmuxinator/skolplattformen.yml
 
 name: skolplattformen
-root: ~/code/personal/skolplattformen
+root: ~/code/skolplattformen/skolplattformen
 
 windows:
   - site:
       layout: main-vertical
-      root: ~/code/personal/skolplattformen/packages/site
+      root: ~/code/skolplattformen/skolplattformen/packages/site
       panes:
         - nvim
         - yarn test
@@ -14,10 +14,15 @@ windows:
 
   - app:
       layout: 318c,284x79,0,0{205x79,0,0,265,78x79,206,0[78x36,206,0,268,78x35,206,37,269,78x6,206,73,270]}
-      root: ~/code/personal/skolplattformen/packages/app
+      root: ~/code/skolplattformen/skolplattformen/packages/app
       panes:
         - nvim
-        - yarn test --watch
+        - yarn test
+        -  
+
+  - app-runner:
+      layout: main-vertical
+      root: ~/code/skolplattformen/skolplattformen/packages/app
+      panes:
         - yarn start
         - yarn ios
-
