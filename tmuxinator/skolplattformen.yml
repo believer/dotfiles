@@ -18,7 +18,7 @@ windows:
       panes:
         - nvim
         - yarn test
-        -  
+        - yarn typecheck
 
   - app-runner:
       layout: main-vertical
