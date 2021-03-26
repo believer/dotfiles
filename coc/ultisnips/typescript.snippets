@@ -185,7 +185,6 @@ snippet asmockr "Create mock implementation as a Jest mock"
 ;(${1:function} as jest.Mock).mockReturnValue(${2:data})
 endsnippet
 
-
 # Create an [automatic
 # mock](https://jestjs.io/docs/en/mock-functions#mocking-modules) of the module
 # or file
@@ -492,6 +491,13 @@ snippet imra "Import React" b
 import * as React from 'react'
 endsnippet
 
+snippet imc "Import classnames" b
+import classnames from 'classnames'
+endsnippet
+
+snippet imhcl "Import @hemnet/component-library" b
+import { $1 } from '@hemnet/component-library'
+endsnippet
 
 snippet if "If"
 if ($1) {
