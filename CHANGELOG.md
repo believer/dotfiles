@@ -1,3 +1,10 @@
+# [1.35.0](https://github.com/believer/dotfiles/compare/v1.34.0...v1.35.0) (2021-03-26)
+
+
+### Features
+
+* **mux:** update skolplattformen ([8b90c15](https://github.com/believer/dotfiles/commit/8b90c1591e079d385ae5a10e164a15c46a70f085))
+
 # [1.34.0](https://github.com/believer/dotfiles/compare/v1.33.0...v1.34.0) (2021-03-26)
 
 
