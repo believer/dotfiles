@@ -1,3 +1,12 @@
+# [1.34.0](https://github.com/believer/dotfiles/compare/v1.33.0...v1.34.0) (2021-03-26)
+
+
+### Features
+
+* use supreme run in run cmd ([977a4d3](https://github.com/believer/dotfiles/commit/977a4d3d20ea8fa6ff3e9017f59d714269dbea65))
+* **mux:** update skolplattformen ([36fa69a](https://github.com/believer/dotfiles/commit/36fa69a1bb6f13fa43663102eadf4f8f135e8601))
+* **snippets:** update typescripts snippets ([7a798de](https://github.com/believer/dotfiles/commit/7a798dea7e0fd746b6a3bd03c1ef056d93f5782e))
+
 # [1.33.0](https://github.com/believer/dotfiles/compare/v1.32.0...v1.33.0) (2021-03-19)
 
 
