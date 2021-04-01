@@ -1,3 +1,10 @@
+# [1.36.0](https://github.com/believer/dotfiles/compare/v1.35.0...v1.36.0) (2021-04-01)
+
+
+### Features
+
+* update ni and nisd commands to use supreme ([0a6a127](https://github.com/believer/dotfiles/commit/0a6a127a251003c7b14f48d23f6bf2d60c80619a))
+
 # [1.35.0](https://github.com/believer/dotfiles/compare/v1.34.0...v1.35.0) (2021-03-26)
 
 
