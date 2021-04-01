@@ -34,3 +34,24 @@ shorten_url() {
 run() {
   supreme run
 }
+
+ni() {
+  for pkg in "$@"
+  do
+    supreme install "$pkg"
+  done
+}
+
+nisd() {
+  for pkg in "$@"
+  do
+    supreme install --dev "$pkg"
+  done
+}
+
+nu() {
+  for pkg in "$@"
+  do
+    supreme uninstall "$pkg"
+  done
+}
