@@ -1,3 +1,10 @@
+## [1.37.1](https://github.com/believer/dotfiles/compare/v1.37.0...v1.37.1) (2021-04-06)
+
+
+### Bug Fixes
+
+* remove split below ([0ac082c](https://github.com/believer/dotfiles/commit/0ac082c2c1da8dd08083a2f5c320904f45289f34))
+
 # [1.37.0](https://github.com/believer/dotfiles/compare/v1.36.0...v1.37.0) (2021-04-06)
 
 
