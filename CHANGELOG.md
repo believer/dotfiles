@@ -1,3 +1,10 @@
+# [1.37.0](https://github.com/believer/dotfiles/compare/v1.36.0...v1.37.0) (2021-04-06)
+
+
+### Features
+
+* **vim:** set split behavior ([4957a69](https://github.com/believer/dotfiles/commit/4957a69161707e28b355cc695c74fc076942a4dd))
+
 # [1.36.0](https://github.com/believer/dotfiles/compare/v1.35.0...v1.36.0) (2021-04-01)
 
 
