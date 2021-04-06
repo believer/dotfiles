@@ -1,3 +1,10 @@
+# [1.38.0](https://github.com/believer/dotfiles/compare/v1.37.1...v1.38.0) (2021-04-06)
+
+
+### Features
+
+* **alias:** add git rebase alias ([01dd570](https://github.com/believer/dotfiles/commit/01dd570748f1389dead35ae80b0ec9264e823a21))
+
 ## [1.37.1](https://github.com/believer/dotfiles/compare/v1.37.0...v1.37.1) (2021-04-06)
 
 
