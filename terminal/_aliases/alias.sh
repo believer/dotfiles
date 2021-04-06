@@ -21,6 +21,7 @@ alias gc='git commit'
 alias gp='git push'
 alias ga='git add'
 alias gss='git status --short'
+alias gr='git rebase'
 
 # Kubernetes
 alias k='kubectl -n v2'
