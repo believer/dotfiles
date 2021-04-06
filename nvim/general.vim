@@ -92,3 +92,7 @@ augroup yanking
   autocmd!
   autocmd TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
 augroup END
+
+" Split new buffers to the right and bottom
+set splitbelow
+set splitright
