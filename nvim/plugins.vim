@@ -19,7 +19,6 @@ call plug#begin('~/.vim/plugged')
 
   " Fern.vim - File explorer
   Plug 'lambdalisue/fern.vim'
-  Plug 'lambdalisue/fern-git-status.vim'
   Plug 'antoinemadec/FixCursorHold.nvim' " Fixes performance issues with CursorHold in neovim
 
   " Comments
