@@ -127,3 +127,13 @@ let g:xml_syntax_folding = 1
 let g:javaScript_fold = 1
 let g:ruby_fold = 1
 let g:rust_fold = 1
+
+"" Open today's note of Logseq
+function! OpenToday()
+    let today = strftime('%Y_%m_%d')
+    let todays_journal = today . ".md"
+
+    execute "e ~/Dropbox/Logseq/journals/" . todays_journal
+endfunction
+
+nmap <Leader>ww :call OpenToday()<CR>
