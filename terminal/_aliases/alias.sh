@@ -7,12 +7,12 @@ alias nrs='npm run start'
 alias nrd='npm run dev'
 alias nrt='npm run test'
 alias nout='npm outdated'
-alias nchecku='npx npm-check --update --save-exact'
-alias ychecku='yarn upgrade-interactive --latest'
+alias nchecku='supreme update-dependencies'
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 alias l='ls -1a'
 alias ll='l'
 alias flush-npm='rm -rf node_modules && npm i'
+alias brew-install="brew update && brew upgrade"
 
 # Git
 alias git=hub
