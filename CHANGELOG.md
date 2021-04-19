@@ -1,3 +1,11 @@
+# [1.39.0](https://github.com/believer/dotfiles/compare/v1.38.0...v1.39.0) (2021-04-19)
+
+
+### Features
+
+* add brew-install alias and update nchecku ([79b3439](https://github.com/believer/dotfiles/commit/79b3439f0118d2a03f88131c81b6bdbf8bb2d9b4))
+* add open today's logseq note ([d482dd7](https://github.com/believer/dotfiles/commit/d482dd70bc603f193294cc66afbb25572fd5a307))
+
 # [1.38.0](https://github.com/believer/dotfiles/compare/v1.37.1...v1.38.0) (2021-04-06)
 
 
