@@ -2,12 +2,12 @@
   "dependencies": {
     "coc-css": ">=1.2.6",
     "coc-eslint": ">=1.4.5",
-    "coc-flutter": ">=1.9.1",
+    "coc-flutter": ">=1.9.2",
     "coc-prettier": ">=1.1.12",
     "coc-reason": ">=0.1.2",
     "coc-rls": ">=1.1.6",
     "coc-snippets": ">=2.4.1",
     "coc-tailwindcss": ">=0.7.0",
-    "coc-tsserver": ">=1.6.8"
+    "coc-tsserver": ">=1.7.0"
   }
 }
