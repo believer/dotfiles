@@ -1,3 +1,12 @@
+# [1.40.0](https://github.com/believer/dotfiles/compare/v1.39.0...v1.40.0) (2021-05-03)
+
+
+### Features
+
+* change today's note to obsidian ([34e5a77](https://github.com/believer/dotfiles/commit/34e5a77189add8b1ad2518ba3e611fa2358b1f89))
+* update gitconfig ([af0982c](https://github.com/believer/dotfiles/commit/af0982c5991373e46b0cb008ae743b523f41f3cc))
+* **mux:** add kindle project ([c9ed12e](https://github.com/believer/dotfiles/commit/c9ed12e12554af3c5844f249ab75aa77e1c22055))
+
 # [1.39.0](https://github.com/believer/dotfiles/compare/v1.38.0...v1.39.0) (2021-04-19)
 
 
