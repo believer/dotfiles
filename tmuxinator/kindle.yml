@@ -1,0 +1,20 @@
+# /Users/rickardlaurin/.dotfiles/tmuxinator/kindle.yml
+
+name: kindle
+root: ~/code/personal/kindle-to-logseq
+
+windows:
+  - frontend:
+      layout: main-vertical
+      root: ~/code/personal/kindle-to-logseq/packages/web
+      panes:
+        - nvim
+        - nrs
+        - nr server
+  - parser:
+      layout: main-vertical
+      root: ~/code/personal/kindle-to-logseq/packages/parser
+      panes:
+        - nvim
+        - nrt
+        - nrs
