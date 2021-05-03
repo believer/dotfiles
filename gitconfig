@@ -1,7 +1,7 @@
 [user]
   name = Rickard Natt och Dag
-  email = rickard@hey.com
-  signingkey = C3958EFC7F24E8DF
+  email = rickard@nattochdag.dev
+  signingkey = 97AA4A72D75845D5
 
 [credential]
   helper = osxkeychain
