@@ -130,10 +130,10 @@ let g:rust_fold = 1
 
 "" Open today's note of Logseq
 function! OpenToday()
-    let today = strftime('%Y_%m_%d')
+    let today = strftime('%Y-%m-%d')
     let todays_journal = today . ".md"
 
-    execute "e ~/Dropbox/Logseq/journals/" . todays_journal
+    execute "e ~/Dropbox/Dokument/Obsidian/Rickard/" . todays_journal
 endfunction
 
 nmap <Leader>ww :call OpenToday()<CR>
