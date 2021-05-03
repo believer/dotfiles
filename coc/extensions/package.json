@@ -6,7 +6,7 @@
     "coc-prettier": ">=1.1.12",
     "coc-reason": ">=0.1.2",
     "coc-rls": ">=1.1.6",
-    "coc-snippets": ">=2.4.1",
+    "coc-snippets": ">=2.4.2",
     "coc-tailwindcss": ">=0.7.0",
     "coc-tsserver": ">=1.7.0"
   }
