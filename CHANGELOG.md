@@ -1,3 +1,10 @@
+# [1.41.0](https://github.com/believer/dotfiles/compare/v1.40.0...v1.41.0) (2021-05-04)
+
+
+### Features
+
+* update tmux status bar ([21e840b](https://github.com/believer/dotfiles/commit/21e840b712e927c7fdff71c1551b61260644f3a1))
+
 # [1.40.0](https://github.com/believer/dotfiles/compare/v1.39.0...v1.40.0) (2021-05-03)
 
 
