@@ -133,7 +133,7 @@ function! OpenToday()
     let today = strftime('%Y-%m-%d')
     let todays_journal = today . ".md"
 
-    execute "e ~/Dropbox/Dokument/Obsidian/Rickard/" . todays_journal
+    execute "e ~/Dropbox/Dokument/Obsidian/Rickard/Daily Notes/" . todays_journal
 endfunction
 
 nmap <Leader>ww :call OpenToday()<CR>
