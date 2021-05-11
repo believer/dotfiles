@@ -36,10 +36,14 @@ run() {
 }
 
 ni() {
-  for pkg in "$@"
-  do
-    supreme install "$pkg"
-  done
+  if [ $# -eq 0 ]; then
+    supreme install
+  else
+    for pkg in "$@"
+    do
+      supreme install "$pkg"
+    done
+  fi
 }
 
 nisd() {
