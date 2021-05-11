@@ -1,3 +1,16 @@
+# [1.42.0](https://github.com/believer/dotfiles/compare/v1.41.0...v1.42.0) (2021-05-11)
+
+
+### Bug Fixes
+
+* **coc:** update rescript lsp ([499c3ee](https://github.com/believer/dotfiles/commit/499c3eebae82a1c7e5d2e106a24134c99019573f))
+* **mux:** update kp ([99a3369](https://github.com/believer/dotfiles/commit/99a3369610ed8f37d4b122f56fecc65d3622c5d4))
+
+
+### Features
+
+* update supreme aliases ([7ff8489](https://github.com/believer/dotfiles/commit/7ff8489eafb04d144eb1f3069de014bc98af85a2))
+
 # [1.41.0](https://github.com/believer/dotfiles/compare/v1.40.0...v1.41.0) (2021-05-04)
 
 
