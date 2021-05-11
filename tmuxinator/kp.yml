@@ -4,10 +4,10 @@ name: kp
 root: ~/code/hemnet/kundportalen
 
 on_project_start: 
-  - docker-compose up -d
+  - docker compose up -d
 
 on_project_stop:
-  - docker-compose stop
+  - docker compose stop
 
 windows:
   - kundportalen:
