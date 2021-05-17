@@ -1,3 +1,10 @@
+## [1.43.1](https://github.com/believer/dotfiles/compare/v1.43.0...v1.43.1) (2021-05-17)
+
+
+### Bug Fixes
+
+* **git:** use my old prune command for cleaning branches ([fc66aac](https://github.com/believer/dotfiles/commit/fc66aac3258c053920ec120db3aca3b749093a7d))
+
 # [1.43.0](https://github.com/believer/dotfiles/compare/v1.42.0...v1.43.0) (2021-05-17)
 
 
