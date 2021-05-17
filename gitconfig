@@ -9,10 +9,12 @@
 [alias]
   co = checkout
   s = switch
-  up = pull --rebase --autostash
+  up = "!f() { git pull --rebase --autostash; git prune; }; f"
   scb = "!f() { git switch -c fix/\"$1\"; }; f"
   scf = "!f() { git switch -c feature/\"$1\"; }; f"
   scc = "!f() { git switch -c chore/\"$1\"; }; f"
+  prune = "!f() { git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
+  tdiff = "!f() { hub compare v$1..v$2; }; f"
 
 [core]
     pager = delta --plus-color="#012800" --minus-color="#340001"

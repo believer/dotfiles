@@ -1,14 +1,6 @@
 #!/usr/bin/env bash
 # Custom functions
 
-git_prune() {
-  git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
-}
-
-git_tag_diff() {
-  git compare v$1..v$2
-}
-
 pgsql_restore() {
   pg_restore --verbose --clean -Fc -h $1 -p 5432 -U $2 -d $3 -C $4
 }
