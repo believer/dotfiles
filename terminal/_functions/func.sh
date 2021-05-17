@@ -22,15 +22,6 @@ ds_store() {
   find . -name '.DS_Store' -type f -delete
 }
 
-shorten_url() {
-  if [ -n "$1" ]
-  then
-    pushd ~/code/personal/rlaur.in && npm run shorten $1 $2 && popd
-  else
-    echo "Missing parameters"
-  fi
-}
-
 run() {
   supreme run
 }
