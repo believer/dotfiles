@@ -1,3 +1,11 @@
+# [1.43.0](https://github.com/believer/dotfiles/compare/v1.42.0...v1.43.0) (2021-05-17)
+
+
+### Features
+
+* **git:** move custom git commands to gitconfig ([1ad842d](https://github.com/believer/dotfiles/commit/1ad842d926c0bfbc0972b4b815e425673432ad84))
+* **git:** rename branch clean command ([43a5845](https://github.com/believer/dotfiles/commit/43a58455c13b76e99dd081417c647a8288a9e7e3))
+
 # [1.42.0](https://github.com/believer/dotfiles/compare/v1.41.0...v1.42.0) (2021-05-11)
 
 
