@@ -1,3 +1,11 @@
+# [1.44.0](https://github.com/believer/dotfiles/compare/v1.43.1...v1.44.0) (2021-06-11)
+
+
+### Features
+
+* **lsp:** add clojure ([ae743c7](https://github.com/believer/dotfiles/commit/ae743c768fd561b1c88169e57abbc70186f30067))
+* **snippets:** add html snippets ([04f1482](https://github.com/believer/dotfiles/commit/04f1482fb82b5b6442791866bd7ee22bcca9dccc))
+
 ## [1.43.1](https://github.com/believer/dotfiles/compare/v1.43.0...v1.43.1) (2021-05-17)
 
 
