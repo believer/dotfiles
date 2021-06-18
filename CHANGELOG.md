@@ -1,3 +1,10 @@
+# [1.45.0](https://github.com/believer/dotfiles/compare/v1.44.0...v1.45.0) (2021-06-18)
+
+
+### Features
+
+* move back to nerdtree ([b6f0dcb](https://github.com/believer/dotfiles/commit/b6f0dcb096f8cecadc4e585c2baed80fc97dd702))
+
 # [1.44.0](https://github.com/believer/dotfiles/compare/v1.43.1...v1.44.0) (2021-06-11)
 
 
