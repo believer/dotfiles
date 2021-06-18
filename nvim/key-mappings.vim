@@ -60,25 +60,19 @@ nmap <leader>A <Plug>CtrlSFCwordPath -W<CR>
 " Yank to clipboard
 vnoremap <leader>y "*y
 
-" Fern.vim
-let hide_dirs  = '^\%(\.git\|node_modules\)$'
-let g:fern#default_exclude = hide_dirs
-
+" NERDTree
 "" Toggle drawer
-noremap <leader>d :Fern . -drawer -width=35 -toggle<CR><C-w>=
+noremap <leader>d :NERDTreeToggle<CR>
 
 "" Open current file in drawer
-noremap <leader>f :Fern . -drawer -reveal=% -width=35<CR><C-w>=
+noremap <leader>f :NERDTreeFind<CR>
 
-"" Open current buffer's directory in drawer
-noremap <silent> <Leader>. :Fern %:h -drawer -width=35<CR><C-w>=
-
-"" Close all buffers except the current
+" Close all buffers except the current
 command BufOnly silent! execute "%bd|e#|bd#"
 
 nnoremap <leader>b :BufOnly<CR>
 
-"" Remove HTML attribute
+" Remove HTML attribute
 " diw - Delete inside word to be anywhere in attribute name
 " x - Remove =
 " da" - Remove attribute value

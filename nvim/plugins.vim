@@ -17,8 +17,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'dyng/ctrlsf.vim' " Uses ripgrep for easier editing of multiple places
   Plug 'Konfekt/FastFold'
 
-  " Fern.vim - File explorer
-  Plug 'lambdalisue/fern.vim'
+  " NERDTree - File explorer
+  Plug 'preservim/nerdtree'
+  " Plug 'lambdalisue/fern.vim'
   Plug 'antoinemadec/FixCursorHold.nvim' " Fixes performance issues with CursorHold in neovim
 
   " Comments
