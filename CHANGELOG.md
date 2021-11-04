@@ -1,3 +1,12 @@
+# [1.46.0](https://github.com/believer/dotfiles/compare/v1.45.0...v1.46.0) (2021-11-04)
+
+
+### Features
+
+* **mux:** devlog project ([018117d](https://github.com/believer/dotfiles/commit/018117db519e5b27c500fc6f43f36a208d6cb213))
+* add bracket pairs ([9d97485](https://github.com/believer/dotfiles/commit/9d97485fc491f65dea16e33906fc0a20bdf63814))
+* nerdtree settings ([03c1916](https://github.com/believer/dotfiles/commit/03c19162ea70bfd82ca1d11a7fd12fb92c4cbe08))
+
 # [1.45.0](https://github.com/believer/dotfiles/compare/v1.44.0...v1.45.0) (2021-06-18)
 
 
