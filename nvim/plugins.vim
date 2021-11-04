@@ -36,6 +36,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " styled-components
   Plug 'ryyppy/vim-rescript' " ReScript
   Plug 'sheerun/vim-polyglot' " Installs a bunch of languages
+  Plug 'tmsvg/pear-tree' " Bracket pairs
 
   " Themes
   Plug '~/code/personal/night-owl'
@@ -45,4 +46,3 @@ call plug#begin('~/.vim/plugged')
   " Personal plugins
   Plug '~/code/personal/cyclist.vim'
 call plug#end()
-
