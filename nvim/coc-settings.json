@@ -9,8 +9,7 @@
     "rescript",
     "typescriptreact",
     "html.handlebars",
-    "htmldjango",
-    "clojure"
+    "htmldjango"
   ],
   "coc.preferences.formatOnSaveFiletypes": [
     "dart",
@@ -28,8 +27,7 @@
     "json",
     "typescriptreact",
     "javascriptreact",
-    "eruby",
-    "clojure"
+    "eruby"
   ],
   "codeLens.separator": "🕶",
   "codeLens.enable": true,
@@ -43,15 +41,6 @@
       "args": ["--node-ipc"],
       "filetypes": ["rescript"],
       "rootPatterns": ["bsconfig.json"]
-    },
-    "clojure-lsp": {
-      "command": "bash",
-      "args": ["-c", "/usr/local/bin/clojure-lsp"],
-      "filetypes": ["clojure"],
-      "trace.server": "verbose",
-      "initializationOptions": {
-        "ignore-classpath-directories": true
-      }
     }
   },
   "snippets.ultisnips.directories": ["~/.dotfiles/snippets"]
