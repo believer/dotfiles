@@ -49,6 +49,9 @@ let g:coc_snippet_next = '<tab>'
 
 "" NERDTree
 let g:NERDTreeWinPos = "right"
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeAutoDeleteBuffer = 1
 
 "" RSpec mappings (thoughtbot/vim-rspec)
 map <leader>t :call RunCurrentSpecFile()<CR>
@@ -105,3 +108,8 @@ function! OpenToday()
 endfunction
 
 nmap <Leader>ww :call OpenToday()<CR>
+
+" Autopairs
+let g:AutoPairsFlyMode = 1
+
+
