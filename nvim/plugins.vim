@@ -28,9 +28,6 @@ call plug#begin('~/.vim/plugged')
   " gcgc - uncomment
   Plug 'tpope/vim-commentary'
 
-  " Ruby
-  Plug 'thoughtbot/vim-rspec'
-
   " Syntax
   Plug 'luochen1990/rainbow' " Rainbow brackets
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " styled-components

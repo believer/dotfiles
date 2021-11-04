@@ -96,7 +96,6 @@ set sessionoptions-=folds
 let g:markdown_folding = 1
 let g:xml_syntax_folding = 1
 let g:javaScript_fold = 1
-let g:ruby_fold = 1
 let g:rust_fold = 1
 
 "" Open today's note of Logseq
