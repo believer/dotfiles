@@ -1,3 +1,10 @@
+# [1.47.0](https://github.com/believer/dotfiles/compare/v1.46.0...v1.47.0) (2021-11-08)
+
+
+### Features
+
+* add kitty conf ([c7743e4](https://github.com/believer/dotfiles/commit/c7743e4044f411bea6a3c00b9ea0fb22e89c9afc))
+
 # [1.46.0](https://github.com/believer/dotfiles/compare/v1.45.0...v1.46.0) (2021-11-04)
 
 
