@@ -1,3 +1,10 @@
+# [1.48.0](https://github.com/believer/dotfiles/compare/v1.47.0...v1.48.0) (2021-11-15)
+
+
+### Features
+
+* **typescript:** add namespaced import ([61600c4](https://github.com/believer/dotfiles/commit/61600c48b5bb35e636fa0e940c10f1efcebea8ed))
+
 # [1.47.0](https://github.com/believer/dotfiles/compare/v1.46.0...v1.47.0) (2021-11-08)
 
 
