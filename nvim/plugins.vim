@@ -34,6 +34,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ryyppy/vim-rescript' " ReScript
   Plug 'sheerun/vim-polyglot' " Installs a bunch of languages
   Plug 'tmsvg/pear-tree' " Bracket pairs
+  Plug 'lepture/vim-jinja'
 
   " Themes
   Plug '~/code/personal/night-owl'
