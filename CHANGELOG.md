@@ -1,3 +1,11 @@
+# [1.49.0](https://github.com/believer/dotfiles/compare/v1.48.0...v1.49.0) (2021-11-25)
+
+
+### Features
+
+* **snippet:** add advent of code rust snippet ([deb296b](https://github.com/believer/dotfiles/commit/deb296bb0221981c8cc4957c0a6c83af274357fd))
+* add nunjucks syntax support ([17541d5](https://github.com/believer/dotfiles/commit/17541d535f56f0d538a1f98515713b12abc37995))
+
 # [1.48.0](https://github.com/believer/dotfiles/compare/v1.47.0...v1.48.0) (2021-11-15)
 
 
