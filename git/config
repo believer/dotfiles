@@ -1,7 +1,7 @@
 [user]
   name = Rickard Natt och Dag
-  email = rickard@fastmail.se
-  signingkey = 97AA4A72D75845D5
+  email = rickard@nattochdag.dev
+  signingkey = 311CA15A9AF40D01
 
 [credential]
   helper = osxkeychain
@@ -21,9 +21,6 @@
 
 [interactive]
     diffFilter = delta --color-only
-
-[gpg]
-	program = gpg
 
 [commit]
   gpgsign = true
