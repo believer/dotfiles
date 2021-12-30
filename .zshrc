@@ -1,3 +1,6 @@
+# Change shell to brew version
+# sudo chsh -s $(which zsh) $(whoami)
+
 export DOTFILES_PATH="$HOME/.dotfiles"
 
 setopt HIST_IGNORE_DUPS # Don't record an entry that was just recorded again.
@@ -7,16 +10,18 @@ setopt HIST_REDUCE_BLANKS # Remove superfluous blanks before recording entry.
 setopt hist_ignore_space # ignore commands that start with space
 HISTFILE=~/.zhistory
 
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Antibody
-export ZSH="${HOME}/.oh-my-zsh"
 source <(antibody init)
 antibody bundle < ~/.dotfiles/.zsh_plugins.txt
 
+source $ZSH/oh-my-zsh.sh
+
 # Setup terminal
 source "$DOTFILES_PATH/terminal/init.sh"
-
-# Work
-source ~/.dotfiles/.hemnetrc
 
 # 10ms for key sequences
 KEYTIMEOUT=1
@@ -27,9 +32,6 @@ KEYTIMEOUT=1
 # CDPATH ALTERATIONS
 CDPATH=.:$HOME:$HOME/code
 
-# added by travis gem
-[ -f /Users/rickardlaurin/.travis/travis.sh ] && source /Users/rickardlaurin/.travis/travis.sh
-
 # Hub
 eval "$(hub alias -s)"
 
@@ -37,6 +39,7 @@ eval "$(hub alias -s)"
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 3 # normal minimum is 2 (30 ms)
 
-PS1="⚡️ "
-
 export PATH
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
