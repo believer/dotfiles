@@ -1,47 +1,21 @@
 {
   "typescript.preferences.quoteStyle": "single",
   "typescript.suggest.autoImports": true,
-  "javascript.validate.enable": true,
-  "tailwindCSS.jsLanguages": [
-    "javascript",
-    "javascriptreact",
-    "reason",
-    "rescript",
-    "typescriptreact",
-    "html.handlebars",
-    "htmldjango"
-  ],
+  "javascript.validate.enable": false,
   "coc.preferences.formatOnSaveFiletypes": [
-    "dart",
-    "html.handlebars",
+    "svelte",
     "html",
     "graphql",
     "reason",
-    "rescript",
-    "rust",
     "typescript",
     "css",
-    "scss",
     "markdown",
     "javascript",
     "json",
     "typescriptreact",
-    "javascriptreact",
-    "eruby"
+    "javascriptreact"
   ],
   "codeLens.separator": "🕶",
   "codeLens.enable": true,
   "prettier.eslintIntegration": true,
-  "prettier.stylelineIntegration": true,
-  "scss.validate": true,
-  "languageserver": {
-    "rescript": {
-      "enable": true,
-      "module": "~/.vim/plugged/vim-rescript/server/out/server.js",
-      "args": ["--node-ipc"],
-      "filetypes": ["rescript"],
-      "rootPatterns": ["bsconfig.json"]
-    }
-  },
-  "snippets.ultisnips.directories": ["~/.dotfiles/snippets"]
 }
