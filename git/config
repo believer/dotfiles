@@ -1,7 +1,7 @@
 [user]
   name = Rickard Natt och Dag
   email = rickard@nattochdag.dev
-  signingkey = 311CA15A9AF40D01
+	signingkey = 277B8E0F5F1C9E59
 
 [credential]
   helper = osxkeychain
@@ -17,7 +17,7 @@
   tdiff = "!f() { hub compare v$1..v$2; }; f"
 
 [core]
-    pager = delta --plus-color="#012800" --minus-color="#340001"
+    pager = delta --plus-style="#012800" --minus-style="#340001"
 
 [interactive]
     diffFilter = delta --color-only
