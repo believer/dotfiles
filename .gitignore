@@ -11,6 +11,7 @@ gh
 
 # Work setup
 .hemnetrc
+.invidirc
 
 # CoC setup
 coc/lists

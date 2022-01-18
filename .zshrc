@@ -20,6 +20,9 @@ antibody bundle < ~/.dotfiles/.zsh_plugins.txt
 
 source $ZSH/oh-my-zsh.sh
 
+# Work
+source ~/.dotfiles/.invidirc
+
 # Setup terminal
 source "$DOTFILES_PATH/terminal/init.sh"
 
