@@ -9,7 +9,7 @@
 [alias]
   co = checkout
   s = switch
-  up = "!f() { git pull --rebase --autostash; git bclean; }; f"
+  up = "!f() { git pull --all --rebase --autostash; git bclean; }; f"
   scb = "!f() { git switch -c fix/\"$1\"; }; f"
   scf = "!f() { git switch -c feature/\"$1\"; }; f"
   scc = "!f() { git switch -c chore/\"$1\"; }; f"
