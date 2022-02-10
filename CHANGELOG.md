@@ -1,3 +1,12 @@
+# [1.50.0](https://github.com/believer/dotfiles/compare/v1.49.0...v1.50.0) (2022-02-10)
+
+
+### Features
+
+* pull all branches using git up ([f0ed461](https://github.com/believer/dotfiles/commit/f0ed4614ca60315e8ec36f675dd3be023f0768f9))
+* **snippets:** add remix snippets ([c051050](https://github.com/believer/dotfiles/commit/c051050a480fd70a7f145c757c288c1be20905a8))
+* add karabiner configuration ([3e529dd](https://github.com/believer/dotfiles/commit/3e529dd8997a2cb02fbdf835ebcbf585408da022))
+
 # [1.49.0](https://github.com/believer/dotfiles/compare/v1.48.0...v1.49.0) (2021-11-25)
 
 
