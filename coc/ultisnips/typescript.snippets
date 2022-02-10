@@ -506,3 +506,30 @@ if ($1) {
 }
 endsnippet
 
+# Remix
+snippet rdata "Remix LoaderData"
+type LoaderData = {
+	$1: $2
+}
+endsnippet
+
+snippet rload "Remix loader"
+export const loader: LoaderFunction = async () => {
+	$1
+}
+endsnippet
+
+snippet ract "Remix action"
+export const action: ActionFunction = async ({ request }) => {
+	$1
+}
+endsnippet
+
+snippet rform "Remix formData"
+const form = await request.formData()
+const $2 = form.get('$1') 
+endsnippet
+
+snippet rul "Remix useLoaderData"
+const data = useLoaderData<LoaderData>()
+endsnippet
