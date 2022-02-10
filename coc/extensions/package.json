@@ -7,7 +7,6 @@
     "coc-snippets": ">=2.4.7",
     "coc-tailwind-intellisense": "https://github.com/rodrigore/coc-tailwind-intellisense",
     "coc-tailwindcss": ">=0.7.0",
-    "coc-tsserver": ">=1.9.6",
-    "coc-vetur": ">=1.2.5"
+    "coc-tsserver": ">=1.9.6"
   }
 }
