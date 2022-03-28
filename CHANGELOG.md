@@ -1,3 +1,10 @@
+# [1.51.0](https://github.com/believer/dotfiles/compare/v1.50.0...v1.51.0) (2022-03-28)
+
+
+### Features
+
+* add aliases for obsidian notes and backups ([a4fb85e](https://github.com/believer/dotfiles/commit/a4fb85e3232a847a541289e73fd7464a49374f05))
+
 # [1.50.0](https://github.com/believer/dotfiles/compare/v1.49.0...v1.50.0) (2022-02-10)
 
 
