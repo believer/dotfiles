@@ -20,7 +20,7 @@ function set_fnm_version {
       return;
     fi
 
-    eval "fnm use"
+    eval "fnm --log-level=error use"
     EXIT_CODE=$?
 
     if [ $EXIT_CODE -eq 1 ]; then

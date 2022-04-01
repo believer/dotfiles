@@ -1,5 +1,6 @@
 # Change shell to brew version
 # sudo chsh -s $(which zsh) $(whoami)
+# Add /opt/homebrew/bin to /etc/paths after /usr/local/bin
 
 export DOTFILES_PATH="$HOME/.dotfiles"
 

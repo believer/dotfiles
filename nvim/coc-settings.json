@@ -18,8 +18,9 @@
   ],
   "codeLens.separator": "🕶",
   "codeLens.enable": true,
-  "prettier.eslintIntegration": false,
+  "typescript.referencesCodeLens.enable": false,
   "prettier.onlyUseLocalVersion": true,
+  "prettier.eslintIntegration": true,
   "languageserver": {
     "tailwind-lsp": {
       "command": "tailwindcss-language-server",
@@ -29,7 +30,7 @@
         "javascript",
         "javascriptreact",
         "typescript",
-        "typescriptreact"
+        "rescript"
       ],
 
       "rootPatterns": [

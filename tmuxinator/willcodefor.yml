@@ -1,7 +1,7 @@
 # /Users/rickardlaurin/.config/tmuxinator/willcodefor.yml
 
 name: willcodefor
-root: ~/code/personal/willcode
+root: ~/code/personal/willcodefor.beer
 
 windows:
   - editor:
@@ -9,3 +9,4 @@ windows:
       panes:
         - nvim
         - nrs
+        - npm run css
