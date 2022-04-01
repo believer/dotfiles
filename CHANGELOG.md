@@ -1,3 +1,10 @@
+# [1.52.0](https://github.com/believer/dotfiles/compare/v1.51.0...v1.52.0) (2022-04-01)
+
+
+### Features
+
+* add formatrelay command ([e04d996](https://github.com/believer/dotfiles/commit/e04d996dc3f6f4280a4701d8243da7b476ff2306))
+
 # [1.51.0](https://github.com/believer/dotfiles/compare/v1.50.0...v1.51.0) (2022-03-28)
 
 
