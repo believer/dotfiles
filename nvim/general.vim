@@ -95,3 +95,6 @@ augroup END
 
 " Split new vertical buffers to the right
 set splitright
+
+" Format Relay GraphQL queries in file
+command FormatRelay execute "!yarn rescript-relay-cli format-single-graphql %"
