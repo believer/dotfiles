@@ -1,0 +1,17 @@
+# /Users/rdag/.dotfiles/tmuxinator/conexus.yml
+
+name: conexus
+root: ~/code/invidi/mediahub-ui
+
+windows:
+  - frontend:
+      layout: bb37,284x89,0,0{215x89,0,0,0,68x89,216,0[68x79,216,0,2,68x9,216,80,4]}
+      panes:
+        - nvim
+        - nrd
+        -
+  - api:
+      layout: main-vertical
+      root: ~/code/invidi/mediahub-e2e
+      panes:
+        -
