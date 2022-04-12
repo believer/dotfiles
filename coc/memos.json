@@ -1,5 +1,8 @@
 {
   "coc-eslint|global": {
     "eslintAlwaysAllowExecution": true
+  },
+  "@yaegassy/coc-volar|/Users/rdag/code/invidi/mediahub-ui": {
+    "coc-volar-ts-server-path": "/Users/rdag/.dotfiles/coc/extensions/node_modules/@yaegassy/coc-volar/node_modules/typescript/lib/tsserverlibrary.js"
   }
 }

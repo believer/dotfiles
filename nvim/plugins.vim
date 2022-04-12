@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kshenoy/vim-signature' " Easier setup for marks
   Plug 'dyng/ctrlsf.vim' " Uses ripgrep for easier editing of multiple places
   Plug 'Konfekt/FastFold'
+  Plug 'github/copilot.vim' " GitHub Copilot
 
   " NERDTree - File explorer
   Plug 'preservim/nerdtree'

@@ -1,3 +1,22 @@
+snippet vtest "Vue test" b
+import { render, screen, RenderResult } from '@testing-library/vue'
+import `!v expand('%:t:r:r')` from './`!v expand('%:t:r:r')`.vue'
+
+const setup = (customProps = {}): RenderResult => {
+	const props = {
+		...customProps
+	}
+
+	return render(`!v expand('%:t:r:r')`, { props })
+}
+
+test('${1:What does it test?}', () => {
+	setup()
+
+	screen.debug()
+})
+endsnippet
+
 # This create a testing setup using `@testing-library/react` for use in Jest.
 # 
 # Jest tests in the setups I work with have the same name as the component they
@@ -80,6 +99,7 @@ endsnippet
 # - `$1` - Test description
 # - `$0` - Test content
 snippet stest "Simple test setup" b
+import { describe, test } from 'vitest'
 import `!v expand('%:t:r:r')` from '../`!v expand('%:t:r:r')`'
 
 test('${1:What does it test?}', () => {
@@ -506,6 +526,12 @@ if ($1) {
 }
 endsnippet
 
+snippet ptype "PropTypes"
+type `!v expand('%:t:r:r')`Props = {
+	$1: $2
+}
+endsnippet
+
 # Remix
 snippet rdata "Remix LoaderData"
 type LoaderData = {
@@ -532,4 +558,10 @@ endsnippet
 
 snippet rul "Remix useLoaderData"
 const data = useLoaderData<LoaderData>()
+endsnippet
+
+snippet rfslr "Remix component" b
+export default function `!v expand('%:t:r')`() {
+	return <div>${1:Component content}</div>
+}
 endsnippet

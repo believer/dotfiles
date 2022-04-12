@@ -52,6 +52,7 @@ let g:NERDTreeWinPos = "right"
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeQuitOnOpen = 1 " Quit NERDTree when opening a file
 
 "" RSpec mappings (thoughtbot/vim-rspec)
 map <leader>t :call RunCurrentSpecFile()<CR>

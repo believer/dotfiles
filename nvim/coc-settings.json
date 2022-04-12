@@ -1,4 +1,10 @@
 {
+  "codeLens.separator": "🕶",
+  "codeLens.enable": true,
+  "eslint.autoFixOnSave": true, 
+  "prettier.eslintIntegration": true,
+  "prettier.onlyUseLocalVersion": true,
+  "typescript.referencesCodeLens.enable": false,
   "typescript.preferences.quoteStyle": "single",
   "typescript.suggest.autoImports": true,
   "javascript.validate.enable": false,
@@ -12,15 +18,15 @@
     "markdown",
     "reason",
     "rescript",
+    "rust",
     "svelte",
     "typescript",
     "typescriptreact",
+    "vue"
   ],
-  "codeLens.separator": "🕶",
-  "codeLens.enable": true,
-  "typescript.referencesCodeLens.enable": false,
-  "prettier.onlyUseLocalVersion": true,
-  "prettier.eslintIntegration": true,
+  "prettier.disableLanguages": [
+    "vue"
+  ],
   "languageserver": {
     "tailwind-lsp": {
       "command": "tailwindcss-language-server",

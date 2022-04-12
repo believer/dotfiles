@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from soco import SoCo
 
-ip = '192.168.1.55'
+ip = '192.168.86.100'
 
 if __name__ == '__main__':
     nothing = "Nothing playing :("
