@@ -3,7 +3,6 @@
   "codeLens.enable": true,
   "eslint.autoFixOnSave": true, 
   "prettier.eslintIntegration": true,
-  "prettier.onlyUseLocalVersion": true,
   "typescript.referencesCodeLens.enable": false,
   "typescript.preferences.quoteStyle": "single",
   "typescript.suggest.autoImports": true,
@@ -31,14 +30,12 @@
     "tailwind-lsp": {
       "command": "tailwindcss-language-server",
       "args": ["--stdio"],
-
       "filetypes": [
         "javascript",
         "javascriptreact",
         "typescript",
         "rescript"
       ],
-
       "rootPatterns": [
         "tailwind.config.js",
         "tailwind.config.ts",
