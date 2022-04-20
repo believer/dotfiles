@@ -1,3 +1,10 @@
+# [1.53.0](https://github.com/believer/dotfiles/compare/v1.52.0...v1.53.0) (2022-04-20)
+
+
+### Features
+
+* update files mapping ([de1bfd7](https://github.com/believer/dotfiles/commit/de1bfd723255cccd5a844a00167ae593711c6dd3))
+
 # [1.52.0](https://github.com/believer/dotfiles/compare/v1.51.0...v1.52.0) (2022-04-01)
 
 
