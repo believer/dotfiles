@@ -1,3 +1,10 @@
+## [1.53.1](https://github.com/believer/dotfiles/compare/v1.53.0...v1.53.1) (2022-04-25)
+
+
+### Bug Fixes
+
+* don't run rg before adding a search term ([3ee30ee](https://github.com/believer/dotfiles/commit/3ee30ee5518b50f8219a577694dbb6908e719f7e))
+
 # [1.53.0](https://github.com/believer/dotfiles/compare/v1.52.0...v1.53.0) (2022-04-20)
 
 
