@@ -10,7 +10,7 @@ let maplocalleader="\\"
 nmap <leader>; :GFiles<CR>
 nmap <leader>o :Buffers<CR>
 nmap cc :Commands<CR>
-nmap ?? :Rg<CR>
+nmap ?? :Rg 
 
 " Git diffs
 "" Start by doing :Gdiff, from vim-fugitive, on a conflicted file
