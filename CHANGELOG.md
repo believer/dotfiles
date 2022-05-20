@@ -1,3 +1,10 @@
+# [1.54.0](https://github.com/believer/dotfiles/compare/v1.53.1...v1.54.0) (2022-05-20)
+
+
+### Features
+
+* update willcodefor project ([0689bca](https://github.com/believer/dotfiles/commit/0689bca643daab56da1ec6a75186dd411084ce65))
+
 ## [1.53.1](https://github.com/believer/dotfiles/compare/v1.53.0...v1.53.1) (2022-04-25)
 
 
