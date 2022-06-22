@@ -78,3 +78,5 @@ nnoremap <leader>b :BufOnly<CR>
 " da" - Remove attribute value
 nnoremap <leader>ad diwxda"<Cr>
 
+" Add shortcut to the black hole register
+map <leader>r "_
