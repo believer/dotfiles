@@ -1,3 +1,10 @@
+# [1.55.0](https://github.com/believer/dotfiles/compare/v1.54.0...v1.55.0) (2022-06-22)
+
+
+### Features
+
+* add shortcut to black hole register ([83264a8](https://github.com/believer/dotfiles/commit/83264a8a0630b7714be01bc4001c4a464684da96))
+
 # [1.54.0](https://github.com/believer/dotfiles/compare/v1.53.1...v1.54.0) (2022-05-20)
 
 
