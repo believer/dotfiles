@@ -1,13 +1,13 @@
 {
   "dependencies": {
-    "@yaegassy/coc-volar": ">=0.16.5",
+    "@yaegassy/coc-volar": ">=0.20.7",
     "coc-css": ">=1.3.0",
     "coc-eslint": ">=1.5.8",
-    "coc-prettier": ">=9.2.3",
+    "coc-prettier": ">=9.3.1",
     "coc-rls": ">=1.1.6",
-    "coc-snippets": ">=3.0.9",
+    "coc-snippets": ">=3.0.14",
     "coc-tailwind-intellisense": "https://github.com/rodrigore/coc-tailwind-intellisense",
     "coc-tailwindcss": ">=0.7.0",
-    "coc-tsserver": ">=1.10.0"
+    "coc-tsserver": ">=1.10.5"
   }
 }
