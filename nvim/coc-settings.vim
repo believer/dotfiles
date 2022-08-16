@@ -41,6 +41,9 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <C-SPACE> coc#refresh()
 
+" Use <cr> to code complete.
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+
 " Highlight symbol under cursor on CursorHold
 augroup coc
   autocmd!
