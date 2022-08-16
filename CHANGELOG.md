@@ -1,3 +1,10 @@
+## [1.55.1](https://github.com/believer/dotfiles/compare/v1.55.0...v1.55.1) (2022-08-16)
+
+
+### Bug Fixes
+
+* code completion ([feb674e](https://github.com/believer/dotfiles/commit/feb674e264e278b04b5bca611d395fb8ec32ff1d))
+
 # [1.55.0](https://github.com/believer/dotfiles/compare/v1.54.0...v1.55.0) (2022-06-22)
 
 
