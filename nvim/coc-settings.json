@@ -9,6 +9,7 @@
   "javascript.validate.enable": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
+    "scss",
     "graphql",
     "html",
     "javascript",
@@ -21,9 +22,6 @@
     "svelte",
     "typescript",
     "typescriptreact",
-    "vue"
-  ],
-  "prettier.disableLanguages": [
     "vue"
   ],
   "languageserver": {
