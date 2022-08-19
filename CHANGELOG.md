@@ -1,3 +1,10 @@
+## [1.55.2](https://github.com/believer/dotfiles/compare/v1.55.1...v1.55.2) (2022-08-19)
+
+
+### Bug Fixes
+
+* add link to homebrew python3 ([b70cf8e](https://github.com/believer/dotfiles/commit/b70cf8e901e9a86ec072a469abaa8faae0966014))
+
 ## [1.55.1](https://github.com/believer/dotfiles/compare/v1.55.0...v1.55.1) (2022-08-16)
 
 
