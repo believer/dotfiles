@@ -96,5 +96,7 @@ augroup END
 " Split new vertical buffers to the right
 set splitright
 
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
+
 " Format Relay GraphQL queries in file
 command FormatRelay execute "!yarn rescript-relay-cli format-single-graphql %"
