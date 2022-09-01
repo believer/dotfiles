@@ -1,3 +1,15 @@
+# [1.56.0](https://github.com/believer/dotfiles/compare/v1.55.2...v1.56.0) (2022-09-01)
+
+
+### Bug Fixes
+
+* set python3 to macos ([9a8f419](https://github.com/believer/dotfiles/commit/9a8f4193a006c7d67e5625e447810dc40528d8da))
+
+
+### Features
+
+* **alias:** add docker logs alias ([8e21201](https://github.com/believer/dotfiles/commit/8e21201c5769f3c1d1c92fcba5fb20d2aa8132f3))
+
 ## [1.55.2](https://github.com/believer/dotfiles/compare/v1.55.1...v1.55.2) (2022-08-19)
 
 
