@@ -30,6 +30,7 @@ alias k='kubectl -n v2'
 alias d="docker"
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}"'
 alias ds='clear && docker service ps --format "table {{.Name}}\t{{.Image}}\t{{.CurrentState}}"'
+alias dls='docker logs -f '
 
 # Dotfiles
 alias tmuxconf='nvim $XDG_CONFIG_HOME/.tmux.conf'
