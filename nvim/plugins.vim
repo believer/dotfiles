@@ -17,11 +17,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'dyng/ctrlsf.vim' " Uses ripgrep for easier editing of multiple places
   Plug 'Konfekt/FastFold'
   Plug 'github/copilot.vim' " GitHub Copilot
-
+  Plug 'antoinemadec/FixCursorHold.nvim' " Fixes performance issues with CursorHold in neovim
+  
   " NERDTree - File explorer
   Plug 'preservim/nerdtree'
-  " Plug 'lambdalisue/fern.vim'
-  Plug 'antoinemadec/FixCursorHold.nvim' " Fixes performance issues with CursorHold in neovim
 
   " Comments
   " <count>gcc - toggle line(s) comment
