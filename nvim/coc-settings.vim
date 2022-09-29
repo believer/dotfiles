@@ -9,6 +9,9 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 nmap <silent> :tso :CocCommand editor.action.organizeImport<CR>
 nmap <silent> :cco :CocCommand workspace.showOutput<CR>
 
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
 function! s:show_documentation()
   if &filetype == 'vim'
     execute 'h '.expand('<cword>')

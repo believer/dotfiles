@@ -2,7 +2,6 @@
   "codeLens.separator": "🕶",
   "codeLens.enable": true,
   "eslint.autoFixOnSave": true, 
-  "prettier.eslintIntegration": true,
   "typescript.referencesCodeLens.enable": false,
   "typescript.preferences.quoteStyle": "single",
   "typescript.suggest.autoImports": true,
