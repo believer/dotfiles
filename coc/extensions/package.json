@@ -8,5 +8,14 @@
     "coc-rls": ">=1.1.6",
     "coc-snippets": ">=3.1.2",
     "coc-tsserver": ">=1.11.9"
+<<<<<<< Updated upstream
   }
+=======
+  },
+  "disabled": [],
+  "locked": [
+    "@yaegassy/coc-volar"
+  ],
+  "lastUpdate": 1664457256178
+>>>>>>> Stashed changes
 }
