@@ -1,3 +1,11 @@
+# [1.57.0](https://github.com/believer/dotfiles/compare/v1.56.0...v1.57.0) (2022-10-20)
+
+
+### Features
+
+* **git:** add fs for fuzzy switching branches ([e5462df](https://github.com/believer/dotfiles/commit/e5462df1e8dafca777dc20dafcc625a6bff33374))
+* add vim-camelsnek ([488850f](https://github.com/believer/dotfiles/commit/488850f97b7c6b397287261626af1a6837f385cb))
+
 # [1.56.0](https://github.com/believer/dotfiles/compare/v1.55.2...v1.56.0) (2022-09-01)
 
 
