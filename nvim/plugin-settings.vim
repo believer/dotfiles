@@ -48,6 +48,7 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 
 "" NERDTree
+let g:NERDTreeMinimalMenu=1 " Temporary fix for m-menu https://github.com/preservim/nerdtree/issues/1321
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
@@ -104,4 +105,5 @@ nmap <Leader>ww :call OpenToday()<CR>
 " Autopairs
 let g:AutoPairsFlyMode = 1
 
-
+" Vim info for vim-startify
+set viminfo='100,n$HOME/.vim/files/info/viminfo

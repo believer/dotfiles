@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive' " All things git
   Plug 'tpope/vim-repeat' " Enhance . repeat
   Plug 'tpope/vim-surround' " Surround words something
+  Plug 'nicwest/vim-camelsnek' " Convert casing
 
   " Comments
   " <count>gcc - toggle line(s) comment

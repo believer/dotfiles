@@ -7,7 +7,7 @@ let mapleader="\<Space>"
 let maplocalleader="\\"
 
 "" Fzf
-nmap <leader>; :GFiles<CR>
+nnoremap <silent> <leader>; :GFiles --cached --others --exclude-standard<CR>
 nmap <leader>o :Buffers<CR>
 nmap cc :Commands<CR>
 nmap ?? :Rg 
