@@ -15,6 +15,7 @@
   scc = "!f() { git switch -c chore/\"$1\"; }; f"
   bclean = "!f() { git fetch -p; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
   tdiff = "!f() { hub compare v$1..v$2; }; f"
+  fs = "!f() { git branch -a | grep -v remotes | grep $1 | xargs git switch; }; f"
 
 [core]
     pager = delta --plus-style="#012800" --minus-style="#340001"
