@@ -1,3 +1,10 @@
+## [1.57.1](https://github.com/believer/dotfiles/compare/v1.57.0...v1.57.1) (2022-11-10)
+
+
+### Bug Fixes
+
+* merge conflicts ([da60450](https://github.com/believer/dotfiles/commit/da60450ad93b5e6dc3227a1d719127f6465d63cc))
+
 # [1.57.0](https://github.com/believer/dotfiles/compare/v1.56.0...v1.57.0) (2022-10-20)
 
 
