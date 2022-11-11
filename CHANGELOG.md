@@ -1,3 +1,16 @@
+# [1.58.0](https://github.com/believer/dotfiles/compare/v1.57.1...v1.58.0) (2022-11-11)
+
+
+### Bug Fixes
+
+* reduce update interval in tmux status ([193279f](https://github.com/believer/dotfiles/commit/193279f63910e9e269b5bddfa752fefc1fdbbd24))
+
+
+### Features
+
+* **snippet:** add async test snippet ([84be983](https://github.com/believer/dotfiles/commit/84be98326525ae1affdea62d367bf0ca9596e56b))
+* add fastfold and close-buffers ([aabf43c](https://github.com/believer/dotfiles/commit/aabf43c295f9cfe7ab96512a5a93ae6255555089))
+
 ## [1.57.1](https://github.com/believer/dotfiles/compare/v1.57.0...v1.57.1) (2022-11-10)
 
 
