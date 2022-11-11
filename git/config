@@ -15,8 +15,9 @@
   scc = "!f() { git switch -c chore/\"$1\"; }; f"
   bclean = "!f() { git fetch -p; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
   tdiff = "!f() { hub compare v$1..v$2; }; f"
-  fs = "!f() { git branch -a | grep -v remotes | grep $1 | xargs git switch; }; f"
+  fs = "!f() { git branch | grep $1 | xargs git switch; }; f"
 	fame = !python3 -m gitfame
+  update = "!f() { git stash && git switch master && git up && git switch - && git rebase master && git stash pop; }; f"
 
 [core]
     pager = delta --plus-style="#012800" --minus-style="#340001"
@@ -36,3 +37,5 @@
 
 [push]
 	autoSetupRemote = true
+[safe]
+	directory = undefined

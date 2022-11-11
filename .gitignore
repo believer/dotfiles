@@ -25,6 +25,7 @@ coc/extensions/db.json
 configstore
 coc/commands
 coc/snippets-mru
+coc/suggest.txt
 
 # Lazygit
 jesseduffield

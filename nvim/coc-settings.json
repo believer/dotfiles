@@ -2,6 +2,7 @@
   "codeLens.separator": "🕶",
   "codeLens.enable": true,
   "eslint.autoFixOnSave": true, 
+  "tailwindCSS.emmetCompletions": true,
   "typescript.referencesCodeLens.enable": false,
   "typescript.preferences.quoteStyle": "single",
   "typescript.suggest.autoImports": true,

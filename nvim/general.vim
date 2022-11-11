@@ -100,3 +100,8 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 " Format Relay GraphQL queries in file
 command FormatRelay execute "!yarn rescript-relay-cli format-single-graphql %"
+
+" Ensure that folds aren't overriden for FastFold
+set foldmethod=syntax
+set sessionoptions-=folds
+set viewoptions=cursor,folds,slash,unix
