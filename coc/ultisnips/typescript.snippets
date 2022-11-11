@@ -134,6 +134,21 @@ describe('${1:What does it describe?}', () => {
 })
 endsnippet
 
+# Create a `describe` block and an async `test` block for testing in Jest
+#
+# **Jump sequence:**
+#
+# - `$1` - Describe description
+# - `$2` - Test description
+# - `$0` - Test content
+snippet descta "Jest - Describe / async test" b
+describe('${1:What does it describe?}', () => {
+	test('${2:What does it test?}', async () => {
+		$0
+	})
+})
+endsnippet
+
 # Create a `test` block for testing in Jest
 #
 # **Jump sequence:**
