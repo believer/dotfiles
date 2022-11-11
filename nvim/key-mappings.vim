@@ -67,10 +67,7 @@ noremap <leader>d :NERDTreeToggle<CR>
 "" Open current file in drawer
 noremap <leader>f :NERDTreeFind<CR>
 
-" Close all buffers except the current
-command BufOnly silent! execute "%bd|e#|bd#"
-
-nnoremap <leader>b :BufOnly<CR>
+nnoremap <leader>b :Bdelete hidden<CR>
 
 " Remove HTML attribute
 " diw - Delete inside word to be anywhere in attribute name

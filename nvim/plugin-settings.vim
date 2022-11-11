@@ -107,3 +107,7 @@ let g:AutoPairsFlyMode = 1
 
 " Vim info for vim-startify
 set viminfo='100,n$HOME/.vim/files/info/viminfo
+
+" FastFold
+let g:javaScript_fold = 1
+let g:markdown_folding = 1
