@@ -77,3 +77,12 @@ nnoremap <leader>ad diwxda"<Cr>
 
 " Add shortcut to the black hole register
 map <leader>r "_
+
+" Logically scrolling
+" Scroll up/down and center cursor
+" https://twitter.com/ThePrimeagen/status/1591996471951429633
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
+" Next search term and center cursor
+nnoremap n nzz
