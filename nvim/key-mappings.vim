@@ -84,5 +84,6 @@ map <leader>r "_
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
-" Next search term and center cursor
+" Next/previous search term and center cursor
 nnoremap n nzz
+nnoremap N Nzz
