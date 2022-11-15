@@ -1,3 +1,11 @@
+# [1.59.0](https://github.com/believer/dotfiles/compare/v1.58.0...v1.59.0) (2022-11-15)
+
+
+### Features
+
+* **mappings:** add scroll mappings ([f229146](https://github.com/believer/dotfiles/commit/f2291468a11c30e810a3dc8b6882bcb5dd6fe2d6))
+* **snippets:** update rust snippets for advent of code ([98fc220](https://github.com/believer/dotfiles/commit/98fc22024140839859f01855640ee1e105a4574b))
+
 # [1.58.0](https://github.com/believer/dotfiles/compare/v1.57.1...v1.58.0) (2022-11-11)
 
 
