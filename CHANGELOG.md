@@ -1,3 +1,10 @@
+## [1.59.1](https://github.com/believer/dotfiles/compare/v1.59.0...v1.59.1) (2022-11-15)
+
+
+### Bug Fixes
+
+* **mappings:** handle previous search term as well ([ffed401](https://github.com/believer/dotfiles/commit/ffed401eba2f7cbf46a204aa66bcbd996555d016))
+
 # [1.59.0](https://github.com/believer/dotfiles/compare/v1.58.0...v1.59.0) (2022-11-15)
 
 
