@@ -1,3 +1,10 @@
+# [1.60.0](https://github.com/believer/dotfiles/compare/v1.59.1...v1.60.0) (2022-12-12)
+
+
+### Features
+
+* add shortcut to toggle inlay hint ([2e8381a](https://github.com/believer/dotfiles/commit/2e8381a89d115ff7d9041a97363a3f3f28802870))
+
 ## [1.59.1](https://github.com/believer/dotfiles/compare/v1.59.0...v1.59.1) (2022-11-15)
 
 
