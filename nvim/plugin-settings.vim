@@ -55,11 +55,6 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeQuitOnOpen = 1 " Quit NERDTree when opening a file
 
-"" RSpec mappings (thoughtbot/vim-rspec)
-map <leader>t :call RunCurrentSpecFile()<CR>
-map <leader>s :call RunNearestSpec()<CR>
-map <leader>l :call RunLastSpec()<CR>
-
 "" Rainbow brackets (luochen1990/rainbow)
 let g:rainbow_active = 1
 

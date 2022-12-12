@@ -65,3 +65,5 @@ augroup END
 " Code actions
 xmap <leader>i <Plug>(coc-codeaction-line)
 nmap <leader>i <Plug>(coc-codeaction-line)
+
+nmap <leader>s :CocCommand document.toggleInlayHint<CR>
