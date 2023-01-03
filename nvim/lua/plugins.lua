@@ -7,6 +7,12 @@ return require('packer').startup(function()
   use 'nvim-lualine/lualine.nvim' -- Status line
   use 'mattn/emmet-vim' -- Emmet
 
+  -- Treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
   -- LSP support
   use 'neovim/nvim-lspconfig' -- LSP configuration
   use 'williamboman/mason.nvim' -- Installer of LSPs and more
