@@ -1,3 +1,11 @@
+# [1.63.0](https://github.com/believer/dotfiles/compare/v1.62.0...v1.63.0) (2023-01-03)
+
+
+### Features
+
+* **plugin:** add git signs ([751df3b](https://github.com/believer/dotfiles/commit/751df3bac17a3e6d7a0d64e07cdfc2bd8bbbedcd))
+* **theme:** use tokyonight ([098c226](https://github.com/believer/dotfiles/commit/098c226ff2a62dfc19fd9f78b5f3df7ac93e8591))
+
 # [1.62.0](https://github.com/believer/dotfiles/compare/v1.61.1...v1.62.0) (2023-01-03)
 
 
