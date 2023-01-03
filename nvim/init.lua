@@ -5,7 +5,6 @@ vim.keymap.set('n', '<Space>', '<Nop>', {})
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
-
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
@@ -22,41 +21,9 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Lualine setup
-local colors = {
-  black   = '#051626',
-  lightgrey = '#282C34',
-  grey = '#334452',
-  red    = '#EF5350',
-  green = '#22DA63',
-  forest = '#ADDB67',
-  yellow = '#FFEB95',
-  blue = '#82AAFF',
-  violet = '#C792EA',
-  cyan = '#7fdbca',
-  lightcyan = '#68B0A0',
-  white  = '#c6c6c6',
-}
-
-local theme = {
-  normal = {
-    a = { fg = colors.black, bg = colors.cyan },
-    b = { fg = colors.black, bg = colors.lightcyan },
-    c = { fg = colors.cyan, bg = colors.lightgrey },
-  },
-  insert = {
-    a = { fg = colors.black, bg = colors.forest },
-    c = { fg = colors.forest, bg = colors.lightgrey },
-  },
-  visual = { 
-    a = { fg = colors.black, bg = colors.blue },
-    c = { fg = colors.blue, bg = colors.lightgrey },
-  },
-  replace = { a = { fg = colors.black, bg = colors.red } },
-}
-
 require('lualine').setup {
   options = {
-    theme = theme,
+    theme = 'tokyonight',
     component_separators = '|',
     section_separators = { left = '', right = '' },
   },
@@ -82,7 +49,7 @@ vim.opt.expandtab = true -- expand tabs to spaces
 vim.opt.smartindent = true
 
 -- Color scheme
-vim.cmd('colorscheme night-owl')
+vim.cmd('colorscheme tokyonight-night')
 
 -- Telescope setup
 local telescope = require('telescope.builtin')

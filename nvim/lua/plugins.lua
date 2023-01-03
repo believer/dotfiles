@@ -35,7 +35,6 @@ return require('packer').startup(function()
     requires = {{'nvim-lua/plenary.nvim'}}
   }
 
-
   -- Theme
-  use '~/code/personal/night-owl'
+  use 'folke/tokyonight.nvim'
 end)
