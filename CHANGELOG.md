@@ -1,3 +1,10 @@
+## [1.61.1](https://github.com/believer/dotfiles/compare/v1.61.0...v1.61.1) (2023-01-03)
+
+
+### Bug Fixes
+
+* **nvim-tree:** show on right side and close when opening file ([3cf04d0](https://github.com/believer/dotfiles/commit/3cf04d0b440628fcb8e504920a4ff8cdf895aa26))
+
 # [1.61.0](https://github.com/believer/dotfiles/compare/v1.60.0...v1.61.0) (2023-01-03)
 
 
