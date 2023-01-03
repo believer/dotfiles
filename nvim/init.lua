@@ -153,3 +153,6 @@ vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEn
     vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
   end
 })
+
+-- Git signs
+require('gitsigns').setup()

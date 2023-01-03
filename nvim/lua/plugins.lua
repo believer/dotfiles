@@ -6,6 +6,7 @@ return require('packer').startup(function()
   use 'github/copilot.vim' -- GitHub Copilot
   use 'nvim-lualine/lualine.nvim' -- Status line
   use 'mattn/emmet-vim' -- Emmet
+  use 'lewis6991/gitsigns.nvim' -- Git signs in the gutter
 
   -- Treesitter
   use {
