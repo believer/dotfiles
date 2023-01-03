@@ -1,3 +1,10 @@
+# [1.62.0](https://github.com/believer/dotfiles/compare/v1.61.1...v1.62.0) (2023-01-03)
+
+
+### Features
+
+* add nvim-treesitter ([e9f2843](https://github.com/believer/dotfiles/commit/e9f28431d3e15a3184bab6c079cff3ac1e146f6d))
+
 ## [1.61.1](https://github.com/believer/dotfiles/compare/v1.61.0...v1.61.1) (2023-01-03)
 
 
