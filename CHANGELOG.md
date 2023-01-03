@@ -1,3 +1,15 @@
+# [1.61.0](https://github.com/believer/dotfiles/compare/v1.60.0...v1.61.0) (2023-01-03)
+
+
+### Bug Fixes
+
+* git push command ([fbc94c5](https://github.com/believer/dotfiles/commit/fbc94c5db217ffafcebb8ace65ed57ae3366c57a))
+
+
+### Features
+
+* start moving configuration to lua ([a2e93de](https://github.com/believer/dotfiles/commit/a2e93de6a1779b61dd3a8ab0aae4e5d6fe52827a))
+
 # [1.60.0](https://github.com/believer/dotfiles/compare/v1.59.1...v1.60.0) (2022-12-12)
 
 
