@@ -117,8 +117,8 @@ vim.keymap.set('n', '<C-L>', '<C-W><C-L>', {})
 vim.keymap.set('n', '<C-H>', '<C-W><C-H>', {})
 
 -- Git
-vim.keymap.set('n', '<leader>gp', ':Git push', {})
-vim.keymap.set('n', '<leader>up', ':!git up', {})
+vim.keymap.set('n', '<leader>gp', ':Git push<cr>', {})
+vim.keymap.set('n', '<leader>up', ':!git up<cr>', {})
 vim.keymap.set('n', ':gss', ':G<cr>', { silent = true })
 
 -- Highlights the text that I'm yanking
