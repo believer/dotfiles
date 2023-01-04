@@ -9,23 +9,11 @@ nvim/.netrwhist
 tool_state
 gh
 github-copilot
+configstore
 
 # Work setup
 .hemnetrc
 .invidirc
-
-# CoC setup
-coc/lists
-coc/list-lists-history.json
-coc/list-commands-history.json
-coc/list-diagnostics-history.json
-coc/list-extensions-history.json
-coc/history.json
-coc/extensions/db.json
-configstore
-coc/commands
-coc/snippets-mru
-coc/suggest.txt
 
 # Lazygit
 jesseduffield
