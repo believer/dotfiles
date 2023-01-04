@@ -1,3 +1,10 @@
+# [1.65.0](https://github.com/believer/dotfiles/compare/v1.64.0...v1.65.0) (2023-01-04)
+
+
+### Features
+
+* **null-ls:** add formatting for lua and rescript ([b5cfe21](https://github.com/believer/dotfiles/commit/b5cfe2141c5c4b6ffa5ccf9f2d8433852e73682d))
+
 # [1.64.0](https://github.com/believer/dotfiles/compare/v1.63.0...v1.64.0) (2023-01-04)
 
 
