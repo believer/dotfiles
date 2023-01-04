@@ -1,17 +1,17 @@
-local map = require('utils').map
+local map = require("utils").map
 local g = vim.g
 local o = vim.opt
 
 -- Leader
-g.mapleader = ' '
-g.maplocalleader = ' '
+g.mapleader = " "
+g.maplocalleader = " "
 
 -- set termguicolors to enable highlight groups
 o.termguicolors = true
 
 -- Always display the sign column (where errors are displayed)
-o.signcolumn = 'yes'
-vim.cmd('highlight clear SignColumn') -- Remove highlighting of sign column
+o.signcolumn = "yes"
+vim.cmd("highlight clear SignColumn") -- Remove highlighting of sign column
 
 -- Split new buffers to the right
 o.splitright = true
@@ -32,7 +32,7 @@ o.expandtab = true -- expand tabs to spaces
 o.smartindent = true
 
 -- Simplify moving between panes
-map('n', '<C-J>', '<C-W><C-J>')
-map('n', '<C-K>', '<C-W><C-K>')
-map('n', '<C-L>', '<C-W><C-L>')
-map('n', '<C-H>', '<C-W><C-H>')
+map("n", "<C-J>", "<C-W><C-J>")
+map("n", "<C-K>", "<C-W><C-K>")
+map("n", "<C-L>", "<C-W><C-L>")
+map("n", "<C-H>", "<C-W><C-H>")

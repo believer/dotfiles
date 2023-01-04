@@ -1,17 +1,17 @@
-require('settings')
-require('plugins')
-require('lsp')
-require('snippets')
+require("settings")
+require("plugins")
+require("lsp")
+require("snippets")
 
-local map = require('utils').map
+local map = require("utils").map
 
 -- Color scheme
-vim.cmd('colorscheme tokyonight-night')
+vim.cmd("colorscheme tokyonight-night")
 
 -- Git
-map('n', '<leader>gp', ':Git push<cr>')
-map('n', '<leader>up', ':!git up<cr>')
-map('n', ':gss', ':G<cr>')
+map("n", "<leader>gp", ":Git push<cr>")
+map("n", "<leader>up", ":!git up<cr>")
+map("n", ":gss", ":G<cr>")
 
 -- Highlights the text that I'm yanking
 -- Courtesy of TJ DeVries
