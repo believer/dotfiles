@@ -1,3 +1,10 @@
+# [1.66.0](https://github.com/believer/dotfiles/compare/v1.65.0...v1.66.0) (2023-01-04)
+
+
+### Features
+
+* **lua:** continued updating and fine tuning ([1548160](https://github.com/believer/dotfiles/commit/1548160b1faa261ea05cff54e796b3a0b298d596))
+
 # [1.65.0](https://github.com/believer/dotfiles/compare/v1.64.0...v1.65.0) (2023-01-04)
 
 
