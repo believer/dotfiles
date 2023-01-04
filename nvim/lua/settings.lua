@@ -20,6 +20,10 @@ o.splitright = true
 o.ignorecase = true
 o.smartcase = true
 
+-- Search
+o.hlsearch = false
+o.incsearch = true
+
 -- Display line numbers and use relative numbering
 o.number = true
 o.relativenumber = true

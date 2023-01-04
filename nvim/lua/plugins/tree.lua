@@ -22,4 +22,5 @@ require("nvim-tree").setup({
 	},
 })
 
-map("n", "<leader>d", ":NvimTreeToggle<cr>")
+map("n", "<leader>d", vim.cmd.NvimTreeToggle)
+map("n", "<leader>f", vim.cmd.NvimTreeFocus)

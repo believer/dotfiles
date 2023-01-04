@@ -8,6 +8,8 @@ require("nvim-treesitter.configs").setup({
 	-- Enable autopairs
 	autopairs = { enable = true },
 
+  indent = { enable = true },
+
 	-- Ensure that certain syntaxes are installed
 	ensure_installed = {
 		"css",

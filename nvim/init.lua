@@ -11,14 +11,16 @@ vim.cmd("colorscheme tokyonight-night")
 -- Git
 map("n", "<leader>gp", ":Git push<cr>")
 map("n", "<leader>up", ":!git up<cr>")
-map("n", ":gss", ":G<cr>")
+map("n", ":gss", vim.cmd.Git)
 
--- Highlights the text that I'm yanking
--- Courtesy of TJ DeVries
--- https://youtu.be/apyV4v7x33o?t=2912
-vim.cmd([[
-augroup yanking
-  autocmd!
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
-augroup END
-]])
+-- Highlight on yank
+-- Taken from kickstart.nvim
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
+})
