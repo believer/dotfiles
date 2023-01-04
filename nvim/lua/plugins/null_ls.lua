@@ -23,5 +23,7 @@ null_ls.setup {
     b.diagnostics.eslint_d,
     b.formatting.prettierd,
     b.formatting.eslint_d,
+    b.formatting.stylua,
+    b.formatting.rescript,
   },
 }
