@@ -1,3 +1,10 @@
+# [1.64.0](https://github.com/believer/dotfiles/compare/v1.63.0...v1.64.0) (2023-01-04)
+
+
+### Features
+
+* lots of moving configuration to lua ([b42e616](https://github.com/believer/dotfiles/commit/b42e61606b29943535e755aa5b0073ce6945b292))
+
 # [1.63.0](https://github.com/believer/dotfiles/compare/v1.62.0...v1.63.0) (2023-01-03)
 
 
