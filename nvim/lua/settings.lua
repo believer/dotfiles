@@ -6,6 +6,9 @@ local o = vim.opt
 g.mapleader = " "
 g.maplocalleader = " "
 
+-- Define Python path
+g.python3_host_prog = "/usr/bin/python3"
+
 -- set termguicolors to enable highlight groups
 o.termguicolors = true
 
