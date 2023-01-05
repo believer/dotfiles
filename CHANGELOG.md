@@ -1,3 +1,10 @@
+## [1.72.1](https://github.com/believer/dotfiles/compare/v1.72.0...v1.72.1) (2023-01-05)
+
+
+### Bug Fixes
+
+* define the python path ([7ba299a](https://github.com/believer/dotfiles/commit/7ba299a2956b5f30814e7d1f127c4abc7494efd7))
+
 # [1.72.0](https://github.com/believer/dotfiles/compare/v1.71.0...v1.72.0) (2023-01-05)
 
 
