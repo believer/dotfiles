@@ -15,22 +15,22 @@ local regular_snippets = {
 		"vtest",
 		fmt(
 			[[
-import {{ render, screen, RenderResult }} from '@testing-library/vue'
-import {filename} from '../{filename}.vue'
+  import {{ render, screen, RenderResult }} from '@testing-library/vue'
+  import {filename} from '../{filename}.vue'
 
-const setup = (customProps = {{}}): RenderResult => {{
-	const props = {{
-		...customProps
-	}}
+  const setup = (customProps = {{}}): RenderResult => {{
+    const props = {{
+      ...customProps
+    }}
 
-	return render({filename}, {{ props }})
-}}
+    return render({filename}, {{ props }})
+  }}
 
-test('{test_name}', () => {{
-	setup()
+  test('{test_name}', () => {{
+    setup()
 
-	screen.debug()
-}})
+    screen.debug()
+  }})
   ]],
 			{
 				filename = filename(),
@@ -42,9 +42,69 @@ test('{test_name}', () => {{
 
 -- These will expand automatically
 local auto_snippets = {
-	-- Testing
+	-- Assertion
 	s("expdoc", fmt("expect({}).toBeInTheDocument()", { i(0) })),
 	s("expndoc", fmt("expect({}).not.toBeInTheDocument()", { i(0) })),
+
+	-- Create a `describe` block
+	s(
+		"desc",
+		fmt(
+			[[
+  describe('{test_name}', () => {{
+    {content}
+  }})
+  ]],
+			{
+				test_name = i(1, "What does it describe?"),
+				content = i(2),
+			}
+		)
+	),
+	-- Create a `describe` block and a `test` block
+	s(
+		"desct",
+		fmt(
+			[[
+  describe('{describe_name}', () => {{
+    test('{test_name}', () => {{
+      {content}
+    }})
+  }})
+  ]],
+			{
+				describe_name = i(1, "What does it describe?"),
+				test_name = i(2, "What does it test?"),
+				content = i(3),
+			}
+		)
+	),
+
+	-- Create a `test` block
+	s(
+		"test",
+		fmt(
+			[[
+    test('{test_name}', () => {{
+      {content}
+    }})
+  ]],
+			{ test_name = i(1, "What does it test?"), content = i(2) }
+		)
+	),
+
+	-- Create an async `test` block
+	s(
+		"testa",
+		fmt(
+			[[
+    test('{test_name}', async () => {{
+      {content}
+    }})
+  ]],
+			{ test_name = i(1, "What does it test?"), content = i(2) }
+		)
+	),
 
 	-- Testing Library
 	s("sdbg", t("screen.debug()")),
