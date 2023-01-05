@@ -1,3 +1,11 @@
+# [1.68.0](https://github.com/believer/dotfiles/compare/v1.67.0...v1.68.0) (2023-01-05)
+
+
+### Features
+
+* add keymap to copy to clipboard ([eab9e25](https://github.com/believer/dotfiles/commit/eab9e2599213230a508bd2dc5943dd6f17532013))
+* patch monolisa font to get icons, add typescript.nvim ([d0039a1](https://github.com/believer/dotfiles/commit/d0039a13aa8ef9574f010149f246daacb4a69098))
+
 # [1.67.0](https://github.com/believer/dotfiles/compare/v1.66.0...v1.67.0) (2023-01-05)
 
 
