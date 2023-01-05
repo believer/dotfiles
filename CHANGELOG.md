@@ -1,3 +1,11 @@
+# [1.67.0](https://github.com/believer/dotfiles/compare/v1.66.0...v1.67.0) (2023-01-05)
+
+
+### Features
+
+* enable undofile to preserve undo history ([e3f5bdf](https://github.com/believer/dotfiles/commit/e3f5bdf6a3af1bce4989da42ec1d529dccb7cd93))
+* **plugins:** test out harpoon ([d169d24](https://github.com/believer/dotfiles/commit/d169d24a03691e0603b285ff56843566dd84404c))
+
 # [1.66.0](https://github.com/believer/dotfiles/compare/v1.65.0...v1.66.0) (2023-01-04)
 
 
