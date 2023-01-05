@@ -56,3 +56,9 @@ lspconfig.eslint.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+require("typescript").setup({
+	server = {
+		on_attach = on_attach,
+	},
+})

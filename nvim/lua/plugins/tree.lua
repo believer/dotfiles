@@ -12,14 +12,6 @@ require("nvim-tree").setup({
 	view = {
 		side = "right",
 	},
-	renderer = {
-		icons = {
-			show = {
-				file = false,
-				folder = false,
-			},
-		},
-	},
 })
 
 map("n", "<leader>d", vim.cmd.NvimTreeToggle)
