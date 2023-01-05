@@ -1,3 +1,13 @@
+# [1.70.0](https://github.com/believer/dotfiles/compare/v1.69.0...v1.70.0) (2023-01-05)
+
+
+### Features
+
+* **harpoon:** update mappings ([72b7ccb](https://github.com/believer/dotfiles/commit/72b7ccb929445106abfd2038ef8747b0f0defce4))
+* **null-ls:** add rustfmt ([8a2d998](https://github.com/believer/dotfiles/commit/8a2d998b2861e783166719923f30b19de21f9f33))
+* add centering position while scrolling/searching ([0b0a1c7](https://github.com/believer/dotfiles/commit/0b0a1c7a0be6dee786cb4d6b9c3e241825dafe63))
+* **snippets:** load snippets from files ([73aaf4e](https://github.com/believer/dotfiles/commit/73aaf4e16bf48a19b2747688da30883930a83157))
+
 # [1.69.0](https://github.com/believer/dotfiles/compare/v1.68.0...v1.69.0) (2023-01-05)
 
 
