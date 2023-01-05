@@ -43,3 +43,6 @@ map("n", "<C-H>", "<C-W><C-H>")
 
 -- Persist undos after buffers are unloaded
 o.undofile = true
+
+-- Copy to the system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
