@@ -89,10 +89,18 @@ return require("packer").startup(function(use)
 	-- Theme
 	use("folke/tokyonight.nvim")
 
+	-- Automatically add matching parens, braces, quotes etc.
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
 			require("plugins.autopairs")
+		end,
+	})
+
+	use({
+		"ThePrimeagen/harpoon",
+		config = function()
+			require("plugins.harpoon")
 		end,
 	})
 end)
