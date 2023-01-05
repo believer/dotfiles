@@ -1,3 +1,11 @@
+# [1.71.0](https://github.com/believer/dotfiles/compare/v1.70.0...v1.71.0) (2023-01-05)
+
+
+### Features
+
+* **snippets:** add more typescript snippets ([9a15c9c](https://github.com/believer/dotfiles/commit/9a15c9c0b07f7b4d35fbf5d53ec3b3178af2cd4a))
+* **snippets:** javascript snippets extend typescript ([2b2e1fe](https://github.com/believer/dotfiles/commit/2b2e1fef70b35ce7064f25f051db0a2a26dc8998))
+
 # [1.70.0](https://github.com/believer/dotfiles/compare/v1.69.0...v1.70.0) (2023-01-05)
 
 
