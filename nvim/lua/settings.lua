@@ -46,3 +46,14 @@ o.undofile = true
 
 -- Copy to the system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+
+-- Keep cursor position when collapsing lines
+map("n", "J", "mzJ`z")
+
+-- Center cursor when scrolling up and down
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+
+-- Center search results
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
