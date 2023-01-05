@@ -7,8 +7,14 @@ end
 
 -- Regular snippets available through completion menu
 local regular_snippets = {
-	-- Console log
-	s("clog", fmt("console.log({})", { i(0, "data") })),
+	s({
+		trig = "clog",
+		name = "Console.log",
+		dscr = "A simple console log",
+	}, fmt("console.log({})", { i(0, "data") })),
+
+	-- Assertions
+	s("exp", fmt("expect({}).toEqual({})", { i(1), i(2) })),
 
 	-- Vue test
 	s(
@@ -42,9 +48,12 @@ local regular_snippets = {
 
 -- These will expand automatically
 local auto_snippets = {
-	-- Assertion
+	-- Assertions
+	s("asmock", fmt("asMock({}).mockResolvedValue({})", { i(1), i(2) })),
 	s("expdoc", fmt("expect({}).toBeInTheDocument()", { i(0) })),
 	s("expndoc", fmt("expect({}).not.toBeInTheDocument()", { i(0) })),
+	s("thbcw", fmt("expect({}).toHaveBeenCalledWith({})", { i(1), i(2) })),
+	s("thbct", fmt("expect({}).toHaveBeenCalledTimes({})", { i(1), i(2) })),
 
 	-- Create a `describe` block
 	s(
