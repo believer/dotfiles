@@ -25,6 +25,7 @@ null_ls.setup({
 		b.formatting.eslint_d,
 		b.formatting.stylua,
 		b.formatting.rescript,
+		b.formatting.rustfmt,
 		require("typescript.extensions.null-ls.code-actions"),
 	},
 })
