@@ -79,3 +79,11 @@ map("n", "<leader>ad", "diwxda<cr>")
 
 -- Shortcut to the black hole register
 map("n", "<leader>r", '"_')
+
+-- Tell GitHub Copilot to use Node 16
+g.copilot_node_command = "~/Library/Caches/fnm_multishells/20517_1672831454977/bin/node"
+
+-- Map Copilot completion to ctrl + j
+g.copilot_no_tab_map = true
+
+map("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
