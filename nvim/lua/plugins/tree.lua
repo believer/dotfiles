@@ -15,4 +15,4 @@ require("nvim-tree").setup({
 })
 
 map("n", "<leader>d", vim.cmd.NvimTreeToggle)
-map("n", "<leader>f", vim.cmd.NvimTreeFocus)
+map("n", "<leader>f", vim.cmd.NvimTreeFindFile)
