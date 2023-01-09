@@ -1,3 +1,12 @@
+## [1.73.1](https://github.com/believer/dotfiles/compare/v1.73.0...v1.73.1) (2023-01-09)
+
+
+### Bug Fixes
+
+* **copilot:** run copilot with node 16 and fix tab mapping ([c6947d2](https://github.com/believer/dotfiles/commit/c6947d21c471482df379d1246a2dd9bb225a49c9))
+* **nvim-tree:** find file command ([2e95352](https://github.com/believer/dotfiles/commit/2e95352ec2aac82a0439f1301e5c13652d088557))
+* **snippets:** move test snippets from autocompletion ([c24974b](https://github.com/believer/dotfiles/commit/c24974b4c1c6a88aa57bbd760d49ca8daf71aaac))
+
 # [1.73.0](https://github.com/believer/dotfiles/compare/v1.72.1...v1.73.0) (2023-01-09)
 
 
