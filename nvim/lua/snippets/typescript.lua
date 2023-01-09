@@ -44,6 +44,32 @@ local regular_snippets = {
 			}
 		)
 	),
+
+	-- Create a `test` block
+	s(
+		"test",
+		fmt(
+			[[
+    test('{test_name}', () => {{
+      {content}
+    }})
+  ]],
+			{ test_name = i(1, "What does it test?"), content = i(2) }
+		)
+	),
+
+	-- Create an async `test` block
+	s(
+		"testa",
+		fmt(
+			[[
+    test('{test_name}', async () => {{
+      {content}
+    }})
+  ]],
+			{ test_name = i(1, "What does it test?"), content = i(2) }
+		)
+	),
 }
 
 -- These will expand automatically
@@ -86,32 +112,6 @@ local auto_snippets = {
 				test_name = i(2, "What does it test?"),
 				content = i(3),
 			}
-		)
-	),
-
-	-- Create a `test` block
-	s(
-		"test",
-		fmt(
-			[[
-    test('{test_name}', () => {{
-      {content}
-    }})
-  ]],
-			{ test_name = i(1, "What does it test?"), content = i(2) }
-		)
-	),
-
-	-- Create an async `test` block
-	s(
-		"testa",
-		fmt(
-			[[
-    test('{test_name}', async () => {{
-      {content}
-    }})
-  ]],
-			{ test_name = i(1, "What does it test?"), content = i(2) }
 		)
 	),
 
