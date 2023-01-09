@@ -1,3 +1,10 @@
+# [1.73.0](https://github.com/believer/dotfiles/compare/v1.72.1...v1.73.0) (2023-01-09)
+
+
+### Features
+
+* move key mappings to lua ([db4da9d](https://github.com/believer/dotfiles/commit/db4da9d7a268b6a4cbda02a7520df9fc80a7fbe9))
+
 ## [1.72.1](https://github.com/believer/dotfiles/compare/v1.72.0...v1.72.1) (2023-01-05)
 
 
