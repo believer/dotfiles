@@ -60,3 +60,22 @@ map("n", "<C-u>", "<C-u>zz")
 -- Center search results
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
+
+-- Remove arrow keys
+map("n", "<Up>", "<Nop>")
+map("n", "<Down>", "<Nop>")
+map("n", "<Left>", "<Nop>")
+map("n", "<Right>", "<Nop>")
+
+-- Remap things I usually mistype
+map("n", "q:", "<Nop>")
+map("n", ":W", vim.cmd.w)
+
+-- Remove HTML attribute
+-- diw - Delete inside word to be anywhere in attribute name
+-- x - Remove =
+-- da" - Remove attribute value
+map("n", "<leader>ad", "diwxda<cr>")
+
+-- Shortcut to the black hole register
+map("n", "<leader>r", '"_')
