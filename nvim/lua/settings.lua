@@ -84,6 +84,7 @@ map("n", "<leader>r", '"_')
 g.copilot_node_command = "~/Library/Caches/fnm_multishells/20517_1672831454977/bin/node"
 
 -- Map Copilot completion to ctrl + j
+-- replace_keycodes = false fixes an issue where Copilot would insert weird characters
+-- https://github.com/community/community/discussions/29817#discussioncomment-4217615
 g.copilot_no_tab_map = true
-
-map("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+map("i", "<C-j>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true, replace_keycodes = false })
