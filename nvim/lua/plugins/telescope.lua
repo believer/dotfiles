@@ -1,5 +1,7 @@
 local map = require("utils").map
 local telescope = require("telescope.builtin")
+local actions = require("telescope.actions")
+
 
 map("n", "<leader>;", telescope.find_files)
 -- Setup
@@ -13,6 +15,20 @@ require("telescope").setup({
 		},
 	},
 })
+
+-- Use git_files if in a git repo, otherwise use find_files
+local function project_files()
+	vim.fn.system("git rev-parse --is-inside-work-tree")
+
+	if vim.v.shell_error == 0 then
+		telescope.git_files()
+	else
+		telescope.find_files()
+	end
+end
+
+-- Keybindings
+map("n", "<leader>;", project_files)
 map("n", "??", telescope.live_grep)
 map("n", "<leader>o", telescope.buffers)
 map("n", "<leader>fh", telescope.help_tags)
