@@ -1,3 +1,16 @@
+# [1.74.0](https://github.com/believer/dotfiles/compare/v1.73.1...v1.74.0) (2023-01-10)
+
+
+### Bug Fixes
+
+* **telescope:** close on esc instead of switching to normal mode ([404896a](https://github.com/believer/dotfiles/commit/404896a60bbe3f64890ad69d246eb6b234b04fae))
+
+
+### Features
+
+* **telescope:** add fzf support ([c5a7cf6](https://github.com/believer/dotfiles/commit/c5a7cf66daf8bff9e03c52b868eb1f10e3558c4d))
+* **telescope:** use git_files, fallback to find_files ([f78506f](https://github.com/believer/dotfiles/commit/f78506f8ef6685d311cacd55ea047d8174e2b80f))
+
 ## [1.73.1](https://github.com/believer/dotfiles/compare/v1.73.0...v1.73.1) (2023-01-09)
 
 
