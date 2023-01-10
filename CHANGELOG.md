@@ -1,3 +1,10 @@
+# [1.75.0](https://github.com/believer/dotfiles/compare/v1.74.0...v1.75.0) (2023-01-10)
+
+
+### Features
+
+* **null-ls:** add stylelint diagnostics ([6671b5f](https://github.com/believer/dotfiles/commit/6671b5f118814969d102e3631c210bcdef103023))
+
 # [1.74.0](https://github.com/believer/dotfiles/compare/v1.73.1...v1.74.0) (2023-01-10)
 
 
