@@ -17,7 +17,7 @@
   tdiff = "!f() { hub compare v$1..v$2; }; f"
   fs = "!f() { git branch | grep $1 | xargs git switch; }; f"
 	fame = !python3 -m gitfame
-  update = "!f() { git stash && git switch master && git up && git switch - && git rebase master && git stash pop; }; f"
+  update = "!f() { git switch master && git up && git switch - && git rebase master }; f"
 
 [core]
     pager = delta --plus-style="#012800" --minus-style="#340001"
