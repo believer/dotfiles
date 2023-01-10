@@ -21,6 +21,7 @@ null_ls.setup({
 		b.code_actions.eslint_d,
 		b.completion.spell,
 		b.diagnostics.eslint_d,
+		b.diagnostics.stylelint,
 		b.formatting.prettierd,
 		b.formatting.eslint_d,
 		b.formatting.stylua,
