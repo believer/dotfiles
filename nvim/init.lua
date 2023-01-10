@@ -12,6 +12,7 @@ vim.cmd("colorscheme tokyonight-night")
 map("n", "<leader>gp", ":Git push<cr>")
 map("n", "<leader>up", ":!git up<cr>")
 map("n", ":gss", vim.cmd.Git)
+map("n", ":Gss", vim.cmd.Git)
 
 -- Highlight on yank
 -- Taken from kickstart.nvim
