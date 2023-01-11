@@ -1,3 +1,20 @@
+# [1.76.0](https://github.com/believer/dotfiles/compare/v1.75.0...v1.76.0) (2023-01-11)
+
+
+### Bug Fixes
+
+* **copilot:** fix insertion of weird characters ([a4180d5](https://github.com/believer/dotfiles/commit/a4180d50c3f29a102d58ecf630865bfc0df52d31))
+* **git:** fix broken update command ([0315f0a](https://github.com/believer/dotfiles/commit/0315f0ad0a1d4d9f60226857382b97b524e8c11f))
+
+
+### Features
+
+* **nvim-tree:** add s for vs split ([fee7a44](https://github.com/believer/dotfiles/commit/fee7a44e58b06ee3fabf61f588ebd8c86986dccf))
+* **nvim-tree:** disable window picker ([7226bf9](https://github.com/believer/dotfiles/commit/7226bf9e89ffe9bf4c339a1bd9f268811a030417))
+* **snippets:** map vue to typescript ([294146b](https://github.com/believer/dotfiles/commit/294146b90d887b15e68b3b6ac4ca75cb3fa77f8c))
+* **telescope:** add mappings for cycling search history ([7a4cc96](https://github.com/believer/dotfiles/commit/7a4cc9608b7d1193572a1103ee8d386b43348cd3))
+* **treesitter:** add json syntax ([c7308c4](https://github.com/believer/dotfiles/commit/c7308c400b7deb6714967fe5e5ac6b7637459d2c))
+
 # [1.75.0](https://github.com/believer/dotfiles/compare/v1.74.0...v1.75.0) (2023-01-10)
 
 
