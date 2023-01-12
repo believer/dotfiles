@@ -62,6 +62,11 @@ lspconfig.rust_analyzer.setup({
 	capabilities = capabilities,
 })
 
+lspconfig.rescriptls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 require("typescript").setup({
 	server = {
 		on_attach = on_attach,
