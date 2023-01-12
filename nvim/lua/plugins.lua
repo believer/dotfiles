@@ -114,4 +114,7 @@ return require("packer").startup(function(use)
 
 	-- Additional tools when working with TypeScript (add/organize imports)
 	use("jose-elias-alvarez/typescript.nvim")
+
+	-- Treesitter support for ReScript
+	use("nkrkv/nvim-treesitter-rescript")
 end)
