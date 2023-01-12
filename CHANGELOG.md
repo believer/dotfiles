@@ -1,3 +1,10 @@
+# [1.78.0](https://github.com/believer/dotfiles/compare/v1.77.0...v1.78.0) (2023-01-12)
+
+
+### Features
+
+* **treesitter:** add rescript and markdown support ([2b3c7ea](https://github.com/believer/dotfiles/commit/2b3c7eadafb00b6ab29ac4ab4536abf2bb06827f))
+
 # [1.77.0](https://github.com/believer/dotfiles/compare/v1.76.0...v1.77.0) (2023-01-12)
 
 
