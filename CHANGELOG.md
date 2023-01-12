@@ -1,3 +1,10 @@
+# [1.77.0](https://github.com/believer/dotfiles/compare/v1.76.0...v1.77.0) (2023-01-12)
+
+
+### Features
+
+* **harpoon:** add more key mappings ([ef6c55d](https://github.com/believer/dotfiles/commit/ef6c55d0e16753197c0c6b15cdb937ae7035be9c))
+
 # [1.76.0](https://github.com/believer/dotfiles/compare/v1.75.0...v1.76.0) (2023-01-11)
 
 
