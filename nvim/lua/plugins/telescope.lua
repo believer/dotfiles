@@ -12,10 +12,6 @@ require("telescope").setup({
 			i = {
 				-- Close telescope with <Esc> instead of switching to normal mode
 				["<esc>"] = actions.close,
-
-				-- Cycle through search history
-				["<C-]>"] = actions.cycle_history_next,
-				["<C-[>"] = actions.cycle_history_prev,
 			},
 		},
 	},
