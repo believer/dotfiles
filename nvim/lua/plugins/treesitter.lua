@@ -1,5 +1,6 @@
 require("nvim-treesitter.configs").setup({
-	-- Turn on highlighting highlight = { enable = true },
+	-- Turn on highlighting
+	highlight = { enable = true },
 
 	-- Enable windwp/nvim-ts-autotag for close/update tags
 	autotag = { enable = true },
