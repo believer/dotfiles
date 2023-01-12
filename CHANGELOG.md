@@ -1,3 +1,15 @@
+# [1.79.0](https://github.com/believer/dotfiles/compare/v1.78.0...v1.79.0) (2023-01-12)
+
+
+### Bug Fixes
+
+* **treesitter:** I broke highlighting ([33e1c66](https://github.com/believer/dotfiles/commit/33e1c66468702c911ef21b23c06d6e2d5d45262e))
+
+
+### Features
+
+* **lsp:** add rescript support ([c2e23d6](https://github.com/believer/dotfiles/commit/c2e23d6ddc2f4a0c8650a81218e95c7f9dbb76f8))
+
 # [1.78.0](https://github.com/believer/dotfiles/compare/v1.77.0...v1.78.0) (2023-01-12)
 
 
