@@ -36,14 +36,7 @@ local autocommands = {
 		callback = function()
 			vim.opt.foldmethod = "expr"
 			vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-		end,
-	},
-
-	-- Open all folds when opening file
-	open_all_folds = {
-		triggers = { "BufReadPost", "FileReadPost" },
-		callback = function()
-			vim.cmd("normal zR")
+			vim.opt.foldlevel = 99
 		end,
 	},
 }
