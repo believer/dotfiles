@@ -50,10 +50,7 @@ return require("packer").startup(function(use)
 	use("williamboman/mason-lspconfig.nvim") -- LSP configuration for Mason
 
 	-- Snippets
-	use({
-		"L3MON4D3/LuaSnip",
-		tag = "v<CurrentMajor>.*",
-	})
+	use("L3MON4D3/LuaSnip")
 
 	-- Autocompletion
 	use({
