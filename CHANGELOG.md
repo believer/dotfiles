@@ -1,3 +1,10 @@
+# [1.80.0](https://github.com/believer/dotfiles/compare/v1.79.0...v1.80.0) (2023-01-13)
+
+
+### Features
+
+* **harpoon:** add ability to open in split ([efecbcd](https://github.com/believer/dotfiles/commit/efecbcd6e46cbce250986c3f3022d60af4f8d9cb))
+
 # [1.79.0](https://github.com/believer/dotfiles/compare/v1.78.0...v1.79.0) (2023-01-12)
 
 
