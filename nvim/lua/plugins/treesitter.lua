@@ -16,6 +16,17 @@ require("nvim-treesitter.configs").setup({
 	-- Enable indent
 	indent = { enable = true },
 
+	-- Enable incremental selection
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "gnn",
+			node_incremental = "grn",
+			scope_incremental = "grc",
+			node_decremental = "grm",
+		},
+	},
+
 	-- Ensure that certain syntaxes are installed
 	ensure_installed = {
 		"css",
