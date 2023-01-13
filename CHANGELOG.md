@@ -1,3 +1,10 @@
+# [1.82.0](https://github.com/believer/dotfiles/compare/v1.81.0...v1.82.0) (2023-01-13)
+
+
+### Features
+
+* **treesitter:** add incremental selection ([bc9f0f7](https://github.com/believer/dotfiles/commit/bc9f0f79ba904f1c36c66321757635674f46d247))
+
 # [1.81.0](https://github.com/believer/dotfiles/compare/v1.80.0...v1.81.0) (2023-01-13)
 
 
