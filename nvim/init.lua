@@ -3,25 +3,27 @@ require("plugins")
 require("lsp")
 require("snippets")
 
-local map = require("utils").map
+local U = require("utils")
 
 -- Color scheme
 vim.cmd("colorscheme tokyonight-night")
 
 -- Git
-map("n", "<leader>gp", ":Git push<cr>")
-map("n", "<leader>up", ":!git up<cr>")
-map("n", ":gss", vim.cmd.Git)
-map("n", ":Gss", vim.cmd.Git)
+U.map("n", "<leader>gp", ":Git push<cr>")
+U.map("n", "<leader>up", ":!git up<cr>")
+U.map("n", ":gss", vim.cmd.Git)
+U.map("n", ":Gss", vim.cmd.Git)
 
 -- Highlight on yank
 -- Taken from kickstart.nvim
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+local autocommands = {
+	highlight_yank = {
+		group_opts = { clear = true },
+		triggers = { "TextYankPost" },
+		callback = function()
+			vim.highlight.on_yank()
+		end,
+	},
+}
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = "*",
-})
+U.add_autocommands(autocommands)
