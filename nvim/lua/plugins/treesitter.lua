@@ -1,6 +1,11 @@
+local add_autocommands = require("utils").add_autocommands
+
 require("nvim-treesitter.configs").setup({
 	-- Turn on highlighting
-	highlight = { enable = true },
+	highlight = {
+		additional_vim_regex_highlighting = false,
+		enable = true,
+	},
 
 	-- Enable windwp/nvim-ts-autotag for close/update tags
 	autotag = { enable = true },
@@ -23,3 +28,25 @@ require("nvim-treesitter.configs").setup({
 		"vue",
 	},
 })
+
+local autocommands = {
+	-- Workaround for folds combined with Packer
+	add_folds = {
+		triggers = { "BufEnter", "BufAdd", "BufNew", "BufNewFile", "BufWinEnter" },
+		callback = function()
+			vim.opt.foldmethod = "expr"
+			vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+			vim.g.nofoldenable = true
+		end,
+	},
+
+	-- Open all folds when opening file
+	open_all_folds = {
+		triggers = { "BufReadPost", "FileReadPost" },
+		callback = function()
+			vim.cmd("normal zR")
+		end,
+	},
+}
+
+add_autocommands(autocommands)
