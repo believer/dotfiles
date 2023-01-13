@@ -1,3 +1,10 @@
+# [1.81.0](https://github.com/believer/dotfiles/compare/v1.80.0...v1.81.0) (2023-01-13)
+
+
+### Features
+
+* **treesitter:** add support for folding ([a1f855d](https://github.com/believer/dotfiles/commit/a1f855d8a3b7aa2b2f39faa636d3722cbdd48d93))
+
 # [1.80.0](https://github.com/believer/dotfiles/compare/v1.79.0...v1.80.0) (2023-01-13)
 
 
