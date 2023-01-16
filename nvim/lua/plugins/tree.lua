@@ -1,26 +1,39 @@
+-- File tree
 local map = require("utils").map
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-require("nvim-tree").setup({
-	actions = {
-		open_file = {
-			quit_on_open = true,
-			window_picker = {
-				enable = false,
-			},
-		},
-	},
-	view = {
-		side = "right",
-		mappings = {
-			list = {
-				{ key = { "s" }, action = "vsplit" },
-			},
-		},
-	},
-})
-
-map("n", "<leader>d", vim.cmd.NvimTreeToggle)
-map("n", "<leader>f", vim.cmd.NvimTreeFindFile)
+return {
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v2.x",
+  dependencies = {
+    -- Add devicons
+    "nvim-tree/nvim-web-devicons",
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+  },
+  opts = {
+    close_if_last_window = true,
+    event_handlers = {
+      {
+        event = "file_opened",
+        handler = function()
+          --auto close
+          require("neo-tree").close_all()
+        end,
+      },
+    },
+    window = {
+      position = "right",
+      mappings = {
+        ["s"] = "open_vsplit",
+        ["<C-v>"] = "open_vsplit",
+      },
+    },
+  },
+  init = function()
+    map("n", "<leader>d", vim.cmd.NeoTreeFocusToggle)
+    map("n", "<leader>f", vim.cmd.NeoTreeReveal)
+  end,
+}

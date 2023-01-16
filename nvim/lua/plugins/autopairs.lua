@@ -1,5 +1,7 @@
-local autopairs = require("nvim-autopairs")
-
-autopairs.setup({
-	check_ts = true,
-})
+-- Automatically add matching parens, braces, quotes etc.
+return {
+  "windwp/nvim-autopairs",
+  opts = {
+    check_ts = true,
+  },
+}
