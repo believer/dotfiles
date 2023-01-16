@@ -46,11 +46,4 @@ return {
 
 	-- Additional tools when working with TypeScript (add/organize imports)
 	{ "jose-elias-alvarez/typescript.nvim", ft = "typescript" },
-
-	{
-		"goolord/alpha-nvim",
-		config = function()
-			require("alpha").setup(require("alpha.themes.theta").config)
-		end,
-	},
 }
