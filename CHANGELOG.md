@@ -1,3 +1,16 @@
+# [1.86.0](https://github.com/believer/dotfiles/compare/v1.85.0...v1.86.0) (2023-01-16)
+
+
+### Bug Fixes
+
+* **alpha:** highlight color ([334b846](https://github.com/believer/dotfiles/commit/334b846250aef5a04975b99117eae00ac3a68824))
+
+
+### Features
+
+* **alpha:** set a static header ([78934ab](https://github.com/believer/dotfiles/commit/78934ab241d66c8a34afadcc7cbcc9cb57e5e178))
+* **lazy:** hide notifications on updates ([803a7ea](https://github.com/believer/dotfiles/commit/803a7ea040bdaa70b524618ca704c395e7e9951b))
+
 # [1.85.0](https://github.com/believer/dotfiles/compare/v1.84.0...v1.85.0) (2023-01-16)
 
 
