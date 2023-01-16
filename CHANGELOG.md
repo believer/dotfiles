@@ -1,3 +1,15 @@
+# [1.83.0](https://github.com/believer/dotfiles/compare/v1.82.0...v1.83.0) (2023-01-16)
+
+
+### Bug Fixes
+
+* **tmux:** update term color ([c74e8f9](https://github.com/believer/dotfiles/commit/c74e8f98aaf12fa325ce9494df3e29a31c913a62))
+
+
+### Features
+
+* **plugins:** use lazy.nvim ([6abec99](https://github.com/believer/dotfiles/commit/6abec992a07ae5b394c798a02c9e76cc3be9cf0d))
+
 # [1.82.0](https://github.com/believer/dotfiles/compare/v1.81.0...v1.82.0) (2023-01-13)
 
 
