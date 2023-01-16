@@ -1,7 +1,10 @@
 return {
-	"tpope/vim-commentary", -- Easier comments (gc / gcc)
+	-- Easier comments (gc / gcc)
+	{ "tpope/vim-commentary", event = "VeryLazy" },
+	-- Actions that work on surrounding context
+	{ "tpope/vim-surround", event = "VeryLazy" },
+
 	"tpope/vim-fugitive", -- Git
-	"tpope/vim-surround", -- Actions that work on surrounding context
 
 	-- GitHub Copilot
 	{
@@ -38,8 +41,16 @@ return {
 		end,
 	},
 
-	"mattn/emmet-vim", -- Emmet
+	-- Emmet
+	{ "mattn/emmet-vim", event = "VeryLazy" },
 
 	-- Additional tools when working with TypeScript (add/organize imports)
-	"jose-elias-alvarez/typescript.nvim",
+	{ "jose-elias-alvarez/typescript.nvim", ft = "typescript" },
+
+	{
+		"goolord/alpha-nvim",
+		config = function()
+			require("alpha").setup(require("alpha.themes.theta").config)
+		end,
+	},
 }
