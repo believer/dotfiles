@@ -1,3 +1,10 @@
+## [1.87.3](https://github.com/believer/dotfiles/compare/v1.87.2...v1.87.3) (2023-01-16)
+
+
+### Bug Fixes
+
+* **mason:** ensure installed language servers ([3a059d6](https://github.com/believer/dotfiles/commit/3a059d66647b5b9d22f9e6ba5c7597464cbf01b3))
+
 ## [1.87.2](https://github.com/believer/dotfiles/compare/v1.87.1...v1.87.2) (2023-01-16)
 
 
