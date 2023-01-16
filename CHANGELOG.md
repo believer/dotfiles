@@ -1,3 +1,10 @@
+# [1.87.0](https://github.com/believer/dotfiles/compare/v1.86.0...v1.87.0) (2023-01-16)
+
+
+### Features
+
+* **alpha:** position greeting in center ([0b73c78](https://github.com/believer/dotfiles/commit/0b73c784e1a0b65d0a50151231e29f7dd8235115))
+
 # [1.86.0](https://github.com/believer/dotfiles/compare/v1.85.0...v1.86.0) (2023-01-16)
 
 
