@@ -1,3 +1,10 @@
+## [1.87.2](https://github.com/believer/dotfiles/compare/v1.87.1...v1.87.2) (2023-01-16)
+
+
+### Bug Fixes
+
+* **treesitter:** run configuration ([dd15a4e](https://github.com/believer/dotfiles/commit/dd15a4ec1c5fa6111c12523262b6616e9be7e3a6))
+
 ## [1.87.1](https://github.com/believer/dotfiles/compare/v1.87.0...v1.87.1) (2023-01-16)
 
 
