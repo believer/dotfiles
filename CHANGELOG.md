@@ -1,3 +1,10 @@
+# [1.85.0](https://github.com/believer/dotfiles/compare/v1.84.0...v1.85.0) (2023-01-16)
+
+
+### Features
+
+* **alpha:** add alpha greeting screen ([e4429b7](https://github.com/believer/dotfiles/commit/e4429b75f1809aaaa16ceaad1a1a70dacfa36b4d))
+
 # [1.84.0](https://github.com/believer/dotfiles/compare/v1.83.0...v1.84.0) (2023-01-16)
 
 
