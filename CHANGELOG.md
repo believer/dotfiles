@@ -1,3 +1,10 @@
+## [1.87.1](https://github.com/believer/dotfiles/compare/v1.87.0...v1.87.1) (2023-01-16)
+
+
+### Bug Fixes
+
+* **alpha:** slightly move greeting message ([0cf4d6f](https://github.com/believer/dotfiles/commit/0cf4d6f1584f53dd3804e201c07a054546ef64b5))
+
 # [1.87.0](https://github.com/believer/dotfiles/compare/v1.86.0...v1.87.0) (2023-01-16)
 
 
