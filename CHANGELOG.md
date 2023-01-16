@@ -1,3 +1,13 @@
+# [1.84.0](https://github.com/believer/dotfiles/compare/v1.83.0...v1.84.0) (2023-01-16)
+
+
+### Features
+
+* **lazy:** lazy load plugins ([2782dce](https://github.com/believer/dotfiles/commit/2782dce53f13f96e021a4c277fc59d7d0f5a8049))
+* **tmux:** update active border style ([f3fdc38](https://github.com/believer/dotfiles/commit/f3fdc38ba1b0df1538809d95806d056aff2f7841))
+* **tmux:** update styling ([bc25160](https://github.com/believer/dotfiles/commit/bc25160c980db427d7c98340c1c1e3b4ab53bcc8))
+* **tree:** add harpoon marks to tree ([ee09f8a](https://github.com/believer/dotfiles/commit/ee09f8af99e7a032e601058cad2c660781f2edb9))
+
 # [1.83.0](https://github.com/believer/dotfiles/compare/v1.82.0...v1.83.0) (2023-01-16)
 
 
