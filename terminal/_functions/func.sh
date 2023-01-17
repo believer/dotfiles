@@ -42,3 +42,18 @@ nu() {
     supreme uninstall "$pkg"
   done
 }
+
+# Pomodoro
+# Created by @bashbunni
+# https://gist.github.com/bashbunni/f6b04fc4703903a71ce9f70c58345106
+work() { 
+  timer ${1:-'60m'} && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break 😊'\
+        -sound Crystal
+}
+
+rest() {
+  timer ${1:-'10m'} && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work 😬'\
+        -sound Crystal
+}
