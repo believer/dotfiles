@@ -1,3 +1,10 @@
+# [1.88.0](https://github.com/believer/dotfiles/compare/v1.87.3...v1.88.0) (2023-01-17)
+
+
+### Features
+
+* add pomodoro timer by [@bashbunni](https://github.com/bashbunni) ([b6aa1cb](https://github.com/believer/dotfiles/commit/b6aa1cb9b52e694f28c1138a034a638b37236c14))
+
 ## [1.87.3](https://github.com/believer/dotfiles/compare/v1.87.2...v1.87.3) (2023-01-16)
 
 
