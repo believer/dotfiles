@@ -73,6 +73,11 @@ return {
         capabilities = capabilities,
       })
 
+      lspconfig.eslint.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
       lspconfig.rescriptls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
@@ -104,18 +109,16 @@ return {
               buffer = bufnr,
               callback = function()
                 vim.lsp.buf.format({ bufnr = bufnr })
+                vim.cmd("EslintFixAll")
               end,
             })
           end
         end,
 
         sources = {
-          b.code_actions.eslint_d,
           b.completion.spell,
-          b.diagnostics.eslint_d,
           b.diagnostics.stylelint,
-          b.formatting.prettierd,
-          b.formatting.eslint_d,
+          b.formatting.prettier,
           b.formatting.stylua,
           b.formatting.rescript,
           b.formatting.rustfmt,
