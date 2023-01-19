@@ -4,6 +4,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-cmdline",
     "saadparwaiz1/cmp_luasnip",
     -- Snippets
     "L3MON4D3/LuaSnip",
@@ -12,6 +13,12 @@ return {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
+
+    local has_words_before = function()
+      unpack = unpack or table.unpack
+      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    end
 
     cmp.setup({
       -- Snippet expansions from Luasnip
@@ -35,6 +42,8 @@ return {
             cmp.select_next_item()
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
+          elseif has_words_before() then
+            cmp.complete()
           else
             fallback()
           end
@@ -58,5 +67,27 @@ return {
         { name = "path", group_index = 3 }, -- File paths
       }),
     })
+
+    -- Use buffer source for `/` and `?`
+    cmp.setup.cmdline({ "/", "?" }, {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = "buffer" },
+      },
+    })
+
+    -- Use cmdline & path source for ':'
+    cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = "path" },
+      }, {
+        { name = "cmdline" },
+      }),
+    })
+
+    -- Add parenthesis when completing methods
+    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
   end,
 }
