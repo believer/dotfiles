@@ -82,12 +82,6 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
       })
-
-      require("typescript").setup({
-        server = {
-          on_attach = on_attach,
-        },
-      })
     end,
   },
 
@@ -122,7 +116,6 @@ return {
           b.formatting.stylua,
           b.formatting.rescript,
           b.formatting.rustfmt,
-          require("typescript.extensions.null-ls.code-actions"),
         },
       })
     end,
