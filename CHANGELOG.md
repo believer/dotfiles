@@ -1,3 +1,20 @@
+# [1.89.0](https://github.com/believer/dotfiles/compare/v1.88.0...v1.89.0) (2023-01-19)
+
+
+### Bug Fixes
+
+* **format:** test async formatting on save ([9715481](https://github.com/believer/dotfiles/commit/9715481dbef493f3b0d01799767b79b92a19dd66))
+* **gitsigns:** enable plugin ([103a2c4](https://github.com/believer/dotfiles/commit/103a2c496d09a0071a4213ce23dc39ff1fb15770))
+* **lsp:** use eslint lsp instead of eslint in null-ls ([166bf9d](https://github.com/believer/dotfiles/commit/166bf9de6cad610bfa9310583101600ac048eda1)), closes [/github.com/jose-elias-alvarez/null-ls.nvim/issues/1199#issuecomment-1286013269](https://github.com//github.com/jose-elias-alvarez/null-ls.nvim/issues/1199/issues/issuecomment-1286013269)
+* **lsp:** use sync formatting ([92f36da](https://github.com/believer/dotfiles/commit/92f36dadf17f284c7558f598ce95202d245956c8))
+
+
+### Features
+
+* **cmp:** sort results from auto-completion ([e0a1de9](https://github.com/believer/dotfiles/commit/e0a1de9be5167c493ecef1e66056aae23d13c746))
+* **plugins:** add which-key ([d203a60](https://github.com/believer/dotfiles/commit/d203a60062871581a03ff1bc199c32c320a43633))
+* **snippets:** map typescriptreact to typescript ([3b3573e](https://github.com/believer/dotfiles/commit/3b3573e86808c5fc236f4704c7fe3cd6f28be241))
+
 # [1.88.0](https://github.com/believer/dotfiles/compare/v1.87.3...v1.88.0) (2023-01-17)
 
 
