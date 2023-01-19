@@ -29,10 +29,17 @@ return {
       -- Set up lspconfig.
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
+      local lsp_formatting = function(bufnr)
+        vim.lsp.buf.format({
+          bufnr = bufnr,
+        })
+      end
 
       -- Map the keys after the language server is attached to the buffer.
-      local on_attach = function(_, bufnr)
+      local on_attach = function(client, bufnr)
         local wk = require("which-key")
+
+        local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
         wk.register({
           g = {
@@ -43,6 +50,17 @@ return {
           ["<leader>rn"] = { vim.lsp.buf.rename, "Rename", buffer = bufnr },
           ["<leader>ca"] = { vim.lsp.buf.code_action, "Code action", buffer = bufnr },
         })
+
+        if client.supports_method("textDocument/formatting") then
+          vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+              lsp_formatting(bufnr)
+            end,
+          })
+        end
       end
 
       lspconfig.volar.setup({
@@ -61,6 +79,9 @@ return {
               enable = true,
               globals = { "vim" },
             },
+            format = {
+              enable = true,
+            }
           },
         },
       })
@@ -126,7 +147,6 @@ return {
           b.completion.spell,
           b.diagnostics.stylelint,
           b.formatting.prettier,
-          b.formatting.stylua,
           b.formatting.rescript,
           b.formatting.rustfmt,
         },
