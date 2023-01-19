@@ -26,26 +26,23 @@ return {
       require("mason").setup()
       require("mason-lspconfig").setup()
 
-      local map = require("utils").map
-
       -- Set up lspconfig.
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
 
-      map("n", "<leader>e", vim.diagnostic.open_float)
-      map("n", "[d", vim.diagnostic.goto_prev)
-      map("n", "]d", vim.diagnostic.goto_next)
-      map("n", "<leader>q", vim.diagnostic.setloclist)
-
       -- Map the keys after the language server is attached to the buffer.
       local on_attach = function(_, bufnr)
-        local bufopts = { buffer = bufnr }
+        local wk = require("which-key")
 
-        map("n", "gD", vim.lsp.buf.declaration, bufopts)
-        map("n", "gd", vim.lsp.buf.definition, bufopts)
-        map("n", "K", vim.lsp.buf.hover, bufopts)
-        map("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
-        map("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
+        wk.register({
+          g = {
+            D = { vim.lsp.buf.declaration, "Go to declaration", buffer = bufnr },
+            d = { vim.lsp.buf.definition, "Go to definition", buffer = bufnr },
+          },
+          ["K"] = { vim.lsp.buf.hover, "Hover", buffer = bufnr },
+          ["<leader>rn"] = { vim.lsp.buf.rename, "Rename", buffer = bufnr },
+          ["<leader>ca"] = { vim.lsp.buf.code_action, "Code action", buffer = bufnr },
+        })
       end
 
       lspconfig.volar.setup({

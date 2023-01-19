@@ -40,13 +40,7 @@ require("lazy").setup("plugins", {
 })
 require("snippets")
 
-local U = require("utils")
-
--- Git
-U.map("n", "<leader>gp", ":Git push<cr>")
-U.map("n", "<leader>up", ":!git up<cr>")
-U.map("n", ":gss", vim.cmd.Git)
-U.map("n", ":Gss", vim.cmd.Git)
+local add_autocommands = require("utils").add_autocommands
 
 -- Highlight on yank
 -- Taken from kickstart.nvim
@@ -60,4 +54,4 @@ local autocommands = {
   },
 }
 
-U.add_autocommands(autocommands)
+add_autocommands(autocommands)

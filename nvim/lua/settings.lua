@@ -47,9 +47,6 @@ map("n", "<C-H>", "<C-W><C-H>")
 -- Persist undos after buffers are unloaded
 o.undofile = true
 
--- Copy to the system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-
 -- Keep cursor position when collapsing lines
 map("n", "J", "mzJ`z")
 
@@ -70,12 +67,3 @@ map("n", "<Right>", "<Nop>")
 -- Remap things I usually mistype
 map("n", "q:", "<Nop>")
 map("n", ":W", vim.cmd.w)
-
--- Remove HTML attribute
--- diw - Delete inside word to be anywhere in attribute name
--- x - Remove =
--- da" - Remove attribute value
-map("n", "<leader>ad", "diwxda<cr>")
-
--- Shortcut to the black hole register
-map("n", "<leader>r", '"_')
