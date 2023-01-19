@@ -1,20 +1,20 @@
 return {
   "folke/which-key.nvim",
   config = function()
+    local wk = require("which-key")
+
     -- Shorten timeout to wait for mappings to complete
     vim.o.timeout = true
     vim.o.timeoutlen = 300
 
-    require("which-key").setup()
-
-    local wk = require("which-key")
-
+    wk.setup()
     wk.register({
       ["<leader>"] = {
         a = {
           name = "+actions",
           b = { '"_', "Black hole register" },
           d = { 'diwxda"<CR>', "Delete HTML attribute" },
+          e = { "<cmd>EslintFixAll<CR>", "Fix all ESLint errors" },
         },
 
         -- Diagnostics
