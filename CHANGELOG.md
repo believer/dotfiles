@@ -1,3 +1,12 @@
+# [1.90.0](https://github.com/believer/dotfiles/compare/v1.89.0...v1.90.0) (2023-01-19)
+
+
+### Features
+
+* **cmp:** update super tab mapping ([21f1ad6](https://github.com/believer/dotfiles/commit/21f1ad67a4de0b4fa789f24e10051bcc999ae961))
+* **lsp:** maybe formatting this way ([84e21cd](https://github.com/believer/dotfiles/commit/84e21cd297c72cc34cbc5a43d6bdccf176e662c0))
+* **snippets:** add rescript ([d9eef11](https://github.com/believer/dotfiles/commit/d9eef11e8d8da7740b56d8ce83a856273df7d9c3))
+
 # [1.89.0](https://github.com/believer/dotfiles/compare/v1.88.0...v1.89.0) (2023-01-19)
 
 
