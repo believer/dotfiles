@@ -1,3 +1,11 @@
+# [1.91.0](https://github.com/believer/dotfiles/compare/v1.90.0...v1.91.0) (2023-01-20)
+
+
+### Features
+
+* **lualine:** add diagnostics ([ec3407b](https://github.com/believer/dotfiles/commit/ec3407b853747c4a458b9bd0c2cbf1a657e2df04))
+* **null-ls:** looks like formatting works ([6a519ab](https://github.com/believer/dotfiles/commit/6a519ab665ba996911d2dd1b45c5405c83cd9543))
+
 # [1.90.0](https://github.com/believer/dotfiles/compare/v1.89.0...v1.90.0) (2023-01-19)
 
 
