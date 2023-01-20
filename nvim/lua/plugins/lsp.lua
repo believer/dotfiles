@@ -1,7 +1,6 @@
 return {
   {
     "williamboman/mason.nvim", -- Installer of LSPs and more
-    event = "VeryLazy",
     dependencies = {
       "williamboman/mason-lspconfig.nvim", -- LSP configuration for Mason
     },
@@ -21,7 +20,6 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    event = "VeryLazy",
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup()
@@ -87,7 +85,6 @@ return {
 
   {
     "jose-elias-alvarez/null-ls.nvim",
-    event = "VeryLazy",
     dependencies = {
       "lukas-reineke/lsp-format.nvim",
     },
