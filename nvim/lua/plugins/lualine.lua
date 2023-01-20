@@ -9,7 +9,7 @@ return {
     sections = {
       lualine_a = { "mode" },
       lualine_b = { "filename" },
-      lualine_c = { "branch" },
+      lualine_c = { "branch", "diagnostics" },
       lualine_x = {
         {
           require("lazy.status").updates,
