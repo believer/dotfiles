@@ -45,6 +45,22 @@ local regular_snippets = {
 		)
 	),
 
+	-- Create a `describe` block
+	s(
+		"desc",
+		fmt(
+			[[
+  describe('{test_name}', () => {{
+    {content}
+  }})
+  ]],
+			{
+				test_name = i(1, "What does it describe?"),
+				content = i(2),
+			}
+		)
+	),
+
 	-- Create a `test` block
 	s(
 		"test",
@@ -81,21 +97,6 @@ local auto_snippets = {
 	s("thbcw", fmt("expect({}).toHaveBeenCalledWith({})", { i(1), i(2) })),
 	s("thbct", fmt("expect({}).toHaveBeenCalledTimes({})", { i(1), i(2) })),
 
-	-- Create a `describe` block
-	s(
-		"desc",
-		fmt(
-			[[
-  describe('{test_name}', () => {{
-    {content}
-  }})
-  ]],
-			{
-				test_name = i(1, "What does it describe?"),
-				content = i(2),
-			}
-		)
-	),
 	-- Create a `describe` block and a `test` block
 	s(
 		"desct",
