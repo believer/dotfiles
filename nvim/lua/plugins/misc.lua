@@ -10,7 +10,7 @@ return {
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
-		event = "VimEnter",
+		event = "InsertEnter",
 		config = function()
 			local machine = os.getenv("MACHINE")
 
