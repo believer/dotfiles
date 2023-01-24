@@ -39,31 +39,31 @@ o.expandtab = true -- expand tabs to spaces
 o.smartindent = true
 
 -- Simplify moving between panes
-map("n", "<C-J>", "<C-W><C-J>")
-map("n", "<C-K>", "<C-W><C-K>")
-map("n", "<C-L>", "<C-W><C-L>")
-map("n", "<C-H>", "<C-W><C-H>")
+map("<C-J>", "<C-W><C-J>")
+map("<C-K>", "<C-W><C-K>")
+map("<C-L>", "<C-W><C-L>")
+map("<C-H>", "<C-W><C-H>")
 
 -- Persist undos after buffers are unloaded
 o.undofile = true
 
 -- Keep cursor position when collapsing lines
-map("n", "J", "mzJ`z")
+map("J", "mzJ`z")
 
 -- Center cursor when scrolling up and down
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
+map("<C-d>", "<C-d>zz")
+map("<C-u>", "<C-u>zz")
 
 -- Center search results
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+map("n", "nzzzv")
+map("N", "Nzzzv")
 
 -- Remove arrow keys
-map("n", "<Up>", "<Nop>")
-map("n", "<Down>", "<Nop>")
-map("n", "<Left>", "<Nop>")
-map("n", "<Right>", "<Nop>")
+map("<Up>", "<Nop>")
+map("<Down>", "<Nop>")
+map("<Left>", "<Nop>")
+map("<Right>", "<Nop>")
 
 -- Remap things I usually mistype
-map("n", "q:", "<Nop>")
-map("n", ":W", vim.cmd.w)
+map("q:", "<Nop>")
+map(":W", vim.cmd.w)
