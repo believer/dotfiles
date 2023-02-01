@@ -119,8 +119,6 @@ return {
 			end
 
 			null_ls.setup({
-				debug = true,
-
 				-- Format on save
 				on_attach = on_attach,
 
