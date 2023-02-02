@@ -67,3 +67,6 @@ map("<Right>", "<Nop>")
 -- Remap things I usually mistype
 map("q:", "<Nop>")
 map(":W", vim.cmd.w)
+
+-- Format Relay GraphQL queries in file
+vim.cmd([[command FormatRelay execute "!yarn rescript-relay-cli format-single-graphql %"]])
