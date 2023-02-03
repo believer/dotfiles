@@ -5,8 +5,9 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-cmdline",
+
+		-- Snippet support
 		"saadparwaiz1/cmp_luasnip",
-		-- Snippets
 		"L3MON4D3/LuaSnip",
 	},
 	event = "InsertEnter",
@@ -61,28 +62,12 @@ return {
 
 			-- Add additional completion sources
 			sources = cmp.config.sources({
-				{ name = "luasnip", priority = 10, group_index = 1 }, -- Snippets
-				{ name = "nvim_lsp", group_index = 2 }, -- LSP
-				{ name = "buffer", group_index = 3 }, -- Texts from buffer
-				{ name = "path", group_index = 3 }, -- File paths
-			}),
-		})
-
-		-- Use buffer source for `/` and `?`
-		cmp.setup.cmdline({ "/", "?" }, {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = {
-				{ name = "buffer" },
-			},
-		})
-
-		-- Use cmdline & path source for ':'
-		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({
-				{ name = "path" },
+				{ name = "luasnip", priority = 10, max_item_count = 5 }, -- Snippets
+				{ name = "nvim_lsp", max_item_count = 5, priority = 5 }, -- LSP
+				{ name = "path", max_item_count = 5, priority = 3 }, -- File paths
 			}, {
-				{ name = "cmdline" },
+				{ name = "spell", max_item_count = 5, priority = 2 }, -- Spelling
+				{ name = "buffer", max_item_count = 5, keyword_length = 3, priority = 1 }, -- Texts from buffer
 			}),
 		})
 
