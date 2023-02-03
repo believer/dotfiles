@@ -1,3 +1,10 @@
+## [1.91.1](https://github.com/believer/dotfiles/compare/v1.91.0...v1.91.1) (2023-02-03)
+
+
+### Bug Fixes
+
+* **cmp:** update priority order of suggestions ([c664a01](https://github.com/believer/dotfiles/commit/c664a01273946f19644350074021f718e38aa15e))
+
 # [1.91.0](https://github.com/believer/dotfiles/compare/v1.90.0...v1.91.0) (2023-01-20)
 
 
