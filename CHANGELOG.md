@@ -1,3 +1,10 @@
+## [1.91.2](https://github.com/believer/dotfiles/compare/v1.91.1...v1.91.2) (2023-02-06)
+
+
+### Bug Fixes
+
+* **cmp:** remove limit from lsp and snippets ([d7ad7eb](https://github.com/believer/dotfiles/commit/d7ad7ebe1b17271ab34e73ee4d9666b9870309af))
+
 ## [1.91.1](https://github.com/believer/dotfiles/compare/v1.91.0...v1.91.1) (2023-02-03)
 
 
