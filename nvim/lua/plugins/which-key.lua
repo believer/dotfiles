@@ -7,11 +7,14 @@ return {
 		vim.o.timeout = true
 		vim.o.timeoutlen = 300
 
+		local harpoon_mark = require("harpoon.mark")
+		local harpoon_ui = require("harpoon.ui")
+
 		wk.setup()
 		wk.register({
 			["<leader>"] = {
 				a = {
-					name = "+actions",
+					name = "actions",
 					b = { '"_', "Black hole register" },
 					d = { 'diwxda"<CR>', "Delete HTML attribute" },
 					e = { "<cmd>EslintFixAll<CR>", "Fix all ESLint errors" },
@@ -19,7 +22,7 @@ return {
 
 				-- Diagnostics
 				e = {
-					name = "+diagnostics",
+					name = "diagnostics",
 					d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Show error in float window" },
 					l = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "Display diagnostics to location list" },
 					n = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
@@ -27,12 +30,12 @@ return {
 				},
 
 				-- Tree view
-				d = { "<cmd>NeoTreeFocusToggle<CR>", "Toggle the tree view" },
-				f = { "<cmd>NeoTreeReveal<CR>", "Reveal the current file in the tree view" },
+				d = { vim.cmd.NeoTreeFocusToggle, "Toggle the tree view" },
+				f = { vim.cmd.NeoTreeReveal, "Reveal the current file in the tree view" },
 
 				-- Git
 				g = {
-					name = "+git",
+					name = "git",
 					b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle git blame on line" },
 					p = { "<cmd>Git push<CR>", "git push" },
 					s = { "<cmd>Git<CR>", "git status" },
@@ -41,13 +44,13 @@ return {
 
 				-- Harpoon
 				h = {
-					name = "+harpoon",
-					a = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add file to harpoon" },
-					c = { "<cmd>lua require('harpoon.mark').clear_all()<CR>", "Clear all files from harpoon" },
-					l = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Toggle quick menu" },
-					n = { "<cmd>lua require('harpoon.ui').nav_next()<CR>", "Next file" },
-					p = { "<cmd>lua require('harpoon.ui').nav_prev()<CR>", "Previous file" },
-					r = { "<cmd>lua require('harpoon.mark').rm_file()<CR>", "Remove file from harpoon" },
+					name = "harpoon",
+					a = { harpoon_mark.add_file, "Add file to harpoon" },
+					c = { harpoon_mark.clear_all, "Clear all files from harpoon" },
+					l = { harpoon_ui.toggle_quick_menu, "Toggle quick menu" },
+					n = { harpoon_ui.nav_next, "Next file" },
+					p = { harpoon_ui.nav_prev, "Previous file" },
+					r = { harpoon_mark.rm_file, "Remove file from harpoon" },
 					["1"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", "Navigate to file 1" },
 					["2"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", "Navigate to file 2" },
 					["3"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", "Navigate to file 3" },
@@ -58,7 +61,7 @@ return {
 				[";"] = { "<cmd>Telescope find_files<CR>", "Find files" },
 				["?"] = { "<cmd>Telescope live_grep<CR>", "Grep in all files" },
 				t = {
-					name = "+telescope",
+					name = "telescope",
 					b = { "<cmd>Telescope buffers<CR>", "Open buffers" },
 					d = { "<cmd>Telescope lsp_document_symbols<CR>", "Symbols in document" },
 					f = { "<cmd>Telescope find_files<CR>", "Telescope find files" },
