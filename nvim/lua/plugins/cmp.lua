@@ -62,8 +62,8 @@ return {
 
 			-- Add additional completion sources
 			sources = cmp.config.sources({
-				{ name = "luasnip", priority = 10, max_item_count = 5 }, -- Snippets
-				{ name = "nvim_lsp", max_item_count = 5, priority = 5 }, -- LSP
+				{ name = "luasnip", priority = 10 }, -- Snippets
+				{ name = "nvim_lsp", priority = 5 }, -- LSP
 				{ name = "path", max_item_count = 5, priority = 3 }, -- File paths
 			}, {
 				{ name = "spell", max_item_count = 5, priority = 2 }, -- Spelling
