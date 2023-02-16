@@ -1,3 +1,11 @@
+# [1.93.0](https://github.com/believer/dotfiles/compare/v1.92.0...v1.93.0) (2023-02-16)
+
+
+### Features
+
+* **lsp:** add code lens, inlay hints and signature help ([971e7b2](https://github.com/believer/dotfiles/commit/971e7b22ca1ebe3c75876123026dad6df994d2ae))
+* **snippets:** add rescript snippets ([8bcc4e9](https://github.com/believer/dotfiles/commit/8bcc4e99e498af7012d7ed840dabb94dd249bb26))
+
 # [1.92.0](https://github.com/believer/dotfiles/compare/v1.91.2...v1.92.0) (2023-02-16)
 
 
