@@ -3,6 +3,8 @@ return {
 		"williamboman/mason.nvim", -- Installer of LSPs and more
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim", -- LSP configuration for Mason
+			"lvimuser/lsp-inlayhints.nvim", -- Inlay hints for LSPs"
+			"ray-x/lsp_signature.nvim", -- Signature help for LSPs
 		},
 		opts = {
 			ensure_installed = {
@@ -29,8 +31,37 @@ return {
 			local lspconfig = require("lspconfig")
 
 			-- Map the keys after the language server is attached to the buffer.
-			local on_attach = function(_, bufnr)
+			local on_attach = function(client, bufnr)
 				local wk = require("which-key")
+
+				if client.server_capabilities.inlayHintProvider then
+					require("lsp-inlayhints").on_attach(client, bufnr)
+				end
+
+				if client.server_capabilities.codeLensProvider then
+					local group = vim.api.nvim_create_augroup("LSP/CodeLens", { clear = true })
+					vim.api.nvim_create_autocmd({ "InsertLeave", "CursorHold" }, {
+						group = group,
+						callback = vim.lsp.codelens.refresh,
+						buffer = bufnr,
+					})
+					vim.api.nvim_create_autocmd("BufEnter", {
+						group = group,
+						callback = vim.lsp.codelens.refresh,
+						buffer = bufnr,
+						once = true,
+					})
+				end
+
+				if client.server_capabilities.signatureHelpProvider then
+					require("lsp_signature").on_attach({
+						hint_enable = true,
+						floating_window = false,
+						hint_prefix = "",
+						hint_scheme = "LspSignatureActiveParameter",
+						fix_pos = false,
+					}, bufnr)
+				end
 
 				wk.register({
 					g = {
@@ -50,7 +81,7 @@ return {
 				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 			})
 
-			lspconfig.sumneko_lua.setup({
+			lspconfig.lua_ls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
@@ -79,6 +110,15 @@ return {
 			lspconfig.rescriptls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				init_options = {
+					extensionConfiguration = {
+						askToStartBuild = false,
+						codeLens = true,
+						inlayHints = {
+							enable = true,
+						},
+					},
+				},
 			})
 		end,
 	},
