@@ -1,3 +1,10 @@
+# [1.92.0](https://github.com/believer/dotfiles/compare/v1.91.2...v1.92.0) (2023-02-16)
+
+
+### Features
+
+* **relay:** add format relay command ([7440704](https://github.com/believer/dotfiles/commit/744070428cc011cbbc9be129ad2f4f1df63f0915))
+
 ## [1.91.2](https://github.com/believer/dotfiles/compare/v1.91.1...v1.91.2) (2023-02-06)
 
 
