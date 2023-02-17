@@ -1,3 +1,10 @@
+# [1.95.0](https://github.com/believer/dotfiles/compare/v1.94.0...v1.95.0) (2023-02-17)
+
+
+### Features
+
+* **cmp:** add icons and borders ([f5e1919](https://github.com/believer/dotfiles/commit/f5e191909694050f806f6d3486956ccbc003eed6))
+
 # [1.94.0](https://github.com/believer/dotfiles/compare/v1.93.0...v1.94.0) (2023-02-17)
 
 
