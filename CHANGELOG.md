@@ -1,3 +1,10 @@
+# [1.94.0](https://github.com/believer/dotfiles/compare/v1.93.0...v1.94.0) (2023-02-17)
+
+
+### Features
+
+* **snippets:** add vue ([186e8aa](https://github.com/believer/dotfiles/commit/186e8aaf66857f57eecccb8ae255d45913fc2c99))
+
 # [1.93.0](https://github.com/believer/dotfiles/compare/v1.92.0...v1.93.0) (2023-02-16)
 
 
