@@ -6,6 +6,9 @@ return {
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-cmdline",
 
+		-- UI for completion menu
+		"NvChad/ui",
+
 		-- Snippet support
 		"saadparwaiz1/cmp_luasnip",
 		"L3MON4D3/LuaSnip",
@@ -21,7 +24,45 @@ return {
 			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 		end
 
+		-- Add borders to completion menu
+		local function border(hl_name)
+			return {
+				{ "╭", hl_name },
+				{ "─", hl_name },
+				{ "╮", hl_name },
+				{ "│", hl_name },
+				{ "╯", hl_name },
+				{ "─", hl_name },
+				{ "╰", hl_name },
+				{ "│", hl_name },
+			}
+		end
+
+		-- Configure completion menu
+		vim.o.completeopt = "menu,menuone,noselect"
+
+		-- Remove scrollbars from completion menu
+		local cmp_window = require("cmp.utils.window")
+
+		cmp_window.info_ = cmp_window.info
+		cmp_window.info = function(self)
+			local info = self:info_()
+			info.scrollable = false
+			return info
+		end
+
 		cmp.setup({
+			-- Add borders to completion menu
+			window = {
+				completion = {
+					border = border("Comment"),
+					winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+				},
+				documentation = {
+					border = border("Comment"),
+				},
+			},
+
 			-- Snippet expansions from Luasnip
 			snippet = {
 				expand = function(args)
@@ -29,10 +70,22 @@ return {
 				end,
 			},
 
+			-- Add icons to completion menu
+			formatting = {
+				format = function(_, vim_item)
+					local icons = require("nvchad_ui.icons").lspkind
+					vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+					return vim_item
+				end,
+			},
+
 			-- Key mappings to navigate completion menu
 			mapping = cmp.mapping.preset.insert({
+				["<C-p>"] = cmp.mapping.select_prev_item(),
+				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-d>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
+				["<C-e>"] = cmp.mapping.close(),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Replace,
