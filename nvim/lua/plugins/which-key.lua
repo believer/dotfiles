@@ -73,6 +73,15 @@ return {
 				},
 
 				y = { '"+y', "Copy to system clipboard", mode = "v" },
+
+				x = {
+					name = "trouble",
+					x = { "<cmd>TroubleToggle<cr>", "Open Trouble list" },
+					w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
+					d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "Document Diagnostics" },
+					q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
+					l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
+				},
 			},
 		})
 	end,

@@ -5,6 +5,14 @@ return {
 	{ "tpope/vim-surround", event = "VeryLazy" },
 	-- Git
 	{ "tpope/vim-fugitive", event = "VeryLazy" },
+	-- Pretty list of diagnostics
+	{
+		"folke/trouble.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("trouble").setup()
+		end,
+	},
 
 	-- GitHub Copilot
 	{

@@ -67,6 +67,7 @@ return {
 					g = {
 						D = { vim.lsp.buf.declaration, "Go to declaration", buffer = bufnr },
 						d = { vim.lsp.buf.definition, "Go to definition", buffer = bufnr },
+						R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
 					},
 					["K"] = { vim.lsp.buf.hover, "Hover", buffer = bufnr },
 					["<leader>rn"] = { vim.lsp.buf.rename, "Rename", buffer = bufnr },
