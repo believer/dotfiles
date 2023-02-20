@@ -1,3 +1,10 @@
+# [1.96.0](https://github.com/believer/dotfiles/compare/v1.95.0...v1.96.0) (2023-02-20)
+
+
+### Features
+
+* add trouble.nvim ([1537a1e](https://github.com/believer/dotfiles/commit/1537a1e49ed0520c712a8024d92a5aefc77a68e6))
+
 # [1.95.0](https://github.com/believer/dotfiles/compare/v1.94.0...v1.95.0) (2023-02-17)
 
 
