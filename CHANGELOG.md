@@ -1,3 +1,10 @@
+# [1.98.0](https://github.com/believer/dotfiles/compare/v1.97.0...v1.98.0) (2023-02-21)
+
+
+### Features
+
+* **lsp:** add tailwind lsp ([715e3af](https://github.com/believer/dotfiles/commit/715e3afa5c363f6fd03295fde2d1a0260a5bb224))
+
 # [1.97.0](https://github.com/believer/dotfiles/compare/v1.96.0...v1.97.0) (2023-02-21)
 
 
