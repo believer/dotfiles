@@ -1,3 +1,10 @@
+# [1.97.0](https://github.com/believer/dotfiles/compare/v1.96.0...v1.97.0) (2023-02-21)
+
+
+### Features
+
+* **alias:** change npm update command ([53ca880](https://github.com/believer/dotfiles/commit/53ca88033607bbb174c011a2a0453bf4d538230d))
+
 # [1.96.0](https://github.com/believer/dotfiles/compare/v1.95.0...v1.96.0) (2023-02-20)
 
 
