@@ -1,3 +1,10 @@
+## [1.98.2](https://github.com/believer/dotfiles/compare/v1.98.1...v1.98.2) (2023-02-23)
+
+
+### Bug Fixes
+
+* **cmp:** remove spelling from completion ([a0534c9](https://github.com/believer/dotfiles/commit/a0534c91f1e0f9d04a0504692069a2b5d137d4ed))
+
 ## [1.98.1](https://github.com/believer/dotfiles/compare/v1.98.0...v1.98.1) (2023-02-23)
 
 
