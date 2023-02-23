@@ -169,7 +169,6 @@ return {
 				on_attach = on_attach,
 
 				sources = {
-					b.completion.spell,
 					b.diagnostics.stylelint,
 					b.formatting.prettierd,
 					b.formatting.eslint_d,
