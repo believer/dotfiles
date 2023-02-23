@@ -1,3 +1,10 @@
+## [1.98.1](https://github.com/believer/dotfiles/compare/v1.98.0...v1.98.1) (2023-02-23)
+
+
+### Bug Fixes
+
+* **telescope:** display dotfiles ([82de787](https://github.com/believer/dotfiles/commit/82de78707e306e60560517a05bc7ed9e29afe2c7))
+
 # [1.98.0](https://github.com/believer/dotfiles/compare/v1.97.0...v1.98.0) (2023-02-21)
 
 
