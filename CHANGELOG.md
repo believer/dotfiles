@@ -1,3 +1,10 @@
+# [1.99.0](https://github.com/believer/dotfiles/compare/v1.98.2...v1.99.0) (2023-03-06)
+
+
+### Features
+
+* **lsp:** add border to hover windows ([9bc049d](https://github.com/believer/dotfiles/commit/9bc049d05adf8e81984bda8ceddfbd5f8b17a218))
+
 ## [1.98.2](https://github.com/believer/dotfiles/compare/v1.98.1...v1.98.2) (2023-02-23)
 
 
