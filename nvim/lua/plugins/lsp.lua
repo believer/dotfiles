@@ -180,13 +180,32 @@ return {
 				end
 			end
 
+			local prettierd = b.formatting.prettierd.with({
+				filetypes = {
+					"astro",
+					"css",
+					"graphql",
+					"html",
+					"javascript",
+					"javascriptreact",
+					"json",
+					"markdown",
+					"scss",
+					"typescript",
+					"typescriptreact",
+					"vue",
+					"vue",
+					"yaml",
+				},
+			})
+
 			null_ls.setup({
 				-- Format on save
 				on_attach = on_attach,
 
 				sources = {
 					b.diagnostics.stylelint,
-					b.formatting.prettierd,
+					prettierd,
 					b.formatting.eslint_d,
 					b.formatting.rescript,
 					b.formatting.rustfmt,
