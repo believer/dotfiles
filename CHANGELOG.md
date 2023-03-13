@@ -1,3 +1,10 @@
+# [1.101.0](https://github.com/believer/dotfiles/compare/v1.100.0...v1.101.0) (2023-03-13)
+
+
+### Features
+
+* **function:** add argument to supreme run shorthand ([b1c1470](https://github.com/believer/dotfiles/commit/b1c1470a104a916b1c999eb25fa13384253e4855))
+
 # [1.100.0](https://github.com/believer/dotfiles/compare/v1.99.0...v1.100.0) (2023-03-07)
 
 
