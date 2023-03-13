@@ -15,7 +15,7 @@ ds_store() {
 }
 
 run() {
-  supreme run
+  supreme run $1
 }
 
 ni() {
