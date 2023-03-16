@@ -1,3 +1,10 @@
+# [1.102.0](https://github.com/believer/dotfiles/compare/v1.101.0...v1.102.0) (2023-03-16)
+
+
+### Features
+
+* **snippets:** add rust ([46bf834](https://github.com/believer/dotfiles/commit/46bf834c9c26b25b0161f30ef83693f70e97582a))
+
 # [1.101.0](https://github.com/believer/dotfiles/compare/v1.100.0...v1.101.0) (2023-03-13)
 
 
