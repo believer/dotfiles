@@ -14,35 +14,6 @@ ds_store() {
   find . -name '.DS_Store' -type f -delete
 }
 
-run() {
-  supreme run $1
-}
-
-ni() {
-  if [ $# -eq 0 ]; then
-    supreme install
-  else
-    for pkg in "$@"
-    do
-      supreme install "$pkg"
-    done
-  fi
-}
-
-nisd() {
-  for pkg in "$@"
-  do
-    supreme install --dev "$pkg"
-  done
-}
-
-nu() {
-  for pkg in "$@"
-  do
-    supreme uninstall "$pkg"
-  done
-}
-
 # Pomodoro
 # Created by @bashbunni
 # https://gist.github.com/bashbunni/f6b04fc4703903a71ce9f70c58345106

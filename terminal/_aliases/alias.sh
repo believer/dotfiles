@@ -26,6 +26,12 @@ alias gr='git rebase'
 # Kubernetes
 alias k='kubectl -n v2'
 
+# Supreme
+alias ni='supreme install'
+alias nisd='supreme install --dev'
+alias nu='supreme uninstall'
+alias run='supreme run'
+
 # Docker
 alias d="docker"
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}"'
