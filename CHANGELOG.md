@@ -1,3 +1,11 @@
+# [1.104.0](https://github.com/believer/dotfiles/compare/v1.103.0...v1.104.0) (2023-03-23)
+
+
+### Features
+
+* add quick save shortcut ([b26bf37](https://github.com/believer/dotfiles/commit/b26bf376ca6489fb40968d88bd25b394b1a04a30))
+* use supreme for dependency updates ([8c80d5a](https://github.com/believer/dotfiles/commit/8c80d5a1148f4ee7078f6a972395314ed6a23ca4))
+
 # [1.103.0](https://github.com/believer/dotfiles/compare/v1.102.0...v1.103.0) (2023-03-18)
 
 
