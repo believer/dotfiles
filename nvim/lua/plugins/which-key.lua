@@ -71,6 +71,7 @@ return {
 					m = { "<cmd>Telescope marks<CR>", "Telescope marks" },
 					o = { "<cmd>Telescope oldfiles<CR>", "Recently opened files" },
 					s = { "<cmd>Telescope spell_suggest<CR>", "Suggest spelling" },
+					t = { "<cmd>TodoTelescope<CR>", "Todo list" },
 					w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Symbols in workspace" },
 				},
 
