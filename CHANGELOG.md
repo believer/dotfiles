@@ -1,3 +1,10 @@
+# [1.106.0](https://github.com/believer/dotfiles/compare/v1.105.0...v1.106.0) (2023-04-03)
+
+
+### Features
+
+* update setup script ([2bb7abd](https://github.com/believer/dotfiles/commit/2bb7abdfca074d2d930b7da2618863a7d2946999))
+
 # [1.105.0](https://github.com/believer/dotfiles/compare/v1.104.0...v1.105.0) (2023-03-24)
 
 
