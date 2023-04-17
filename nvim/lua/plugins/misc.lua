@@ -1,6 +1,12 @@
 return {
 	-- Easier comments (gc / gcc)
-	{ "tpope/vim-commentary", event = "VeryLazy" },
+	{
+		"numToStr/Comment.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
 	-- Actions that work on surrounding context
 	{ "tpope/vim-surround", event = "VeryLazy" },
 	-- Git
