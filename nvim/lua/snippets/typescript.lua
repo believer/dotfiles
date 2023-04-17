@@ -86,6 +86,19 @@ local regular_snippets = {
 			{ test_name = i(1, "What does it test?"), content = i(2) }
 		)
 	),
+
+	-- Create a vitest mock
+	s(
+		"vmock",
+		fmt(
+			[[
+      vi.mock('{name}', () => {{
+        {content}
+      }})
+    ]],
+			{ name = i(1, "What does it mock?"), content = i(2) }
+		)
+	),
 }
 
 -- These will expand automatically
