@@ -1,6 +1,7 @@
 return {
 	{
 		"williamboman/mason.nvim", -- Installer of LSPs and more
+		build = ":MasonUpdate",
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim", -- LSP configuration for Mason
 		},
@@ -123,6 +124,16 @@ return {
 				capabilities = capabilities,
 			})
 
+			lspconfig.stylelint_lsp.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+
+			lspconfig.cssls.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+
 			lspconfig.rescriptls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
@@ -198,10 +209,8 @@ return {
 				on_attach = on_attach,
 
 				sources = {
-					b.diagnostics.stylelint,
 					prettierd,
 					b.formatting.eslint_d,
-					b.formatting.rescript,
 					b.formatting.rustfmt,
 					b.formatting.stylua,
 				},
