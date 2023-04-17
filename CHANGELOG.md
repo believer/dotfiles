@@ -1,3 +1,16 @@
+# [1.109.0](https://github.com/believer/dotfiles/compare/v1.108.1...v1.109.0) (2023-04-17)
+
+
+### Bug Fixes
+
+* remove python path override ([496af07](https://github.com/believer/dotfiles/commit/496af073acdc39250396045877678a6e626ce638))
+* **lsp:** add stylelint and css lsp configurations ([726ffcd](https://github.com/believer/dotfiles/commit/726ffcdf539d35b643c3f4a62e6654584c95e84f))
+
+
+### Features
+
+* switch from vim-commentary to comment.nvim ([c4026cc](https://github.com/believer/dotfiles/commit/c4026cc076f70fe7d03af9927f7cc442d095b0f3))
+
 ## [1.108.1](https://github.com/believer/dotfiles/compare/v1.108.0...v1.108.1) (2023-04-17)
 
 
