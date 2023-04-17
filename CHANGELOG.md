@@ -1,3 +1,10 @@
+## [1.108.1](https://github.com/believer/dotfiles/compare/v1.108.0...v1.108.1) (2023-04-17)
+
+
+### Bug Fixes
+
+* **telescope:** use default file sorters ([fc47877](https://github.com/believer/dotfiles/commit/fc4787792fb40a28a6dec119218a3f837cbb465f))
+
 # [1.108.0](https://github.com/believer/dotfiles/compare/v1.107.0...v1.108.0) (2023-04-17)
 
 
