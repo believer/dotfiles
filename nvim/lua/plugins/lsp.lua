@@ -29,6 +29,7 @@ return {
 			-- Set up lspconfig.
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
+			local util = require("lspconfig/util")
 
 			-- Map the keys after the language server is attached to the buffer.
 			local on_attach = function(client, bufnr)
@@ -117,6 +118,15 @@ return {
 			lspconfig.rust_analyzer.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				filetypes = { "rust" },
+				root_dir = util.root_pattern("Cargo.toml"),
+				settings = {
+					["rust-analyzer"] = {
+						cargo = {
+							allFeatures = true,
+						},
+					},
+				},
 			})
 
 			lspconfig.eslint.setup({
