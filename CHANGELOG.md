@@ -1,3 +1,16 @@
+# [1.107.0](https://github.com/believer/dotfiles/compare/v1.106.0...v1.107.0) (2023-04-17)
+
+
+### Bug Fixes
+
+* remove thicken font from kitty configuration ([d992df2](https://github.com/believer/dotfiles/commit/d992df2b82aed6563d77e5d29cb845ff53295ad5))
+* update alias path to swap files ([34c2456](https://github.com/believer/dotfiles/commit/34c2456bb1715657f7df744d2410c78ccdc502af))
+
+
+### Features
+
+* **snippets:** add vitest mock in typescript ([f2a0c7d](https://github.com/believer/dotfiles/commit/f2a0c7d16e95c7016720a75f40ff8d3f6284f013))
+
 # [1.106.0](https://github.com/believer/dotfiles/compare/v1.105.0...v1.106.0) (2023-04-03)
 
 
