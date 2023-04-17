@@ -1,3 +1,11 @@
+# [1.108.0](https://github.com/believer/dotfiles/compare/v1.107.0...v1.108.0) (2023-04-17)
+
+
+### Features
+
+* update rust lsp config ([6952848](https://github.com/believer/dotfiles/commit/6952848b50d9b6a00c45f8988595c93926e1a93e))
+* **telescope:** add configuration from nvchad ([e0c5987](https://github.com/believer/dotfiles/commit/e0c59876af555a32bc36d10b4a167a2152213b13))
+
 # [1.107.0](https://github.com/believer/dotfiles/compare/v1.106.0...v1.107.0) (2023-04-17)
 
 
