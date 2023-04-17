@@ -3,8 +3,6 @@ return {
 		"williamboman/mason.nvim", -- Installer of LSPs and more
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim", -- LSP configuration for Mason
-			"lvimuser/lsp-inlayhints.nvim", -- Inlay hints for LSPs"
-			"ray-x/lsp_signature.nvim", -- Signature help for LSPs
 		},
 		opts = {
 			ensure_installed = {
@@ -35,10 +33,6 @@ return {
 			local on_attach = function(client, bufnr)
 				local wk = require("which-key")
 
-				if client.server_capabilities.inlayHintProvider then
-					require("lsp-inlayhints").on_attach(client, bufnr)
-				end
-
 				if client.server_capabilities.codeLensProvider then
 					local group = vim.api.nvim_create_augroup("LSP/CodeLens", { clear = true })
 					vim.api.nvim_create_autocmd({ "InsertLeave", "CursorHold" }, {
@@ -52,16 +46,6 @@ return {
 						buffer = bufnr,
 						once = true,
 					})
-				end
-
-				if client.server_capabilities.signatureHelpProvider then
-					require("lsp_signature").on_attach({
-						hint_enable = true,
-						floating_window = false,
-						hint_prefix = "",
-						hint_scheme = "LspSignatureActiveParameter",
-						fix_pos = false,
-					}, bufnr)
 				end
 
 				wk.register({
