@@ -127,11 +127,13 @@ return {
 			lspconfig.stylelint_lsp.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				filetypes = { "css", "scss", "vue" },
 			})
 
 			lspconfig.cssls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				filetypes = { "css", "scss" },
 			})
 
 			lspconfig.rescriptls.setup({
