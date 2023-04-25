@@ -67,3 +67,6 @@ map(":W", vim.cmd.w)
 
 -- Format Relay GraphQL queries in file
 vim.cmd([[command FormatRelay execute "!yarn rescript-relay-cli format-single-graphql %"]])
+
+-- Close all buffers except the current one
+vim.cmd([[command BufOnly silent! execute "%bd|e#|bd#"]])
