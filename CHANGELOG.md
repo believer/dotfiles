@@ -1,3 +1,16 @@
+# [1.110.0](https://github.com/believer/dotfiles/compare/v1.109.0...v1.110.0) (2023-04-25)
+
+
+### Bug Fixes
+
+* **lsp:** only load stylelint and css lsps in certain files ([c2347d0](https://github.com/believer/dotfiles/commit/c2347d04a12286a3a65d3e2d95a6657547d9eee0))
+
+
+### Features
+
+* **tmux:** increase scrollback history ([5a675ef](https://github.com/believer/dotfiles/commit/5a675effbe41eda484bd2eb37183e9458fc145ee))
+* **tmux:** reduce status update time ([fe911e0](https://github.com/believer/dotfiles/commit/fe911e0fab8fe90e0aa4a06ba0b6e199aa2defe6))
+
 # [1.109.0](https://github.com/believer/dotfiles/compare/v1.108.1...v1.109.0) (2023-04-17)
 
 
