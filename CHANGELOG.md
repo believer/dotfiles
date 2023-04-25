@@ -1,3 +1,10 @@
+# [1.111.0](https://github.com/believer/dotfiles/compare/v1.110.0...v1.111.0) (2023-04-25)
+
+
+### Features
+
+* **nvim:** add command to close all buffers except the current ([7e9baf3](https://github.com/believer/dotfiles/commit/7e9baf3561f7b60554cc5843c42db5de632d0ba6))
+
 # [1.110.0](https://github.com/believer/dotfiles/compare/v1.109.0...v1.110.0) (2023-04-25)
 
 
