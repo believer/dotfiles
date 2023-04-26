@@ -1,3 +1,10 @@
+## [1.112.1](https://github.com/believer/dotfiles/compare/v1.112.0...v1.112.1) (2023-04-26)
+
+
+### Bug Fixes
+
+* **tmux:** add a keybinding for clear screen ([b87dffb](https://github.com/believer/dotfiles/commit/b87dffbdc5c4d12160a395505c5418d347c63700))
+
 # [1.112.0](https://github.com/believer/dotfiles/compare/v1.111.0...v1.112.0) (2023-04-26)
 
 
