@@ -1,3 +1,10 @@
+# [1.112.0](https://github.com/believer/dotfiles/compare/v1.111.0...v1.112.0) (2023-04-26)
+
+
+### Features
+
+* **tmux:** add easy navigation between vim and tmux ([792cb7c](https://github.com/believer/dotfiles/commit/792cb7c87953bb369ede7017b1311a8a6dd370cb))
+
 # [1.111.0](https://github.com/believer/dotfiles/compare/v1.110.0...v1.111.0) (2023-04-25)
 
 
