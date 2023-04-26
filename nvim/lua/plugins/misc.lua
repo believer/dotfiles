@@ -11,6 +11,8 @@ return {
 	{ "tpope/vim-surround", event = "VeryLazy" },
 	-- Git
 	{ "tpope/vim-fugitive", event = "VeryLazy" },
+	-- Setup navigation between vim and tmux panes
+	{ "christoomey/vim-tmux-navigator", event = "VeryLazy" },
 	-- Pretty list of diagnostics
 	{
 		"folke/trouble.nvim",
