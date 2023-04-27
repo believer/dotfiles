@@ -5,6 +5,7 @@ vim.g.loaded_netrwPlugin = 1
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v2.x",
+	event = "VeryLazy",
 	dependencies = {
 		-- Add devicons
 		"nvim-tree/nvim-web-devicons",
