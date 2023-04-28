@@ -9,6 +9,7 @@ export PYTHON_CONFIGURE_OPTS="--enable-framework"
 export GOPATH="$HOME/code/go"
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.dotfiles"
+export ZDOTDIR="$XDG_CONFIG_HOME"
 export GPG_TTY="$(tty)"
 
 # Android SDK

@@ -1,3 +1,10 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # Change shell to brew version
 # sudo chsh -s $(which zsh) $(whoami)
 # Add /opt/homebrew/bin to /etc/paths after /usr/local/bin
@@ -11,16 +18,13 @@ setopt HIST_REDUCE_BLANKS # Remove superfluous blanks before recording entry.
 setopt hist_ignore_space # ignore commands that start with space
 HISTFILE=~/.zhistory
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# CDPATH ALTERATIONS
+CDPATH=.:$HOME:$HOME/code
 
 # Antidote
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 
-# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
-antidote load
-
+# Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
 # Work
@@ -35,9 +39,6 @@ KEYTIMEOUT=1
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# CDPATH ALTERATIONS
-CDPATH=.:$HOME:$HOME/code
-
 # Hub
 eval "$(hub alias -s)"
 
@@ -47,5 +48,6 @@ defaults write -g KeyRepeat -int 3 # normal minimum is 2 (30 ms)
 
 export PATH
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
