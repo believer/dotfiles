@@ -3,7 +3,7 @@
 
 echo "Installing Homebrew packages..."
 
-brew install antibody
+brew install antidote
 brew install bat
 brew install fnm
 brew install git
