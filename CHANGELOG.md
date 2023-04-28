@@ -1,3 +1,15 @@
+# [1.113.0](https://github.com/believer/dotfiles/compare/v1.112.1...v1.113.0) (2023-04-28)
+
+
+### Bug Fixes
+
+* **terminal:** updates for antidote and powerlevel10k ([21f76d8](https://github.com/believer/dotfiles/commit/21f76d80546e7c669b9d6a02c82c2be54a0b53f0))
+
+
+### Features
+
+* change antibody to antidote for zsh plugins ([b9d65a4](https://github.com/believer/dotfiles/commit/b9d65a45918c2f0ab33ae2f2e8e8ca93ff3d146a))
+
 ## [1.112.1](https://github.com/believer/dotfiles/compare/v1.112.0...v1.112.1) (2023-04-26)
 
 
