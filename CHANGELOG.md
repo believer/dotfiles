@@ -1,3 +1,15 @@
+# [1.114.0](https://github.com/believer/dotfiles/compare/v1.113.0...v1.114.0) (2023-05-02)
+
+
+### Bug Fixes
+
+* **zsh:** move config around ([3dbaee7](https://github.com/believer/dotfiles/commit/3dbaee7875721e0662f65bf04a8b91e9f1f4d112))
+
+
+### Features
+
+* **snippets:** add findByText in typescript ([40b1e51](https://github.com/believer/dotfiles/commit/40b1e516a3d0c1c81d8a9fba006e70a0dce7ffe3))
+
 # [1.113.0](https://github.com/believer/dotfiles/compare/v1.112.1...v1.113.0) (2023-04-28)
 
 
