@@ -132,6 +132,7 @@ local auto_snippets = {
 	-- Testing Library
 	s("sdbg", t("screen.debug()")),
 	s("sgbt", fmt("screen.getByText(/{name}/i)", { name = i(0) })),
+	s("sfbt", fmt("await screen.findByText(/{name}/i)", { name = i(0) })),
 	s("sgblt", fmt("screen.getByLabelText(/{name}/i)", { name = i(0) })),
 	s("sqbt", fmt("screen.queryByText(/{name}/i)", { name = i(0) })),
 	s("sgbr", fmt("screen.getByRole('{role}', {{ name: /{name}/i }})", { role = i(1, "button"), name = i(2, "name") })),
