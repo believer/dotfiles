@@ -1,3 +1,15 @@
+# [1.115.0](https://github.com/believer/dotfiles/compare/v1.114.0...v1.115.0) (2023-05-05)
+
+
+### Bug Fixes
+
+* **fzf:** move fzf startup in zshrc ([0bbee35](https://github.com/believer/dotfiles/commit/0bbee35c0bae5648a1a4906268b21ebb8bf49b11))
+
+
+### Features
+
+* **tailwind:** add colorizer support in buffer and cmp ([8e1f707](https://github.com/believer/dotfiles/commit/8e1f7071ff322714fb9193244414da7c13a3ef30))
+
 # [1.114.0](https://github.com/believer/dotfiles/compare/v1.113.0...v1.114.0) (2023-05-02)
 
 
