@@ -72,8 +72,9 @@ return {
 
 			-- Add icons to completion menu
 			formatting = {
-				format = function(_, vim_item)
+				format = function(entry, vim_item)
 					local icons = require("nvchad_ui.icons").lspkind
+					vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
 					vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
 					return vim_item
 				end,
