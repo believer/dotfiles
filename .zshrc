@@ -30,8 +30,6 @@ source ~/.dotfiles/.invidirc
 # 10ms for key sequences
 KEYTIMEOUT=1
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Hub
 eval "$(hub alias -s)"
@@ -51,3 +49,7 @@ source "$DOTFILES_PATH/terminal/init.sh"
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
