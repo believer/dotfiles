@@ -36,10 +36,15 @@ return {
 				-- Git
 				g = {
 					name = "git",
-					b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle git blame on line" },
+					b = { "<cmd>Telescope git_branches<CR>", "Git branches" },
+					c = {
+						b = { "<cmd>Telescope git_bcommits<CR>", "Buffer commits" },
+						c = { "<cmd>Telescope git_commits<CR>", "Git commits" },
+					},
 					p = { "<cmd>Git push<CR>", "git push" },
 					s = { "<cmd>Git<CR>", "git status" },
 					u = { "<cmd>!git up<CR>", "git up" },
+					z = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle git blame on line" },
 				},
 
 				-- Harpoon

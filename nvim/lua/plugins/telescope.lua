@@ -19,6 +19,11 @@ return {
 					find_files = {
 						find_command = { "rg", "--files", "--hidden", "--glob", "!.git" },
 					},
+					git_branches = {
+						mappings = {
+							i = { ["<cr>"] = actions.git_switch_branch },
+						},
+					},
 				},
 				defaults = {
 					vimgrep_arguments = {
