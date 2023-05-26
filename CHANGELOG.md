@@ -1,3 +1,11 @@
+# [1.116.0](https://github.com/believer/dotfiles/compare/v1.115.0...v1.116.0) (2023-05-26)
+
+
+### Features
+
+* **telescope:** add key bindings for git and telescope ([31ac350](https://github.com/believer/dotfiles/commit/31ac35062478f0dd3f51b216678afce91843c9b2))
+* **which-key:** add lazy shortcut ([29ceaad](https://github.com/believer/dotfiles/commit/29ceaadeaaa73bb72fc27b1db087a25890da2a05))
+
 # [1.115.0](https://github.com/believer/dotfiles/compare/v1.114.0...v1.115.0) (2023-05-05)
 
 
