@@ -24,12 +24,14 @@ CDPATH=.:$HOME:$HOME/code
 # Antidote
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 
-# Work
-source ~/.dotfiles/.invidirc
+# Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
+# Setup terminal
+source "$DOTFILES_PATH/terminal/init.sh"
 
 # 10ms for key sequences
 KEYTIMEOUT=1
-
 
 # Hub
 eval "$(hub alias -s)"
@@ -39,10 +41,6 @@ defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 3 # normal minimum is 2 (30 ms)
 
 export PATH
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Setup terminal
 source "$DOTFILES_PATH/terminal/init.sh"
