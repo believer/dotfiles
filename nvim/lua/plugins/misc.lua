@@ -39,21 +39,8 @@ return {
 		cmd = "Copilot",
 		event = "InsertEnter",
 		config = function()
-			local machine = os.getenv("MACHINE")
-
-			-- Set correct Node 16 version from fnm
-			local copilot_node_command = vim.fn.expand("$HOME")
-				.. "/Library/Caches/fnm_multishells/50473_1673852317829/bin/node"
-
-			if machine == "home" then
-				copilot_node_command = vim.fn.expand("$HOME")
-					.. "/Library/Caches/fnm_multishells/45675_1674151559563/bin/node"
-			end
-
 			vim.defer_fn(function()
 				require("copilot").setup({
-					-- Tell GitHub Copilot to use Node 16
-					copilot_node_command = copilot_node_command,
 					panel = {
 						auto_refresh = false,
 						keymap = {
