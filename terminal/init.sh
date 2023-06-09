@@ -17,6 +17,7 @@ pathrm() {
 # Path
 pathadd "$JAVA_HOME/bin"
 pathadd "$ANDROID_HOME/tools"
+pathadd "$ANDROID_HOME/emulator"
 pathadd "$ANDROID_HOME/platform-tools"
 pathadd "$HOME/.yarn/bin"
 pathadd "$HOME/.pub-cache/bin"
