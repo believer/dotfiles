@@ -77,11 +77,9 @@ return {
 			})
 
 			-- Setup the LSPs.
-			lspconfig.volar.setup({
+			lspconfig.tsserver.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
-				-- Use Volar for all JavaScript and TypeScript code as it also handles Vue correctly
-				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 			})
 
 			lspconfig.lua_ls.setup({
