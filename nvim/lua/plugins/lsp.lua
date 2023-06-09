@@ -120,6 +120,20 @@ return {
 			lspconfig.tailwindcss.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				settings = {
+					tailwindCSS = {
+						classAttributes = { "class", "className", "class:list", "classList", "ngClass", "style" },
+						-- experimental = {
+						-- 	classRegex = {
+						-- 		"tw`([^`]*)", -- tw`...`
+						-- 		'tw="([^"]*)', -- <div tw="..." />
+						-- 		'tw={"([^"}]*)', -- <div tw={"..."} />
+						-- 		"tw\\.\\w+`([^`]*)", -- tw.xxx`...`
+						-- 		"tw\\(.*?\\)`([^`]*)",
+						-- 	},
+						-- },
+					},
+				},
 			})
 
 			lspconfig.stylelint_lsp.setup({
