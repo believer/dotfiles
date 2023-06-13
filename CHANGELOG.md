@@ -1,3 +1,12 @@
+# [1.117.0](https://github.com/believer/dotfiles/compare/v1.116.0...v1.117.0) (2023-06-13)
+
+
+### Features
+
+* update jdk ([c89f249](https://github.com/believer/dotfiles/commit/c89f249e869448265aabb2aa6039221cb8409461))
+* **lsp:** add style tag and custom tw to tailwind ([e246a77](https://github.com/believer/dotfiles/commit/e246a77ae6141d8d0765449eddd5f6deaefbce8c))
+* **lsp:** use tsserver ([031d631](https://github.com/believer/dotfiles/commit/031d631e4c2eb05f11a320d15ffd95858dcac829))
+
 # [1.116.0](https://github.com/believer/dotfiles/compare/v1.115.0...v1.116.0) (2023-05-26)
 
 
