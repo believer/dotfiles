@@ -18,6 +18,7 @@ return {
 					b = { '"_', "Black hole register" },
 					d = { 'diwxda"<CR>', "Delete HTML attribute" },
 					e = { "<cmd>EslintFixAll<CR>", "Fix all ESLint errors" },
+					t = { vim.cmd.OrganizeImports, "Organize imports" },
 				},
 
 				-- Diagnostics
