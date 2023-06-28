@@ -139,15 +139,6 @@ return {
 				settings = {
 					tailwindCSS = {
 						classAttributes = { "class", "className", "class:list", "classList", "ngClass", "style" },
-						-- experimental = {
-						-- 	classRegex = {
-						-- 		"tw`([^`]*)", -- tw`...`
-						-- 		'tw="([^"]*)', -- <div tw="..." />
-						-- 		'tw={"([^"}]*)', -- <div tw={"..."} />
-						-- 		"tw\\.\\w+`([^`]*)", -- tw.xxx`...`
-						-- 		"tw\\(.*?\\)`([^`]*)",
-						-- 	},
-						-- },
 					},
 				},
 			})
