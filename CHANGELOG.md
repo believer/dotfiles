@@ -1,3 +1,11 @@
+# [1.118.0](https://github.com/believer/dotfiles/compare/v1.117.0...v1.118.0) (2023-06-28)
+
+
+### Features
+
+* add key bindings to open definition in new split ([b8842de](https://github.com/believer/dotfiles/commit/b8842de3b5cd4f43fa9f84e9672c6d5ab95e90ce))
+* **lsp:** add organize imports to typescript ([e61ebe0](https://github.com/believer/dotfiles/commit/e61ebe0e54cf977f99cb8ae9025b1bd59d465af2))
+
 # [1.117.0](https://github.com/believer/dotfiles/compare/v1.116.0...v1.117.0) (2023-06-13)
 
 
