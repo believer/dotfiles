@@ -1,6 +1,7 @@
 return {
 	{
 		"williamboman/mason.nvim", -- Installer of LSPs and more
+		event = "VeryLazy",
 		build = ":MasonUpdate",
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim", -- LSP configuration for Mason
@@ -21,6 +22,7 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
+		event = "BufReadPre",
 		config = function()
 			require("mason").setup()
 			require("mason-lspconfig").setup()

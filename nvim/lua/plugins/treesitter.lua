@@ -5,6 +5,7 @@ vim.opt.foldlevel = 99
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		event = "BufReadPre",
 		dependencies = {
 			{
 				"nkrkv/nvim-treesitter-rescript", -- Support for ReScript

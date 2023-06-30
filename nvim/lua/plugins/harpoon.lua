@@ -1,6 +1,7 @@
 -- Quickly navigate between files
 return {
 	"ThePrimeagen/harpoon",
+	event = "VeryLazy",
 	config = function()
 		-- Add ability to open files in a split
 		local group = vim.api.nvim_create_augroup("Harpoon Augroup", { clear = true })
