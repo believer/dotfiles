@@ -30,6 +30,9 @@ alias ncu='supreme update-dependencies'
 alias ni='supreme install'
 alias nisd='supreme install --dev'
 alias nu='supreme uninstall'
+alias nw='supreme workspace add'
+alias nwsd='supreme workspace add --dev'
+alias nwr='supreme workspace remove'
 alias run='supreme run'
 
 # Docker
