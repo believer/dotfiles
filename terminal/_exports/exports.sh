@@ -10,7 +10,7 @@ export GOPATH="$HOME/code/go"
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.dotfiles"
 export ZDOTDIR="$XDG_CONFIG_HOME"
-export GPG_TTY="$(tty)"
+export GPG_TTY=$TTY
 
 # Android SDK
 export ANDROID_HOME=${HOME}/Library/Android/sdk
