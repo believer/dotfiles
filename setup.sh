@@ -1,14 +1,15 @@
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# Add /opt/homebrew/bin to /etc/paths after /usr/local/bin
+
 echo "Installing Homebrew packages..."
 
 brew install antidote
 brew install bat
 brew install fnm
-brew install git
+brew install hub
 brew install gnupg # gpg
-brew install kitty
 brew install neovim
 brew install opendevtools/supreme/supreme
 brew install opendevtools/todos/todos
