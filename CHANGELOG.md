@@ -1,3 +1,10 @@
+## [1.118.1](https://github.com/believer/dotfiles/compare/v1.118.0...v1.118.1) (2023-07-31)
+
+
+### Bug Fixes
+
+* change tty for gpg ([3dbc9f6](https://github.com/believer/dotfiles/commit/3dbc9f651e22595f2a710aacaeaaf205de97d128))
+
 # [1.118.0](https://github.com/believer/dotfiles/compare/v1.117.0...v1.118.0) (2023-06-28)
 
 
