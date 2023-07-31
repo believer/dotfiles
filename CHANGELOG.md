@@ -1,3 +1,12 @@
+# [1.119.0](https://github.com/believer/dotfiles/compare/v1.118.1...v1.119.0) (2023-07-31)
+
+
+### Features
+
+* **format:** replace null-ls with formatter.nvim ([3d96b33](https://github.com/believer/dotfiles/commit/3d96b3319dca9c55591c490c904e30271a675ee1))
+* add fzf and gh to setup ([f853254](https://github.com/believer/dotfiles/commit/f8532545223135a5808a08c4237770538cbf0e1d))
+* add gpg setup using keychain ([80a767a](https://github.com/believer/dotfiles/commit/80a767a2ea0a981774adecd2c1b844ff13f68050))
+
 ## [1.118.1](https://github.com/believer/dotfiles/compare/v1.118.0...v1.118.1) (2023-07-31)
 
 
