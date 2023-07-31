@@ -174,70 +174,30 @@ return {
 	},
 
 	{
-		"jose-elias-alvarez/null-ls.nvim",
-		dependencies = {
-			"lukas-reineke/lsp-format.nvim",
-		},
+		"mhartington/formatter.nvim",
 		config = function()
-			local null_ls = require("null-ls")
-			local b = null_ls.builtins
+			vim.api.nvim_create_autocmd("BufWritePost", { command = "FormatWriteLock" })
 
-			local lsp_formatting = function(bufnr)
-				vim.lsp.buf.format({
-					filter = function(client)
-						-- apply whatever logic you want (in this example, we'll only use null-ls)
-						return client.name == "null-ls"
-					end,
-					bufnr = bufnr,
-				})
+			local formatter_settings = {
+				logging = true,
+				filetype = {
+					lua = {
+						require("formatter.filetypes.lua").stylua,
+					},
+				},
+			}
+
+			-- Add same settings for all javascript filetypes
+			local js_types = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
+
+			for _, type in ipairs(js_types) do
+				formatter_settings.filetype[type] = {
+					require("formatter.filetypes.typescript").prettierd,
+					require("formatter.filetypes.typescript").eslint_d,
+				}
 			end
 
-			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-			-- add to your shared on_attach callback
-			local on_attach = function(client, bufnr)
-				if client.supports_method("textDocument/formatting") then
-					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						group = augroup,
-						buffer = bufnr,
-						callback = function()
-							lsp_formatting(bufnr)
-						end,
-					})
-				end
-			end
-
-			local prettierd = b.formatting.prettierd.with({
-				filetypes = {
-					"astro",
-					"css",
-					"graphql",
-					"html",
-					"javascript",
-					"javascriptreact",
-					"json",
-					"markdown",
-					"scss",
-					"typescript",
-					"typescriptreact",
-					"vue",
-					"vue",
-					"yaml",
-				},
-			})
-
-			null_ls.setup({
-				-- Format on save
-				on_attach = on_attach,
-
-				sources = {
-					prettierd,
-					b.formatting.eslint_d,
-					b.formatting.rustfmt,
-					b.formatting.stylua,
-				},
-			})
+			require("formatter").setup(formatter_settings)
 		end,
 	},
 }
