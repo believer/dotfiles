@@ -8,6 +8,8 @@ echo "Installing Homebrew packages..."
 brew install antidote
 brew install bat
 brew install fnm
+brew install fzf
+brew install gh
 brew install hub
 brew install gnupg # gpg
 brew install neovim
@@ -30,3 +32,7 @@ cargo install cargo-watch
 # Add yarn (> Node 16.10)
 echo "Setup Yarn..."
 corepack enable
+
+# Setup FZF
+echo "Setup FZF key bindings and auto-completion..."
+$(brew --prefix)/opt/fzf/install
