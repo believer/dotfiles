@@ -20,9 +20,6 @@ CDPATH=.:$HOME:$HOME/code
 # Antidote
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 
-# Oh My Zsh
-# source $ZSH/oh-my-zsh.sh
-
 # Setup terminal
 source "$DOTFILES_PATH/terminal/init.sh"
 
