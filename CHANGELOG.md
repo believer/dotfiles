@@ -1,3 +1,10 @@
+# [1.120.0](https://github.com/believer/dotfiles/compare/v1.119.0...v1.120.0) (2023-08-03)
+
+
+### Features
+
+* **formatting:** add prettier to css ([eaa1d2f](https://github.com/believer/dotfiles/commit/eaa1d2f8b59430635cf6bad572e7f45ac0d7c4b0))
+
 # [1.119.0](https://github.com/believer/dotfiles/compare/v1.118.1...v1.119.0) (2023-07-31)
 
 
