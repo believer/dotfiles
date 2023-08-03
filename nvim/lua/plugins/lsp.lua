@@ -184,6 +184,9 @@ return {
 					lua = {
 						require("formatter.filetypes.lua").stylua,
 					},
+					css = {
+						require("formatter.filetypes.css").prettierd,
+					},
 				},
 			}
 
