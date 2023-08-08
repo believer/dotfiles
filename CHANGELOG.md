@@ -1,3 +1,10 @@
+# [1.121.0](https://github.com/believer/dotfiles/compare/v1.120.0...v1.121.0) (2023-08-08)
+
+
+### Features
+
+* add ocaml-lsp ([635429e](https://github.com/believer/dotfiles/commit/635429e6f87cb83607841e84b13630fee72f2151))
+
 # [1.120.0](https://github.com/believer/dotfiles/compare/v1.119.0...v1.120.0) (2023-08-03)
 
 
