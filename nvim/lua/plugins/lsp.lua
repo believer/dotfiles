@@ -193,6 +193,9 @@ return {
 					css = {
 						require("formatter.filetypes.css").prettierd,
 					},
+					markdown = {
+						require("formatter.filetypes.markdown").prettierd,
+					},
 					ocaml = {
 						function()
 							local util = require("formatter.util")
@@ -206,7 +209,7 @@ return {
 								stdin = true,
 							}
 						end,
-					},
+          },
 				},
 			}
 
