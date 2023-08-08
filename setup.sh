@@ -44,3 +44,7 @@ corepack enable
 # Setup FZF
 echo "Setup FZF key bindings and auto-completion..."
 $(brew --prefix)/opt/fzf/install
+
+# Install programs
+# Chrome
+# Docker
