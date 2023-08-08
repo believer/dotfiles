@@ -1,3 +1,10 @@
+# [1.122.0](https://github.com/believer/dotfiles/compare/v1.121.0...v1.122.0) (2023-08-08)
+
+
+### Features
+
+* **formatting:** add markdown formatting ([1c4fd21](https://github.com/believer/dotfiles/commit/1c4fd210bf76d8c28c6e46b2d926c1c9ca9f8b5f))
+
 # [1.121.0](https://github.com/believer/dotfiles/compare/v1.120.0...v1.121.0) (2023-08-08)
 
 
