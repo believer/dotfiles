@@ -44,9 +44,11 @@ antidote load
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
 # bun completions
 [ -s "/Users/rickard/.bun/_bun" ] && source "/Users/rickard/.bun/_bun"
 
 # opam configuration
 [[ ! -r /Users/rickard/.opam/opam-init/init.zsh ]] || source /Users/rickard/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# rbenv
+eval "$(rbenv init - zsh)"
