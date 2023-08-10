@@ -6,9 +6,6 @@ return {
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-cmdline",
 
-		-- UI for completion menu
-		"NvChad/ui",
-
 		-- Snippet support
 		"saadparwaiz1/cmp_luasnip",
 		"L3MON4D3/LuaSnip",
@@ -73,7 +70,48 @@ return {
 			-- Add icons to completion menu
 			formatting = {
 				format = function(entry, vim_item)
-					local icons = require("nvchad_ui.icons").lspkind
+					local icons = {
+						Array = "[]",
+						Boolean = "",
+						Calendar = "",
+						Class = "󰠱",
+						Codeium = "",
+						Color = "󰏘",
+						Constant = "󰏿",
+						Constructor = "",
+						Copilot = "",
+						Enum = "",
+						EnumMember = "",
+						Event = "",
+						Field = "󰜢",
+						File = "󰈚",
+						Folder = "󰉋",
+						Function = "󰆧",
+						Interface = "",
+						Keyword = "󰌋",
+						Method = "󰆧",
+						Module = "",
+						Namespace = "󰌗",
+						Null = "󰟢",
+						Number = "",
+						Object = "󰅩",
+						Operator = "󰆕",
+						Package = "",
+						Property = "󰜢",
+						Reference = "󰈇",
+						Snippet = "",
+						String = "󰉿",
+						Struct = "󰙅",
+						TabNine = "",
+						Table = "",
+						Tag = "",
+						Text = "󰉿",
+						TypeParameter = "󰊄",
+						Unit = "󰑭",
+						Value = "󰎠",
+						Variable = "󰀫",
+						Watch = "󰥔",
+					}
 					vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
 					vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
 					return vim_item
