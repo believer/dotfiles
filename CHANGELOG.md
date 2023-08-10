@@ -1,3 +1,10 @@
+# [1.123.0](https://github.com/believer/dotfiles/compare/v1.122.0...v1.123.0) (2023-08-10)
+
+
+### Features
+
+* **tmux:** add prefix + % to set an even split ([51ef206](https://github.com/believer/dotfiles/commit/51ef2067d9a27fde833ef480bfa0973fbd1afbc5))
+
 # [1.122.0](https://github.com/believer/dotfiles/compare/v1.121.0...v1.122.0) (2023-08-08)
 
 
