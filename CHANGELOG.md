@@ -1,3 +1,10 @@
+## [1.123.1](https://github.com/believer/dotfiles/compare/v1.123.0...v1.123.1) (2023-08-10)
+
+
+### Bug Fixes
+
+* vendor icon setup for lsps ([d995fa1](https://github.com/believer/dotfiles/commit/d995fa15233d0acf5a2bf4e84b563d1cf33ed5a1))
+
 # [1.123.0](https://github.com/believer/dotfiles/compare/v1.122.0...v1.123.0) (2023-08-10)
 
 
