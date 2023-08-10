@@ -21,7 +21,7 @@ o.ignorecase = true
 o.smartcase = true
 
 -- Search
-o.hlsearch = false
+o.hlsearch = true
 o.incsearch = true
 
 -- Display line numbers and use relative numbering
