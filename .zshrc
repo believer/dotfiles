@@ -44,6 +44,13 @@ antidote load
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+<<<<<<< Updated upstream
+=======
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+>>>>>>> Stashed changes
 # bun completions
 [ -s "/Users/rickard/.bun/_bun" ] && source "/Users/rickard/.bun/_bun"
 
