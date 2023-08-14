@@ -1,3 +1,10 @@
+# [1.124.0](https://github.com/believer/dotfiles/compare/v1.123.1...v1.124.0) (2023-08-14)
+
+
+### Features
+
+* **snippets:** add react native component ([9a4aed5](https://github.com/believer/dotfiles/commit/9a4aed5fe0992fbce8ab6aef0ca258ea156ed39d))
+
 ## [1.123.1](https://github.com/believer/dotfiles/compare/v1.123.0...v1.123.1) (2023-08-10)
 
 
