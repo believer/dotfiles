@@ -136,6 +136,27 @@ local auto_snippets = {
 	s("sgblt", fmt("screen.getByLabelText(/{name}/i)", { name = i(0) })),
 	s("sqbt", fmt("screen.queryByText(/{name}/i)", { name = i(0) })),
 	s("sgbr", fmt("screen.getByRole('{role}', {{ name: /{name}/i }})", { role = i(1, "button"), name = i(2, "name") })),
+
+	s(
+		"rncmp",
+		fmt(
+			[[
+import {{ View }} from 'react-native'
+
+function {filename} () {{
+  return (
+    <View></View>
+  )
+}}
+
+    
+export default {filename}
+  ]],
+			{
+				filename = filename(),
+			}
+		)
+	),
 }
 
 return regular_snippets, auto_snippets
