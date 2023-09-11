@@ -4,7 +4,6 @@ return {
 		vim.api.nvim_create_autocmd("BufWritePost", { command = "FormatWriteLock" })
 
 		local formatter_settings = {
-			logging = true,
 			filetype = {
 				go = {
 					require("formatter.filetypes.go").gofmt,
