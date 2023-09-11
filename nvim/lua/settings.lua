@@ -35,6 +35,9 @@ o.autoindent = true
 o.expandtab = true -- expand tabs to spaces
 o.smartindent = true
 
+-- Hide partial commands in status bar
+o.showcmd = false
+
 -- Simplify moving between panes
 map("<C-J>", "<C-W><C-J>")
 map("<C-K>", "<C-W><C-K>")
