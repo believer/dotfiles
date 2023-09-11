@@ -16,6 +16,8 @@ local regular_snippets = {
 	-- Assertions
 	s("exp", fmt("expect({}).toEqual({})", { i(1), i(2) })),
 
+	s("snap", fmt("expect({}).toMatchSnapshot()", { i(0) })),
+
 	-- Vue test
 	s(
 		"vtest",
@@ -143,7 +145,11 @@ local auto_snippets = {
 			[[
 import {{ View }} from 'react-native'
 
-function {filename} () {{
+type {filename}Props = {{
+ 
+}}
+
+function {filename} ({{}}: {filename}Props) {{
   return (
     <View></View>
   )
