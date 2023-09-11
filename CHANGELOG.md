@@ -1,3 +1,11 @@
+# [1.125.0](https://github.com/believer/dotfiles/compare/v1.124.0...v1.125.0) (2023-09-11)
+
+
+### Features
+
+* **nvim:** hide partial commands in status bar ([69fc5e6](https://github.com/believer/dotfiles/commit/69fc5e6a331ecc9f3597fa4cc14fde4dbbadb640))
+* **snippets:** update typescript ([ee3b860](https://github.com/believer/dotfiles/commit/ee3b860af438da9dc14873b4438ce204d7b4c25e))
+
 # [1.124.0](https://github.com/believer/dotfiles/compare/v1.123.1...v1.124.0) (2023-08-14)
 
 
