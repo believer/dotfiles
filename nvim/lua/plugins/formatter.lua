@@ -17,6 +17,9 @@ return {
 				css = {
 					require("formatter.filetypes.css").prettierd,
 				},
+				json = {
+					require("formatter.filetypes.json").prettierd,
+				},
 				markdown = {
 					require("formatter.filetypes.markdown").prettierd,
 				},
