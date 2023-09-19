@@ -23,7 +23,7 @@ if spotify_state is equal to "playing" then
 		set is_repeat to repeating
 		
 		set track_position to my track_time(player_position, track_duration)
-		set track_data to artist_name & " - " & track_name & " (" & album_name & ")" & track_position
+		set track_data to artist_name & " - " & track_name & track_position
 		
 		return my track_meta(track_data, is_shuffle, is_repeat)
 	end tell
@@ -43,7 +43,7 @@ else if itunes_state is equal to "playing" then
 		end if
 		
 		set track_position to my track_time(player_position, track_duration)
-		set track_data to artist_name & " - " & track_name & " (" & album_name & ")" & track_position
+		set track_data to artist_name & " - " & track_name & track_position
 		
 		return my track_meta(track_data, is_shuffle, is_repeat)
 	end tell
