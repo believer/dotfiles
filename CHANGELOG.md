@@ -1,3 +1,10 @@
+# [1.126.0](https://github.com/believer/dotfiles/compare/v1.125.0...v1.126.0) (2023-09-19)
+
+
+### Features
+
+* **format:** add json format ([2be9d85](https://github.com/believer/dotfiles/commit/2be9d859f8e063b2309055016d19fd74984efc33))
+
 # [1.125.0](https://github.com/believer/dotfiles/compare/v1.124.0...v1.125.0) (2023-09-11)
 
 
