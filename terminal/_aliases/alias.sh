@@ -5,7 +5,6 @@
 alias nr='npm run '
 alias nrs='npm run start'
 alias nrd='npm run dev'
-alias nrt='npm run test'
 alias nout='npm outdated'
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 alias l='ls -1a'

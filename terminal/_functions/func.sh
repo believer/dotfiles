@@ -28,3 +28,12 @@ rest() {
         -title 'Break is over! Get back to work 😬'\
         -sound Crystal
 }
+
+nrt() {
+  if [[ -f bun.lockdb ]]; then
+    command bun test
+  else
+    command npm run test
+  fi
+}
+
