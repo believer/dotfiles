@@ -1,3 +1,10 @@
+# [1.127.0](https://github.com/believer/dotfiles/compare/v1.126.0...v1.127.0) (2023-09-19)
+
+
+### Features
+
+* nrt command uses bun if available ([a931689](https://github.com/believer/dotfiles/commit/a93168928b51088655bf913b80461c53a2c7e56e))
+
 # [1.126.0](https://github.com/believer/dotfiles/compare/v1.125.0...v1.126.0) (2023-09-19)
 
 
