@@ -1,3 +1,11 @@
+# [1.128.0](https://github.com/believer/dotfiles/compare/v1.127.0...v1.128.0) (2023-10-03)
+
+
+### Features
+
+* add notes project ([f7a3ff9](https://github.com/believer/dotfiles/commit/f7a3ff917cc0b0e050f882354b3e7a62da6581a4))
+* add zen mode for notes editing ([559eb3b](https://github.com/believer/dotfiles/commit/559eb3b0e136411b132e37b6e3ce90e7915a7fc5))
+
 # [1.127.0](https://github.com/believer/dotfiles/compare/v1.126.0...v1.127.0) (2023-09-19)
 
 
