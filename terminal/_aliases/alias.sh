@@ -59,7 +59,7 @@ alias dotfiles='cd ~/.dotfiles'
 alias wid='cd ~/Dropbox/Dokument/what-i-did && nvim'
 alias swap='cd ~/.local/state/nvim/swap'
 alias node-prune='find . -name "node_modules" -type d -prune -exec rm -rf '{}' +'
-alias obsidian='cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/notes'
+alias obsidian='cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Based'
 alias backups='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Backups'
 
 # Swift
