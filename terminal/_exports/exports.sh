@@ -1,6 +1,6 @@
 # ENV
 export REACT_EDITOR=vim
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
