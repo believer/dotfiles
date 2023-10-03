@@ -28,6 +28,8 @@ o.incsearch = true
 o.number = true
 o.relativenumber = true
 
+o.linebreak = true -- wrap long lines with full words
+
 -- Tabs
 o.tabstop = 2 -- 1 tab = 2 spaces
 o.shiftwidth = 2 -- indentation
