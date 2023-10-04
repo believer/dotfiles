@@ -1,3 +1,10 @@
+# [1.129.0](https://github.com/believer/dotfiles/compare/v1.128.0...v1.129.0) (2023-10-04)
+
+
+### Features
+
+* **tmuxinator:** update movie project ([9225507](https://github.com/believer/dotfiles/commit/92255070d90bad644c3a9a852bd7457912ac908b))
+
 # [1.128.0](https://github.com/believer/dotfiles/compare/v1.127.0...v1.128.0) (2023-10-03)
 
 
