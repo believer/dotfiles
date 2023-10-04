@@ -145,36 +145,10 @@ return {
 				},
 			})
 
-			lspconfig.stylelint_lsp.setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-				filetypes = { "css", "scss", "vue" },
-			})
-
 			lspconfig.cssls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 				filetypes = { "css", "scss" },
-			})
-
-			lspconfig.rescriptls.setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-				init_options = {
-					extensionConfiguration = {
-						askToStartBuild = false,
-						codeLens = true,
-						inlayHints = {
-							enable = true,
-						},
-					},
-				},
-			})
-
-			lspconfig.ocamllsp.setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-				filetypes = { "ocaml" },
 			})
 
 			lspconfig.gopls.setup({

@@ -37,20 +37,6 @@ return {
 					sql = {
 						require("formatter.filetypes.sql").pgformat,
 					},
-					ocaml = {
-						function()
-							local util = require("formatter.util")
-
-							return {
-								exe = "ocamlformat",
-								args = {
-									"--enable-outside-detected-project",
-									util.escape_path(util.get_current_buffer_file_path()),
-								},
-								stdin = true,
-							}
-						end,
-					},
 				},
 			}
 
