@@ -11,6 +11,7 @@ alias l='ls -1a'
 alias ll='l'
 alias flush-npm='rm -rf node_modules && npm i'
 alias brew-install="brew update && brew upgrade"
+alias eslint_d="~/.local/share/nvim/mason/bin/eslint_d"
 
 # Git
 alias git=hub
