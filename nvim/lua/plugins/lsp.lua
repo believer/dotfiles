@@ -140,7 +140,20 @@ return {
 				capabilities = capabilities,
 				settings = {
 					tailwindCSS = {
-						classAttributes = { "class", "className", "class:list", "classList", "ngClass", "style" },
+						experimental = {
+							classRegex = {
+								-- Support cva
+								{
+									"cva\\(([^)]*)\\)",
+									"[\"'`]([^\"'`]*).*?[\"'`]",
+								},
+								-- Support ts-pattern
+								{
+									"with\\((.*)\\)",
+									"[\"'`]([^\"'`]*).*?[\"'`]",
+								},
+							},
+						},
 					},
 				},
 			})
