@@ -52,6 +52,9 @@ nmap rn :renameFile
 exmap showFile obcommand file-explorer:reveal-active-file
 nmap <Space>f :showFile
 
+exmap showFileProperties obcommand properties:open-local
+nmap <Space>p :showFileProperties
+
 " NOTE: must use 'map' and not 'nmap'
 map [[ :surround_wiki
 nunmap s
