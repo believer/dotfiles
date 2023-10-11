@@ -157,9 +157,6 @@ return {
 				{ name = "luasnip", priority = 10 }, -- Snippets
 				{ name = "nvim_lsp", priority = 5 }, -- LSP
 				{ name = "path", max_item_count = 5, priority = 3 }, -- File paths
-			}, {
-				{ name = "spell", max_item_count = 5, priority = 2 }, -- Spelling
-				{ name = "buffer", max_item_count = 5, keyword_length = 3, priority = 1 }, -- Texts from buffer
 			}),
 		})
 
