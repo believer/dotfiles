@@ -1,3 +1,12 @@
+## [1.131.1](https://github.com/believer/dotfiles/compare/v1.131.0...v1.131.1) (2023-10-11)
+
+
+### Bug Fixes
+
+* remove spell and buffer from completion ([1dfc24a](https://github.com/believer/dotfiles/commit/1dfc24a784f2d6187d74b83bd4cfad3eb306fca7))
+* **obsidian:** surround commands ([cf45e53](https://github.com/believer/dotfiles/commit/cf45e5340b04f2cabddceb8d0f3620bba75e0c73))
+* **tailwind:** support cva and ts-pattern ([0586fce](https://github.com/believer/dotfiles/commit/0586fcea6dc695d55bf64d272bf2d3f5afa34851))
+
 # [1.131.0](https://github.com/believer/dotfiles/compare/v1.130.0...v1.131.0) (2023-10-11)
 
 
