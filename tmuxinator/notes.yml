@@ -1,7 +1,7 @@
 # /Users/rickard/.dotfiles/tmuxinator/notes.yml
 
 name: notes
-root: ~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Based
+root: ~/code/Notes/
 
 windows:
   - editor:
