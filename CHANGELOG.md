@@ -1,3 +1,10 @@
+# [1.131.0](https://github.com/believer/dotfiles/compare/v1.130.0...v1.131.0) (2023-10-11)
+
+
+### Features
+
+* add open file properties in obsidian ([c89efee](https://github.com/believer/dotfiles/commit/c89efee69851b3421ca58e6392d05a4fa15d066d))
+
 # [1.130.0](https://github.com/believer/dotfiles/compare/v1.129.0...v1.130.0) (2023-10-11)
 
 
