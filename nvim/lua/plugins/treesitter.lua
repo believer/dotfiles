@@ -9,7 +9,6 @@ return {
 		dependencies = {
 			{
 				"nkrkv/nvim-treesitter-rescript", -- Support for ReScript
-				"danielo515/nvim-treesitter-reason", -- Support for ReasonML
 				ft = "rescript",
 			},
 			"windwp/nvim-ts-autotag", -- Automatically close/update HTML tags
