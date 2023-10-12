@@ -1,9 +1,11 @@
+" Unmap space to use as leader key
 unmap <Space>
 
-" Have j and k navigate visual lines rather than logical ones
+" Move by visual lines
 nmap j gj
 nmap k gk
 
+" Editor
 exmap focusRight obcommand editor:focus-right
 nmap <C-l> :focusRight
 
@@ -25,6 +27,13 @@ nmap gV :split
 exmap switcher obcommand switcher:open
 nmap <Space>; :switcher
 
+exmap leftSidebar obcommand app:toggle-left-sidebar
+nmap <Space>d :leftSidebar
+
+exmap rightSidebar obcommand app:toggle-right-sidebar
+nmap <Space>r :rightSidebar
+
+" Daily
 exmap daily obcommand daily-notes
 nmap gd :daily
 
@@ -34,14 +43,9 @@ nmap gp :dailyPrevious
 exmap dailyNext obcommand daily-notes:goto-next
 nmap gn :dailyNext
 
+" File handling
 exmap template obcommand insert-template
 nmap tt :template
-
-exmap leftSidebar obcommand app:toggle-left-sidebar
-nmap <Space>d :leftSidebar
-
-exmap rightSidebar obcommand app:toggle-right-sidebar
-nmap <Space>r :rightSidebar
 
 exmap moveFile obcommand file-explorer:move-file
 nmap mv :moveFile
@@ -55,6 +59,7 @@ nmap <Space>f :showFile
 exmap showFileProperties obcommand properties:open-local
 nmap <Space>p :showFileProperties
 
+" Surround strings like vim-surround
 exmap surround_wiki surround [[ ]]
 exmap surround_double_quotes surround " "
 exmap surround_single_quotes surround ' '
@@ -77,4 +82,3 @@ map s[ :surround_square_brackets
 map s[ :surround_square_brackets
 map s{ :surround_curly_brackets
 map s} :surround_curly_brackets
-
