@@ -9,6 +9,7 @@ return {
 
 		local harpoon_mark = require("harpoon.mark")
 		local harpoon_ui = require("harpoon.ui")
+		local telescope_builtin = require("telescope.builtin")
 
 		wk.setup()
 		wk.register({
@@ -37,10 +38,10 @@ return {
 				-- Git
 				g = {
 					name = "git",
-					b = { "<cmd>Telescope git_branches<CR>", "Git branches" },
+					b = { telescope_builtin.git_branches, "Git branches" },
 					c = {
-						b = { "<cmd>Telescope git_bcommits<CR>", "Buffer commits" },
-						c = { "<cmd>Telescope git_commits<CR>", "Git commits" },
+						b = { telescope_builtin.git_bcommits, "Buffer commits" },
+						c = { telescope_builtin.git_commits, "Git commits" },
 					},
 					p = { "<cmd>Git push<CR>", "git push" },
 					s = { "<cmd>Git<CR>", "git status" },
@@ -68,19 +69,18 @@ return {
 				s = { vim.cmd.update, "Save" },
 
 				-- Telescope
-				[";"] = { "<cmd>Telescope find_files<CR>", "Find files" },
-				["?"] = { "<cmd>Telescope live_grep<CR>", "Grep in all files" },
+				[";"] = { telescope_builtin.find_files, "Find files" },
+				["?"] = { telescope_builtin.live_grep, "Grep in all files" },
 				t = {
 					name = "telescope",
-					b = { "<cmd>Telescope buffers<CR>", "Open buffers" },
-					d = { "<cmd>Telescope lsp_document_symbols<CR>", "Symbols in document" },
-					f = { "<cmd>Telescope find_files<CR>", "Telescope find files" },
-					h = { "<cmd>Telescope help_tags<CR>", "Telescope help tags" },
-					m = { "<cmd>Telescope marks<CR>", "Telescope marks" },
-					o = { "<cmd>Telescope oldfiles<CR>", "Recently opened files" },
-					s = { "<cmd>Telescope spell_suggest<CR>", "Suggest spelling" },
+					b = { telescope_builtin.buffers, "Open buffers" },
+					d = { telescope_builtin.lsp_document_symbols, "Symbols in document" },
+					h = { telescope_builtin.help_tags, "Telescope help tags" },
+					m = { telescope_builtin.marks, "Telescope marks" },
+					o = { telescope_builtin.oldfiles, "Recently opened files" },
+					s = { telescope_builtin.spell_suggest, "Suggest spelling" },
 					t = { "<cmd>TodoTelescope<CR>", "Todo list" },
-					w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Symbols in workspace" },
+					w = { telescope_builtin.lsp_dynamic_workspace_symbols, "Symbols in workspace" },
 				},
 
 				y = { '"+y', "Copy to system clipboard", mode = "v" },
