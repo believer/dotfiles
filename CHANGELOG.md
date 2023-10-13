@@ -1,3 +1,10 @@
+## [1.131.2](https://github.com/believer/dotfiles/compare/v1.131.1...v1.131.2) (2023-10-13)
+
+
+### Bug Fixes
+
+* **telescope:** use release branch instead of tag ([75a9a55](https://github.com/believer/dotfiles/commit/75a9a55841f4bf06ca32ab92cb2fee6865531ad7))
+
 ## [1.131.1](https://github.com/believer/dotfiles/compare/v1.131.0...v1.131.1) (2023-10-11)
 
 
