@@ -1,5 +1,5 @@
 [user]
-  name = Rickard Natt och Dag
+	name = believer
   email = rickard@nattochdag.dev
 	signingkey = 5C0DD50A48389EA4
 
@@ -39,3 +39,5 @@
 	autoSetupRemote = true
 [safe]
 	directory = undefined
+[gpg]
+	program = /usr/local/bin/gpg
