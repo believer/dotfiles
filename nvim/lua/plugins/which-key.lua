@@ -24,11 +24,12 @@ return {
 
 				-- Diagnostics
 				e = {
-					name = "diagnostics",
-					d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Show error in float window" },
-					l = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "Display diagnostics to location list" },
-					n = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
-					p = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Previous diagnostic" },
+					name = "trouble",
+					e = { "<cmd>TroubleToggle<cr>", "Open Trouble list" },
+					w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
+					d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
+					q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
+					l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
 				},
 
 				-- Tree view
@@ -84,15 +85,6 @@ return {
 				},
 
 				y = { '"+y', "Copy to system clipboard", mode = "v" },
-
-				x = {
-					name = "trouble",
-					x = { "<cmd>TroubleToggle<cr>", "Open Trouble list" },
-					w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
-					d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "Document Diagnostics" },
-					q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
-					l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
-				},
 			},
 		})
 	end,
