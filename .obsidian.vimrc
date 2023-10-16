@@ -33,6 +33,9 @@ nmap <Space>d :leftSidebar
 exmap rightSidebar obcommand app:toggle-right-sidebar
 nmap <Space>r :rightSidebar
 
+exmap backlinks obcommand backlink:toggle-backlinks-in-document
+nmap <Space>b :backlinks
+
 " Daily
 exmap daily obcommand daily-notes
 nmap gd :daily
