@@ -1,3 +1,10 @@
+# [1.132.0](https://github.com/believer/dotfiles/compare/v1.131.2...v1.132.0) (2023-10-16)
+
+
+### Features
+
+* **obsidian:** add backlinks toggle ([c80e474](https://github.com/believer/dotfiles/commit/c80e474aa69759218f32fac026b0844f41d329a4))
+
 ## [1.131.2](https://github.com/believer/dotfiles/compare/v1.131.1...v1.131.2) (2023-10-13)
 
 
