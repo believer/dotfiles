@@ -1,3 +1,10 @@
+# [1.133.0](https://github.com/believer/dotfiles/compare/v1.132.0...v1.133.0) (2023-10-26)
+
+
+### Features
+
+* update typescript snippets ([e1565c7](https://github.com/believer/dotfiles/commit/e1565c7ddbab8a5e81a4098eef106df3db5902a1))
+
 # [1.132.0](https://github.com/believer/dotfiles/compare/v1.131.2...v1.132.0) (2023-10-16)
 
 
