@@ -139,11 +139,12 @@ local auto_snippets = {
 	s("sqbt", fmt("screen.queryByText(/{name}/i)", { name = i(0) })),
 	s("sgbr", fmt("screen.getByRole('{role}', {{ name: /{name}/i }})", { role = i(1, "button"), name = i(2, "name") })),
 
+	-- React Native
 	s(
 		"rncmp",
 		fmt(
 			[[
-import {{ View }} from 'react-native'
+import {{ Text, View }} from 'react-native'
 
 type {filename}Props = {{
  
@@ -151,7 +152,9 @@ type {filename}Props = {{
 
 function {filename} ({{}}: {filename}Props) {{
   return (
-    <View></View>
+    <View>
+      <Text>{filename}</Text>
+    </View>
   )
 }}
 
@@ -162,6 +165,51 @@ export default {filename}
 				filename = filename(),
 			}
 		)
+	),
+
+	-- UI components
+	s(
+		"rntl",
+		fmt([[<Typography.Label>{text}</Typography.Label>]], {
+			text = i(1, "Text"),
+		})
+	),
+	s(
+		"rnth",
+		fmt([[<Typography.Headline>{text}</Typography.Headline>]], {
+			text = i(1, "Text"),
+		})
+	),
+	s(
+		"rntt",
+		fmt([[<Typography.Title>{text}</Typography.Title>]], {
+			text = i(1, "Text"),
+		})
+	),
+	s(
+		"rntb",
+		fmt([[<Typography.Body>{text}</Typography.Body>]], {
+			text = i(1, "Text"),
+		})
+	),
+	s(
+		"rnfc",
+		fmt([[<Formatted.Currency currency="{currency}" value="{value}" />]], {
+			currency = i(1, "Currency"),
+			value = i(2, "Value"),
+		})
+	),
+	s(
+		"rnfn",
+		fmt([[<Formatted.Number value="{value}" />]], {
+			value = i(1, "Value"),
+		})
+	),
+	s(
+		"rnfp",
+		fmt([[<Formatted.Percent value="{value}" />]], {
+			value = i(1, "Value"),
+		})
 	),
 }
 
