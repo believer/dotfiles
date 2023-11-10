@@ -44,6 +44,22 @@ return {
 						b = { telescope_builtin.git_bcommits, "Buffer commits" },
 						c = { telescope_builtin.git_commits, "Git commits" },
 					},
+					-- Signs
+					h = {
+						name = "Git signs",
+						p = { "<cmd>Gitsigns preview_hunk", "Preview hunk" },
+						r = { "<cmd>Gitsigns reset_hunk", "Reset hunk" },
+						s = { "<cmd>Gitsigns stage_hunk", "Stage hunk" },
+						-- Toggle highlights
+						t = {
+							name = "Toggle highlights",
+							b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle git blame on line" },
+							l = { "<cmd>Gitsigns toggle_linehl<CR>", "Toggle line highlights" },
+							n = { "<cmd>Gitsigns toggle_numhl<CR>", "Toggle number highlights" },
+							s = { "<cmd>Gitsigns toggle_signs<CR>", "Toggle signs" },
+							w = { "<cmd>Gitsigns toggle_word_diff<CR>", "Toggle word diff highlights" },
+						},
+					},
 					p = { "<cmd>Git push<CR>", "git push" },
 					s = { "<cmd>Git<CR>", "git status" },
 					u = { "<cmd>!git up<CR>", "git up" },
