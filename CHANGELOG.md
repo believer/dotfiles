@@ -1,3 +1,10 @@
+# [1.134.0](https://github.com/believer/dotfiles/compare/v1.133.0...v1.134.0) (2023-11-10)
+
+
+### Features
+
+* add key bindings for gitsigns ([eb00e53](https://github.com/believer/dotfiles/commit/eb00e53600b7dc0f08c3797e5b2b2ef467162d72))
+
 # [1.133.0](https://github.com/believer/dotfiles/compare/v1.132.0...v1.133.0) (2023-10-26)
 
 
