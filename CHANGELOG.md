@@ -1,3 +1,10 @@
+## [1.134.1](https://github.com/believer/dotfiles/compare/v1.134.0...v1.134.1) (2023-11-13)
+
+
+### Bug Fixes
+
+* **gitsigns:** add cr to key bindings ([b1c27b6](https://github.com/believer/dotfiles/commit/b1c27b60afefbc9f19aa8b16ef8196b1dd997695))
+
 # [1.134.0](https://github.com/believer/dotfiles/compare/v1.133.0...v1.134.0) (2023-11-10)
 
 
