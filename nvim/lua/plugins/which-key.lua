@@ -47,9 +47,9 @@ return {
 					-- Signs
 					h = {
 						name = "Git signs",
-						p = { "<cmd>Gitsigns preview_hunk", "Preview hunk" },
-						r = { "<cmd>Gitsigns reset_hunk", "Reset hunk" },
-						s = { "<cmd>Gitsigns stage_hunk", "Stage hunk" },
+						p = { "<cmd>Gitsigns preview_hunk<CR>", "Preview hunk" },
+						r = { "<cmd>Gitsigns reset_hunk<CR>", "Reset hunk" },
+						s = { "<cmd>Gitsigns stage_hunk<CR>", "Stage hunk" },
 						-- Toggle highlights
 						t = {
 							name = "Toggle highlights",
