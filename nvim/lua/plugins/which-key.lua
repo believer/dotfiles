@@ -17,6 +17,7 @@ return {
 				a = {
 					name = "actions",
 					b = { '"_', "Black hole register" },
+					c = { "<cmd>ColorizerToggle<CR>", "Toggle colorizer" },
 					d = { 'diwxda"<CR>', "Delete HTML attribute" },
 					e = { "<cmd>EslintFixAll<CR>", "Fix all ESLint errors" },
 					t = { vim.cmd.OrganizeImports, "Organize imports" },
