@@ -1,3 +1,12 @@
+# [1.135.0](https://github.com/believer/dotfiles/compare/v1.134.1...v1.135.0) (2023-11-15)
+
+
+### Features
+
+* add lsp and syntax for templ files ([2b69caa](https://github.com/believer/dotfiles/commit/2b69caac39f44a709f0adc108940357709a91797))
+* add mason bin to path ([86c10da](https://github.com/believer/dotfiles/commit/86c10daeafaef85ff421af9e072cc1cfb2a6bf8c))
+* add toggle for colorizer ([6ee3848](https://github.com/believer/dotfiles/commit/6ee3848312d74e0742c369d8412ce522bf1a9210))
+
 ## [1.134.1](https://github.com/believer/dotfiles/compare/v1.134.0...v1.134.1) (2023-11-13)
 
 
