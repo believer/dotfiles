@@ -135,6 +135,11 @@ return {
 				capabilities = capabilities,
 			})
 
+			lspconfig.rescriptls.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+
 			lspconfig.tailwindcss.setup({
 				filetypes = {
 					-- Default
