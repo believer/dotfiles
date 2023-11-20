@@ -24,6 +24,9 @@ return {
 					markdown = {
 						require("formatter.filetypes.markdown").prettierd,
 					},
+					rust = {
+						require("formatter.filetypes.rust").rustfmt,
+					},
 					sql = {
 						require("formatter.filetypes.sql").pgformat,
 					},
