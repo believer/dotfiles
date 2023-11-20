@@ -1,3 +1,10 @@
+# [1.137.0](https://github.com/believer/dotfiles/compare/v1.136.0...v1.137.0) (2023-11-20)
+
+
+### Features
+
+* **format:** add rustfmt ([63094f7](https://github.com/believer/dotfiles/commit/63094f7d7cbdbe6bf4ec4f581e167597788cade8))
+
 # [1.136.0](https://github.com/believer/dotfiles/compare/v1.135.0...v1.136.0) (2023-11-20)
 
 
