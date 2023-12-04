@@ -130,12 +130,17 @@ return {
 				},
 			})
 
-			lspconfig.eslint.setup({
+			-- lspconfig.eslint.setup({
+			-- 	on_attach = on_attach,
+			-- 	capabilities = capabilities,
+			-- })
+
+			lspconfig.rescriptls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
-			lspconfig.rescriptls.setup({
+			lspconfig.biome.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
@@ -234,6 +239,11 @@ return {
 			})
 
 			lspconfig.templ.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+
+			lspconfig.htmx.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
