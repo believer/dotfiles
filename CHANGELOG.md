@@ -1,3 +1,13 @@
+# [1.138.0](https://github.com/believer/dotfiles/compare/v1.137.0...v1.138.0) (2023-12-18)
+
+
+### Features
+
+* add go snippets ([448627d](https://github.com/believer/dotfiles/commit/448627d9d2685b21848748e7c07ff053408f268e))
+* **kitty:** turn off monitor sync ([3bef2f0](https://github.com/believer/dotfiles/commit/3bef2f030af975eca10271886006a7a00588efb7))
+* **rust:** add clippy check on save ([084f575](https://github.com/believer/dotfiles/commit/084f57507f2e03fc48634ab4699b6b2d01d2c05d))
+* update trouble config ([6580ad8](https://github.com/believer/dotfiles/commit/6580ad8cb87a839edf330347ec4f8208ba9e8877))
+
 # [1.137.0](https://github.com/believer/dotfiles/compare/v1.136.0...v1.137.0) (2023-11-20)
 
 
