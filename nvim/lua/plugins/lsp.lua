@@ -252,6 +252,10 @@ return {
 			lspconfig.htmx.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				filetypes = {
+					"html",
+					"templ",
+				},
 			})
 		end,
 	},
