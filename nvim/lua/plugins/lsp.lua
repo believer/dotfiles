@@ -126,6 +126,12 @@ return {
 						cargo = {
 							allFeatures = true,
 						},
+						checkOnSave = {
+							command = "clippy",
+						},
+						diagnostics = {
+							enable = true,
+						},
 					},
 				},
 			})
