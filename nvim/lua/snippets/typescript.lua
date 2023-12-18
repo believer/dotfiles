@@ -150,16 +150,13 @@ type {filename}Props = {{
  
 }}
 
-function {filename} ({{}}: {filename}Props) {{
+export function {filename} ({{}}: {filename}Props) {{
   return (
     <View>
       <Text>{filename}</Text>
     </View>
   )
 }}
-
-    
-export default {filename}
   ]],
 			{
 				filename = filename(),
