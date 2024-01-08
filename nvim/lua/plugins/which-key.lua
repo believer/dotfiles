@@ -42,6 +42,7 @@ return {
 					name = "git",
 					b = { telescope_builtin.git_branches, "Git branches" },
 					c = {
+						name = "Commit history",
 						b = { telescope_builtin.git_bcommits, "Buffer commits" },
 						c = { telescope_builtin.git_commits, "Git commits" },
 					},
