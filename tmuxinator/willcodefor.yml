@@ -8,5 +8,5 @@ windows:
       layout: e5a5,320x86,0,0{245x86,0,0,15,74x86,246,0[74x57,246,0,16,74x28,246,58,17]}
       panes:
         - nvim
-        - nrd
-        -
+        - nrs
+        - nr css
