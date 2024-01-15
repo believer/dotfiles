@@ -1,3 +1,16 @@
+# [1.139.0](https://github.com/believer/dotfiles/compare/v1.138.0...v1.139.0) (2024-01-15)
+
+
+### Bug Fixes
+
+* update rescript formatting ([072b57e](https://github.com/believer/dotfiles/commit/072b57efc18bdd5de243903ee0f88ecf2b5b444f))
+
+
+### Features
+
+* embrace biome over eslint/prettier ([40dd967](https://github.com/believer/dotfiles/commit/40dd967e4b43aaff520cabd817ea10dde5e7dca4))
+* update willcodefor mux ([f535709](https://github.com/believer/dotfiles/commit/f5357094e74d8f01e2f0f21670cff001954cc42e))
+
 # [1.138.0](https://github.com/believer/dotfiles/compare/v1.137.0...v1.138.0) (2023-12-18)
 
 
