@@ -139,6 +139,15 @@ return {
 			lspconfig.rescriptls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				init_options = {
+					extensionConfiguration = {
+						askToStartBuild = false,
+						inlayHints = {
+							enable = true,
+						},
+						codeLens = true,
+					},
+				},
 			})
 
 			lspconfig.biome.setup({

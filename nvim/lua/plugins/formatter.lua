@@ -30,6 +30,11 @@ return {
 					sql = {
 						require("formatter.filetypes.sql").pgformat,
 					},
+					rescript = {
+						function()
+							vim.lsp.buf.format()
+						end,
+					},
 				},
 			}
 
