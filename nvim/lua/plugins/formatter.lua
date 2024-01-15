@@ -38,8 +38,7 @@ return {
 
 			for _, type in ipairs(js_types) do
 				formatter_settings.filetype[type] = {
-					require("formatter.filetypes.typescript").prettierd,
-					require("formatter.filetypes.typescript").eslint_d,
+					require("formatter.filetypes.typescript").biome,
 				}
 			end
 
