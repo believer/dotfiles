@@ -2,6 +2,7 @@ return {
 	{
 		"mhartington/formatter.nvim",
 		config = function()
+			-- Format on save
 			vim.api.nvim_create_autocmd("BufWritePost", { command = "FormatWriteLock" })
 
 			local formatter_settings = {
@@ -49,13 +50,9 @@ return {
 
 			require("formatter").setup(formatter_settings)
 
-			vim.api.nvim_create_autocmd({
-				-- 'BufWritePre' event triggers just before a buffer is written to file.
-				"BufWritePre",
-			}, {
+			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = { "*.templ" },
 				callback = function()
-					-- Format the current buffer using Neovim's built-in LSP (Language Server Protocol).
 					vim.lsp.buf.format()
 				end,
 			})
