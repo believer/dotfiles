@@ -109,6 +109,8 @@ local auto_snippets = {
 	s("asmock", fmt("asMock({}).mockResolvedValue({})", { i(1), i(2) })),
 	s("expdoc", fmt("expect({}).toBeInTheDocument()", { i(0) })),
 	s("expndoc", fmt("expect({}).not.toBeInTheDocument()", { i(0) })),
+	s("exps", fmt("expect({}).toBeOnTheScreen()", { i(0) })),
+	s("expns", fmt("expect({}).not.toBeOnTheScreen()", { i(0) })),
 	s("thbcw", fmt("expect({}).toHaveBeenCalledWith({})", { i(1), i(2) })),
 	s("thbct", fmt("expect({}).toHaveBeenCalledTimes({})", { i(1), i(2) })),
 
