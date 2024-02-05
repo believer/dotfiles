@@ -12,8 +12,11 @@ return {
 				ft = "rescript",
 			},
 			"windwp/nvim-ts-autotag", -- Automatically close/update HTML tags
+			"vrischmann/tree-sitter-templ", -- Support for templ
 		},
 		config = function()
+			local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
 			require("nvim-treesitter.configs").setup({
 				autopairs = { enable = true },
 				indent = { enable = true },
@@ -52,7 +55,8 @@ return {
 				},
 			})
 
-			local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+			-- Setup templ
+			require("tree-sitter-templ").setup({})
 
 			treesitter_parser_config.templ = {
 				install_info = {
@@ -63,12 +67,6 @@ return {
 			}
 
 			vim.treesitter.language.register("templ", "templ")
-		end,
-	},
-	{
-		"vrischmann/tree-sitter-templ",
-		config = function()
-			require("tree-sitter-templ").setup({})
 		end,
 	},
 }
