@@ -18,36 +18,7 @@ local regular_snippets = {
 
 	s("snap", fmt("expect({}).toMatchSnapshot()", { i(0) })),
 
-	-- Vue test
-	s(
-		"vtest",
-		fmt(
-			[[
-  import {{ render, screen, RenderResult }} from '@testing-library/vue'
-  import {filename} from '../{filename}.vue'
-
-  const setup = (customProps = {{}}): RenderResult => {{
-    const props = {{
-      ...customProps
-    }}
-
-    return render({filename}, {{ props }})
-  }}
-
-  test('{test_name}', () => {{
-    setup()
-
-    screen.debug()
-  }})
-  ]],
-			{
-				filename = filename(),
-				test_name = i(0, "What does it test?"),
-			}
-		)
-	),
-
-	-- Create a `describe` block
+	-- create a `describe` block
 	s(
 		"desc",
 		fmt(

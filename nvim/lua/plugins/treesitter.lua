@@ -51,7 +51,6 @@ return {
 					"rust",
 					"scss",
 					"typescript",
-					"vue",
 				},
 			})
 
