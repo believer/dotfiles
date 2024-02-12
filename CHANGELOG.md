@@ -1,3 +1,10 @@
+# [1.140.0](https://github.com/believer/dotfiles/compare/v1.139.0...v1.140.0) (2024-02-12)
+
+
+### Features
+
+* **git:** add git rerere ([2fb553e](https://github.com/believer/dotfiles/commit/2fb553e41c519544e27da4b372667151700dd128))
+
 # [1.139.0](https://github.com/believer/dotfiles/compare/v1.138.0...v1.139.0) (2024-01-15)
 
 
