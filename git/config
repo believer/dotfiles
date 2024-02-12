@@ -26,7 +26,7 @@
     diffFilter = delta --color-only
 
 [commit]
-  gpgsign = true
+	gpgsign = true
 
 [merge "npm-merge-driver"]
 	name = automatically merge npm lockfiles
@@ -41,3 +41,5 @@
 	directory = undefined
 [gpg]
 	program = /usr/local/bin/gpg
+[rerere]
+	enabled = true
