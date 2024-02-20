@@ -1,3 +1,13 @@
+# [1.141.0](https://github.com/believer/dotfiles/compare/v1.140.0...v1.141.0) (2024-02-20)
+
+
+### Features
+
+* add ThePrimeagen's tmux sessionizer ([e79bbf9](https://github.com/believer/dotfiles/commit/e79bbf96bdf54e330b2090c40d8a4b90cffcadc0))
+* add zoxide ([bd0d33f](https://github.com/believer/dotfiles/commit/bd0d33f7feefc2465de8d248c5fa330afe898313))
+* add zoxide to telescope ([04e9881](https://github.com/believer/dotfiles/commit/04e988197380ff1cec254809ce878a3b2dd30606))
+* use zoxide as cd ([14ec1b7](https://github.com/believer/dotfiles/commit/14ec1b72f11a28ef516b137b4f031e0311386d3f))
+
 # [1.140.0](https://github.com/believer/dotfiles/compare/v1.139.0...v1.140.0) (2024-02-12)
 
 
