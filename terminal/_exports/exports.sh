@@ -14,3 +14,7 @@ export GPG_TTY=$TTY
 
 # Android SDK
 export ANDROID_HOME=${HOME}/Library/Android/sdk
+
+# Adblock for npm
+export DISABLE_OPENCOLLECTIVE=1
+export ADBLOCK=1
