@@ -6,12 +6,14 @@ return {
 		event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
+			"jvgrootveld/telescope-zoxide",
 		},
 		config = function()
 			local actions = require("telescope.actions")
 
-			-- Load fzf support
+			-- Extensions
 			require("telescope").load_extension("fzf")
+			require("telescope._extensions.zoxide.utils")
 
 			-- Setup
 			require("telescope").setup({

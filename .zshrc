@@ -52,3 +52,6 @@ antidote load
 
 # rbenv
 eval "$(rbenv init - zsh)"
+
+# zoxide
+eval "$(zoxide init zsh)"
