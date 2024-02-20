@@ -100,6 +100,7 @@ return {
 					s = { telescope_builtin.spell_suggest, "Suggest spelling" },
 					t = { "<cmd>TodoTelescope<CR>", "Todo list" },
 					w = { telescope_builtin.lsp_dynamic_workspace_symbols, "Symbols in workspace" },
+					z = { "<cmd>Telescope zoxide list<CR>", "Zoxide" },
 				},
 
 				y = { '"+y', "Copy to system clipboard", mode = "v" },
