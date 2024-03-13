@@ -45,6 +45,7 @@ return {
 						name = "Commit history",
 						b = { telescope_builtin.git_bcommits, "Buffer commits" },
 						c = { telescope_builtin.git_commits, "Git commits" },
+						s = { telescope_builtin.git_stash, "Git stash" },
 					},
 					-- Signs
 					h = {
