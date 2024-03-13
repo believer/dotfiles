@@ -1,3 +1,10 @@
+# [1.143.0](https://github.com/believer/dotfiles/compare/v1.142.0...v1.143.0) (2024-03-13)
+
+
+### Features
+
+* **tmux:** add horizontal zoom and resize to 70% ([e82be50](https://github.com/believer/dotfiles/commit/e82be50d2ac28258370f3b33b8186294b8d11a4a))
+
 # [1.142.0](https://github.com/believer/dotfiles/compare/v1.141.0...v1.142.0) (2024-03-13)
 
 
