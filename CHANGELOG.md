@@ -1,3 +1,11 @@
+# [1.142.0](https://github.com/believer/dotfiles/compare/v1.141.0...v1.142.0) (2024-03-13)
+
+
+### Features
+
+* **telescope:** add git stash search ([f349fde](https://github.com/believer/dotfiles/commit/f349fde0c91a89ab4c54886f54b1ccb0388c1770))
+* **tmux:** add vertical zoom ([e2504b6](https://github.com/believer/dotfiles/commit/e2504b67bf5259cff667a4fdcc9f186a852ff73e))
+
 # [1.141.0](https://github.com/believer/dotfiles/compare/v1.140.0...v1.141.0) (2024-02-20)
 
 
