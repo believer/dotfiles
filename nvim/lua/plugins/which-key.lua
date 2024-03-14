@@ -84,8 +84,6 @@ return {
 					["4"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", "Navigate to file 4" },
 				},
 
-				l = { "<cmd>Lazy<CR>", "Update plugins" },
-
 				s = { vim.cmd.update, "Save" },
 
 				-- Telescope
