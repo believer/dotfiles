@@ -88,6 +88,7 @@ return {
 
 				-- Telescope
 				[";"] = { telescope_builtin.find_files, "Find files" },
+				["'"] = { telescope_builtin.git_status, "Changed files" },
 				["?"] = { telescope_builtin.live_grep, "Grep in all files" },
 				t = {
 					name = "telescope",
