@@ -1,3 +1,10 @@
+# [1.144.0](https://github.com/believer/dotfiles/compare/v1.143.0...v1.144.0) (2024-03-15)
+
+
+### Features
+
+* **telescope:** add command for changed git files ([0ecb58a](https://github.com/believer/dotfiles/commit/0ecb58a489e6c8f7a8f2ca091f27cf5845208751))
+
 # [1.143.0](https://github.com/believer/dotfiles/compare/v1.142.0...v1.143.0) (2024-03-13)
 
 
