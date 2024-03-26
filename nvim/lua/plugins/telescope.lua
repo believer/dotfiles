@@ -6,6 +6,7 @@ return {
 		event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope-ui-select.nvim", -- Display vim.ui.select in telescope
 			"jvgrootveld/telescope-zoxide",
 		},
 		config = function()
@@ -13,10 +14,16 @@ return {
 
 			-- Extensions
 			require("telescope").load_extension("fzf")
+			require("telescope").load_extension("ui-select")
 			require("telescope._extensions.zoxide.utils")
 
 			-- Setup
 			require("telescope").setup({
+				extensions = {
+					["ui-select"] = {
+						require("telescope.themes").get_dropdown(),
+					},
+				},
 				pickers = {
 					find_files = {
 						find_command = { "rg", "--files", "--hidden", "--glob", "!.git" },
