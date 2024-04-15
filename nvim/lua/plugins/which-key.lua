@@ -14,6 +14,7 @@ return {
 
 		wk.setup()
 		wk.register({
+			["-"] = { vim.cmd.Oil, "Open oil.nvim" },
 			["<leader>"] = {
 				a = {
 					name = "actions",
