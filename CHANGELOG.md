@@ -1,3 +1,12 @@
+# [1.145.0](https://github.com/believer/dotfiles/compare/v1.144.0...v1.145.0) (2024-04-15)
+
+
+### Features
+
+* **plugin:** add nvim-ufo ([608b193](https://github.com/believer/dotfiles/commit/608b1934ee24c92ec09f3f739b796d1ddf586cba))
+* **plugin:** add oil.nvim ([afb2703](https://github.com/believer/dotfiles/commit/afb2703f198110ef8c0c8e064c66a3c2e94225b6))
+* **telescope:** add vim.ui.select support ([bc41a2c](https://github.com/believer/dotfiles/commit/bc41a2c907b3b240225425f8e86cf6de14b89177))
+
 # [1.144.0](https://github.com/believer/dotfiles/compare/v1.143.0...v1.144.0) (2024-03-15)
 
 
