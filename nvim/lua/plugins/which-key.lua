@@ -10,6 +10,7 @@ return {
 		local harpoon_mark = require("harpoon.mark")
 		local harpoon_ui = require("harpoon.ui")
 		local telescope_builtin = require("telescope.builtin")
+		local ufo = require("ufo")
 
 		wk.setup()
 		wk.register({
@@ -104,6 +105,21 @@ return {
 				},
 
 				y = { '"+y', "Copy to system clipboard", mode = "v" },
+			},
+
+			["z"] = {
+				K = {
+					function()
+						local winid = require("ufo").peekFoldedLinesUnderCursor()
+
+						if not winid then
+							vim.lsp.buf.hover()
+						end
+					end,
+					"Peek fold",
+				},
+				M = { ufo.closeAllFolds, "Close all folds" },
+				R = { ufo.openAllFolds, "Open all folds" },
 			},
 		})
 	end,
