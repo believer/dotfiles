@@ -4,7 +4,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/code ~/code/personal ~/code/seb -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/code ~/code/personal ~/code/seb ~/code/opendevtools -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
