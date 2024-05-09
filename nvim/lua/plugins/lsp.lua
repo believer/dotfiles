@@ -20,10 +20,13 @@ return {
 		},
 	},
 
+	{ "folke/neodev.nvim", opts = {} },
+
 	{
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
 		config = function()
+			require("neodev").setup()
 			require("mason").setup()
 			require("mason-lspconfig").setup()
 
@@ -31,11 +34,10 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 			local util = require("lspconfig/util")
+			local wk = require("which-key")
 
 			-- Map the keys after the language server is attached to the buffer.
 			local on_attach = function(client, bufnr)
-				local wk = require("which-key")
-
 				if client.server_capabilities.codeLensProvider then
 					local group = vim.api.nvim_create_augroup("LSP/CodeLens", { clear = true })
 					vim.api.nvim_create_autocmd({ "InsertLeave", "CursorHold" }, {
