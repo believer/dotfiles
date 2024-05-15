@@ -5,14 +5,9 @@ return {
 		config = function()
 			require("colorizer").setup({
 				user_default_options = {
+					mode = "virtualtext",
 					css = true,
 					tailwind = true,
-					sass = {
-						enable = true,
-						parsers = {
-							"css",
-						},
-					},
 				},
 			})
 		end,

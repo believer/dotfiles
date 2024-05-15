@@ -23,7 +23,7 @@ alias gss='git status --short'
 alias gr='git rebase'
 
 # Kubernetes
-alias k='kubectl -n v2'
+alias k='kubectl'
 
 # Supreme
 alias ncu='supreme update-dependencies'
