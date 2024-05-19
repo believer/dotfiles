@@ -1,3 +1,11 @@
+# [1.146.0](https://github.com/believer/dotfiles/compare/v1.145.0...v1.146.0) (2024-05-19)
+
+
+### Features
+
+* add inlay hints toggle ([88ac11b](https://github.com/believer/dotfiles/commit/88ac11b21e50024c64c605c042f40c7c59d59ee9))
+* **ts:** add key mapping to remove unused imports ([463f30c](https://github.com/believer/dotfiles/commit/463f30c02b1f2ebcdb4b03ea5f58c70e81ad6f55))
+
 # [1.145.0](https://github.com/believer/dotfiles/compare/v1.144.0...v1.145.0) (2024-04-15)
 
 
