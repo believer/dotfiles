@@ -22,6 +22,12 @@ return {
 					c = { "<cmd>ColorizerToggle<CR>", "Toggle colorizer" },
 					d = { 'diwxda"<CR>', "Delete HTML attribute" },
 					e = { "<cmd>EslintFixAll<CR>", "Fix all ESLint errors" },
+					i = {
+						function()
+							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+						end,
+						"Toggle inlay hints",
+					},
 					r = { vim.cmd.TSRemoveUnused, "Remove unused imports" },
 					t = { vim.cmd.TSOrganizeImports, "Organize imports" },
 				},

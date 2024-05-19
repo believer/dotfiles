@@ -115,6 +115,33 @@ return {
 						description = "Remove unused",
 					},
 				},
+				completions = {
+					completeFunctionCalls = true,
+				},
+				settings = {
+					javascript = {
+						inlayHints = {
+							includeInlayEnumMemberValueHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayVariableTypeHints = false,
+						},
+					},
+
+					typescript = {
+						inlayHints = {
+							includeInlayEnumMemberValueHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayVariableTypeHints = false,
+						},
+					},
 				},
 			})
 
@@ -127,9 +154,8 @@ return {
 							enable = true,
 							globals = { "vim" },
 						},
-						format = {
-							enable = true,
-						},
+						format = { enable = true },
+						hint = { enable = true },
 					},
 				},
 			})
@@ -174,6 +200,7 @@ return {
 			})
 
 			lspconfig.tailwindcss.setup({
+				cmd = { "bunx", "tailwindcss-language-server", "--stdio" },
 				filetypes = {
 					"astro",
 					"astro-markdown",
