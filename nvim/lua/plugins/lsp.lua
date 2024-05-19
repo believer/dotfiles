@@ -60,7 +60,6 @@ return {
 						R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
 						V = { "<cmd>vert winc ]<CR>", "Go to definition (vertical)" },
 					},
-					["K"] = { vim.lsp.buf.hover, "Hover", buffer = bufnr },
 					["<leader>rn"] = { vim.lsp.buf.rename, "Rename", buffer = bufnr },
 					["<leader>ca"] = { vim.lsp.buf.code_action, "Code action", buffer = bufnr },
 				})

@@ -29,8 +29,6 @@ return {
 				e = {
 					name = "trouble",
 					e = { "<cmd>TroubleToggle<cr>", "Open Trouble list" },
-					n = { vim.diagnostic.goto_next, "Next diagnostic" },
-					p = { vim.diagnostic.goto_prev, "Previous diagnostic" },
 					w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
 					d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
 					q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
