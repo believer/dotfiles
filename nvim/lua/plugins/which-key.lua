@@ -42,10 +42,6 @@ return {
 					l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
 				},
 
-				-- Tree view
-				d = { vim.cmd.NeoTreeFocusToggle, "Toggle the tree view" },
-				f = { vim.cmd.NeoTreeReveal, "Reveal the current file in the tree view" },
-
 				-- Git
 				g = {
 					name = "git",
