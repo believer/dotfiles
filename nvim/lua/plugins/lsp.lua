@@ -38,21 +38,6 @@ return {
 
 			-- Map the keys after the language server is attached to the buffer.
 			local on_attach = function(client, bufnr)
-				if client.server_capabilities.codeLensProvider then
-					local group = vim.api.nvim_create_augroup("LSP/CodeLens", { clear = true })
-					vim.api.nvim_create_autocmd({ "InsertLeave", "CursorHold" }, {
-						group = group,
-						callback = vim.lsp.codelens.refresh,
-						buffer = bufnr,
-					})
-					vim.api.nvim_create_autocmd("BufEnter", {
-						group = group,
-						callback = vim.lsp.codelens.refresh,
-						buffer = bufnr,
-						once = true,
-					})
-				end
-
 				wk.register({
 					g = {
 						D = { vim.lsp.buf.declaration, "Go to declaration", buffer = bufnr },
