@@ -1,3 +1,10 @@
+## [1.148.1](https://github.com/believer/dotfiles/compare/v1.148.0...v1.148.1) (2024-06-13)
+
+
+### Bug Fixes
+
+* info was not redundant ([acf6a6e](https://github.com/believer/dotfiles/commit/acf6a6e35e53c622800bbff5643b6ab38918d2b6))
+
 # [1.148.0](https://github.com/believer/dotfiles/compare/v1.147.0...v1.148.0) (2024-06-13)
 
 
