@@ -181,6 +181,16 @@ export function {filename} ({{}}: {filename}Props) {{
 			value = i(1, "Value"),
 		})
 	),
+	s(
+		"rntr",
+		fmt([[<Trans>{text}</Trans>]], {
+			text = i(1, "Text"),
+		})
+	),
+  s(
+    "usel",
+    fmt([[const {{ _ }} = useLingui()]], {})
+  )
 }
 
 return regular_snippets, auto_snippets
