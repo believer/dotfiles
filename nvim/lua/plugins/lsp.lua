@@ -35,20 +35,24 @@ return {
 			local lspconfig = require("lspconfig")
 			local util = require("lspconfig/util")
 			local wk = require("which-key")
+			local u = require("utils")
 
 			-- Map the keys after the language server is attached to the buffer.
-			local on_attach = function(client, bufnr)
-				wk.register({
-					g = {
-						D = { vim.lsp.buf.declaration, "Go to declaration", buffer = bufnr },
-						d = { vim.lsp.buf.definition, "Go to definition", buffer = bufnr },
-						R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
-						V = { "<cmd>vert winc ]<CR>", "Go to definition (vertical)" },
-					},
-					["<leader>rn"] = { vim.lsp.buf.rename, "Rename", buffer = bufnr },
-					["<leader>ca"] = { vim.lsp.buf.code_action, "Code action", buffer = bufnr },
-				})
-			end
+			vim.api.nvim_create_autocmd("LspAttach", {
+				desc = "LSP Actions",
+				callback = function(args, bufnr)
+					wk.register({
+						g = {
+							D = { vim.lsp.buf.declaration, "Go to declaration", buffer = bufnr },
+							d = { vim.lsp.buf.definition, "Go to definition", buffer = bufnr },
+							R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+							V = { "<cmd>vert winc ]<CR>", "Go to definition (vertical)" },
+						},
+						["<leader>rn"] = { vim.lsp.buf.rename, "Rename", buffer = bufnr },
+						["<leader>ca"] = { vim.lsp.buf.code_action, "Code action", buffer = bufnr },
+					})
+				end,
+			})
 
 			-- Display a border around the hover window for better readability.
 			local _border = "single"
@@ -87,7 +91,6 @@ return {
 			end
 
 			lspconfig.tsserver.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 				cmd = { "bunx", "typescript-language-server", "--stdio" },
 				commands = {
@@ -131,7 +134,6 @@ return {
 			})
 
 			lspconfig.lua_ls.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
 					Lua = {
@@ -146,7 +148,6 @@ return {
 			})
 
 			lspconfig.rust_analyzer.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 				filetypes = { "rust" },
 				root_dir = util.root_pattern("Cargo.toml"),
@@ -166,7 +167,6 @@ return {
 			})
 
 			lspconfig.rescriptls.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 				init_options = {
 					extensionConfiguration = {
@@ -180,7 +180,6 @@ return {
 			})
 
 			lspconfig.biome.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
@@ -212,7 +211,6 @@ return {
 						templ = "html",
 					},
 				},
-				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
 					tailwindCSS = {
@@ -240,28 +238,34 @@ return {
 			})
 
 			lspconfig.cssls.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 				filetypes = { "css", "scss" },
 			})
 
 			lspconfig.gopls.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			lspconfig.templ.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			lspconfig.htmx.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 				filetypes = {
 					"html",
 					"templ",
 				},
+			})
+
+			lspconfig.sourcekit.setup({
+				capabilities = u.mergeTables(capabilities, {
+					workspace = {
+						didChangeWatchedFiles = {
+							dynamicRegistration = true,
+						},
+					},
+				}),
 			})
 		end,
 	},

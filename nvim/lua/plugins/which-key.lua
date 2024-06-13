@@ -28,6 +28,7 @@ return {
 						end,
 						"Toggle inlay hints",
 					},
+					K = { vim.lsp.buf.hover, "Show hover" },
 					r = { vim.cmd.TSRemoveUnused, "Remove unused imports" },
 					t = { vim.cmd.TSOrganizeImports, "Organize imports" },
 				},
