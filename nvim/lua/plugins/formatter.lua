@@ -1,6 +1,7 @@
 return {
 	{
 		"mhartington/formatter.nvim",
+		event = "VeryLazy",
 		config = function()
 			-- Format on save
 			vim.api.nvim_create_autocmd("BufWritePost", { command = "FormatWriteLock" })

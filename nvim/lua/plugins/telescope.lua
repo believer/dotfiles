@@ -1,5 +1,9 @@
 return {
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		event = "VeryLazy",
+		build = "make",
+	},
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
