@@ -20,7 +20,7 @@ return {
 		},
 	},
 
-	{ "folke/neodev.nvim", opts = {} },
+	{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 
 	{
 		"neovim/nvim-lspconfig",
