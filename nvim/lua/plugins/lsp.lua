@@ -26,7 +26,6 @@ return {
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
 		config = function()
-			require("neodev").setup()
 			require("mason").setup()
 			require("mason-lspconfig").setup()
 
