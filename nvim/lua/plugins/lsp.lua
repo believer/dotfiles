@@ -40,15 +40,13 @@ return {
 			vim.api.nvim_create_autocmd("LspAttach", {
 				desc = "LSP Actions",
 				callback = function(args, bufnr)
-					wk.register({
-						g = {
-							D = { vim.lsp.buf.declaration, "Go to declaration", buffer = bufnr },
-							d = { vim.lsp.buf.definition, "Go to definition", buffer = bufnr },
-							R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
-							V = { "<cmd>vert winc ]<CR>", "Go to definition (vertical)" },
-						},
-						["<leader>rn"] = { vim.lsp.buf.rename, "Rename", buffer = bufnr },
-						["<leader>ca"] = { vim.lsp.buf.code_action, "Code action", buffer = bufnr },
+					wk.add({
+						{ "gR", "<cmd>TroubleToggle lsp_references<cr>", desc = "References" },
+						{ "gV", "<cmd>vert winc ]<CR>", desc = "Go to definition (vertical)" },
+						{ "gD", vim.lsp.buf.declaration, desc = "Go to declaration", buffer = bufnr },
+						{ "gd", vim.lsp.buf.definition, desc = "Go to definition", buffer = bufnr },
+						{ "<leader>rn", vim.lsp.buf.rename, desc = "Rename", buffer = bufnr },
+						{ "<leader>ca", vim.lsp.buf.code_action, desc = "Code action", buffer = bufnr },
 					})
 				end,
 			})
