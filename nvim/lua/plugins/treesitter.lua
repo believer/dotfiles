@@ -7,10 +7,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		event = "BufReadPre",
 		dependencies = {
-			{
-				"nkrkv/nvim-treesitter-rescript", -- Support for ReScript
-				ft = "rescript",
-			},
 			"windwp/nvim-ts-autotag", -- Automatically close/update HTML tags
 			"vrischmann/tree-sitter-templ", -- Support for templ
 		},
