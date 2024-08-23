@@ -1,3 +1,11 @@
+## [1.148.2](https://github.com/believer/dotfiles/compare/v1.148.1...v1.148.2) (2024-08-23)
+
+
+### Bug Fixes
+
+* migrate to new trouble.nvim commands ([7f9048a](https://github.com/believer/dotfiles/commit/7f9048a05d49a364d1f433b047bf3b19ab019646))
+* remove rescript treesitter ([ed17047](https://github.com/believer/dotfiles/commit/ed17047df7450fb0162d96267f0430ee737ef643))
+
 ## [1.148.1](https://github.com/believer/dotfiles/compare/v1.148.0...v1.148.1) (2024-06-13)
 
 
