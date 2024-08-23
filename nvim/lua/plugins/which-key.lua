@@ -53,11 +53,10 @@ return {
 
 			-- Diagnostics
 			{ "<leader>e", group = "trouble" },
-			{ "<leader>ee", "<cmd>TroubleToggle<cr>", desc = "Open Trouble list" },
-			{ "<leader>ew", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
-			{ "<leader>ed", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics" },
-			{ "<leader>eq", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix" },
-			{ "<leader>el", "<cmd>TroubleToggle loclist<cr>", desc = "Loclist" },
+			{ "<leader>ee", "<cmd>Trouble diagnostics toggle<cr>", desc = "Open Trouble list" },
+			{ "<leader>ed", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Document Diagnostics" },
+			{ "<leader>eq", "<cmd>Trouble qflist<cr>", desc = "Quickfix" },
+			{ "<leader>el", "<cmd>Trouble loclist<cr>", desc = "Loclist" },
 
 			-- Git
 			{ "<leader>g", group = "git" },
