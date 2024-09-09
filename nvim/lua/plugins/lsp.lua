@@ -87,7 +87,7 @@ return {
 				})
 			end
 
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 				cmd = { "bunx", "typescript-language-server", "--stdio" },
 				commands = {
