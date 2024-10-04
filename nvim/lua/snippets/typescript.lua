@@ -187,10 +187,8 @@ export function {filename} ({{}}: {filename}Props) {{
 			text = i(1, "Text"),
 		})
 	),
-  s(
-    "usel",
-    fmt([[const {{ _ }} = useLingui()]], {})
-  )
+	s("usel", fmt([[const {{ _ }} = useLingui()]], {})),
+	s("imtl", fmt([[import {{ screen, userEvent }} from '@testing-library/react-native']], {})),
 }
 
 return regular_snippets, auto_snippets
