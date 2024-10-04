@@ -1,3 +1,10 @@
+# [1.149.0](https://github.com/believer/dotfiles/compare/v1.148.2...v1.149.0) (2024-10-04)
+
+
+### Features
+
+* **oil:** keybindings for navigation ([e7080b9](https://github.com/believer/dotfiles/commit/e7080b94f4bf4e13ebfa2b832befb662822a198a))
+
 ## [1.148.2](https://github.com/believer/dotfiles/compare/v1.148.1...v1.148.2) (2024-08-23)
 
 
