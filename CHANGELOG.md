@@ -1,3 +1,10 @@
+# [1.150.0](https://github.com/believer/dotfiles/compare/v1.149.0...v1.150.0) (2024-10-17)
+
+
+### Features
+
+* add setup for fish in kitty ([725c720](https://github.com/believer/dotfiles/commit/725c720bcb1572efe1ad0ebb346e16a91fc67a33))
+
 # [1.149.0](https://github.com/believer/dotfiles/compare/v1.148.2...v1.149.0) (2024-10-04)
 
 
