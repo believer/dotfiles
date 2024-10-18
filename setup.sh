@@ -5,7 +5,7 @@
 
 echo "Installing Homebrew packages..."
 
-brew install antidote
+brew install fish
 brew install bat
 brew install fnm
 brew install fzf
