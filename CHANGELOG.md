@@ -1,3 +1,11 @@
+# [1.151.0](https://github.com/believer/dotfiles/compare/v1.150.0...v1.151.0) (2024-10-18)
+
+
+### Features
+
+* **fish:** add aliases, path setup, and tmux integration ([38ec98c](https://github.com/believer/dotfiles/commit/38ec98cc13cb6dcc23349f4abe6e7a7771ef4504))
+* **fish:** update configs ([264c36b](https://github.com/believer/dotfiles/commit/264c36bf9629a57a6c562a04b0aa366c1d798b1c))
+
 # [1.150.0](https://github.com/believer/dotfiles/compare/v1.149.0...v1.150.0) (2024-10-17)
 
 
