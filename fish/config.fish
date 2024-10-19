@@ -19,3 +19,5 @@ if status is-interactive
   # Use vi keybindings in cmd line
   fish_vi_key_bindings
 end
+
+set -g fish_key_bindings fish_vi_key_bindings
