@@ -1,3 +1,15 @@
+# [1.152.0](https://github.com/believer/dotfiles/compare/v1.151.0...v1.152.0) (2024-10-19)
+
+
+### Bug Fixes
+
+* **fish:** set gopath ([dd39103](https://github.com/believer/dotfiles/commit/dd3910358639697ea2c9e0afb82595317d064b34))
+
+
+### Features
+
+* **fish:** set vi key bindings ([acd6df9](https://github.com/believer/dotfiles/commit/acd6df9a026e80b9b73468d662e2aa14a3b1c8c8))
+
 # [1.151.0](https://github.com/believer/dotfiles/compare/v1.150.0...v1.151.0) (2024-10-18)
 
 
