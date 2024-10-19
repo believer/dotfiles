@@ -1,6 +1,8 @@
 fish_config theme choose "TokyoNight Night"
 
 # Path
+set -Ux GOPATH "$HOME/code/go"
+
 fish_add_path "$JAVA_HOME/bin"
 fish_add_path "$ANDROID_HOME/tools"
 fish_add_path "$ANDROID_HOME/emulator"
