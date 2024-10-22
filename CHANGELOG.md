@@ -1,3 +1,10 @@
+# [1.153.0](https://github.com/believer/dotfiles/compare/v1.152.0...v1.153.0) (2024-10-22)
+
+
+### Features
+
+* use conform for formatting ([1364175](https://github.com/believer/dotfiles/commit/13641755d02fd67e3bb49575096fe3897ce9f5ca))
+
 # [1.152.0](https://github.com/believer/dotfiles/compare/v1.151.0...v1.152.0) (2024-10-19)
 
 
