@@ -1,3 +1,10 @@
+# [1.154.0](https://github.com/believer/dotfiles/compare/v1.153.0...v1.154.0) (2024-10-23)
+
+
+### Features
+
+* add multicd ([5acf4d9](https://github.com/believer/dotfiles/commit/5acf4d94e27efb097acca450b12b0ec7c0f10b80))
+
 # [1.153.0](https://github.com/believer/dotfiles/compare/v1.152.0...v1.153.0) (2024-10-22)
 
 
