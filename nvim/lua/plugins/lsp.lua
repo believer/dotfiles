@@ -237,6 +237,14 @@ return {
 			lspconfig.cssls.setup({
 				capabilities = capabilities,
 				filetypes = { "css", "scss" },
+				settings = {
+					css = {
+						validate = true,
+						lint = {
+							unknownAtRules = "ignore",
+						},
+					},
+				},
 			})
 
 			lspconfig.gopls.setup({
