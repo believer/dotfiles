@@ -1,3 +1,15 @@
+# [1.155.0](https://github.com/believer/dotfiles/compare/v1.154.0...v1.155.0) (2024-11-01)
+
+
+### Bug Fixes
+
+* **lsp:** ignore unknown at rules in css ([a3bc090](https://github.com/believer/dotfiles/commit/a3bc090a46c5fb50d4e2b6549ada8c88dfee5390))
+
+
+### Features
+
+* add fish aliases ([7232377](https://github.com/believer/dotfiles/commit/7232377b3bd9de451dc8ce7dc3c038fc6a48ce12))
+
 # [1.154.0](https://github.com/believer/dotfiles/compare/v1.153.0...v1.154.0) (2024-10-23)
 
 
