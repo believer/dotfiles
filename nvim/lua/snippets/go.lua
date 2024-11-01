@@ -11,7 +11,7 @@ local auto_snippets = {
 		"enil",
 		fmt(
 			[[if err != nil {{
-    log.Fatalln(err)
+    return err
   }}]],
 			{}
 		)
