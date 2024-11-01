@@ -181,7 +181,6 @@ return {
 			})
 
 			lspconfig.tailwindcss.setup({
-				cmd = { "bunx", "tailwindcss-language-server", "--stdio" },
 				filetypes = {
 					"astro",
 					"astro-markdown",
