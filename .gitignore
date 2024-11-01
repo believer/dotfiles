@@ -4,6 +4,7 @@ node_modules
 # Misc
 *.zwc
 .DS_Store
+.android
 hub
 nvim/.netrwhist
 tool_state
@@ -11,10 +12,14 @@ gh
 github-copilot
 configstore
 
-# Work setup
-.hemnetrc
-.invidirc
+# nvim
+nvim/harpoon.json
+nvim/lazy
+nvim/mason
+nvim/telescope_history
 
-# Lazygit
-jesseduffield
+# Fish
+fish/fish_history
+fish/fish_variables
+fish/generated_completions
 
