@@ -30,7 +30,7 @@ pkill -TERM gpg-agent
 
 # Node LTS
 echo "Installing Node..."
-fnm install 18
+fnm install --lts
 
 # Rust
 echo "Installing Rust..."
