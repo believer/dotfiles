@@ -2,6 +2,7 @@ fish_config theme choose "TokyoNight Night"
 
 # Path
 set -Ux GOPATH "$HOME/code/go"
+set --export BUN_INSTALL "$HOME/.bun"
 
 fish_add_path "$JAVA_HOME/bin"
 fish_add_path "$ANDROID_HOME/tools"
@@ -17,7 +18,7 @@ fish_add_path "/opt/homebrew/opt/libpq/bin"
 fish_add_path "/usr/bin"
 fish_add_path "/usr/local/sbin"
 fish_add_path "/usr/local/bin"
-
+fish_add_path "$BUN_INSTALL/bin"
 
 # Rust Cargo
 source "$HOME/.cargo/env.fish"
