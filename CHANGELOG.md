@@ -1,3 +1,10 @@
+# [1.156.0](https://github.com/believer/dotfiles/compare/v1.155.0...v1.156.0) (2024-11-02)
+
+
+### Features
+
+* **fish:** add bun support ([de315d7](https://github.com/believer/dotfiles/commit/de315d7e4e208afd2547f5ffcb29b8ad12027555))
+
 # [1.155.0](https://github.com/believer/dotfiles/compare/v1.154.0...v1.155.0) (2024-11-01)
 
 
