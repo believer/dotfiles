@@ -1,3 +1,10 @@
+## [1.156.1](https://github.com/believer/dotfiles/compare/v1.156.0...v1.156.1) (2024-11-04)
+
+
+### Bug Fixes
+
+* only load rustup if exists ([66a00d4](https://github.com/believer/dotfiles/commit/66a00d47a80cd018121fb8b296fa5f85b0793660))
+
 # [1.156.0](https://github.com/believer/dotfiles/compare/v1.155.0...v1.156.0) (2024-11-02)
 
 
