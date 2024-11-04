@@ -3,14 +3,25 @@ node_modules
 
 # Misc
 *.zwc
+.zprofile
+.zsh_plugins.zsh
+.zsh_sessions
+.zshenv
+.zshrc.backup
 .DS_Store
 .android
 hub
 nvim/.netrwhist
 tool_state
 gh
+yarn
 github-copilot
 configstore
+swiftpm
+nvim/lazy
+nvim/mason
+nvim/telescope_history
+nvim/harpoon.json
 
 # nvim
 nvim/harpoon.json
@@ -18,8 +29,11 @@ nvim/lazy
 nvim/mason
 nvim/telescope_history
 
+# Work setup
+.android
+tmuxinator/blackbird.yml
+
 # Fish
 fish/fish_history
 fish/fish_variables
 fish/generated_completions
-

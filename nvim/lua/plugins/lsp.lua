@@ -87,6 +87,16 @@ return {
 				})
 			end
 
+			local TSAddImports = function()
+				vim.lsp.buf.code_action({
+					apply = true,
+					context = {
+						only = { "source.addMissingImports.ts" },
+						diagnostics = {},
+					},
+				})
+			end
+
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 				cmd = { "bunx", "typescript-language-server", "--stdio" },
@@ -98,6 +108,10 @@ return {
 					TSRemoveUnused = {
 						TSRemoveUnused,
 						description = "Remove unused",
+					},
+					TSAddImports = {
+						TSAddImports,
+						description = "Add imports",
 					},
 				},
 				completions = {

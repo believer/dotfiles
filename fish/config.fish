@@ -29,3 +29,9 @@ if status is-interactive
 end
 
 set -g fish_key_bindings fish_vi_key_bindings
+
+# Added by `rbenv init` on Thu Oct 24 14:28:10 CEST 2024
+status --is-interactive; and rbenv init - --no-rehash fish | source
+
+# More dots, more cd ..
+abbr --add dotdot --regex '^\.\.+$' --function multicd

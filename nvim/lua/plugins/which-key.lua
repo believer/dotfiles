@@ -50,6 +50,7 @@ return {
 			{ "<leader>aK", vim.lsp.buf.hover, desc = "Show hover" },
 			{ "<leader>ar", vim.cmd.TSRemoveUnused, desc = "Remove unused imports" },
 			{ "<leader>at", vim.cmd.TSOrganizeImports, desc = "Organize imports" },
+			{ "<leader>ai", vim.cmd.TSAddImports, desc = "Add imports" },
 
 			-- Diagnostics
 			{ "<leader>e", group = "trouble" },
