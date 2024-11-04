@@ -20,9 +20,6 @@ fish_add_path "/usr/local/sbin"
 fish_add_path "/usr/local/bin"
 fish_add_path "$BUN_INSTALL/bin"
 
-# Rust Cargo
-source "$HOME/.cargo/env.fish"
-
 if status is-interactive
   # Use vi keybindings in cmd line
   fish_vi_key_bindings
