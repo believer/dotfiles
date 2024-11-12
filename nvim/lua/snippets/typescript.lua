@@ -139,46 +139,21 @@ export function {filename} ({{}}: {filename}Props) {{
 
 	-- UI components
 	s(
-		"rntl",
-		fmt([[<Typography.Label>{text}</Typography.Label>]], {
-			text = i(1, "Text"),
-		})
-	),
-	s(
 		"rnth",
-		fmt([[<Typography.Headline>{text}</Typography.Headline>]], {
+		fmt([[<T.Heading>{text}</T.Heading>]], {
 			text = i(1, "Text"),
 		})
 	),
 	s(
-		"rntt",
-		fmt([[<Typography.Title>{text}</Typography.Title>]], {
+		"rntd",
+		fmt([[<T.Detail>{text}</T.Detail>]], {
 			text = i(1, "Text"),
 		})
 	),
 	s(
 		"rntb",
-		fmt([[<Typography.Body>{text}</Typography.Body>]], {
+		fmt([[<T.Body>{text}</T.Body>]], {
 			text = i(1, "Text"),
-		})
-	),
-	s(
-		"rnfc",
-		fmt([[<Formatted.Currency currency="{currency}" value="{value}" />]], {
-			currency = i(1, "Currency"),
-			value = i(2, "Value"),
-		})
-	),
-	s(
-		"rnfn",
-		fmt([[<Formatted.Number value="{value}" />]], {
-			value = i(1, "Value"),
-		})
-	),
-	s(
-		"rnfp",
-		fmt([[<Formatted.Percent value="{value}" />]], {
-			value = i(1, "Value"),
 		})
 	),
 	s(
