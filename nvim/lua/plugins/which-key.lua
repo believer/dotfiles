@@ -40,13 +40,6 @@ return {
 			{ "<leader>ac", "<cmd>ColorizerToggle<CR>", desc = "Toggle colorizer" },
 			{ "<leader>ad", 'diwxda"<CR>', desc = "Delete HTML attribute" },
 			{ "<leader>ae", "<cmd>EslintFixAll<CR>", desc = "Fix all ESLint errors" },
-			{
-				"<leader>ai",
-				function()
-					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-				end,
-				desc = "Toggle inlay hints",
-			},
 			{ "<leader>aK", vim.lsp.buf.hover, desc = "Show hover" },
 			{ "<leader>ar", vim.cmd.TSRemoveUnused, desc = "Remove unused imports" },
 			{ "<leader>at", vim.cmd.TSOrganizeImports, desc = "Organize imports" },
@@ -96,6 +89,14 @@ return {
 			{ "<leader>h2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", desc = "Navigate to file 2" },
 			{ "<leader>h3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", desc = "Navigate to file 3" },
 			{ "<leader>h4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", desc = "Navigate to file 4" },
+
+			{
+				"<leader>ih",
+				function()
+					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+				end,
+				desc = "Toggle inlay hints",
+			},
 
 			-- Telescope
 			{ "<leader>t", group = "Telescope" },
