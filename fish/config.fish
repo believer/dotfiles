@@ -3,6 +3,7 @@ fish_config theme choose "TokyoNight Night"
 # Path
 set -Ux GOPATH "$HOME/code/go"
 set --export BUN_INSTALL "$HOME/.bun"
+set --export ANDROID_HOME "$HOME/Library/Android/sdk"
 
 fish_add_path "$JAVA_HOME/bin"
 fish_add_path "$ANDROID_HOME/tools"
