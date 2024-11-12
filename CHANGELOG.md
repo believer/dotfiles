@@ -1,3 +1,10 @@
+## [1.156.2](https://github.com/believer/dotfiles/compare/v1.156.1...v1.156.2) (2024-11-12)
+
+
+### Bug Fixes
+
+* update inlay hints keymap to not conflict with other commands ([2e39b67](https://github.com/believer/dotfiles/commit/2e39b67d49e6957bbd85abf489a70635f1d595e7))
+
 ## [1.156.1](https://github.com/believer/dotfiles/compare/v1.156.0...v1.156.1) (2024-11-04)
 
 
