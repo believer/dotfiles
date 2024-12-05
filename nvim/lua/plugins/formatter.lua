@@ -16,6 +16,7 @@ return {
 					markdown = { "prettierd" },
 					rust = { "rustfmt" },
 					lua = { "stylua" },
+					sql = { "pg_format" },
 				},
 			}
 
