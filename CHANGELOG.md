@@ -1,3 +1,11 @@
+# [1.157.0](https://github.com/believer/dotfiles/compare/v1.156.2...v1.157.0) (2024-12-09)
+
+
+### Features
+
+* add pg_format to sql formatter ([eb6c5aa](https://github.com/believer/dotfiles/commit/eb6c5aa6cf0117051fee249fad29617c2070b1e8))
+* add telescope-frecency ([2797dee](https://github.com/believer/dotfiles/commit/2797deea133aeb238f63f3b989be833248290902))
+
 ## [1.156.2](https://github.com/believer/dotfiles/compare/v1.156.1...v1.156.2) (2024-11-12)
 
 
