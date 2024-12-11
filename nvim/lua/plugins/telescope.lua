@@ -11,7 +11,6 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-ui-select.nvim", -- Display vim.ui.select in telescope
-			"nvim-telescope/telescope-frecency.nvim", -- Sort files by most used _frecently_
 			"jvgrootveld/telescope-zoxide",
 		},
 		config = function()
@@ -20,7 +19,6 @@ return {
 			-- Extensions
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("ui-select")
-			require("telescope").load_extension("frecency")
 			require("telescope._extensions.zoxide.utils")
 
 			-- Setup
@@ -28,11 +26,6 @@ return {
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
-					},
-					---@type FrecencyOpts
-					frecency = {
-						path_display = { "shorten" },
-						show_scores = true,
 					},
 				},
 				pickers = {

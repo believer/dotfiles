@@ -32,8 +32,7 @@ return {
 			{ "<leader>y", '"+y', desc = "Copy to system clipboard", mode = "v" },
 
 			{ "<leader>'", telescope_builtin.git_status, desc = "Changed files" },
-			-- { "<leader>;", telescope_builtin.find_files, desc = "Find files" },
-			{ "<leader>;", "<cmd>Telescope frecency workspace=CWD<cr>", desc = "Frecently used files" },
+			{ "<leader>;", telescope_builtin.find_files, desc = "Find files" },
 			{ "<leader>?", telescope_builtin.live_grep, desc = "Grep in all files" },
 
 			{ "<leader>a", group = "actions" },
