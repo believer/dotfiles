@@ -156,6 +156,22 @@ return {
 				{ name = "nvim_lsp", priority = 5 }, -- LSP
 				{ name = "path", max_item_count = 5, priority = 3 }, -- File paths
 			}),
+
+			sorting = {
+				priority_weight = 1,
+				-- https://github.com/tjdevries/config_manager/blob/78608334a7803a0de1a08a9a4bd1b03ad2a5eb11/xdg_config/nvim/after/plugin/completion.lua#L129
+				-- Plus recently_used
+				comparators = {
+					cmp.config.compare.offset,
+					cmp.config.compare.exact,
+					cmp.config.compare.score,
+					cmp.config.compare.recently_used,
+					cmp.config.compare.kind,
+					cmp.config.compare.sort_text,
+					cmp.config.compare.length,
+					cmp.config.compare.order,
+				},
+			},
 		})
 
 		-- Add parenthesis when completing methods
