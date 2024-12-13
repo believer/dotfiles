@@ -1,3 +1,10 @@
+# [1.158.0](https://github.com/believer/dotfiles/compare/v1.157.0...v1.158.0) (2024-12-13)
+
+
+### Features
+
+* add sorting for nvim-cmp ([a980fa1](https://github.com/believer/dotfiles/commit/a980fa156acc44ea2a5496f75040ad394beedf38))
+
 # [1.157.0](https://github.com/believer/dotfiles/compare/v1.156.2...v1.157.0) (2024-12-09)
 
 
