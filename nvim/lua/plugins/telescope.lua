@@ -1,17 +1,15 @@
 return {
 	{
-		"nvim-telescope/telescope-fzf-native.nvim",
-		event = "VeryLazy",
-		build = "make",
-	},
-	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
 		event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-ui-select.nvim", -- Display vim.ui.select in telescope
-			"jvgrootveld/telescope-zoxide",
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+			},
 		},
 		config = function()
 			local actions = require("telescope.actions")
@@ -19,7 +17,6 @@ return {
 			-- Extensions
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("ui-select")
-			require("telescope._extensions.zoxide.utils")
 
 			-- Setup
 			require("telescope").setup({

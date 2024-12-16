@@ -45,6 +45,7 @@ return {
 						{ "gV", "<cmd>vert winc ]<CR>", desc = "Go to definition (vertical)" },
 						{ "gD", vim.lsp.buf.declaration, desc = "Go to declaration", buffer = bufnr },
 						{ "gd", vim.lsp.buf.definition, desc = "Go to definition", buffer = bufnr },
+						{ "<leader>rr", require("telescope.builtin").lsp_references, desc = "LSP references" },
 						{ "<leader>rn", vim.lsp.buf.rename, desc = "Rename", buffer = bufnr },
 						{ "<leader>ca", vim.lsp.buf.code_action, desc = "Code action", buffer = bufnr },
 					})
