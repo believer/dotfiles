@@ -30,7 +30,7 @@ return {
 			require("mason-lspconfig").setup()
 
 			-- Set up lspconfig.
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
 			local util = require("lspconfig/util")
 			local wk = require("which-key")
@@ -150,7 +150,7 @@ return {
 					Lua = {
 						diagnostics = {
 							enable = true,
-							globals = { "vim" },
+							globals = { "vim", "love" },
 						},
 						format = { enable = true },
 						hint = { enable = true },

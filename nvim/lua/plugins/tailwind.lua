@@ -12,11 +12,4 @@ return {
 			})
 		end,
 	},
-	{
-		"roobert/tailwindcss-colorizer-cmp.nvim",
-		event = "BufReadPre",
-		config = function()
-			require("tailwindcss-colorizer-cmp").setup()
-		end,
-	},
 }
