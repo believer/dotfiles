@@ -1,3 +1,10 @@
+# [1.159.0](https://github.com/believer/dotfiles/compare/v1.158.0...v1.159.0) (2024-12-20)
+
+
+### Features
+
+* add inlay hints to gopls ([efac5a1](https://github.com/believer/dotfiles/commit/efac5a12661e7fb942fc539664e8e9cb365d5b8a))
+
 # [1.158.0](https://github.com/believer/dotfiles/compare/v1.157.0...v1.158.0) (2024-12-13)
 
 
