@@ -1,3 +1,10 @@
+# [1.160.0](https://github.com/believer/dotfiles/compare/v1.159.0...v1.160.0) (2025-01-13)
+
+
+### Features
+
+* add light mode theme ([8843810](https://github.com/believer/dotfiles/commit/8843810b02f13c74f956e934fd4cb2f4d8e15ff6))
+
 # [1.159.0](https://github.com/believer/dotfiles/compare/v1.158.0...v1.159.0) (2024-12-20)
 
 
