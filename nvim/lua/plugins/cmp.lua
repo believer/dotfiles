@@ -8,11 +8,6 @@ return {
 		---@type blink.cmp.Config
 		opts = {
 			completion = {
-				menu = {
-					auto_show = function(ctx)
-						return ctx.mode ~= "cmdline"
-					end,
-				},
 				ghost_text = {
 					enabled = true,
 				},
@@ -20,7 +15,6 @@ return {
 
 			keymap = {
 				preset = "default",
-				["<CR>"] = { "accept", "fallback" },
 			},
 
 			appearance = {
