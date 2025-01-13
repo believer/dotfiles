@@ -1,4 +1,4 @@
-fish_config theme choose "TokyoNight Night"
+fish_config theme choose "tokyonight-night"
 
 # Path
 set -Ux GOPATH "$HOME/code/go"
@@ -20,6 +20,7 @@ fish_add_path "/usr/bin"
 fish_add_path "/usr/local/sbin"
 fish_add_path "/usr/local/bin"
 fish_add_path "$BUN_INSTALL/bin"
+fish_add_path "/Applications/love.app/Contents/MacOS"
 
 if status is-interactive
   # Use vi keybindings in cmd line
