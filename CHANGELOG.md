@@ -1,3 +1,10 @@
+# [1.161.0](https://github.com/believer/dotfiles/compare/v1.160.0...v1.161.0) (2025-01-14)
+
+
+### Features
+
+* add initial ghostty config ([a3deda5](https://github.com/believer/dotfiles/commit/a3deda526e0578b1ff80de6d385f5a0294d6aa3f))
+
 # [1.160.0](https://github.com/believer/dotfiles/compare/v1.159.0...v1.160.0) (2025-01-13)
 
 
