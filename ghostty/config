@@ -1,0 +1,23 @@
+theme = "/Users/rickard/.dotfiles/ghostty/tokyonight_night"
+
+# Setup custom fonts
+font-family = "Mono Lisa Nerd Font"
+font-size = 12
+
+# Thought this would make it work like tmux and keep
+# everything open, but doesn't seem to do anything?
+window-save-state = always
+
+# Disable to make åäö work using my Karabiner setup
+macos-option-as-alt = false
+
+# Keybinds similar to what I'm used to from tmux
+keybind = ctrl+a>ctrl+d=close_surface
+keybind = ctrl+a>shift+\=new_split:right
+keybind = ctrl+a>-=new_split:down
+keybind = ctrl+a>h=goto_split:previous
+keybind = ctrl+a>j=goto_split:bottom
+keybind = ctrl+a>k=goto_split:top
+keybind = ctrl+a>l=goto_split:next
+keybind = ctrl+a>c=new_tab
+keybind = ctrl+a>z=toggle_split_zoom
