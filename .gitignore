@@ -28,6 +28,7 @@ nvim/harpoon.json
 nvim/lazy
 nvim/mason
 nvim/telescope_history
+nvim/blink
 
 # Work setup
 .android
