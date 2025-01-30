@@ -8,13 +8,39 @@ return {
 		---@type blink.cmp.Config
 		opts = {
 			completion = {
+				documentation = {
+					auto_show = true,
+				},
 				ghost_text = {
-					enabled = true,
+					enabled = false,
+				},
+				menu = {
+					auto_show = function(ctx)
+						return ctx.mode ~= "cmdline"
+					end,
+					draw = {
+						treesitter = { "lsp" },
+						columns = {
+							{ "kind_icon" },
+							{ "label", "label_description", gap = 1 },
+							{ "kind" },
+						},
+					},
+				},
+
+				accept = {
+					auto_brackets = {
+						semantic_token_resolution = {
+							blocked_filetypes = { "typescriptreact" },
+						},
+					},
 				},
 			},
 
 			keymap = {
 				preset = "default",
+				["<Tab>"] = { "select_and_accept", "fallback" },
+				["<CR>"] = { "select_and_accept", "fallback" },
 			},
 
 			appearance = {
