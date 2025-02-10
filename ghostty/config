@@ -4,6 +4,10 @@ theme = "/Users/rickard/.dotfiles/ghostty/tokyonight_night"
 font-family = "Mono Lisa Nerd Font"
 font-size = 12
 
+# Dimming and divider colors
+unfocused-split-opacity = 0.85
+split-divider-color = #33364d
+
 # Thought this would make it work like tmux and keep
 # everything open, but doesn't seem to do anything?
 window-save-state = always
@@ -21,3 +25,9 @@ keybind = ctrl+a>k=goto_split:top
 keybind = ctrl+a>l=goto_split:next
 keybind = ctrl+a>c=new_tab
 keybind = ctrl+a>z=toggle_split_zoom
+keybind = ctrl+a>[=scroll_page_up
+keybind = ctrl+a>]=scroll_page_down
+
+# Quick terminal
+quick-terminal-position = bottom
+keybind = global:cmd+grave_accent=toggle_quick_terminal
