@@ -233,7 +233,7 @@ return {
 								},
 								-- Support tailwind-variants
 								{
-									"tv\\(([^)]*)\\)",
+									"([\"'`][^\"'`]*.*?[\"'`])",
 									"[\"'`]([^\"'`]*).*?[\"'`]",
 								},
 								-- Support ts-pattern
