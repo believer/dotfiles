@@ -1,3 +1,10 @@
+## [1.161.1](https://github.com/believer/dotfiles/compare/v1.161.0...v1.161.1) (2025-02-20)
+
+
+### Bug Fixes
+
+* update tailwind-variants regex ([b8d2719](https://github.com/believer/dotfiles/commit/b8d27192431640255bfcb61a005906682b933400))
+
 # [1.161.0](https://github.com/believer/dotfiles/compare/v1.160.0...v1.161.0) (2025-01-14)
 
 
