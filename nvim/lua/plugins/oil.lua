@@ -4,7 +4,9 @@ return {
 	opts = {},
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		require("oil").setup({
+    local oil = require("oil")
+
+		oil.setup({
 			keymaps = {
 				["<CR>"] = "actions.select",
 				["<C-v>"] = "actions.select_vsplit",
@@ -14,5 +16,9 @@ return {
 				["<C-r>"] = "actions.refresh",
 			},
 		})
+
+    oil.set_is_hidden_file(function(name)
+      return name:match("^%.") ~= nil or vim.endswith(name, "_templ.go")
+    end)
 	end,
 }

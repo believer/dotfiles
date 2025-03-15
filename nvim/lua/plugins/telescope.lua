@@ -66,7 +66,7 @@ return {
 						height = 0.80,
 						preview_cutoff = 120,
 					},
-					file_ignore_patterns = { "node_modules" },
+					file_ignore_patterns = { "node_modules", "_templ%.go" },
 					path_display = { "truncate" },
 					winblend = 0,
 					border = {},
