@@ -1,3 +1,10 @@
+# [1.162.0](https://github.com/believer/dotfiles/compare/v1.161.1...v1.162.0) (2025-03-15)
+
+
+### Features
+
+* hide generate templ files in oil and telescope ([c64f1e2](https://github.com/believer/dotfiles/commit/c64f1e291c710ff23ed7b07fac2456a73e914fcd))
+
 ## [1.161.1](https://github.com/believer/dotfiles/compare/v1.161.0...v1.161.1) (2025-02-20)
 
 
