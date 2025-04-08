@@ -216,14 +216,12 @@ return {
 					-- Custom
 					"templ",
 				},
-				init_options = {
-					userLanguages = {
-						templ = "html",
-					},
-				},
 				capabilities = capabilities,
 				settings = {
 					tailwindCSS = {
+						includeLanguages = {
+							templ = "html",
+						},
 						experimental = {
 							classRegex = {
 								-- Support cva
