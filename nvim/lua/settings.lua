@@ -82,3 +82,12 @@ vim.cmd([[command FormatRelay execute "!yarn rescript-relay-cli format-single-gr
 
 -- Close all buffers except the current one
 vim.cmd([[command BufOnly silent! execute "%bd|e#|bd#"]])
+
+-- Remove '-' from iskeyword so words-separated-by-dashes are treated as separate words
+-- This is filetype dependent, so needs to be run everytime
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*", -- or specify filetypes like "css", "javascript", etc.
+	callback = function()
+		vim.opt_local.iskeyword:remove("-")
+	end,
+})
