@@ -10,10 +10,10 @@ return {
 					lsp_format = "fallback",
 				},
 				formatters_by_ft = {
-					css = { "prettierd" },
+					css = { "prettier" },
 					go = { "gofmt" },
-					json = { "prettierd" },
-					markdown = { "prettierd" },
+					json = { "prettier" },
+					markdown = { "prettier" },
 					rust = { "rustfmt" },
 					lua = { "stylua" },
 					sql = { "pg_format" },
