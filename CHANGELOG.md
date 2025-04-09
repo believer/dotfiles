@@ -1,3 +1,15 @@
+# [1.163.0](https://github.com/believer/dotfiles/compare/v1.162.0...v1.163.0) (2025-04-09)
+
+
+### Bug Fixes
+
+* tab completion in snippets ([1c87ff8](https://github.com/believer/dotfiles/commit/1c87ff8ab1d095b8d50a06242fe48f3eec4934af))
+
+
+### Features
+
+* add equalize_splits to ghostty ([fd2f755](https://github.com/believer/dotfiles/commit/fd2f7553406ddf7dac08a02bff53e37ef9efb435))
+
 # [1.162.0](https://github.com/believer/dotfiles/compare/v1.161.1...v1.162.0) (2025-03-15)
 
 
