@@ -27,6 +27,7 @@ keybind = ctrl+a>c=new_tab
 keybind = ctrl+a>z=toggle_split_zoom
 keybind = ctrl+a>[=scroll_page_up
 keybind = ctrl+a>]=scroll_page_down
+keybind = ctrl+a>equal=equalize_splits
 
 # Quick terminal
 quick-terminal-position = bottom
