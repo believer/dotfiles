@@ -13,9 +13,8 @@ return {
 				"prettierd",
 				"rescriptls",
 				"rust_analyzer",
-				"sumneko_lua",
+				"sumnekm_lua",
 				"tailwindcss",
-				"volar",
 			},
 		},
 	},
@@ -32,6 +31,7 @@ return {
 			-- Set up lspconfig.
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
+			local configs = require("lspconfig/configs")
 			local util = require("lspconfig/util")
 			local wk = require("which-key")
 			local u = require("utils")
@@ -275,17 +275,33 @@ return {
 				},
 			})
 
+			if not configs.golangcilsp then
+				configs.golangcilsp = {
+					default_config = {
+						cmd = { "golangci-lint-langserver" },
+						root_dir = lspconfig.util.root_pattern(".git", "go.mod"),
+						init_options = {
+							command = { "golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1" },
+						},
+					},
+				}
+			end
+
+			lspconfig.golangci_lint_ls.setup({
+				filetypes = { "go", "gomod" },
+			})
+
 			lspconfig.templ.setup({
 				capabilities = capabilities,
 			})
 
-			lspconfig.htmx.setup({
-				capabilities = capabilities,
-				filetypes = {
-					"html",
-					"templ",
-				},
-			})
+			-- lspconfig.htmx.setup({
+			-- 	capabilities = capabilities,
+			-- 	filetypes = {
+			-- 		"html",
+			-- 		"templ",
+			-- 	},
+			-- })
 
 			lspconfig.sourcekit.setup({
 				capabilities = u.mergeTables(capabilities, {
