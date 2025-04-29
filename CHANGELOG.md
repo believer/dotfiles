@@ -1,3 +1,10 @@
+# [1.165.0](https://github.com/believer/dotfiles/compare/v1.164.0...v1.165.0) (2025-04-29)
+
+
+### Features
+
+* add console log quick macro ([de29615](https://github.com/believer/dotfiles/commit/de296155da20927ccaf5d073520a4d6796e9b515))
+
 # [1.164.0](https://github.com/believer/dotfiles/compare/v1.163.0...v1.164.0) (2025-04-29)
 
 
