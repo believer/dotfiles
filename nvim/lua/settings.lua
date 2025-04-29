@@ -77,17 +77,27 @@ map("<Right>", "<Nop>")
 map("q:", "<Nop>")
 map(":W", vim.cmd.w)
 
--- Format Relay GraphQL queries in file
-vim.cmd([[command FormatRelay execute "!yarn rescript-relay-cli format-single-graphql %"]])
-
 -- Close all buffers except the current one
 vim.cmd([[command BufOnly silent! execute "%bd|e#|bd#"]])
 
 -- Remove '-' from iskeyword so words-separated-by-dashes are treated as separate words
 -- This is filetype dependent, so needs to be run everytime
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*", -- or specify filetypes like "css", "javascript", etc.
+	pattern = "*", -- For all types, otherwise use pattern like below
 	callback = function()
 		vim.opt_local.iskeyword:remove("-")
+	end,
+})
+
+-- Macros
+local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)
+
+-- Mark something and hit @l to create a print statement below it
+vim.api.nvim_create_augroup("JSLogMacro", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = "JSLogMacro",
+	pattern = { "javascript", "typescript", "typescriptreact" },
+	callback = function()
+		vim.fn.setreg("l", "yoconsole.log('" .. esc .. "pa:'," .. esc .. "a" .. esc .. "pa)" .. esc .. "")
 	end,
 })
