@@ -1,3 +1,15 @@
+# [1.164.0](https://github.com/believer/dotfiles/compare/v1.163.0...v1.164.0) (2025-04-29)
+
+
+### Bug Fixes
+
+* make hyphen separated words act like individual words ([d1c0a56](https://github.com/believer/dotfiles/commit/d1c0a5666b053e018e50b104c03433e682f97daf))
+
+
+### Features
+
+* little floating todo window ([0775955](https://github.com/believer/dotfiles/commit/07759556929399ab6c746f85186ff7ad2b20f269))
+
 # [1.163.0](https://github.com/believer/dotfiles/compare/v1.162.0...v1.163.0) (2025-04-09)
 
 
