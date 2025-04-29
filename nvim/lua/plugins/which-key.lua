@@ -98,6 +98,8 @@ return {
 				desc = "Toggle inlay hints",
 			},
 
+			{ "<leader>tl", vim.cmd.Td, desc = "Display TODO list" },
+
 			-- Telescope
 			{ "<leader>t", group = "Telescope" },
 			{ "<leader>tb", telescope_builtin.buffers, desc = "Open buffers" },

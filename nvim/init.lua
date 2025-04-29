@@ -11,6 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Floating todo window
+require("floatingtodo").setup({
+	target_file = "~/code/Rickard/todo.md",
+})
+
 require("settings")
 require("lazy").setup("plugins", {
 	performance = {
