@@ -5,6 +5,13 @@
       {
         "language": "go",
         "path": "./go.json"
+      },
+      {
+        "language": [
+          "typescript",
+          "typescriptreact"
+        ],
+        "path": "./typescript.json"
       }
     ]
   }

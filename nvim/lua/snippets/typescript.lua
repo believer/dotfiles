@@ -14,7 +14,7 @@ local regular_snippets = {
 	}, fmt("console.log({})", { i(0, "data") })),
 
 	-- Assertions
-	s("exp", fmt("expect({}).toEqual({})", { i(1), i(2) })),
+	s("expe", fmt("expect({}).toEqual({})", { i(1), i(2) })),
 
 	s("snap", fmt("expect({}).toMatchSnapshot()", { i(0) })),
 
@@ -111,6 +111,10 @@ local auto_snippets = {
 	s("sgblt", fmt("screen.getByLabelText(/{name}/i)", { name = i(0) })),
 	s("sqbt", fmt("screen.queryByText(/{name}/i)", { name = i(0) })),
 	s("sgbr", fmt("screen.getByRole('{role}', {{ name: /{name}/i }})", { role = i(1, "button"), name = i(2, "name") })),
+	s(
+		"sqbr",
+		fmt("screen.queryByRole('{role}', {{ name: /{name}/i }})", { role = i(1, "button"), name = i(2, "name") })
+	),
 
 	-- React Native
 	s(

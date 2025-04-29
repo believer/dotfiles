@@ -223,22 +223,9 @@ return {
 							templ = "html",
 						},
 						experimental = {
+							-- Support tailwind-variants
 							classRegex = {
-								-- Support cva
-								{
-									"cva\\(([^)]*)\\)",
-									"[\"'`]([^\"'`]*).*?[\"'`]",
-								},
-								-- Support tailwind-variants
-								{
-									"([\"'`][^\"'`]*.*?[\"'`])",
-									"[\"'`]([^\"'`]*).*?[\"'`]",
-								},
-								-- Support ts-pattern
-								{
-									"with\\((.*)\\)",
-									"[\"'`]([^\"'`]*).*?[\"'`]",
-								},
+								{ "tv\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
 							},
 						},
 					},
