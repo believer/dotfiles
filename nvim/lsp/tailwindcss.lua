@@ -1,3 +1,4 @@
+---@type vim.lsp.Config
 return {
 	cmd = { "bunx", "tailwindcss-language-server", "--stdio" },
 	filetypes = {

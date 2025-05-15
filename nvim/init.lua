@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Floating todo window
 require("floatingtodo").setup({
-	target_file = "~/code/Rickard/todo.md",
+	target_file = "~/code/Rickard/TODO.md",
 })
 
 require("settings")

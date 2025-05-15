@@ -17,7 +17,7 @@ local function center_in(outer, inner)
 end
 
 local function win_config(opts)
-	local width = math.min(math.floor(vim.o.columns * 0.8), 64)
+	local width = math.min(math.floor(vim.o.columns * 0.8), 280)
 	local height = math.floor(vim.o.lines * 0.8)
 
 	return {

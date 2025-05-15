@@ -1,34 +1,3 @@
--- Setup the LSPs.
-local function TSOrganizeImports()
-	vim.lsp.buf.code_action({
-		apply = true,
-		context = {
-			only = { "source.organizeImports.ts" },
-			diagnostics = {},
-		},
-	})
-end
-
-local TSRemoveUnused = function()
-	vim.lsp.buf.code_action({
-		apply = true,
-		context = {
-			only = { "source.removeUnused.ts" },
-			diagnostics = {},
-		},
-	})
-end
-
-local TSAddImports = function()
-	vim.lsp.buf.code_action({
-		apply = true,
-		context = {
-			only = { "source.addMissingImports.ts" },
-			diagnostics = {},
-		},
-	})
-end
-
 local settingsJsTs = {
 	inlayHints = {
 		includeInlayEnumMemberValueHints = true,
@@ -41,22 +10,9 @@ local settingsJsTs = {
 	},
 }
 
+---@type vim.lsp.Config
 return {
 	cmd = { "bunx", "typescript-language-server", "--stdio" },
-	commands = {
-		TSOrganizeImports = {
-			TSOrganizeImports,
-			description = "Organize Imports",
-		},
-		TSRemoveUnused = {
-			TSRemoveUnused,
-			description = "Remove unused",
-		},
-		TSAddImports = {
-			TSAddImports,
-			description = "Add imports",
-		},
-	},
 	completion = {
 		completeFunctionCalls = true,
 	},
