@@ -1,7 +1,4 @@
-local capabilities = require("blink.cmp").get_lsp_capabilities()
-
 return {
-	capabilities = capabilities,
 	cmd = { "biome", "lsp-proxy" },
 	filetypes = {
 		"astro",

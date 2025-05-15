@@ -1,5 +1,3 @@
-local capabilities = require("blink.cmp").get_lsp_capabilities()
-
 -- Setup the LSPs.
 local function TSOrganizeImports()
 	vim.lsp.buf.code_action({
@@ -44,7 +42,6 @@ local settingsJsTs = {
 }
 
 return {
-	capabilities = capabilities,
 	cmd = { "bunx", "typescript-language-server", "--stdio" },
 	commands = {
 		TSOrganizeImports = {

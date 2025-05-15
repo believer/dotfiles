@@ -1,7 +1,4 @@
-local capabilities = require("blink.cmp").get_lsp_capabilities()
-
 return {
-	capabilities = capabilities,
 	cmd = { "bunx", "tailwindcss-language-server", "--stdio" },
 	filetypes = {
 		"gohtml",
