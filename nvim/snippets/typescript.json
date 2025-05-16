@@ -1,0 +1,85 @@
+{
+  "Component": {
+    "prefix": "rncmp",
+    "body": ["PROGRAM-ID. ${1:${TM_FILENAME/(.*)\\..+$/${1:/upcase}/}}."]
+  },
+  "PascalCase": {
+    "prefix": "filename-pascal",
+    "description": "",
+    "body": "${TM_FILENAME_BASE/(\\w+)?[-_\\s]+(\\w+)/${1:/capitalize}${2:/capitalize}/g}"
+  },
+  "Exported function": {
+    "prefix": "fun",
+    "body": ["export function ${1:name}() {", "\t$2", "}"]
+  },
+  "findByText": {
+    "prefix": "sfbt",
+    "body": ["screen.findByText(${1:id})"]
+  },
+  "getByRole": {
+    "prefix": "sgbr",
+    "body": ["screen.getByRole(${1:role}, { name: ${2:name} })"]
+  },
+  "getByTestId": {
+    "prefix": "sgbti",
+    "body": ["screen.getByTestId(${1:id})"]
+  },
+  "getByText": {
+    "prefix": "sgbt",
+    "body": ["screen.getByText(${1:id})"]
+  },
+  "queryByRole": {
+    "prefix": "sqbr",
+    "body": ["screen.queryByRole(${1:role}, { name: ${2:name} })"]
+  },
+  "queryByTestId": {
+    "prefix": "sqbti",
+    "body": ["screen.queryByTestId(${1:id})"]
+  },
+  "queryByText": {
+    "prefix": "sqbt",
+    "body": ["screen.queryByText(${1:id})"]
+  },
+  "toBe": {
+    "prefix": "tobe",
+    "body": ["expect(${1:assertion}).toBe(${2:expected})"]
+  },
+  "toEqual": {
+    "prefix": "toeq",
+    "body": ["expect(${1:assertion}).toEqual(${2:expected})"]
+  },
+  "not.toBeOnTheScreen": {
+    "prefix": "ntbots",
+    "body": ["expect(${1:assertion}).not.toBeOnTheScreen()"]
+  },
+  "toBeOnTheScreen": {
+    "prefix": "tbots",
+    "body": ["expect(${1:assertion}).toBeOnTheScreen()"]
+  },
+  "not.toHaveBeenCalled": {
+    "prefix": "nthbc",
+    "body": ["expect(${1:assertion}).not.toHaveBeenCalled()"]
+  },
+  "toHaveBeenCalledWith": {
+    "prefix": "thbcw",
+    "body": ["expect(${1:assertion}).toHaveBeenCalledWith(${2:expected})"]
+  },
+  "Describe": {
+    "prefix": "desc",
+    "body": ["describe('${1:description}', () => {", "\t${3:content}", "})"]
+  },
+  "Test": {
+    "prefix": "test",
+    "body": ["test('${1:description}', () => {", "\t${3:content}", "})"]
+  },
+  "Describe and Test": {
+    "prefix": "desct",
+    "body": [
+      "describe('${1:description}', () => {",
+      "\ttest('${2:test}', () => {",
+      "\t\t${3:content}",
+      "\t})",
+      "})"
+    ]
+  }
+}
