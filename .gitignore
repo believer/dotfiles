@@ -18,6 +18,7 @@ yarn
 github-copilot
 configstore
 swiftpm
+qBittorrent
 nvim/lazy
 nvim/mason
 nvim/telescope_history
