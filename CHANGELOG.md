@@ -1,3 +1,10 @@
+## [1.165.1](https://github.com/believer/dotfiles/compare/v1.165.0...v1.165.1) (2025-05-16)
+
+
+### Bug Fixes
+
+* only activate ts and css on filetypes ([709315b](https://github.com/believer/dotfiles/commit/709315b3e4edac1e472196803af62c6d94dcb4a5))
+
 # [1.165.0](https://github.com/believer/dotfiles/compare/v1.164.0...v1.165.0) (2025-04-29)
 
 
