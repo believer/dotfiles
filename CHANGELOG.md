@@ -1,3 +1,11 @@
+# [1.166.0](https://github.com/believer/dotfiles/compare/v1.165.1...v1.166.0) (2025-05-22)
+
+
+### Features
+
+* add spellcheck ([47d7394](https://github.com/believer/dotfiles/commit/47d7394fb8376b976c18fc3356c99129ed44efb0))
+* add typescript functions ([dd251a8](https://github.com/believer/dotfiles/commit/dd251a8b7f7794bf8b89e5b5282ddd0d7ee16b23))
+
 ## [1.165.1](https://github.com/believer/dotfiles/compare/v1.165.0...v1.165.1) (2025-05-16)
 
 
