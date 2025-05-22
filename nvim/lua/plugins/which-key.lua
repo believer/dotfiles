@@ -7,6 +7,30 @@ local harpoon_ui = require("harpoon.ui")
 local telescope_builtin = require("telescope.builtin")
 local ufo = require("ufo")
 
+local function add_word_to_lang(lang)
+	local word = vim.fn.expand("<cword>")
+	if word == "" then
+		print("No word under cursor.")
+		return
+	end
+
+	local original_lang = vim.opt.spelllang:get()
+	local original_spellfile = vim.opt.spellfile
+	local spellfile_path = vim.fn.expand(string.format("~/.dotfiles/nvim/spell/%s.utf-8.add", lang))
+
+	vim.opt.spelllang = { lang }
+	vim.opt.spellfile = spellfile_path
+
+	vim.cmd("silent! spellgood " .. word)
+	vim.cmd("silent! mkspell! " .. spellfile_path)
+
+	-- Restore original settings
+	vim.opt.spelllang = original_lang
+	vim.opt.spellfile = original_spellfile
+
+	print("Added '" .. word .. "' to " .. lang)
+end
+
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
@@ -111,6 +135,23 @@ return {
 			{ "<leader>tt", "<cmd>TodoTelescope<CR>", desc = "Todo list" },
 			{ "<leader>tw", telescope_builtin.lsp_dynamic_workspace_symbols, desc = "Symbols in workspace" },
 			{ "<leader>tz", "<cmd>Telescope zoxide list<CR>", desc = "Zoxide" },
+
+			-- Spelling
+			{ "<leader>w", group = "Spelling" },
+			{
+				"<leader>ws",
+				function()
+					add_word_to_lang("sv")
+				end,
+				desc = "Add word to Swedish",
+			},
+			{
+				"<leader>we",
+				function()
+					add_word_to_lang("en")
+				end,
+				desc = "Add word to English",
+			},
 		})
 	end,
 }

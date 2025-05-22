@@ -101,3 +101,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.fn.setreg("l", "yoconsole.log('" .. esc .. "pa:'," .. esc .. "a" .. esc .. "pa)" .. esc .. "")
 	end,
 })
+
+-- Spell check English and Swedish
+o.spell = true
+o.spelllang = { "en", "sv" }
