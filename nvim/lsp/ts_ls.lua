@@ -13,7 +13,7 @@ local settingsJsTs = {
 ---@type vim.lsp.Config
 return {
 	cmd = { "bunx", "typescript-language-server", "--stdio" },
-	filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+	filetypes = require("filetypes").js,
 	completion = {
 		completeFunctionCalls = true,
 	},

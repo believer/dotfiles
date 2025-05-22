@@ -72,6 +72,44 @@ local autocommands = {
 			vim.highlight.on_yank()
 		end,
 	},
+	ts_remove = {
+		pattern = require("filetypes").js,
+		triggers = { "FileType" },
+		callback = function()
+			-- Remove unused variables
+			vim.api.nvim_create_user_command("TSRemoveUnused", function()
+				vim.lsp.buf.code_action({
+					apply = true,
+					context = {
+						only = { "source.removeUnused.ts" },
+						diagnostics = {},
+					},
+				})
+			end, {})
+
+			-- Add missing imports
+			vim.api.nvim_create_user_command("TSAddImports", function()
+				vim.lsp.buf.code_action({
+					apply = true,
+					context = {
+						only = { "source.addMissingImports.ts" },
+						diagnostics = {},
+					},
+				})
+			end, {})
+
+			-- Automatically organize imports
+			vim.api.nvim_create_user_command("TSOrganizeImports", function()
+				vim.lsp.buf.code_action({
+					apply = true,
+					context = {
+						only = { "source.organizeImports.ts" },
+						diagnostics = {},
+					},
+				})
+			end, {})
+		end,
+	},
 }
 
 add_autocommands(autocommands)
