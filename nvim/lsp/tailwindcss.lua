@@ -1,6 +1,6 @@
 ---@type vim.lsp.Config
 return {
-	cmd = { "bunx", "tailwindcss-language-server", "--stdio" },
+	cmd = { "tailwindcss-language-server", "--stdio" },
 	filetypes = {
 		"gohtml",
 		"gohtmltmpl",
@@ -16,7 +16,12 @@ return {
 		"typescriptreact",
 		"templ",
 	},
-	root_markers = { "tailwind.config.js" },
+	root_markers = {
+		"tailwind.config.js",
+		-- Workaround to make it start when using the Tailwind binary
+		-- like I do in my movies project
+		"go.mod",
+	},
 	settings = {
 		tailwindCSS = {
 			classAttributes = { "class", "className", "class:list", "classList", "ngClass" },
