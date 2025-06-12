@@ -9,6 +9,7 @@ return {
 		dependencies = {
 			"windwp/nvim-ts-autotag", -- Automatically close/update HTML tags
 			"vrischmann/tree-sitter-templ", -- Support for templ
+			"nvim-treesitter/nvim-treesitter-textobjects", --  Syntax aware text-objects
 		},
 		config = function()
 			local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
@@ -19,6 +20,33 @@ return {
 				highlight = {
 					additional_vim_regex_highlighting = false,
 					enable = true,
+				},
+
+				textobjects = {
+					select = {
+						enable = true,
+						lookahead = true,
+						keymaps = {
+							-- You can use the capture groups defined in textobjects.scm
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+							["ac"] = "@class.outer",
+							["ic"] = "@class.inner",
+						},
+					},
+					move = {
+						enable = true,
+						set_jumps = true, -- whether to set jumps in the jumplist
+						goto_next_start = { ["]m"] = "@function.outer", ["]]"] = "@class.outer" },
+						goto_next_end = { ["]M"] = "@function.outer", ["]["] = "@class.outer" },
+						goto_previous_start = { ["[m"] = "@function.outer", ["[["] = "@class.outer" },
+						goto_previous_end = { ["[M"] = "@function.outer", ["[]"] = "@class.outer" },
+					},
+					swap = {
+						enable = true,
+						swap_next = { ["<leader>>"] = "@parameter.inner" },
+						swap_previous = { ["<leader><"] = "@parameter.outer" },
+					},
 				},
 
 				-- Enable windwp/nvim-ts-autotag for close/update tags
