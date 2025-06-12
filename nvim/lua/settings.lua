@@ -103,5 +103,4 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Spell check English and Swedish
-o.spell = true
 o.spelllang = { "en", "sv" }

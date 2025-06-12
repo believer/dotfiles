@@ -139,6 +139,13 @@ return {
 			-- Spelling
 			{ "<leader>w", group = "Spelling" },
 			{
+				"<leader>ww",
+				function()
+					vim.wo.spell = not vim.wo.spell
+				end,
+				desc = "Toggle spellcheck",
+			},
+			{
 				"<leader>ws",
 				function()
 					add_word_to_lang("sv")
