@@ -1,3 +1,11 @@
+# [1.167.0](https://github.com/believer/dotfiles/compare/v1.166.0...v1.167.0) (2025-06-12)
+
+
+### Features
+
+* add yaml formatting ([55aacec](https://github.com/believer/dotfiles/commit/55aacec1b6f41c58e63c90e23a5479fa06fa630d))
+* **treesitter:** add text-object awareness ([60629ab](https://github.com/believer/dotfiles/commit/60629aba2d110712a3bea75888a8f93d157b26db))
+
 # [1.166.0](https://github.com/believer/dotfiles/compare/v1.165.1...v1.166.0) (2025-05-22)
 
 
