@@ -22,7 +22,7 @@ return {
 			}
 
 			-- Add same options for all JS/TS types
-			local js_types = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
+			local js_types = require("filetypes").js
 
 			for _, type in ipairs(js_types) do
 				formatter_settings.formatters_by_ft[type] = {
