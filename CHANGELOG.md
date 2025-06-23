@@ -1,3 +1,10 @@
+# [1.168.0](https://github.com/believer/dotfiles/compare/v1.167.0...v1.168.0) (2025-06-23)
+
+
+### Features
+
+* add jsonls ([7e2bfc8](https://github.com/believer/dotfiles/commit/7e2bfc8bec98a2a772a3e0e900a8a655caf18540))
+
 # [1.167.0](https://github.com/believer/dotfiles/compare/v1.166.0...v1.167.0) (2025-06-12)
 
 
