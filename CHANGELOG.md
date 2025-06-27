@@ -1,3 +1,10 @@
+## [1.168.1](https://github.com/believer/dotfiles/compare/v1.168.0...v1.168.1) (2025-06-27)
+
+
+### Bug Fixes
+
+* use biome lsp for formatting ([0a6ee15](https://github.com/believer/dotfiles/commit/0a6ee158ab0efb314208059b3dbe63dd3487ba09))
+
 # [1.168.0](https://github.com/believer/dotfiles/compare/v1.167.0...v1.168.0) (2025-06-23)
 
 
