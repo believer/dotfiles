@@ -1,3 +1,10 @@
+## [1.168.2](https://github.com/believer/dotfiles/compare/v1.168.1...v1.168.2) (2025-06-27)
+
+
+### Bug Fixes
+
+* use alternate way of attaching biome action ([88b4cc7](https://github.com/believer/dotfiles/commit/88b4cc73f2e315ea8546d2c0d790d0a12db77f3c))
+
 ## [1.168.1](https://github.com/believer/dotfiles/compare/v1.168.0...v1.168.1) (2025-06-27)
 
 
