@@ -5,11 +5,29 @@ return {
 		build = ":MasonUpdate",
 		dependencies = {
 			"mason-org/mason-lspconfig.nvim", -- LSP configuration for Mason
+			"neovim/nvim-lspconfig",
 		},
 		config = function()
 			-- Add capabilities to all filetypes
 			vim.lsp.config("*", {
 				capabilities = require("blink.cmp").get_lsp_capabilities(),
+				on_attach = function(client, bufnr)
+					if client.name == "biome" and client.supports_method("textDocument/codeAction") then
+						vim.api.nvim_create_autocmd("BufWritePre", {
+							group = vim.api.nvim_create_augroup("BiomeFixAll", { clear = true }),
+							buffer = bufnr,
+							callback = function()
+								vim.lsp.buf.code_action({
+									context = {
+										only = { "source.fixAll.biome" },
+										diagnostics = {},
+									},
+									apply = true,
+								})
+							end,
+						})
+					end
+				end,
 			})
 
 			-- Map the keys after the language server is attached to the buffer.
