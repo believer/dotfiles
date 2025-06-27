@@ -59,7 +59,23 @@ return {
 			})
 
 			require("mason").setup()
-			require("mason-lspconfig").setup()
+
+			vim.lsp.enable({
+				"biome",
+				"cssls",
+				"gopls",
+				"htmx",
+				"jsonls",
+				"kotlin_language_server",
+				"lua_ls",
+				"prettierd",
+				"stylua",
+				"tailwindcss",
+				"templ",
+				"ts_ls",
+				"yamlls",
+				"yamlfmt",
+			})
 		end,
 	},
 
