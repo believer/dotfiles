@@ -14,6 +14,7 @@ return {
 			})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
+				desc = "LSP Actions",
 				callback = function(args)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
 
@@ -21,6 +22,7 @@ return {
 						return
 					end
 
+					-- Add Biome fix code action on save
 					if client.name == "biome" then
 						vim.api.nvim_create_autocmd("BufWritePre", {
 							group = vim.api.nvim_create_augroup("BiomeFixAll", { clear = true }),
@@ -35,13 +37,8 @@ return {
 							end,
 						})
 					end
-				end,
-			})
 
-			-- Map the keys after the language server is attached to the buffer.
-			vim.api.nvim_create_autocmd("LspAttach", {
-				desc = "LSP Actions",
-				callback = function()
+					-- Map the keys after the language server is attached to the buffer.
 					require("which-key").add({
 						{ "gR", "<cmd>Trouble lsp_references<cr>", desc = "References" },
 						{ "gV", "<cmd>vert winc ]<CR>", desc = "Go to definition (vertical)" },
