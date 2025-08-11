@@ -1,3 +1,10 @@
+## [1.168.3](https://github.com/believer/dotfiles/compare/v1.168.2...v1.168.3) (2025-08-11)
+
+
+### Bug Fixes
+
+* add pane sizing in ghostty with tmux ([4ed38c4](https://github.com/believer/dotfiles/commit/4ed38c436800f1eb39d8f57db3c21cd7b24c0161))
+
 ## [1.168.2](https://github.com/believer/dotfiles/compare/v1.168.1...v1.168.2) (2025-06-27)
 
 
