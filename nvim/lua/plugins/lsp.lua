@@ -14,7 +14,6 @@ return {
 			})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
-				desc = "LSP Actions",
 				callback = function(args)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
 
@@ -25,6 +24,7 @@ return {
 					-- Add Biome fix code action on save
 					if client.name == "biome" then
 						vim.api.nvim_create_autocmd("BufWritePre", {
+							buffer = args.buf,
 							group = vim.api.nvim_create_augroup("BiomeFixAll", { clear = true }),
 							callback = function()
 								vim.lsp.buf.code_action({
@@ -50,6 +50,7 @@ return {
 				end,
 			})
 
+			vim.o.winborder = "rounded"
 			vim.diagnostic.config({
 				virtual_text = { current_line = true },
 				float = { border = "single" },
@@ -57,11 +58,67 @@ return {
 
 			require("mason").setup()
 
+			local settingsJsTs = {
+				inlayHints = {
+					includeInlayEnumMemberValueHints = true,
+					includeInlayFunctionLikeReturnTypeHints = true,
+					includeInlayFunctionParameterTypeHints = true,
+					includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';Add commentMore actions
+					includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayVariableTypeHints = false,
+				},
+			}
+
+			vim.lsp.config.ts_ls = {
+				completion = {
+					completeFunctionCalls = true,
+				},
+				init_options = {
+					preferences = {
+						includeCompletionsForModuleExports = true,
+						includeCompletionsForImportStatements = true,
+						importModuleSpecifierPreference = "non-relative",
+						importModuleSpecifierEnding = "minimal",
+					},
+				},
+				settings = {
+					javascript = settingsJsTs,
+					typescript = settingsJsTs,
+				},
+			}
+
+			vim.lsp.config.tailwindcss = {
+				settings = {
+					tailwindCSS = {
+						classAttributes = { "class", "className", "class:list", "classList", "ngClass" },
+						includeLanguages = {
+							templ = "html",
+						},
+						lint = {
+							cssConflict = "warning",
+							invalidApply = "error",
+							invalidConfigPath = "error",
+							invalidScreen = "error",
+							invalidTailwindDirective = "error",
+							invalidVariant = "error",
+							recommendedVariantOrder = "warning",
+						},
+						experimental = {
+							-- Support tailwind-variants
+							classRegex = {
+								{ "tv\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+							},
+						},
+						validate = true,
+					},
+				},
+			}
+
 			vim.lsp.enable({
 				"biome",
 				"cssls",
 				"gopls",
-				"htmx",
 				"jsonls",
 				"kotlin_language_server",
 				"lua_ls",
