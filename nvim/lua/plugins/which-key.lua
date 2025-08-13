@@ -64,7 +64,6 @@ return {
 			{ "<leader>ac", "<cmd>ColorizerToggle<CR>", desc = "Toggle colorizer" },
 			{ "<leader>ad", 'diwxda"<CR>', desc = "Delete HTML attribute" },
 			{ "<leader>ae", "<cmd>EslintFixAll<CR>", desc = "Fix all ESLint errors" },
-			{ "<leader>aK", vim.lsp.buf.hover, desc = "Show hover" },
 			{ "<leader>ar", vim.cmd.TSRemoveUnused, desc = "Remove unused imports" },
 			{ "<leader>at", vim.cmd.TSOrganizeImports, desc = "Organize imports" },
 			{ "<leader>ai", vim.cmd.TSAddImports, desc = "Add imports" },
