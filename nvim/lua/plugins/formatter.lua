@@ -12,7 +12,7 @@ return {
 				formatters_by_ft = {
 					css = { "prettierd" },
 					go = { "gofmt" },
-					json = { "prettierd" },
+					json = { "biome-check" },
 					markdown = { "prettierd" },
 					rust = { "rustfmt" },
 					lua = { "stylua" },
