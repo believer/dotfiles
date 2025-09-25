@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+---
 local filename = function()
 	return f(function(_args, snip)
 		local name = vim.split(snip.snippet.env.TM_FILENAME, ".", true)

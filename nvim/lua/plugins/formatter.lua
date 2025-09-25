@@ -17,7 +17,8 @@ return {
 					rust = { "rustfmt" },
 					lua = { "stylua" },
 					sql = { "pg_format" },
-					-- yaml = { "yamlfmt" },
+					ruby = { "rubyfmt" },
+					yaml = { "yamlfmt" },
 				},
 			}
 

@@ -2,10 +2,7 @@
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
-local harpoon_mark = require("harpoon.mark")
-local harpoon_ui = require("harpoon.ui")
 local telescope_builtin = require("telescope.builtin")
-local ufo = require("ufo")
 
 local function add_word_to_lang(lang)
 	local word = vim.fn.expand("<cword>")
@@ -49,11 +46,6 @@ return {
 				end,
 				desc = "Peek fold",
 			},
-			{ "zM", ufo.closeAllFolds, desc = "Close all folds" },
-			{ "zR", ufo.openAllFolds, desc = "Open all folds" },
-
-			{ "<leader>s", vim.cmd.update, desc = "Save" },
-			{ "<leader>y", '"+y', desc = "Copy to system clipboard", mode = "v" },
 
 			{ "<leader>'", telescope_builtin.git_status, desc = "Changed files" },
 			{ "<leader>;", telescope_builtin.find_files, desc = "Find files" },
@@ -100,19 +92,6 @@ return {
 			{ "<leader>ghts", "<cmd>Gitsigns toggle_signs<CR>", desc = "Toggle signs" },
 			{ "<leader>ghtw", "<cmd>Gitsigns toggle_word_diff<CR>", desc = "Toggle word diff highlights" },
 
-			-- Harpoon
-			{ "<leader>h", group = "Harpoon" },
-			{ "<leader>ha", harpoon_mark.add_file, desc = "Add file to harpoon" },
-			{ "<leader>hc", harpoon_mark.clear_all, desc = "Clear all files from harpoon" },
-			{ "<leader>hl", harpoon_ui.toggle_quick_menu, desc = "Toggle quick menu" },
-			{ "<leader>hn", harpoon_ui.nav_next, desc = "Next file" },
-			{ "<leader>hp", harpoon_ui.nav_prev, desc = "Previous file" },
-			{ "<leader>hr", harpoon_mark.rm_file, desc = "Remove file from harpoon" },
-			{ "<leader>h1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", desc = "Navigate to file 1" },
-			{ "<leader>h2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", desc = "Navigate to file 2" },
-			{ "<leader>h3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", desc = "Navigate to file 3" },
-			{ "<leader>h4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", desc = "Navigate to file 4" },
-
 			{
 				"<leader>ih",
 				function()
@@ -157,6 +136,17 @@ return {
 					add_word_to_lang("en")
 				end,
 				desc = "Add word to English",
+			},
+
+			{ "<leader>z", group = "Zen" },
+			{ "<leader>zt", "<cmd>Twilight<CR>", desc = "Toggle Twilight" },
+			{
+				"<leader>zz",
+				function()
+					vim.o.winborder = "none"
+					require("zen-mode").toggle()
+				end,
+				desc = "Toggle zen mode",
 			},
 		})
 	end,

@@ -97,7 +97,6 @@ return {
 				"cssls",
 				"gopls",
 				"jsonls",
-				"kotlin_language_server",
 				"lua_ls",
 				"prettierd",
 				"stylua",

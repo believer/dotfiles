@@ -1,6 +1,0 @@
-{
-  "Console.log": {
-    "prefix": "clog",
-    "body": ["fmt.Println(${1:data})"]
-  }
-}
