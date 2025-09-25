@@ -42,7 +42,7 @@ o.undofile = true -- Persist undos after buffers are unloaded
 g.mapleader = " "
 g.maplocalleader = " "
 
-map("n", "<leader>y", '"+y') -- Copy to system clipboard
+map("v", "<leader>y", '"+y') -- Copy to system clipboard
 
 -- Simplify moving between panes
 map("n", "<C-J>", "<C-W><C-J>")
