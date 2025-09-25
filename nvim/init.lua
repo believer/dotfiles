@@ -79,6 +79,8 @@ map("n", "<leader>at", ":TSOrganizeImports")
 map("n", "<leader>ai", ":TSAddImports")
 
 -- LSP
+map("n", "gd", vim.lsp.buf.definition) -- Go to definition
+map("n", "gD", vim.lsp.buf.declaration) -- Go to declaration
 map("n", "gV", ":vert winc ]<CR>") -- Open definition in vertical split
 map("n", "<leader>ih", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
