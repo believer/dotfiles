@@ -55,7 +55,8 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
--- Searching
+-- Files / Searching
+map("n", "-", ":Oil<CR>")
 map("n", "<leader>;", ":Pick files<CR>") -- Files
 map("n", "<leader>?", ":Pick grep_live<CR>") -- Search in files
 map("n", "<leader>th", ":Pick help<CR>") -- Help files
