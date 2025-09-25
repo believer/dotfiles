@@ -11,6 +11,7 @@ o.linebreak = true -- Wrap long lines with full words
 o.scrolloff = 10 -- Keep 10 lines above/below cursor
 o.splitright = true -- Split new buffers to the right
 o.iskeyword:remove("-") -- Treat dash as word separator
+o.spelllang = { "en", "sv" } -- Spell check English and Swedish
 
 -- Indentation
 o.tabstop = 2 -- 1 tab = 2 spaces
@@ -93,6 +94,16 @@ end)
 map("n", "<leader>we", function()
 	utils.add_word_to_lang("en")
 end)
+
+-- Remap things I usually mistype
+map("n", "q:", "<Nop>")
+map("n", ":W", ":write<CR>")
+
+-- Remove arrow keys
+map("n", "<Up>", "<Nop>")
+map("n", "<Down>", "<Nop>")
+map("n", "<Left>", "<Nop>")
+map("n", "<Right>", "<Nop>")
 
 -- Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
