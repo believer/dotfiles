@@ -1,3 +1,10 @@
+## [1.168.4](https://github.com/believer/dotfiles/compare/v1.168.3...v1.168.4) (2025-09-25)
+
+
+### Bug Fixes
+
+* re-add oil keymap ([6d69846](https://github.com/believer/dotfiles/commit/6d69846e8b769039b5715649c5d0cf6f1189406a))
+
 ## [1.168.3](https://github.com/believer/dotfiles/compare/v1.168.2...v1.168.3) (2025-08-11)
 
 
