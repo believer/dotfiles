@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local regular_snippets = {
 	s({
 		trig = "clog",
