@@ -26,12 +26,12 @@ vim.cmd([[command BufOnly silent! execute "%bd|e#|bd#"]])
 
 -- Remove '-' from iskeyword so words-separated-by-dashes are treated as separate words
 -- This is filetype dependent, so needs to be run everytime
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*", -- For all types, otherwise use pattern like below
-	callback = function()
-		vim.opt_local.iskeyword:remove("-")
-	end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "*", -- For all types, otherwise use pattern like below
+-- 	callback = function()
+-- 		vim.opt_local.iskeyword:remove("-")
+-- 	end,
+-- })
 
 -- Macros
 local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)

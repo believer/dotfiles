@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 local o = vim.opt
 local g = vim.g
 local map = vim.keymap.set
@@ -8,6 +10,7 @@ o.relativenumber = true -- Relative line numbers
 o.linebreak = true -- Wrap long lines with full words
 o.scrolloff = 10 -- Keep 10 lines above/below cursor
 o.splitright = true -- Split new buffers to the right
+o.iskeyword:remove("-") -- Treat dash as word separator
 
 -- Indentation
 o.tabstop = 2 -- 1 tab = 2 spaces
@@ -17,15 +20,16 @@ o.expandtab = true -- Use spaces instead of tabs
 o.smartindent = true -- Smart auto-indenting
 
 -- Search
-o.ignorecase = true
-o.smartcase = true
-o.hlsearch = false
-o.incsearch = true
+o.ignorecase = true -- Case insensitive search
+o.smartcase = true -- Case sensitive search when using capital characters
+o.hlsearch = false -- Don't highlight search results
+o.incsearch = true -- Show matches as you type
 
--- Visual settings
+-- Visual
 o.termguicolors = true -- Enable highlight groups
 o.signcolumn = "yes" -- Always display the sign column (where errors are displayed)
 o.showcmd = false -- Hide partial commands in status bar
+o.winborder = "rounded" -- Windows, like hover or completion, have 1px solid rounded border
 
 vim.cmd("highlight clear SignColumn") -- Remove highlighting of sign column
 
@@ -51,6 +55,45 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
+-- Searching
+map("n", "<leader>;", ":Pick files<CR>") -- Files
+map("n", "<leader>?", ":Pick grep_live<CR>") -- Search in files
+map("n", "<leader>th", ":Pick help<CR>") -- Help files
+map("n", "<leader>tr", ":Pick resume<CR>") -- Resume latest pick
+
+-- Git
+map("n", "<leader>gp", ":Git push<CR>")
+map("n", "<leader>gs", ":Git<CR>")
+map("n", "<leader>gu", ":!git up<CR>")
+map("n", "<leader>gz", ":Gitsigns toggle_current_line_blame<CR>")
+map("n", "<leader>gcb", ":Pick git_commits path='%'<CR>") -- Commits for current buffer
+map("n", "<leader>gcc", ":Pick git_commits<CR>") -- Commits
+map("n", "<leader>ghr", ":Gitsigns reset_hunk<CR>")
+
+-- Custom
+map("n", "<leader>ad", 'diwxda"<CR>') -- Remove HTML attributes
+map("n", "<leader>ar", ":TSRemoveUnused")
+map("n", "<leader>at", ":TSOrganizeImports")
+map("n", "<leader>ai", ":TSAddImports")
+
+-- LSP
+map("n", "gV", ":vert winc ]<CR>") -- Open definition in vertical split
+map("n", "<leader>ih", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
+
+-- Spelling
+map("n", "<leader>ww", function()
+	vim.wo.spell = not vim.wo.spell
+end)
+map("n", "<leader>ws", function()
+	utils.add_word_to_lang("sv")
+end)
+map("n", "<leader>we", function()
+	utils.add_word_to_lang("en")
+end)
+
+-- Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -109,16 +152,17 @@ require("lazy").setup("plugins", {
 
 local add_autocommands = require("utils").add_autocommands
 
+local augroup = vim.api.nvim_create_augroup("UserConfig", {})
+
 -- Highlight on yank
--- Taken from kickstart.nvim
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = augroup,
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
 local autocommands = {
-	highlight_yank = {
-		group_opts = { clear = true },
-		triggers = { "TextYankPost" },
-		callback = function()
-			vim.highlight.on_yank()
-		end,
-	},
 	ts_remove = {
 		pattern = require("filetypes").js,
 		triggers = { "FileType" },

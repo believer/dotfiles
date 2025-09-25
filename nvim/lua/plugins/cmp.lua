@@ -1,25 +1,12 @@
 return {
 	{
 		"saghen/blink.cmp",
-		dependencies = { "rafamadriz/friendly-snippets" },
 		event = "VeryLazy",
 		version = "v0.*",
 
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
-			sources = {
-				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
-				providers = {
-					lazydev = {
-						name = "LazyDev",
-						module = "lazydev.integrations.blink",
-						-- make lazydev completions top priority
-						score_offset = 100,
-					},
-				},
-			},
-
 			completion = {
 				documentation = {
 					auto_show = true,

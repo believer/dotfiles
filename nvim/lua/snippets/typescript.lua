@@ -9,6 +9,18 @@ end
 
 -- Regular snippets available through completion menu
 local regular_snippets = {
+	s(
+		{ trig = "fn" },
+		fmt(
+			[[
+function {name}() {{
+  {content}
+}}
+  ]],
+			{ name = i(0), content = i(1) }
+		)
+	),
+
 	s({
 		trig = "clog",
 		name = "Console.log",
@@ -17,10 +29,9 @@ local regular_snippets = {
 
 	-- Assertions
 	s("expe", fmt("expect({}).toEqual({})", { i(1), i(2) })),
+	s("snap", fmt("expect({}).toMatchSnapshot({})", { i(0), i(1) })),
 
-	s("snap", fmt("expect({}).toMatchSnapshot()", { i(0) })),
-
-	-- create a `describe` block
+	-- Create a `describe` block
 	s(
 		"desc",
 		fmt(
@@ -59,19 +70,6 @@ local regular_snippets = {
     }})
   ]],
 			{ test_name = i(1, "What does it test?"), content = i(2) }
-		)
-	),
-
-	-- Create a vitest mock
-	s(
-		"vmock",
-		fmt(
-			[[
-      vi.mock('{name}', () => {{
-        {content}
-      }})
-    ]],
-			{ name = i(1, "What does it mock?"), content = i(2) }
 		)
 	),
 }

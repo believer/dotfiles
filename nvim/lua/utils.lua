@@ -38,4 +38,28 @@ function M.mergeTables(t1, t2)
 	return merged
 end
 
+function M.add_word_to_lang(lang)
+	local word = vim.fn.expand("<cword>")
+	if word == "" then
+		print("No word under cursor.")
+		return
+	end
+
+	local original_lang = vim.opt.spelllang:get()
+	local original_spellfile = vim.opt.spellfile
+	local spellfile_path = vim.fn.expand(string.format("~/.dotfiles/nvim/spell/%s.utf-8.add", lang))
+
+	vim.opt.spelllang = { lang }
+	vim.opt.spellfile = spellfile_path
+
+	vim.cmd("silent! spellgood " .. word)
+	vim.cmd("silent! mkspell! " .. spellfile_path)
+
+	-- Restore original settings
+	vim.opt.spelllang = original_lang
+	vim.opt.spellfile = original_spellfile
+
+	print("Added '" .. word .. "' to " .. lang)
+end
+
 return M

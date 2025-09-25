@@ -4,7 +4,6 @@ return {
 		event = "VeryLazy",
 		build = ":MasonUpdate",
 		dependencies = {
-			"mason-org/mason-lspconfig.nvim", -- LSP configuration for Mason
 			"neovim/nvim-lspconfig",
 		},
 		config = function()
@@ -13,21 +12,6 @@ return {
 				capabilities = require("blink.cmp").get_lsp_capabilities(),
 			})
 
-			vim.api.nvim_create_autocmd("LspAttach", {
-				callback = function()
-					-- Map the keys after the language server is attached to the buffer.
-					require("which-key").add({
-						{ "gR", "<cmd>Trouble lsp_references<cr>", desc = "References" },
-						{ "gV", "<cmd>vert winc ]<CR>", desc = "Go to definition (vertical)" },
-						{ "gD", vim.lsp.buf.declaration, desc = "Go to declaration" },
-						{ "gd", vim.lsp.buf.definition, desc = "Go to definition" },
-						{ "gi", vim.lsp.buf.implementation, desc = "Go to implementation" },
-						{ "<leader>rr", require("telescope.builtin").lsp_references, desc = "LSP references" },
-					})
-				end,
-			})
-
-			vim.o.winborder = "rounded"
 			vim.diagnostic.config({
 				virtual_text = { current_line = true },
 				float = { border = "single" },
@@ -92,6 +76,16 @@ return {
 				},
 			}
 
+			vim.lsp.config.lua_ls = {
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { "vim" },
+						},
+					},
+				},
+			}
+
 			vim.lsp.enable({
 				"biome",
 				"cssls",
@@ -106,14 +100,6 @@ return {
 				"yamlls",
 				"yamlfmt",
 			})
-		end,
-	},
-
-	{
-		"folke/lazydev.nvim",
-		ft = "lua",
-		config = function()
-			require("lazydev").setup()
 		end,
 	},
 }

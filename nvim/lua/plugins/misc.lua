@@ -5,6 +5,16 @@ return {
 	{ "tpope/vim-fugitive", event = "VeryLazy" },
 
 	{
+		"nvim-mini/mini.nvim",
+		version = false,
+		config = function()
+			require("mini.pairs").setup()
+			require("mini.pick").setup()
+			require("mini.extra").setup()
+		end,
+	},
+
+	{
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
 		build = "make install_jsregexp",
