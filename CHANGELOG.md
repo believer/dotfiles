@@ -1,3 +1,11 @@
+## [1.168.5](https://github.com/believer/dotfiles/compare/v1.168.4...v1.168.5) (2025-09-25)
+
+
+### Bug Fixes
+
+* gd and gD use lsp ([84e3532](https://github.com/believer/dotfiles/commit/84e353213ebb76db323e8cd16bbb1c5767d36c60))
+* yank to clipboard is visual mode ([9cfc054](https://github.com/believer/dotfiles/commit/9cfc05469e383d280d0ecc83c1da393f22bad8cb))
+
 ## [1.168.4](https://github.com/believer/dotfiles/compare/v1.168.3...v1.168.4) (2025-09-25)
 
 
