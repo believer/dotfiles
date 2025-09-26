@@ -121,7 +121,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 o.rtp:prepend(lazypath)
 
-require("settings")
 require("lazy").setup("plugins", {
 	performance = {
 		cache = {
