@@ -74,9 +74,9 @@ map("n", "<leader>ghr", ":Gitsigns reset_hunk<CR>")
 
 -- Custom
 map("n", "<leader>ad", 'diwxda"<CR>') -- Remove HTML attributes
-map("n", "<leader>ar", ":TSRemoveUnused")
-map("n", "<leader>at", ":TSOrganizeImports")
-map("n", "<leader>ai", ":TSAddImports")
+map("n", "<leader>ar", ":TSRemoveUnused<CR>")
+map("n", "<leader>at", ":TSOrganizeImports<CR>")
+map("n", "<leader>ai", ":TSAddImports<CR>")
 
 -- LSP
 map("n", "gd", vim.lsp.buf.definition) -- Go to definition
