@@ -17,6 +17,7 @@ return {
 	{
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
+		event = "BufRead",
 		build = "make install_jsregexp",
 		config = function()
 			local map = vim.keymap.set
