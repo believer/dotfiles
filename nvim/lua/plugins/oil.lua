@@ -8,11 +8,10 @@ return {
 
 		oil.setup({
 			keymaps = {
-				["<CR>"] = "actions.select",
 				["<C-v>"] = "actions.select_vsplit",
 				["<C-x>"] = "actions.select_split",
-				["<C-h>"] = false,
-				["<C-l>"] = false,
+				["<C-h>"] = false, -- Original select_split
+				["<C-l>"] = false, -- Original refresh
 				["<C-r>"] = "actions.refresh",
 			},
 		})
