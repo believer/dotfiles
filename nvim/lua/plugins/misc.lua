@@ -1,5 +1,5 @@
 return {
-	{ "tpope/vim-surround", event = "VeryLazy" }, -- Actions that work on surrounding context
+	{ "tpope/vim-surround", event = "BufRead" }, -- Actions that work on surrounding context
 	{ "tpope/vim-fugitive", event = "VeryLazy" }, -- Git
 
 	{
@@ -61,7 +61,7 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
-		event = "VeryLazy",
+		event = "BufRead",
 		config = function()
 			require("todo-comments").setup()
 		end,

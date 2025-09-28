@@ -18,7 +18,7 @@ return {
 				},
 			},
 			lualine_y = { "filetype" },
-			lualine_z = { "encoding", "location" },
+			lualine_z = {},
 		},
 	},
 }

@@ -1,7 +1,7 @@
 return {
 	{
 		"saghen/blink.cmp",
-		event = "VeryLazy",
+		event = "BufRead",
 		version = "v0.*",
 
 		---@module 'blink.cmp'
