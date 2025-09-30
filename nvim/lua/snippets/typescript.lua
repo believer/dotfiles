@@ -1,10 +1,12 @@
 ---@diagnostic disable: undefined-global
 
-local filename = function()
-	return f(function(_, snip)
-		local name = vim.split(snip.snippet.env.TM_FILENAME, ".", true)
-		return name[1] or ""
-	end)
+local function pascal_case_filename()
+	local name = vim.fn.expand("%:t:r") -- filename without extension
+	local parts = vim.split(name, "-", { plain = true })
+	for i, part in ipairs(parts) do
+		parts[i] = part:sub(1, 1):upper() .. part:sub(2)
+	end
+	return table.concat(parts)
 end
 
 -- Regular snippets available through completion menu
@@ -18,6 +20,45 @@ function {name}() {{
 }}
   ]],
 			{ name = i(0), content = i(1) }
+		)
+	),
+	s(
+		{ trig = "efn" },
+		fmt(
+			[[
+export function {}() {{
+  {}
+}}
+  ]],
+			{ i(0), i(1) }
+		)
+	),
+
+	s(
+		{
+			trig = "style",
+		},
+		fmt(
+			[[
+  const {} = StyleSheet.create((theme) => ({{
+    {}
+  }}))
+  ]],
+			{ i(0, "styles"), i(1) }
+		)
+	),
+	s({ trig = "istyle" }, fmt("import {{ StyleSheet }} from 'react-native-unistyles'", {})),
+	s({ trig = "st" }, fmt("style={{{{{}}}}}", { i(1) })),
+	s({ trig = "theme" }, fmt("theme.color.{},", { i(0) })),
+	s(
+		{ trig = "unip" },
+		fmt(
+			[[
+uniProps={{(theme) => ({{
+  {}
+}})}}
+]],
+			{ i(0) }
 		)
 	),
 
@@ -127,7 +168,7 @@ type {filename}Props = {{
  
 }}
 
-export function {filename} ({{}}: {filename}Props) {{
+export function {filename}({{}}: {filename}Props) {{
   return (
     <View>
       <Text>{filename}</Text>
@@ -136,7 +177,7 @@ export function {filename} ({{}}: {filename}Props) {{
 }}
   ]],
 			{
-				filename = filename(),
+				filename = f(pascal_case_filename),
 			}
 		)
 	),
