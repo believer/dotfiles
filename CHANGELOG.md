@@ -1,3 +1,10 @@
+## [1.168.6](https://github.com/believer/dotfiles/compare/v1.168.5...v1.168.6) (2025-09-30)
+
+
+### Bug Fixes
+
+* change back how we bind tmux prefix ([e065e02](https://github.com/believer/dotfiles/commit/e065e02d5b3bfc822a3879de5f03f2d78ff78701))
+
 ## [1.168.5](https://github.com/believer/dotfiles/compare/v1.168.4...v1.168.5) (2025-09-25)
 
 
