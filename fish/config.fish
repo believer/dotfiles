@@ -5,6 +5,8 @@ set -Ux GOPATH "$HOME/code/go"
 set --export BUN_INSTALL "$HOME/.bun"
 set --export ANDROID_HOME "$HOME/Library/Android/sdk"
 set --export RIPGREP_CONFIG_PATH "$HOME/.dotfiles/.ripgreprc"
+set --export TMUXINATOR_CONFIG "$HOME/.dotfiles/tmuxinator"
+set --export EDITOR "nvim"
 
 fish_add_path "$JAVA_HOME/bin"
 fish_add_path "$ANDROID_HOME/tools"
