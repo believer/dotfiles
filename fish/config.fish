@@ -4,6 +4,7 @@ fish_config theme choose "tokyonight-night"
 set -Ux GOPATH "$HOME/code/go"
 set --export BUN_INSTALL "$HOME/.bun"
 set --export ANDROID_HOME "$HOME/Library/Android/sdk"
+set --export RIPGREP_CONFIG_PATH "$HOME/.dotfiles/.ripgreprc"
 
 fish_add_path "$JAVA_HOME/bin"
 fish_add_path "$ANDROID_HOME/tools"
