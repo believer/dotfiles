@@ -1,3 +1,10 @@
+# [1.169.0](https://github.com/believer/dotfiles/compare/v1.168.6...v1.169.0) (2025-10-21)
+
+
+### Features
+
+* add sql highlighting and formatting in go ([039e20d](https://github.com/believer/dotfiles/commit/039e20d761c71e4d250441a86d8d1e509fce8868))
+
 ## [1.168.6](https://github.com/believer/dotfiles/compare/v1.168.5...v1.168.6) (2025-09-30)
 
 
