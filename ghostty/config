@@ -7,9 +7,7 @@ window-padding-y = 0
 window-padding-color = extend
 
 # Setup custom fonts
-font-family = "Mono Lisa Nerd Font"
-# Needs to be .5 to fill entire screen
-font-size = 12.5
+font-family = "MonoLisa Script Regular"
 
 # Dimming and divider colors
 unfocused-split-opacity = 0.85
