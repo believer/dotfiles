@@ -10,7 +10,7 @@ return {
 					lsp_format = "fallback",
 				},
 				formatters_by_ft = {
-					css = { "prettierd" },
+					css = { "biome-check" },
 					go = { "gofmt" },
 					json = { "biome-check" },
 					lua = { "stylua" },
