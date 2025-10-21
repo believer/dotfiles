@@ -19,6 +19,9 @@ return {
 					rust = { "rustfmt" },
 					sql = { "pg_format" },
 					yaml = { "yamlfmt" },
+					-- Enable formatting of embedded languages
+					-- For example, sql in Go from queries/go/injections.scm
+					["*"] = { "injected" },
 				},
 			}
 
