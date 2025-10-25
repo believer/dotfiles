@@ -1,3 +1,11 @@
+# [1.170.0](https://github.com/believer/dotfiles/compare/v1.169.0...v1.170.0) (2025-10-25)
+
+
+### Features
+
+* **tmux:** add script to quickly open github of open project ([7041763](https://github.com/believer/dotfiles/commit/70417637c27bd75f809e157a54ac8352741e485e))
+* add more sql formatting ([40162be](https://github.com/believer/dotfiles/commit/40162bebf5ba5d699cc78b98a16a8059f39b6351))
+
 # [1.169.0](https://github.com/believer/dotfiles/compare/v1.168.6...v1.169.0) (2025-10-21)
 
 
