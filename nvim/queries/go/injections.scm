@@ -16,3 +16,21 @@
   (raw_string_literal_content) @injection.content
   (#lua-match? @injection.content "^%s*[iI][nN][sS][eE][rR][tT]")
   (#set! injection.language "sql"))
+
+; Update
+(raw_string_literal
+  (raw_string_literal_content) @injection.content
+  (#lua-match? @injection.content "^%s*[uU][pP][dD][aA][tT][eE]")
+  (#set! injection.language "sql"))
+
+; Update
+(raw_string_literal
+  (raw_string_literal_content) @injection.content
+  (#lua-match? @injection.content "^%s*[dD][eE][lL][eE][tT][eE]")
+  (#set! injection.language "sql"))
+
+; WITH
+(raw_string_literal
+  (raw_string_literal_content) @injection.content
+  (#lua-match? @injection.content "^%s*WITH")
+  (#set! injection.language "sql"))
