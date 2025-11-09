@@ -1,3 +1,10 @@
+## [1.170.1](https://github.com/believer/dotfiles/compare/v1.170.0...v1.170.1) (2025-11-09)
+
+
+### Bug Fixes
+
+* templ formatting with injected languages ([a941808](https://github.com/believer/dotfiles/commit/a941808a2a19f97860ecbb87357b194ccdcf36a0))
+
 # [1.170.0](https://github.com/believer/dotfiles/compare/v1.169.0...v1.170.0) (2025-10-25)
 
 
