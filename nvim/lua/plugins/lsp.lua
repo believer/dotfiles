@@ -86,6 +86,20 @@ return {
 				},
 			}
 
+			vim.lsp.config.yamlls = {
+				settings = {
+					yaml = {
+						format = {
+							enable = true,
+						},
+						schemas = {
+							["https://raw.githubusercontent.com/nexlabstudio/maestro-workbench/refs/heads/dev/schema/schema.v0.json"] = "/apps/blackbird/.maestro/**/*",
+							["https://www.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+						},
+					},
+				},
+			}
+
 			vim.lsp.enable({
 				"biome",
 				"cssls",
