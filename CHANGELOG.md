@@ -1,3 +1,10 @@
+# [1.171.0](https://github.com/believer/dotfiles/compare/v1.170.1...v1.171.0) (2025-11-15)
+
+
+### Features
+
+* add yamlls schemas ([0837c44](https://github.com/believer/dotfiles/commit/0837c444966766be6300cca0357bf47f486e5b7f))
+
 ## [1.170.1](https://github.com/believer/dotfiles/compare/v1.170.0...v1.170.1) (2025-11-09)
 
 
