@@ -9,8 +9,20 @@ local function pascal_case_filename()
 	return table.concat(parts)
 end
 
+local function capitalize(args)
+	local text = args[1][1] or ""
+	return text:gsub("^%l", string.upper)
+end
+
 -- Regular snippets available through completion menu
 local regular_snippets = {
+	s(
+		"uses",
+		fmt(
+			"const [{name},set{capitalized}] = React.useState({value})",
+			{ name = i(1), capitalized = f(capitalize, { 1 }), value = i(2) }
+		)
+	),
 	s(
 		{ trig = "fn" },
 		fmt(
@@ -19,7 +31,7 @@ function {name}() {{
   {content}
 }}
   ]],
-			{ name = i(0), content = i(1) }
+			{ name = i(1), content = i(2) }
 		)
 	),
 	s(
@@ -71,6 +83,14 @@ uniProps={{(theme) => ({{
 	-- Assertions
 	s("expe", fmt("expect({}).toEqual({})", { i(1), i(2) })),
 	s("snap", fmt("expect({}).toMatchSnapshot({})", { i(0), i(1) })),
+	s("expdoc", fmt("expect({}).toBeInTheDocument()", { i(0) })),
+	s("expndoc", fmt("expect({}).not.toBeInTheDocument()", { i(0) })),
+	s("exps", fmt("expect({}).toBeOnTheScreen()", { i(0) })),
+	s("expns", fmt("expect({}).not.toBeOnTheScreen()", { i(0) })),
+	s("thbcw", fmt("expect({}).toHaveBeenCalledWith({})", { i(1), i(2) })),
+	s("thbc", fmt("expect({}).toHaveBeenCalled()", { i(0) })),
+	s("nthbc", fmt("expect({}).not.toHaveBeenCalled()", { i(0) })),
+	s("thbct", fmt("expect({}).toHaveBeenCalledTimes({})", { i(1), i(2) })),
 
 	-- Create a `describe` block
 	s(
@@ -119,12 +139,6 @@ uniProps={{(theme) => ({{
 local auto_snippets = {
 	-- Assertions
 	s("asmock", fmt("asMock({}).mockResolvedValue({})", { i(1), i(2) })),
-	s("expdoc", fmt("expect({}).toBeInTheDocument()", { i(0) })),
-	s("expndoc", fmt("expect({}).not.toBeInTheDocument()", { i(0) })),
-	s("exps", fmt("expect({}).toBeOnTheScreen()", { i(0) })),
-	s("expns", fmt("expect({}).not.toBeOnTheScreen()", { i(0) })),
-	s("thbcw", fmt("expect({}).toHaveBeenCalledWith({})", { i(1), i(2) })),
-	s("thbct", fmt("expect({}).toHaveBeenCalledTimes({})", { i(1), i(2) })),
 
 	-- Create a `describe` block and a `test` block
 	s(
