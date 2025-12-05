@@ -13,7 +13,7 @@
   scb = "!f() { git switch -c fix/\"$1\"; }; f"
   scf = "!f() { git switch -c feature/\"$1\"; }; f"
   scc = "!f() { git switch -c chore/\"$1\"; }; f"
-  bclean = "!f() { git fetch -p; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
+  bclean = "!f() { git fetch -p; git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D; }; f"
   tdiff = "!f() { hub compare v$1..v$2; }; f"
   fs = "!f() { git branch | grep $1 | xargs git switch; }; f"
 	fame = !python3 -m gitfame
