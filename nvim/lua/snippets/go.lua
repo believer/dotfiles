@@ -3,9 +3,9 @@
 local regular_snippets = {
 	s({
 		trig = "clog",
-		name = "log.Println",
-		dscr = "Log",
-	}, fmt("log.Println({})", { i(0, "data") })),
+		name = "fmt.Println",
+		dscr = "fmt",
+	}, fmt("fmt.Println({})", { i(0, "data") })),
 }
 
 local auto_snippets = {
