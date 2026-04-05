@@ -19,7 +19,7 @@ github-copilot
 configstore
 swiftpm
 qBittorrent
-nvim/lazy
+nvim/site
 nvim/mason
 nvim/telescope_history
 nvim/harpoon.json

@@ -1,5 +1,171 @@
 local utils = require("utils")
 
+local function gh(n)
+	return "https://github.com/" .. n
+end
+
+-- Install plugins
+vim.pack.add({
+	gh("folke/tokyonight.nvim"), -- Color scheme
+	gh("nvim-lua/plenary.nvim"), -- Dependency for todo-comments
+	gh("folke/todo-comments.nvim"), -- Comment highlighting
+	gh("nvim-lualine/lualine.nvim"), -- Status line
+	gh("tpope/vim-surround"), -- Actions on surrounding context
+	gh("tpope/vim-fugitive"), -- Git
+	gh("stevearc/oil.nvim"), -- File explorer
+	gh("nvim-tree/nvim-web-devicons"), -- Icons in file explorer
+	gh("stevearc/conform.nvim"), -- Formatter
+	gh("lewis6991/gitsigns.nvim"), -- Git signs in gutter
+	gh("nvim-mini/mini.nvim"), -- Mini pickers
+	{ src = gh("saghen/blink.cmp"), version = "v1" }, -- Completions
+})
+
+vim.api.nvim_create_autocmd("PackChanged", {
+	callback = function(ev)
+		if ev.data.spec.name == "blink.cmp" then
+			vim.system({ "cargo", "build", "--release" }, { cwd = ev.data.path })
+		end
+	end,
+})
+
+-- Setup plugins
+--------------------------------------------------
+
+require("blink.cmp").setup({
+	completion = {
+		documentation = {
+			auto_show = true,
+		},
+		ghost_text = {
+			enabled = false,
+		},
+		menu = {
+			auto_show = function(ctx)
+				return ctx.mode ~= "cmdline"
+			end,
+			draw = {
+				treesitter = { "lsp" },
+				columns = {
+					{ "kind_icon" },
+					{ "label", "label_description", gap = 1 },
+					{ "kind" },
+				},
+			},
+		},
+
+		accept = {
+			auto_brackets = {
+				semantic_token_resolution = {
+					blocked_filetypes = { "typescriptreact" },
+				},
+			},
+		},
+	},
+
+	keymap = {
+		preset = "default",
+		["<Tab>"] = { "snippet_forward", "select_and_accept", "fallback" },
+		["S-<Tab>"] = { "snippet_backward", "select_prev", "fallback" },
+		["<CR>"] = { "select_and_accept", "fallback" },
+	},
+
+	appearance = {
+		use_nvim_cmp_as_default = true,
+		nerd_font_variant = "mono",
+	},
+})
+
+-- Lualine
+require("lualine").setup({
+	options = {
+		theme = "tokyonight",
+		component_separators = "|",
+		section_separators = { left = "", right = "" },
+	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "filename" },
+		lualine_c = { "branch", "diagnostics" },
+		lualine_x = {},
+		lualine_y = { "filetype" },
+		lualine_z = {},
+	},
+})
+
+-- TODO Comments
+require("todo-comments").setup()
+
+-- Mini
+require("mini.extra").setup()
+require("mini.pairs").setup()
+require("mini.pick").setup()
+
+local starter = require("mini.starter")
+
+starter.setup({
+	evaluate_single = true,
+	footer = "", -- Show nothing after, nil displays help
+	items = {
+		starter.sections.pick(),
+		starter.sections.recent_files(10, true, false),
+	},
+	content_hooks = {
+		starter.gen_hook.aligning("center", "center"),
+		starter.gen_hook.indexing("all"),
+	},
+})
+
+-- Oil
+local oil = require("oil")
+
+oil.setup({
+	keymaps = {
+		["<C-v>"] = "actions.select_vsplit",
+		["<C-x>"] = "actions.select_split",
+		["<C-h>"] = false, -- Original select_split
+		["<C-l>"] = false, -- Original refresh
+		["<C-r>"] = "actions.refresh",
+	},
+})
+
+oil.set_is_hidden_file(function(name)
+	return name:match("^%.") ~= nil or vim.endswith(name, "_templ.go")
+end)
+
+-- Conform
+local formatter_settings = {
+	format_on_save = {
+		timeout_ms = 500,
+		lsp_format = "fallback",
+	},
+	formatters_by_ft = {
+		css = { "biome-check" },
+		-- Enable formatting of embedded languages using injected
+		-- For example, sql from queries/go/injections.scm
+		go = { "gofmt", "injected" },
+		json = { "biome-check" },
+		lua = { "stylua" },
+		markdown = { "prettierd" },
+		ruby = { "rubyfmt" },
+		rust = { "rustfmt" },
+		sql = { "pg_format" },
+		yaml = { "yamlfmt" },
+	},
+}
+
+local js_types = require("filetypes").js
+
+for _, type in ipairs(js_types) do
+	formatter_settings.formatters_by_ft[type] = { "biome-check" }
+end
+
+require("conform").setup(formatter_settings)
+
+-- Basic settings
+--------------------------------------------------
+
+vim.cmd.colorscheme("tokyonight-night")
+
 local o = vim.opt
 local g = vim.g
 local map = vim.keymap.set
@@ -111,60 +277,60 @@ map("n", "<Left>", "<Nop>")
 map("n", "<Right>", "<Nop>")
 
 -- Lazy
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.ngit",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-o.rtp:prepend(lazypath)
-
-require("lazy").setup("plugins", {
-	performance = {
-		cache = {
-			enabled = true,
-		},
-		rtp = {
-			disabled_plugins = {
-				"2html_plugin",
-				"bugreport",
-				"compiler",
-				"ftplugin",
-				"getscript",
-				"getscriptPlugin",
-				"gzip",
-				"logipat",
-				"matchit",
-				"netrw",
-				"netrwFileHandlers",
-				"netrwPlugin",
-				"netrwSettings",
-				"optwin",
-				"rplugin",
-				"rrhelper",
-				"spellfile_plugin",
-				"synmenu",
-				"syntax",
-				"tar",
-				"tarPlugin",
-				"tohtml",
-				"tutor",
-				"vimball",
-				"vimballPlugin",
-				"zip",
-				"zipPlugin",
-			},
-		},
-	},
-	change_detection = {
-		notify = false,
-	},
-})
+-- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- if not vim.loop.fs_stat(lazypath) then
+-- 	vim.fn.system({
+-- 		"git",
+-- 		"clone",
+-- 		"--filter=blob:none",
+-- 		"https://github.com/folke/lazy.ngit",
+-- 		"--branch=stable", -- latest stable release
+-- 		lazypath,
+-- 	})
+-- end
+-- o.rtp:prepend(lazypath)
+--
+-- require("lazy").setup("plugins", {
+-- 	performance = {
+-- 		cache = {
+-- 			enabled = true,
+-- 		},
+-- 		rtp = {
+-- 			disabled_plugins = {
+-- 				"2html_plugin",
+-- 				"bugreport",
+-- 				"compiler",
+-- 				"ftplugin",
+-- 				"getscript",
+-- 				"getscriptPlugin",
+-- 				"gzip",
+-- 				"logipat",
+-- 				"matchit",
+-- 				"netrw",
+-- 				"netrwFileHandlers",
+-- 				"netrwPlugin",
+-- 				"netrwSettings",
+-- 				"optwin",
+-- 				"rplugin",
+-- 				"rrhelper",
+-- 				"spellfile_plugin",
+-- 				"synmenu",
+-- 				"syntax",
+-- 				"tar",
+-- 				"tarPlugin",
+-- 				"tohtml",
+-- 				"tutor",
+-- 				"vimball",
+-- 				"vimballPlugin",
+-- 				"zip",
+-- 				"zipPlugin",
+-- 			},
+-- 		},
+-- 	},
+-- 	change_detection = {
+-- 		notify = false,
+-- 	},
+-- })
 
 local add_autocommands = require("utils").add_autocommands
 
