@@ -19,6 +19,9 @@ o.shiftwidth = 2 -- Indentation width
 o.autoindent = true -- Copy indent from current line
 o.expandtab = true -- Use spaces instead of tabs
 o.smartindent = true -- Smart auto-indenting
+o.foldmethod = "expr"
+o.foldexpr = "nvim_treesitter#foldexpr()"
+o.foldlevel = 99
 
 -- Search
 o.ignorecase = true -- Case insensitive search
