@@ -22,6 +22,11 @@
 [core]
     pager = delta --plus-style="#012800" --minus-style="#340001"
 
+[diff]
+  tool = nvim_difftool
+[difftool "nvim_difftool"]
+  cmd = nvim -c \"packadd nvim.difftool\" -c \"DiffTool $LOCAL $REMOTE\"
+
 [interactive]
     diffFilter = delta --color-only
 
