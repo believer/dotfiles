@@ -277,21 +277,6 @@ require("mini.extra").setup()
 require("mini.pairs").setup()
 require("mini.pick").setup()
 
-local starter = require("mini.starter")
-
-starter.setup({
-	evaluate_single = true,
-	footer = "", -- Show nothing after, nil displays help
-	items = {
-		starter.sections.pick(),
-		starter.sections.recent_files(10, true, false),
-	},
-	content_hooks = {
-		starter.gen_hook.aligning("center", "center"),
-		starter.gen_hook.indexing("all"),
-	},
-})
-
 -- Oil
 local oil = require("oil")
 
