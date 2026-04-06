@@ -79,7 +79,6 @@ local ensureInstalled = {
 	"javascript",
 	"json",
 	"lua",
-	"markdown",
 	"rust",
 	"scss",
 	"templ",
