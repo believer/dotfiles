@@ -8,7 +8,6 @@ local gh = utils.gh
 -- Install plugins
 vim.pack.add({
 	gh("folke/tokyonight.nvim"), -- Color scheme
-	gh("folke/todo-comments.nvim"), -- Comment highlighting
 	gh("tpope/vim-surround"), -- Actions on surrounding context
 	gh("tpope/vim-fugitive"), -- Git
 	gh("stevearc/oil.nvim"), -- File explorer
@@ -269,9 +268,6 @@ require("blink.cmp").setup({
 	},
 })
 
--- TODO Comments
-require("todo-comments").setup()
-
 -- Mini
 require("mini.extra").setup()
 require("mini.pairs").setup()
@@ -332,8 +328,29 @@ require("conform").setup(formatter_settings)
 -- Color scheme
 vim.cmd.colorscheme("tokyonight-night")
 
--- Custom status bar (must run after color scheme)
+-- Custom plugins (must run after color scheme to get correct colors)
 require("statusbar").setup()
+
+-- Super simple todo-comments using Treesitter
+local KEYWORDS = {
+	TODO = { fg = "#7dcfff", bg = "#0d2533" },
+	FIXME = { fg = "#f7768e", bg = "#310f1c" },
+	HACK = { fg = "#ff9e64", bg = "#331e0d" },
+	NOTE = { fg = "#9ece6a", bg = "#1a2e0f" },
+	WARN = { fg = "#e0af68", bg = "#2e2309" },
+	PERF = { fg = "#bb9af7", bg = "#1e1433" },
+}
+
+local function apply_todo_highlights()
+	for k, v in pairs(KEYWORDS) do
+		vim.api.nvim_set_hl(0, k .. "Tag", { fg = v.fg, bg = v.bg, bold = true })
+		vim.fn.matchadd(k .. "Tag", k .. ":")
+	end
+end
+
+vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter" }, {
+	callback = apply_todo_highlights,
+})
 
 -- Basic settings
 --------------------------------------------------
