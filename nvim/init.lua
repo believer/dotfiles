@@ -67,25 +67,11 @@ require("nvim-treesitter").setup({
 		additional_vim_regex_highlighting = false,
 		enable = true,
 	},
-
 	-- Enable windwp/nvim-ts-autotag for close/update tags
 	autotag = { enable = true },
-
-	-- Ensure that certain syntaxes are installed
-	ensure_installed = {
-		"css",
-		"go",
-		"html",
-		"javascript",
-		"json",
-		"lua",
-		"markdown",
-		"rust",
-		"scss",
-		"typescript",
-	},
 })
 
+-- Install parsers
 local ensureInstalled = {
 	"css",
 	"go",
@@ -96,10 +82,11 @@ local ensureInstalled = {
 	"markdown",
 	"rust",
 	"scss",
-	"typescript",
 	"templ",
+	"typescript",
 }
 
+-- Only install parsers that aren't already installed
 local tsInstalled = require("nvim-treesitter.config").get_installed()
 local parsers = vim.iter(ensureInstalled)
 	:filter(function(parser)
@@ -109,6 +96,7 @@ local parsers = vim.iter(ensureInstalled)
 
 require("nvim-treesitter").install(parsers)
 
+-- Start Treesitter
 vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		-- Enable treesitter highlighting and disable regex syntax
