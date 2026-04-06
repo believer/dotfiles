@@ -62,10 +62,6 @@
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"
     },
-    "tree-sitter-templ": {
-      "rev": "1c6db04effbcd7773c826bded9783cbc3061bd55",
-      "src": "https://github.com/vrischmann/tree-sitter-templ"
-    },
     "vim-fugitive": {
       "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
       "src": "https://github.com/tpope/vim-fugitive"
