@@ -19,7 +19,6 @@ vim.pack.add({
 	gh("L3MON4D3/LuaSnip"), -- Snippets
 	gh("neovim/nvim-lspconfig"), -- LSP configs
 	gh("mason-org/mason.nvim"), -- LSP installer
-	gh("windwp/nvim-ts-autotag"), -- Automatically close/update HTML tags
 	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" }, -- Treesitter
 	{ src = gh("saghen/blink.cmp"), version = "v1" }, -- Completions
 })
