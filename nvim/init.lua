@@ -3,10 +3,7 @@ local utils = require("utils")
 local o = vim.opt
 local g = vim.g
 local map = vim.keymap.set
-
-local function gh(n)
-	return "https://github.com/" .. n
-end
+local gh = utils.gh
 
 -- Install plugins
 vim.pack.add({
@@ -32,10 +29,10 @@ vim.pack.add({
 -- Postinstall hooks
 vim.api.nvim_create_autocmd("PackChanged", {
 	callback = function(ev)
-		local name, kind = ev.data.spec.name, ev.data.kind
+		local name, kind, cwd = ev.data.spec.name, ev.data.kind, ev.data.path
 
 		if name == "luasnip" then
-			vim.system({ "make", "install_jsregexp" }, { cwd = ev.data.path })
+			vim.system({ "make", "install_jsregexp" }, { cwd = cwd })
 		end
 
 		if name == "mason" then
@@ -43,7 +40,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
 		end
 
 		if name == "nvim-treesitter" then
-			vim.system({ "make" }, { cwd = ev.data.path })
+			vim.system({ "make" }, { cwd = cwd })
 		end
 
 		if name == "nvim-treesitter" and kind == "update" then
@@ -54,7 +51,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
 		end
 
 		if name == "blink.cmp" then
-			vim.system({ "cargo", "build", "--release" }, { cwd = ev.data.path })
+			vim.system({ "cargo", "build", "--release" }, { cwd = cwd })
 		end
 	end,
 })
@@ -122,14 +119,9 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 --- LSP
--- Add capabilities to all filetypes
-vim.lsp.config("*", {
-	capabilities = require("blink.cmp").get_lsp_capabilities(),
-})
-
+--- Display diagnostic messages inline
 vim.diagnostic.config({
 	virtual_text = { current_line = true },
-	float = { border = "single" },
 })
 
 require("mason").setup()
@@ -139,7 +131,7 @@ local settingsJsTs = {
 		includeInlayEnumMemberValueHints = true,
 		includeInlayFunctionLikeReturnTypeHints = true,
 		includeInlayFunctionParameterTypeHints = true,
-		includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';Add commentMore actions
+		includeInlayParameterNameHints = "all",
 		includeInlayParameterNameHintsWhenArgumentMatchesName = true,
 		includeInlayPropertyDeclarationTypeHints = true,
 		includeInlayVariableTypeHints = false,
@@ -226,8 +218,8 @@ vim.lsp.enable({
 	"tailwindcss",
 	"templ",
 	"ts_ls",
-	"yamlls",
 	"yamlfmt",
+	"yamlls",
 })
 
 -- Luasnip
@@ -273,7 +265,6 @@ require("blink.cmp").setup({
 				},
 			},
 		},
-
 		accept = {
 			auto_brackets = {
 				semantic_token_resolution = {
@@ -282,14 +273,12 @@ require("blink.cmp").setup({
 			},
 		},
 	},
-
 	keymap = {
 		preset = "default",
 		["<Tab>"] = { "snippet_forward", "select_and_accept", "fallback" },
 		["S-<Tab>"] = { "snippet_backward", "select_prev", "fallback" },
 		["<CR>"] = { "select_and_accept", "fallback" },
 	},
-
 	appearance = {
 		use_nvim_cmp_as_default = true,
 		nerd_font_variant = "mono",
@@ -349,6 +338,7 @@ oil.setup({
 	},
 })
 
+-- Hide certain files in file explorer
 oil.set_is_hidden_file(function(name)
 	return name:match("^%.") ~= nil or vim.endswith(name, "_templ.go")
 end)
@@ -374,7 +364,12 @@ local formatter_settings = {
 	},
 }
 
-local js_types = require("filetypes").js
+local js_types = {
+	"javascript",
+	"typescript",
+	"javascriptreact",
+	"typescriptreact",
+}
 
 for _, type in ipairs(js_types) do
 	formatter_settings.formatters_by_ft[type] = { "biome-check" }
@@ -386,6 +381,9 @@ require("conform").setup(formatter_settings)
 --------------------------------------------------
 
 vim.cmd.colorscheme("tokyonight-night")
+
+-- Enable Neovim 0.12 features
+vim.cmd.packadd("nvim.undotree") -- Undo tree
 
 -- Basics
 o.number = true -- Line numbers
@@ -506,43 +504,29 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- Add code action commands
 local autocommands = {
-	ts_remove = {
-		pattern = require("filetypes").js,
+	ts_commands = {
+		pattern = js_types,
 		triggers = { "FileType" },
 		callback = function()
-			-- Remove unused variables
-			vim.api.nvim_create_user_command("TSRemoveUnused", function()
-				vim.lsp.buf.code_action({
-					apply = true,
-					context = {
-						only = { "source.removeUnused.ts" },
-						diagnostics = {},
-					},
-				})
-			end, {})
+			local commands = {
+				{ name = "TSRemoveUnused", source = "source.removeUnused.ts" },
+				{ name = "TSAddImports", source = "source.addMissingImports.ts" },
+				{ name = "TSOrganizeImports", source = "source.organizeImports.ts" },
+			}
 
-			-- Add missing imports
-			vim.api.nvim_create_user_command("TSAddImports", function()
-				vim.lsp.buf.code_action({
-					apply = true,
-					context = {
-						only = { "source.addMissingImports.ts" },
-						diagnostics = {},
-					},
-				})
-			end, {})
-
-			-- Automatically organize imports
-			vim.api.nvim_create_user_command("TSOrganizeImports", function()
-				vim.lsp.buf.code_action({
-					apply = true,
-					context = {
-						only = { "source.organizeImports.ts" },
-						diagnostics = {},
-					},
-				})
-			end, {})
+			for _, c in ipairs(commands) do
+				vim.api.nvim_create_user_command(c.name, function()
+					vim.lsp.buf.code_action({
+						apply = true,
+						context = {
+							only = { c.source },
+							diagnostics = {},
+						},
+					})
+				end, {})
+			end
 		end,
 	},
 }

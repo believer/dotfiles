@@ -1,17 +1,6 @@
 local api = vim.api
 local M = {}
 
-function M.map(lhs, rhs, mode, opts)
-	local options = { noremap = true, silent = true }
-	mode = mode or "n"
-
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-
-	vim.keymap.set(mode, lhs, rhs, options)
-end
-
 function M.add_autocommands(definitions)
 	for group_name, definition in pairs(definitions) do
 		local triggers = definition.triggers
@@ -25,17 +14,6 @@ function M.add_autocommands(definitions)
 			callback = callback,
 		})
 	end
-end
-
-function M.mergeTables(t1, t2)
-	local merged = {}
-	for k, v in pairs(t1) do
-		merged[k] = v
-	end
-	for k, v in pairs(t2) do
-		merged[k] = v
-	end
-	return merged
 end
 
 function M.add_word_to_lang(lang)
@@ -60,6 +38,10 @@ function M.add_word_to_lang(lang)
 	vim.opt.spellfile = original_spellfile
 
 	print("Added '" .. word .. "' to " .. lang)
+end
+
+function M.gh(n)
+	return "https://github.com/" .. n
 end
 
 return M
