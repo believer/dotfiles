@@ -8,7 +8,6 @@ local gh = utils.gh
 -- Install plugins
 vim.pack.add({
 	gh("folke/tokyonight.nvim"), -- Color scheme
-	gh("nvim-lua/plenary.nvim"), -- Dependency for todo-comments
 	gh("folke/todo-comments.nvim"), -- Comment highlighting
 	gh("tpope/vim-surround"), -- Actions on surrounding context
 	gh("tpope/vim-fugitive"), -- Git
