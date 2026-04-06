@@ -1,5 +1,9 @@
 local utils = require("utils")
 
+local o = vim.opt
+local g = vim.g
+local map = vim.keymap.set
+
 local function gh(n)
 	return "https://github.com/" .. n
 end
@@ -17,12 +21,39 @@ vim.pack.add({
 	gh("stevearc/conform.nvim"), -- Formatter
 	gh("lewis6991/gitsigns.nvim"), -- Git signs in gutter
 	gh("nvim-mini/mini.nvim"), -- Mini pickers
+	gh("L3MON4D3/LuaSnip"), -- Snippets
+	gh("neovim/nvim-lspconfig"), -- LSP configs
+	gh("mason-org/mason.nvim"), -- LSP installer
+	gh("windwp/nvim-ts-autotag"), -- Automatically close/update HTML tags
+	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" }, -- Treesitter
 	{ src = gh("saghen/blink.cmp"), version = "v1" }, -- Completions
 })
 
+-- Postinstall hooks
 vim.api.nvim_create_autocmd("PackChanged", {
 	callback = function(ev)
-		if ev.data.spec.name == "blink.cmp" then
+		local name, kind = ev.data.spec.name, ev.data.kind
+
+		if name == "luasnip" then
+			vim.system({ "make", "install_jsregexp" }, { cwd = ev.data.path })
+		end
+
+		if name == "mason" then
+			vim.cmd("MasonUpdate")
+		end
+
+		if name == "nvim-treesitter" then
+			vim.system({ "make" }, { cwd = ev.data.path })
+		end
+
+		if name == "nvim-treesitter" and kind == "update" then
+			if not ev.data.active then
+				vim.cmd.packadd("nvim-treesitter")
+			end
+			vim.cmd("TSUpdate")
+		end
+
+		if name == "blink.cmp" then
 			vim.system({ "cargo", "build", "--release" }, { cwd = ev.data.path })
 		end
 	end,
@@ -31,6 +62,196 @@ vim.api.nvim_create_autocmd("PackChanged", {
 -- Setup plugins
 --------------------------------------------------
 
+-- Treesitter
+require("nvim-treesitter").setup({
+	autopairs = { enable = true },
+	indent = { enable = true },
+	highlight = {
+		additional_vim_regex_highlighting = false,
+		enable = true,
+	},
+
+	-- Enable windwp/nvim-ts-autotag for close/update tags
+	autotag = { enable = true },
+
+	-- Ensure that certain syntaxes are installed
+	ensure_installed = {
+		"css",
+		"go",
+		"html",
+		"javascript",
+		"json",
+		"lua",
+		"markdown",
+		"rust",
+		"scss",
+		"typescript",
+	},
+})
+
+local ensureInstalled = {
+	"css",
+	"go",
+	"html",
+	"javascript",
+	"json",
+	"lua",
+	"markdown",
+	"rust",
+	"scss",
+	"typescript",
+	"templ",
+}
+
+local tsInstalled = require("nvim-treesitter.config").get_installed()
+local parsers = vim.iter(ensureInstalled)
+	:filter(function(parser)
+		return not vim.tbl_contains(tsInstalled, parser)
+	end)
+	:totable()
+
+require("nvim-treesitter").install(parsers)
+
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function()
+		-- Enable treesitter highlighting and disable regex syntax
+		pcall(vim.treesitter.start)
+		-- Enable treesitter-based indentation
+		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+	end,
+})
+
+--- LSP
+-- Add capabilities to all filetypes
+vim.lsp.config("*", {
+	capabilities = require("blink.cmp").get_lsp_capabilities(),
+})
+
+vim.diagnostic.config({
+	virtual_text = { current_line = true },
+	float = { border = "single" },
+})
+
+require("mason").setup()
+
+local settingsJsTs = {
+	inlayHints = {
+		includeInlayEnumMemberValueHints = true,
+		includeInlayFunctionLikeReturnTypeHints = true,
+		includeInlayFunctionParameterTypeHints = true,
+		includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';Add commentMore actions
+		includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+		includeInlayPropertyDeclarationTypeHints = true,
+		includeInlayVariableTypeHints = false,
+	},
+}
+
+vim.lsp.config.ts_ls = {
+	completion = {
+		completeFunctionCalls = true,
+	},
+	init_options = {
+		preferences = {
+			includeCompletionsForModuleExports = true,
+			includeCompletionsForImportStatements = true,
+			importModuleSpecifierPreference = "non-relative",
+			importModuleSpecifierEnding = "minimal",
+		},
+	},
+	settings = {
+		javascript = settingsJsTs,
+		typescript = settingsJsTs,
+	},
+}
+
+vim.lsp.config.tailwindcss = {
+	settings = {
+		tailwindCSS = {
+			classAttributes = { "class", "className", "class:list", "classList", "ngClass" },
+			includeLanguages = {
+				templ = "html",
+			},
+			lint = {
+				cssConflict = "warning",
+				invalidApply = "error",
+				invalidConfigPath = "error",
+				invalidScreen = "error",
+				invalidTailwindDirective = "error",
+				invalidVariant = "error",
+				recommendedVariantOrder = "warning",
+			},
+			experimental = {
+				-- Support tailwind-variants
+				classRegex = {
+					{ "tv\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+				},
+			},
+			validate = true,
+		},
+	},
+}
+
+vim.lsp.config.lua_ls = {
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
+}
+
+vim.lsp.config.yamlls = {
+	settings = {
+		yaml = {
+			format = {
+				enable = true,
+			},
+			schemas = {
+				["https://raw.githubusercontent.com/nexlabstudio/maestro-workbench/refs/heads/dev/schema/schema.v0.json"] = "/apps/blackbird/.maestro/**/*",
+				["https://www.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+			},
+		},
+	},
+}
+
+vim.lsp.enable({
+	"biome",
+	"cssls",
+	"gopls",
+	"jsonls",
+	"lua_ls",
+	"prettierd",
+	"stylua",
+	"tailwindcss",
+	"templ",
+	"ts_ls",
+	"yamlls",
+	"yamlfmt",
+})
+
+-- Luasnip
+local ls = require("luasnip")
+
+ls.setup({
+	enable_autosnippets = true,
+})
+
+require("luasnip.loaders.from_lua").load({
+	paths = "~/.dotfiles/nvim/lua/snippets",
+})
+
+map("i", "<C-e>", function()
+	ls.expand_or_jump(1)
+end, { silent = true })
+map({ "i", "s" }, "<C-J>", function()
+	ls.jump(1)
+end, { silent = true })
+map({ "i", "s" }, "<C-K>", function()
+	ls.jump(-1)
+end, { silent = true })
+
+-- Blink
 require("blink.cmp").setup({
 	completion = {
 		documentation = {
@@ -166,10 +387,6 @@ require("conform").setup(formatter_settings)
 
 vim.cmd.colorscheme("tokyonight-night")
 
-local o = vim.opt
-local g = vim.g
-local map = vim.keymap.set
-
 -- Basics
 o.number = true -- Line numbers
 o.relativenumber = true -- Relative line numbers
@@ -254,6 +471,9 @@ map("n", "gV", ":vert winc ]<CR>") -- Open definition in vertical split
 map("n", "<leader>ih", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
+
+-- Packages
+map("n", "<leader>pu", vim.pack.update)
 
 -- Spelling
 map("n", "<leader>ww", function()
