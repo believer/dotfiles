@@ -10,7 +10,6 @@ vim.pack.add({
 	gh("folke/tokyonight.nvim"), -- Color scheme
 	gh("nvim-lua/plenary.nvim"), -- Dependency for todo-comments
 	gh("folke/todo-comments.nvim"), -- Comment highlighting
-	gh("nvim-lualine/lualine.nvim"), -- Status line
 	gh("tpope/vim-surround"), -- Actions on surrounding context
 	gh("tpope/vim-fugitive"), -- Git
 	gh("stevearc/oil.nvim"), -- File explorer
@@ -272,23 +271,6 @@ require("blink.cmp").setup({
 	},
 })
 
--- Lualine
-require("lualine").setup({
-	options = {
-		theme = "tokyonight",
-		component_separators = "|",
-		section_separators = { left = "", right = "" },
-	},
-	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "filename" },
-		lualine_c = { "branch", "diagnostics" },
-		lualine_x = {},
-		lualine_y = { "filetype" },
-		lualine_z = {},
-	},
-})
-
 -- TODO Comments
 require("todo-comments").setup()
 
@@ -364,10 +346,14 @@ end
 
 require("conform").setup(formatter_settings)
 
+-- Color scheme
+vim.cmd.colorscheme("tokyonight-night")
+
+-- Custom status bar (must run after color scheme)
+require("statusbar").setup()
+
 -- Basic settings
 --------------------------------------------------
-
-vim.cmd.colorscheme("tokyonight-night")
 
 -- Enable Neovim 0.12 features
 vim.cmd.packadd("nvim.undotree") -- Undo tree

@@ -17,10 +17,6 @@
       "rev": "db486b42299b2e3f5831809617af21becf268a39",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
-    "lualine.nvim": {
-      "rev": "8811f3f3f4dc09d740c67e9ce399e7a541e2e5b2",
-      "src": "https://github.com/nvim-lualine/lualine.nvim"
-    },
     "mason.nvim": {
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim"
