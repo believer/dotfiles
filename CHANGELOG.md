@@ -1,3 +1,10 @@
+# [1.172.0](https://github.com/believer/dotfiles/compare/v1.171.0...v1.172.0) (2026-04-06)
+
+
+### Features
+
+* create custom statusline instead of lualine ([88cf2b9](https://github.com/believer/dotfiles/commit/88cf2b9ab272fa1586dd190508c896c9681ad8c6))
+
 # [1.171.0](https://github.com/believer/dotfiles/compare/v1.170.1...v1.171.0) (2025-11-15)
 
 
