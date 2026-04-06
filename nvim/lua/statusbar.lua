@@ -76,22 +76,30 @@ function _G.statusline()
 end
 
 function M.setup()
-	local fg = "#1a1b26"
-	local bg = "#24283b"
-	local blue = "#7aa2f7"
-	local red = "#f7768e"
+	local function hl(name, fg_color, bg_color, b)
+		local fg = fg_color == nil and "#1a1b26" or fg_color
+		local bg = bg_color == nil and "#24283b" or bg_color
+		local bold = b == nil and false or b
 
-	vim.api.nvim_set_hl(0, "SLNormal", { fg = fg, bg = blue, bold = true })
-	vim.api.nvim_set_hl(0, "SLInsert", { fg = fg, bg = "#9ece6a", bold = true })
-	vim.api.nvim_set_hl(0, "SLVisual", { fg = fg, bg = "#bb9af7", bold = true })
-	vim.api.nvim_set_hl(0, "SLReplace", { fg = fg, bg = red, bold = true })
-	vim.api.nvim_set_hl(0, "SLCommand", { fg = fg, bg = "#e0af68", bold = true })
-	vim.api.nvim_set_hl(0, "SLMid", { fg = "#a9b1d6", bg = bg })
-	vim.api.nvim_set_hl(0, "SLRight", { fg = "#a2a8c6", bg = "#3b4161" })
-	vim.api.nvim_set_hl(0, "SLError", { fg = red, bg = bg })
-	vim.api.nvim_set_hl(0, "SLWarn", { fg = "#e0af68", bg = bg })
-	vim.api.nvim_set_hl(0, "SLInfo", { fg = "#7dcfff", bg = bg })
-	vim.api.nvim_set_hl(0, "SLHint", { fg = "#1abc9c", bg = bg })
+		vim.api.nvim_set_hl(0, name, { fg = fg, bg = bg, bold = bold })
+	end
+
+	-- Modes
+	hl("SLNormal", nil, "#7aa2f7", true)
+	hl("SLInsert", nil, "#9ece6a", true)
+	hl("SLVisual", nil, "#bb9af7", true)
+	hl("SLReplace", nil, "#f7768e", true)
+	hl("SLCommand", nil, "#e0af68", true)
+
+	-- Bar placement
+	hl("SLMid", "#a9b1d6")
+	hl("SLRight", "#a9b1d6", "#3b4161")
+
+	-- Diagnostics
+	hl("SLError", "#f7768e")
+	hl("SLWarn", "#e0af68")
+	hl("SLInfo", "#7dcfff")
+	hl("SLHint", "#1abc9c")
 
 	vim.opt.laststatus = 3 -- Global, no duplicates in splits
 	vim.opt.statusline = "%!v:lua.statusline()"
