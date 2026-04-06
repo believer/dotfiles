@@ -14,7 +14,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "db486b42299b2e3f5831809617af21becf268a39",
+      "rev": "77b813d1aa6a180d903dc744fc81d7e05b138ac2",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "mason.nvim": {
