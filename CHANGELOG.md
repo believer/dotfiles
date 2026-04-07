@@ -1,3 +1,10 @@
+## [1.172.1](https://github.com/believer/dotfiles/compare/v1.172.0...v1.172.1) (2026-04-07)
+
+
+### Bug Fixes
+
+* update branch cleaning command ([ae5ebce](https://github.com/believer/dotfiles/commit/ae5ebcefb84e6f25bb36d61def6988871e10f958))
+
 # [1.172.0](https://github.com/believer/dotfiles/compare/v1.171.0...v1.172.0) (2026-04-06)
 
 
