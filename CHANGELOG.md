@@ -1,3 +1,10 @@
+## [1.172.2](https://github.com/believer/dotfiles/compare/v1.172.1...v1.172.2) (2026-04-07)
+
+
+### Bug Fixes
+
+* move separator to branch name in statusbar ([5c23fde](https://github.com/believer/dotfiles/commit/5c23fde8b0e972cba9a65e606d550dab69aa1d64))
+
 ## [1.172.1](https://github.com/believer/dotfiles/compare/v1.172.0...v1.172.1) (2026-04-07)
 
 
