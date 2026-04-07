@@ -1,3 +1,10 @@
+## [1.172.3](https://github.com/believer/dotfiles/compare/v1.172.2...v1.172.3) (2026-04-07)
+
+
+### Bug Fixes
+
+* consistent spacing in filetype and branch ([5e1ef79](https://github.com/believer/dotfiles/commit/5e1ef798465158e4a69e32b9b24fbc950f07af5d))
+
 ## [1.172.2](https://github.com/believer/dotfiles/compare/v1.172.1...v1.172.2) (2026-04-07)
 
 
