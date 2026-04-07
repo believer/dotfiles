@@ -24,6 +24,17 @@ local regular_snippets = {
 		)
 	),
 	s(
+		"usee",
+		fmt(
+			[[
+        React.useEffect(() => {{
+          {1}
+        }}, [{2}])
+      ]],
+			{ i(1), i(2) }
+		)
+	),
+	s(
 		{ trig = "fn" },
 		fmt(
 			[[
@@ -42,7 +53,7 @@ export function {}() {{
   {}
 }}
   ]],
-			{ i(0), i(1) }
+			{ i(1), i(2) }
 		)
 	),
 
@@ -80,8 +91,14 @@ uniProps={{(theme) => ({{
 		dscr = "A simple console log",
 	}, fmt("console.log({})", { i(0, "data") })),
 
+	-- Lingui
+	s("rntr", fmt("<Trans>{text}</Trans>", { text = i(1, "Text") })),
+	s("usel", fmt("const {{ t }} = useLingui()", {})),
+
 	-- Assertions
 	s("expe", fmt("expect({}).toEqual({})", { i(1), i(2) })),
+	s("expse", fmt("expect({}).toStrictEqual({})", { i(1), i(2) })),
+	s("expb", fmt("expect({}).toBe({})", { i(1), i(2) })),
 	s("snap", fmt("expect({}).toMatchSnapshot({})", { i(0), i(1) })),
 	s("expdoc", fmt("expect({}).toBeInTheDocument()", { i(0) })),
 	s("expndoc", fmt("expect({}).not.toBeInTheDocument()", { i(0) })),
@@ -91,6 +108,22 @@ uniProps={{(theme) => ({{
 	s("thbc", fmt("expect({}).toHaveBeenCalled()", { i(0) })),
 	s("nthbc", fmt("expect({}).not.toHaveBeenCalled()", { i(0) })),
 	s("thbct", fmt("expect({}).toHaveBeenCalledTimes({})", { i(1), i(2) })),
+
+	-- Testing Library
+	s("sdbg", t("screen.debug()")),
+	s("sgbt", fmt("screen.getByText(/{name}/i)", { name = i(0) })),
+	s("sgabt", fmt("screen.getAllByText(/{name}/i)", { name = i(0) })),
+	s("sgbti", fmt("screen.getByTestId({})", { i(0) })),
+	s("sgabti", fmt("screen.getAllByTestId({})", { i(0) })),
+	s("upress", fmt("await user.press({})", { i(0) })),
+	s("sfbt", fmt("await screen.findByText(/{name}/i)", { name = i(0) })),
+	s("sgblt", fmt("screen.getByLabelText(/{name}/i)", { name = i(0) })),
+	s("sqbt", fmt("screen.queryByText(/{name}/i)", { name = i(0) })),
+	s("sgbr", fmt("screen.getByRole('{role}', {{ name: /{name}/i }})", { role = i(1, "button"), name = i(2, "name") })),
+	s(
+		"sqbr",
+		fmt("screen.queryByRole('{role}', {{ name: /{name}/i }})", { role = i(1, "button"), name = i(2, "name") })
+	),
 
 	-- Create a `describe` block
 	s(
@@ -159,18 +192,6 @@ local auto_snippets = {
 		)
 	),
 
-	-- Testing Library
-	s("sdbg", t("screen.debug()")),
-	s("sgbt", fmt("screen.getByText(/{name}/i)", { name = i(0) })),
-	s("sfbt", fmt("await screen.findByText(/{name}/i)", { name = i(0) })),
-	s("sgblt", fmt("screen.getByLabelText(/{name}/i)", { name = i(0) })),
-	s("sqbt", fmt("screen.queryByText(/{name}/i)", { name = i(0) })),
-	s("sgbr", fmt("screen.getByRole('{role}', {{ name: /{name}/i }})", { role = i(1, "button"), name = i(2, "name") })),
-	s(
-		"sqbr",
-		fmt("screen.queryByRole('{role}', {{ name: /{name}/i }})", { role = i(1, "button"), name = i(2, "name") })
-	),
-
 	-- React Native
 	s(
 		"rncmp",
@@ -215,13 +236,6 @@ export function {filename}({{}}: {filename}Props) {{
 			text = i(1, "Text"),
 		})
 	),
-	s(
-		"rntr",
-		fmt([[<Trans>{text}</Trans>]], {
-			text = i(1, "Text"),
-		})
-	),
-	s("usel", fmt([[const {{ _ }} = useLingui()]], {})),
 	s("imtl", fmt([[import {{ screen, userEvent }} from '@testing-library/react-native']], {})),
 }
 
