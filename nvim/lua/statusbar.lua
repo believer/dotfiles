@@ -31,7 +31,7 @@ local function branch_segment()
 	if not branch or branch == "" then
 		return ""
 	end
-	return "%#SLRight# " .. branch .. " | "
+	return "%#SLRight# " .. branch .. " |"
 end
 
 local function diagnostics_segment()
@@ -61,7 +61,7 @@ local function filetype_segment()
 	local ft = vim.bo.filetype
 	local t = ft == "" and "plain" or ft
 
-	return "%#SLRight#" .. t .. " "
+	return "%#SLRight# " .. t .. " "
 end
 
 function _G.statusline()
