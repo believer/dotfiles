@@ -55,17 +55,6 @@ vim.api.nvim_create_autocmd("PackChanged", {
 --------------------------------------------------
 
 -- Treesitter
-require("nvim-treesitter").setup({
-	autopairs = { enable = true },
-	indent = { enable = true },
-	highlight = {
-		additional_vim_regex_highlighting = false,
-		enable = true,
-	},
-	-- Enable windwp/nvim-ts-autotag for close/update tags
-	autotag = { enable = true },
-})
-
 -- Install parsers
 local ensureInstalled = {
 	"css",
@@ -89,6 +78,14 @@ local parsers = vim.iter(ensureInstalled)
 	:totable()
 
 require("nvim-treesitter").install(parsers)
+require("nvim-treesitter").setup({
+	autopairs = { enable = true },
+	indent = { enable = true },
+	highlight = {
+		additional_vim_regex_highlighting = false,
+		enable = true,
+	},
+})
 
 -- Start Treesitter
 vim.api.nvim_create_autocmd("FileType", {
