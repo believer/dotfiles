@@ -1,3 +1,15 @@
+# [1.173.0](https://github.com/believer/dotfiles/compare/v1.172.3...v1.173.0) (2026-04-08)
+
+
+### Bug Fixes
+
+* add tsx treesitter parser ([9672cf6](https://github.com/believer/dotfiles/commit/9672cf63f3b8b8f0ca1d6225638de9ab430bc5a9))
+
+
+### Features
+
+* add keymap for undotree ([30aba2a](https://github.com/believer/dotfiles/commit/30aba2a2f13717d9d4c3a6720170d11622af8d70))
+
 ## [1.172.3](https://github.com/believer/dotfiles/compare/v1.172.2...v1.172.3) (2026-04-07)
 
 
