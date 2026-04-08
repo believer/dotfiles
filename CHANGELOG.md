@@ -1,3 +1,10 @@
+## [1.173.1](https://github.com/believer/dotfiles/compare/v1.173.0...v1.173.1) (2026-04-08)
+
+
+### Bug Fixes
+
+* update colors for pumborder ([41e253d](https://github.com/believer/dotfiles/commit/41e253d9afa0fbe51a6c9902b157e19a88b41660))
+
 # [1.173.0](https://github.com/believer/dotfiles/compare/v1.172.3...v1.173.0) (2026-04-08)
 
 
