@@ -108,33 +108,12 @@ vim.diagnostic.config({
 
 require("mason").setup()
 
-local settingsJsTs = {
-	inlayHints = {
-		includeInlayEnumMemberValueHints = true,
-		includeInlayFunctionLikeReturnTypeHints = true,
-		includeInlayFunctionParameterTypeHints = true,
-		includeInlayParameterNameHints = "all",
-		includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-		includeInlayPropertyDeclarationTypeHints = true,
-		includeInlayVariableTypeHints = false,
-	},
-}
-
-vim.lsp.config.ts_ls = {
-	completion = {
-		completeFunctionCalls = true,
-	},
-	init_options = {
-		preferences = {
-			includeCompletionsForModuleExports = true,
-			includeCompletionsForImportStatements = true,
-			importModuleSpecifierPreference = "non-relative",
-			importModuleSpecifierEnding = "minimal",
-		},
-	},
+vim.lsp.config.tsgo = {
 	settings = {
-		javascript = settingsJsTs,
-		typescript = settingsJsTs,
+		includeCompletionsForModuleExports = true,
+		includeCompletionsForImportStatements = true,
+		importModuleSpecifierPreference = "non-relative",
+		importModuleSpecifierEnding = "minimal",
 	},
 }
 
@@ -199,7 +178,7 @@ vim.lsp.enable({
 	"stylua",
 	"tailwindcss",
 	"templ",
-	"ts_ls",
+	"tsgo",
 	"yamlfmt",
 	"yamlls",
 })
