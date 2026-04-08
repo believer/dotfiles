@@ -380,6 +380,7 @@ map("n", "<leader>ad", 'diwxda"<CR>') -- Remove HTML attributes
 map("n", "<leader>ar", ":TSRemoveUnused<CR>")
 map("n", "<leader>at", ":TSOrganizeImports<CR>")
 map("n", "<leader>ai", ":TSAddImports<CR>")
+map("n", "<leader>uu", ":Undotree<CR>")
 
 -- LSP
 map("n", "gd", vim.lsp.buf.definition) -- Go to definition
