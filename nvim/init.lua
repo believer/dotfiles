@@ -8,7 +8,6 @@ local gh = utils.gh
 -- Install plugins
 vim.pack.add({
 	gh("folke/tokyonight.nvim"), -- Color scheme
-	gh("tpope/vim-surround"), -- Actions on surrounding context
 	gh("tpope/vim-fugitive"), -- Git
 	gh("stevearc/oil.nvim"), -- File explorer
 	gh("nvim-tree/nvim-web-devicons"), -- Icons in file explorer
@@ -207,6 +206,7 @@ require("mini.extra").setup()
 require("mini.pairs").setup()
 require("mini.pick").setup()
 require("mini.completion").setup()
+require("mini.surround").setup()
 
 -- Add enter to completions. From docs.
 _G.cr_action = function()
