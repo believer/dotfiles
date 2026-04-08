@@ -334,6 +334,7 @@ o.signcolumn = "yes" -- Always display the sign column (where errors are display
 o.showcmd = false -- Hide partial commands in status bar
 o.winborder = "rounded" -- Windows, like hover or completion, have 1px solid rounded border
 o.pumborder = "rounded" -- Same as above, but for popup menus
+vim.api.nvim_set_hl(0, "PmenuBorder", { fg = "#484B6A", bg = "#1a1b26" }) -- Pumborder color, bg is TokyoNight and fg is a lighter version of bg
 
 vim.cmd("highlight clear SignColumn") -- Remove highlighting of sign column
 
