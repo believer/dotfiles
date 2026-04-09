@@ -8,6 +8,7 @@ local gh = utils.gh
 -- Install plugins
 vim.pack.add({
 	gh("folke/tokyonight.nvim"), -- Color scheme
+	gh("tpope/vim-surround"), -- Actions on surrounding context
 	gh("tpope/vim-fugitive"), -- Git
 	gh("stevearc/oil.nvim"), -- File explorer
 	gh("nvim-tree/nvim-web-devicons"), -- Icons in file explorer
@@ -114,6 +115,17 @@ vim.lsp.config.tsgo = {
 	},
 }
 
+vim.lsp.config.ts_ls = {
+	init_options = {
+		preferences = {
+			includeCompletionsForModuleExports = true,
+			includeCompletionsForImportStatements = true,
+			importModuleSpecifierPreference = "non-relative",
+			importModuleSpecifierEnding = "minimal",
+		},
+	},
+}
+
 vim.lsp.config.tailwindcss = {
 	settings = {
 		tailwindCSS = {
@@ -175,7 +187,8 @@ vim.lsp.enable({
 	"stylua",
 	"tailwindcss",
 	"templ",
-	"tsgo",
+	-- "tsgo",
+	"ts_ls",
 	"yamlfmt",
 	"yamlls",
 })
@@ -206,7 +219,6 @@ require("mini.extra").setup()
 require("mini.pairs").setup()
 require("mini.pick").setup()
 require("mini.completion").setup()
-require("mini.surround").setup()
 
 -- Add enter to completions. From docs.
 _G.cr_action = function()
