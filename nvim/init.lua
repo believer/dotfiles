@@ -19,6 +19,7 @@ vim.pack.add({
 	gh("neovim/nvim-lspconfig"), -- LSP configs
 	gh("mason-org/mason.nvim"), -- LSP installer
 	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" }, -- Treesitter
+	{ src = gh("saghen/blink.cmp"), version = "v1" }, -- Completions
 })
 
 -- Postinstall hooks
@@ -214,21 +215,52 @@ map({ "i", "s" }, "<C-K>", function()
 	ls.jump(-1)
 end, { silent = true })
 
+-- Blink
+require("blink.cmp").setup({
+	completion = {
+		documentation = {
+			auto_show = true,
+		},
+		ghost_text = {
+			enabled = false,
+		},
+		menu = {
+			auto_show = function(ctx)
+				return ctx.mode ~= "cmdline"
+			end,
+			draw = {
+				treesitter = { "lsp" },
+				columns = {
+					{ "kind_icon" },
+					{ "label", "label_description", gap = 1 },
+					{ "kind" },
+				},
+			},
+		},
+		accept = {
+			auto_brackets = {
+				semantic_token_resolution = {
+					blocked_filetypes = { "typescriptreact" },
+				},
+			},
+		},
+	},
+	keymap = {
+		preset = "default",
+		["<Tab>"] = { "snippet_forward", "select_and_accept", "fallback" },
+		["S-<Tab>"] = { "snippet_backward", "select_prev", "fallback" },
+		["<CR>"] = { "select_and_accept", "fallback" },
+	},
+	appearance = {
+		use_nvim_cmp_as_default = true,
+		nerd_font_variant = "mono",
+	},
+})
+
 -- Mini
 require("mini.extra").setup()
 require("mini.pairs").setup()
 require("mini.pick").setup()
-require("mini.completion").setup()
-
--- Add enter to completions. From docs.
-_G.cr_action = function()
-	if vim.fn.complete_info()["selected"] ~= -1 then
-		return "\25"
-	end
-	return "\r"
-end
-
-vim.keymap.set("i", "<CR>", "v:lua.cr_action()", { expr = true })
 
 -- Oil
 local oil = require("oil")
