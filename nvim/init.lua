@@ -205,6 +205,9 @@ require("luasnip.loaders.from_lua").load({
 	paths = "~/.dotfiles/nvim/lua/snippets",
 })
 
+ls.filetype_extend("javascript", { "typescript" })
+ls.filetype_extend("typescriptreact", { "typescript" })
+
 map("i", "<C-e>", function()
 	ls.expand_or_jump(1)
 end, { silent = true })
@@ -217,6 +220,10 @@ end, { silent = true })
 
 -- Blink
 require("blink.cmp").setup({
+	snippets = { preset = "luasnip" },
+	sources = {
+		default = { "lsp", "path", "snippets", "buffer" },
+	},
 	completion = {
 		documentation = {
 			auto_show = true,
