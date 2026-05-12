@@ -91,11 +91,44 @@ local regular = {
 	-- Testing Library
 	s("sdbg", t("screen.debug()")),
 	screen_query("sgbt", "getByText", false),
+	screen_query("sgabt", "getAllByText", false),
+	screen_query("sgbti", "getByTestId", false),
+	screen_query("sgabti", "getAllByTestId", false),
 	screen_query("sfbt", "findByText", true),
 	screen_query("sgblt", "getByLabelText", false),
 	screen_query("sqbt", "queryByText", false),
+	screen_query("sqbti", "queryByTestId", false),
 	screen_role("sgbr", "getByRole"),
 	screen_role("sqbr", "queryByRole"),
+
+	s(
+		"sus",
+		fmt(
+			[[
+server.use(http.get(url({}), () => ok({})))
+  ]],
+			{ i(1), i(2) }
+		)
+	),
+	s(
+		"suse",
+		fmt(
+			[[
+server.use(http.get(url({}), () => err({})))
+  ]],
+			{ i(1), i(2) }
+		)
+	),
+	s(
+		"isus",
+		fmt(
+			[[
+import {{ http }} from 'msw'
+import {{ err, ok, server, url }} from '#/test-setup/server-handlers'
+  ]],
+			{}
+		)
+	),
 }
 
 -- Auto

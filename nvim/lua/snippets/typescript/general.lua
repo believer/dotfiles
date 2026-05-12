@@ -8,7 +8,7 @@ local regular = {
 		condition = conds.line_begin,
 	}, fmt("console.log({})", { i(0, "data") })),
 	s(
-		"t",
+		"type",
 		fmt(
 			[[
 type {} = {{
