@@ -5,6 +5,10 @@ local g = vim.g
 local map = vim.keymap.set
 local gh = utils.gh
 
+-- Map leader
+g.mapleader = " "
+g.maplocalleader = " "
+
 -- Install plugins
 vim.pack.add({
 	gh("folke/tokyonight.nvim"), -- Color scheme
@@ -394,10 +398,6 @@ vim.cmd("highlight clear SignColumn") -- Remove highlighting of sign column
 -- Backups
 o.swapfile = false
 o.undofile = true -- Persist undos after buffers are unloaded
-
--- Key mappings
-g.mapleader = " "
-g.maplocalleader = " "
 
 map("v", "<leader>y", '"+y') -- Copy to system clipboard
 
