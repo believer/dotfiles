@@ -24,6 +24,7 @@ vim.pack.add({
 	gh("mason-org/mason.nvim"), -- LSP installer
 	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" }, -- Treesitter
 	{ src = gh("saghen/blink.cmp"), version = "v1" }, -- Completions
+	{ src = gh("vieitesss/miniharp.nvim"), version = vim.version.range("v*") }, -- Miniharp
 })
 
 -- Postinstall hooks
@@ -58,6 +59,17 @@ vim.api.nvim_create_autocmd("PackChanged", {
 
 -- Setup plugins
 --------------------------------------------------
+
+-- Harpoon
+local miniharp = require("miniharp")
+
+miniharp.setup()
+
+map("n", "<leader>m", miniharp.toggle_file, { desc = "miniharp: toggle file mark" })
+map("n", "<C-n>", miniharp.next, { desc = "miniharp: next file mark" })
+map("n", "<C-p>", miniharp.prev, { desc = "miniharp: prev file mark" })
+map("n", "<leader>l", miniharp.enter_list, { desc = "miniharp: toggle marks list" })
+map("n", "<leader>mc", miniharp.clear, { desc = "miniharp: clear list" })
 
 -- Treesitter
 -- Install parsers
