@@ -125,10 +125,17 @@ require("mason").setup()
 
 vim.lsp.config.tsgo = {
 	settings = {
-		includeCompletionsForModuleExports = true,
-		includeCompletionsForImportStatements = true,
-		importModuleSpecifierPreference = "non-relative",
-		importModuleSpecifierEnding = "minimal",
+		typescript = {
+			preferences = {
+				importModuleSpecifier = "non-relative",
+				importModuleSpecifierEnding = "minimal",
+				preferTypeOnlyAutoImports = true,
+			},
+			suggest = {
+				autoImports = true,
+				includeCompletionsForImportStatements = true,
+			},
+		},
 	},
 }
 
