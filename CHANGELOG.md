@@ -1,3 +1,15 @@
+# [1.174.0](https://github.com/believer/dotfiles/compare/v1.173.1...v1.174.0) (2026-05-12)
+
+
+### Bug Fixes
+
+* tsgo settings for auto imports ([cd1cf85](https://github.com/believer/dotfiles/commit/cd1cf85695389337887e605816226f6546c3871d))
+
+
+### Features
+
+* add miniharp ([a6dfbd0](https://github.com/believer/dotfiles/commit/a6dfbd0db3ba0823b65b84dd4dfab46d69a249b4))
+
 ## [1.173.1](https://github.com/believer/dotfiles/compare/v1.173.0...v1.173.1) (2026-04-08)
 
 
