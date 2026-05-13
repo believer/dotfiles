@@ -9,10 +9,12 @@ local regular_snippets = {
 		t("#+TITLE: "),
 		i(1, "Title"),
 		t({ "", "#+AUTHOR: Rickard Natt och Dag" }),
-		t({ "", "#+CREATED: " }),
-		f(function()
-			return os.date("[%Y-%m-%d %a %H:%M]")
-		end),
+	}),
+
+	s("prop", {
+		t({ ":PROPERTIES:", "" }),
+		i(1, "Enter property"),
+		t({ "", ":END:" }),
 	}),
 
 	s("quote", {
