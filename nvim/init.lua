@@ -232,10 +232,9 @@ vim.lsp.enable({
 	"lua_ls",
 	"prettierd",
 	"stylua",
-	"tailwindcss",
 	"templ",
-	-- "tsgo",
-	"ts_ls",
+	"tsgo",
+	-- "ts_ls",
 	"yamlfmt",
 	"yamlls",
 })
