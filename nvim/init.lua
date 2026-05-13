@@ -235,6 +235,7 @@ vim.lsp.enable({
 	"templ",
 	"tsgo",
 	-- "ts_ls",
+	"org",
 	"yamlfmt",
 	"yamlls",
 })
