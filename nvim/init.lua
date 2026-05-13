@@ -1,6 +1,7 @@
 local utils = require("utils")
 
 local o = vim.opt
+local ol = vim.opt_local
 local g = vim.g
 local map = vim.keymap.set
 local gh = utils.gh
@@ -22,6 +23,7 @@ vim.pack.add({
 	gh("L3MON4D3/LuaSnip"), -- Snippets
 	gh("neovim/nvim-lspconfig"), -- LSP configs
 	gh("mason-org/mason.nvim"), -- LSP installer
+	gh("nvim-orgmode/orgmode"),
 	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" }, -- Treesitter
 	{ src = gh("saghen/blink.cmp"), version = "v1" }, -- Completions
 	{ src = gh("vieitesss/miniharp.nvim"), version = vim.version.range("v*") }, -- Miniharp
@@ -60,7 +62,28 @@ vim.api.nvim_create_autocmd("PackChanged", {
 -- Setup plugins
 --------------------------------------------------
 
--- Harpoon
+-- Orgmode
+local orgfiles = "~/.orgfiles/"
+local notes = "~/.orgfiles/notes"
+
+require("orgmode").setup({
+	org_agenda_files = notes .. "**/*",
+	org_default_notes_file = orgfiles .. "refile.org",
+	org_capture_templates = {
+		n = {
+			description = "New note",
+			template = "#+TITLE: %^{Title}\n#+AUTHOR: Rickard Natt och Dag\n#+CREATED: %U\n\n%?",
+			target = notes .. "%^{Name}.org",
+		},
+		i = {
+			description = "Inbox",
+			template = "* %^{Title}\n  %U\n  %?",
+			target = notes .. "inbox.org",
+		},
+	},
+})
+
+-- Miniharp
 local miniharp = require("miniharp")
 
 miniharp.setup()
@@ -246,6 +269,16 @@ require("blink.cmp").setup({
 	snippets = { preset = "luasnip" },
 	sources = {
 		default = { "lsp", "path", "snippets", "buffer" },
+		per_filetype = {
+			org = { "orgmode" },
+		},
+		providers = {
+			orgmode = {
+				name = "Orgmode",
+				module = "orgmode.org.autocompletion.blink",
+				fallbacks = { "buffer" },
+			},
+		},
 	},
 	completion = {
 		documentation = {
@@ -417,6 +450,15 @@ vim.cmd("highlight clear SignColumn") -- Remove highlighting of sign column
 -- Backups
 o.swapfile = false
 o.undofile = true -- Persist undos after buffers are unloaded
+
+-- Org mode
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "org",
+	callback = function()
+		ol.conceallevel = 2
+		ol.concealcursor = "nc"
+	end,
+})
 
 map("v", "<leader>y", '"+y') -- Copy to system clipboard
 
