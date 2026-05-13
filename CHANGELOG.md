@@ -1,3 +1,10 @@
+# [1.175.0](https://github.com/believer/dotfiles/compare/v1.174.0...v1.175.0) (2026-05-13)
+
+
+### Features
+
+* add org mode ([6a6a657](https://github.com/believer/dotfiles/commit/6a6a6578c292e5000f36f3184ca32d43f7b667bc))
+
 # [1.174.0](https://github.com/believer/dotfiles/compare/v1.173.1...v1.174.0) (2026-05-12)
 
 
