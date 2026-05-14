@@ -1,3 +1,10 @@
+# [1.176.0](https://github.com/believer/dotfiles/compare/v1.175.0...v1.176.0) (2026-05-14)
+
+
+### Features
+
+* add start of doom emacs config ([1a6c3ae](https://github.com/believer/dotfiles/commit/1a6c3aedf9fdee6edb59362d18e91628a522bd5c))
+
 # [1.175.0](https://github.com/believer/dotfiles/compare/v1.174.0...v1.175.0) (2026-05-13)
 
 
