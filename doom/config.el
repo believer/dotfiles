@@ -88,10 +88,6 @@
 ;; they are implemented.
 ;;
 
-;; Automatic new list item in bulleted lists
-(add-hook 'org-mode-hook
-          (lambda () (org-autolist-mode)))
-
 ;; Skip confirm to exit message
 (setq confirm-kill-emacs nil)
 
