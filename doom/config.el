@@ -44,9 +44,13 @@
 (setq org-directory "~/.orgfiles/")
 (setq org-agenda-files (directory-files-recursively org-directory "\\.org$"))
 
+;; Log time when task was closed
+(setq org-log-done 'time)
+
 ;; Default org file
 (setq org-default-notes-file (concat org-directory "notes.org"))
 
+;; Capture templates
 (setq org-capture-templates
       `(
         ("t" "Task" entry
