@@ -42,9 +42,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/.orgfiles/")
-(setq org-agenda-files
-      (list (concat org-directory "notes.org")
-            (concat org-directory "tasks.org")))
+(setq org-agenda-files (directory-files-recursively org-directory "\\.org$"))
 
 ;; Default org file
 (setq org-default-notes-file (concat org-directory "notes.org"))
@@ -55,38 +53,6 @@
          (file+headline ,(concat org-directory "tasks.org") "Tasks")
          "* TODO %?\n%^t\n%a\n")
         ))
-
-;; Whenever you reconfigure a package, make sure to wrap your config in an
-;; `with-eval-after-load' block, otherwise Doom's defaults may override your
-;; settings. E.g.
-;;
-;;   (with-eval-after-load 'PACKAGE
-;;     (setq x y))
-;;
-;; The exceptions to this rule:
-;;
-;;   - Setting file/directory variables (like `org-directory')
-;;   - Setting variables which explicitly tell you to set them before their
-;;     package is loaded (see 'C-h v VARIABLE' to look them up).
-;;   - Setting doom variables (which start with 'doom-' or '+').
-;;
-;; Here are some additional functions/macros that will help you configure Doom.
-;;
-;; - `load!' for loading external *.el files relative to this one
-;; - `add-load-path!' for adding directories to the `load-path', relative to
-;;   this file. Emacs searches the `load-path' when you load packages with
-;;   `require' or `use-package'.
-;; - `map!' for binding new keys
-;;
-;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
-;; This will open documentation for it, including demos of how they are used.
-;; Alternatively, use `C-h o' to look up a symbol (functions, variables, faces,
-;; etc).
-;;
-;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
-;; they are implemented.
-;;
 
 ;; Skip confirm to exit message
 (setq confirm-kill-emacs nil)
@@ -140,15 +106,12 @@
 (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp!)
 
 ;; Setup Denote
-(use-package denote
-  :ensure t
-  :hook (dired-mode . denote-dired-mode)
+(use-package! denote
   :config
-  ;; Use custom path for notes
-  (let ((notes-path (expand-file-name "notes" org-directory)))
-    (setq denote-directory notes-path)
-    (setq denote-dired-directories notes-path)
-    (setq denote-directories (list notes-path))))
+  (setq denote-directories (list (expand-file-name (concat org-directory "notes"))))
+  (setq denote-dired-directories (list (expand-file-name (concat org-directory "notes"))))
+  (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories)
+  (add-hook 'dired-mode-hook #'dired-hide-details-mode))
 
 ;; Global Org Author in case of exporting instead of adding it to every file
 (setq user-full-name "Rickard Natt och Dag")
