@@ -138,3 +138,23 @@
 
 ;; Start LSP in TreeSitter modes
 (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp!)
+
+;; Setup Denote
+(use-package denote
+  :ensure t
+  :hook (dired-mode . denote-dired-mode)
+  :config
+  ;; Use custom path for notes
+  (let ((notes-path (expand-file-name "notes" org-directory)))
+    (setq denote-directory notes-path)
+    (setq denote-dired-directories notes-path)
+    (setq denote-directories (list notes-path))))
+
+;; Global Org Author in case of exporting instead of adding it to every file
+(setq user-full-name "Rickard Natt och Dag")
+
+;; Setup map for new note
+(map! :leader
+      :prefix "n"
+      :desc "New note"  "n" #'denote
+      :desc "Link note" "l" #'denote-link)

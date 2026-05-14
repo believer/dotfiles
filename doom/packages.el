@@ -53,5 +53,6 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 ;;
-(package! org-autolist)
+
 (package! evil-terminal-cursor-changer)
+(package! denote)
