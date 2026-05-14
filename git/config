@@ -42,6 +42,10 @@
 
 [push]
 	autoSetupRemote = true
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
 [safe]
 	directory = undefined
 [gpg]
