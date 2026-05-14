@@ -1,3 +1,10 @@
+## [1.177.1](https://github.com/believer/dotfiles/compare/v1.177.0...v1.177.1) (2026-05-14)
+
+
+### Bug Fixes
+
+* **doom:** auto hide details in dired ([20a4c82](https://github.com/believer/dotfiles/commit/20a4c82efc2687b1ddb7bf0a303a604e331da84b))
+
 # [1.177.0](https://github.com/believer/dotfiles/compare/v1.176.0...v1.177.0) (2026-05-14)
 
 
