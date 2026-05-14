@@ -88,9 +88,6 @@
 ;; they are implemented.
 ;;
 
-;; Automatically close treemacs on file selection
-(setq treemacs-default-visit-action 'treemacs-visit-node-close-treemacs)
-
 ;; Automatic new list item in bulleted lists
 (add-hook 'org-mode-hook
           (lambda () (org-autolist-mode)))
