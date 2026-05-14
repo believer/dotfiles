@@ -97,6 +97,9 @@
     (require 'evil-terminal-cursor-changer)
     (evil-terminal-cursor-changer-activate)))
 
+;; Calendars start on Monday
+(setq calendar-week-start-day 1)
+
 ;; Formatting
 ;; Go
 (after! go-mode
