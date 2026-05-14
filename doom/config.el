@@ -109,13 +109,17 @@
 ;; Start LSP in TreeSitter modes
 (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp!)
 
+;; Dirvish is used by Doom on top of dired. This hides file details by default
+;; in the explorer. Using `dired-hide-details-mode` doesn't work without hacks
+(after! dirvish
+  (setq dirvish-hide-details t))
+
 ;; Setup Denote
 (use-package! denote
   :config
   (setq denote-directories (list (expand-file-name (concat org-directory "notes"))))
   (setq denote-dired-directories (list (expand-file-name (concat org-directory "notes"))))
-  (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories)
-  (add-hook 'dired-mode-hook #'dired-hide-details-mode))
+  (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories))
 
 ;; Global Org Author in case of exporting instead of adding it to every file
 (setq user-full-name "Rickard Natt och Dag")
