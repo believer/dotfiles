@@ -1,21 +1,67 @@
+#+TITLE: Doom Emacs Configuration
+#+AUTHOR: Rickard Natt och Dag
+#+PROPERTY: header-args:emacs-lisp :tangle yes
+
+* Introduction
+
+Literate Doom Emacs configuration. This file is automatically tangled into
+=config.el= on startup. Edit this file instead of =config.el= directly.
+
+* Tangle on reload
+
+This tangles the config.org to config.el on save.
+
+#+begin_src emacs-lisp
 (defun my/tangle-config ()
   (when (string-equal (buffer-file-name)
                       (expand-file-name "config.org" doom-user-dir))
     (org-babel-tangle)))
 
 (add-hook 'after-save-hook #'my/tangle-config)
+#+end_src
 
+* Appearance
+
+** Font
+
+[[https://www.monolisa.dev/][MonoLisa]] as the primary monospace font.
+
+#+begin_src emacs-lisp
 (setq doom-font (font-spec :family "MonoLisa" :size 11))
+#+end_src
 
+** Theme
+
+A variation of my trusty [[https://github.com/folke/tokyonight.nvim][Tokyo Night]] by folke in nvim.
+
+#+begin_src emacs-lisp
 (setq doom-theme 'doom-tokyo-night)
+#+end_src
 
+** Line Numbers
+
+Relative line numbers for easier vim-style navigation.
+
+#+begin_src emacs-lisp
 (setq display-line-numbers-type 'relative)
+#+end_src
 
+** Cursor
+
+Display a thin caret in insert mode when running in terminal.
+
+#+begin_src emacs-lisp
 (after! evil
   (unless (display-graphic-p)
     (require 'evil-terminal-cursor-changer)
     (evil-terminal-cursor-changer-activate)))
+#+end_src
 
+* Behaviour
+
+** Misc
+
+#+begin_src emacs-lisp
 ;; Skip confirm to exit message
 (setq confirm-kill-emacs nil)
 
@@ -25,22 +71,50 @@
 ;; Move files to trash when deleting in dired
 (setq delete-by-moving-to-trash t
       trash-directory "~/.Trash")
+#+end_src
 
+** Dired / Dirvish
+
+Dirvish wraps dired in Doom. Hide file details by default in the explorer.
+
+#+begin_src emacs-lisp
 (after! dirvish
   (setq dirvish-hide-details t))
+#+end_src
 
+* Org Mode
+
+** Directory & Agenda
+
+#+begin_src emacs-lisp
 (setq org-directory "~/.orgfiles/")
 (setq org-agenda-files (directory-files-recursively org-directory "\\.org$"))
+#+end_src
 
+** Task Logging
+
+Log a timestamp when a task is marked done.
+
+#+begin_src emacs-lisp
 (setq org-log-done 'time)
+#+end_src
 
+** Capture Templates
+
+#+begin_src emacs-lisp
 (setq org-default-notes-file (concat org-directory "notes.org"))
 
 (setq org-capture-templates
       `(("t" "Task" entry
          (file+headline ,(concat org-directory "tasks.org") "Tasks")
          "* TODO %?\n%^t\n%a\n")))
+#+end_src
 
+* Notes (Denote)
+
+[[https://protesilaos.com/emacs/denote][Denote]] for structured note-taking, stored alongside org files.
+
+#+begin_src emacs-lisp
 (use-package! denote
   :config
   (setq denote-directories
@@ -48,18 +122,42 @@
   (setq denote-dired-directories
         (list (expand-file-name (concat org-directory "notes"))))
   (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories))
+#+end_src
 
+** Keybindings
+
+#+begin_src emacs-lisp
 (map! :leader
       :prefix "n"
       :desc "New note"  "n" #'denote
       :desc "Link note" "l" #'denote-link)
+#+end_src
 
+* Export
+
+Global author name used as a fallback when exporting org files.
+
+#+begin_src emacs-lisp
 (setq user-full-name "Rickard Natt och Dag")
+#+end_src
 
+* Languages
+
+** Go
+
+Use =goimports= (a superset of =gofmt=) to format and auto-import on save.
+
+#+begin_src emacs-lisp
 (after! go-mode
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook #'gofmt-before-save))
+#+end_src
 
+** TypeScript
+
+Use Tree-sitter modes and configure LSP with both =ts-ls= and [[https://biomejs.dev/][Biome]].
+
+#+begin_src emacs-lisp
 ;; Use TreeSitter modes for TypeScript/TSX files
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
@@ -86,3 +184,4 @@
 
 ;; Start LSP in TreeSitter modes
 (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp!)
+#+end_src
