@@ -1,3 +1,10 @@
+# [1.177.0](https://github.com/believer/dotfiles/compare/v1.176.0...v1.177.0) (2026-05-14)
+
+
+### Features
+
+* **emacs:** add denote ([904f9cf](https://github.com/believer/dotfiles/commit/904f9cf909adc11c60addd2c455ff686b37a21ff))
+
 # [1.176.0](https://github.com/believer/dotfiles/compare/v1.175.0...v1.176.0) (2026-05-14)
 
 
