@@ -39,3 +39,6 @@ tmuxinator/blackbird.yml
 fish/fish_history
 fish/fish_variables
 fish/generated_completions
+
+doom/profiles*.el
+doom/profiles*.elc

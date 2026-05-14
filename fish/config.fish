@@ -25,6 +25,7 @@ fish_add_path "/usr/local/sbin"
 fish_add_path "/usr/local/bin"
 fish_add_path "$BUN_INSTALL/bin"
 fish_add_path "/Applications/love.app/Contents/MacOS"
+fish_add_path "$HOME/.config/emacs/bin"
 
 if status is-interactive
   # Use vi keybindings in cmd line
