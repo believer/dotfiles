@@ -60,7 +60,6 @@ This tangles the config.org to config.el on save.
 (add-hook 'after-save-hook #'my/tangle-config)
 #+end_src
 
-
 * Appearance
 
 ** Font
@@ -181,33 +180,29 @@ You can also mark files for deletion by pressing ~d~ and then ~x~ to execute.
 
 Tasks, or headlines in general can have a priority associated with them. This is added by pressing ~C-c ,~. This will automatically move to the closest headline above your current position and allow you to enter a priority.
 
-** Directory & Agenda
+** Config
 
 #+begin_src emacs-lisp
+;; Org mode directories
 (setq org-directory "~/.orgfiles/")
-(setq org-agenda-files (directory-files-recursively org-directory "\\.org$"))
-#+end_src
+(setq org-agenda-files
+      (list
+       (expand-file-name "notes.org" org-directory)
+       (expand-file-name "tasks.org" org-directory)
+       (expand-file-name "projects" org-directory)))
 
-** Task Logging
-
-Log a timestamp when a task is marked done.
-
-#+begin_src emacs-lisp
+;; Add a timestamp when a task is marked done
 (setq org-log-done 'time)
-#+end_src
 
-** Capture Templates
-
-#+begin_src emacs-lisp
+;; Templates
 (setq org-default-notes-file (concat org-directory "notes.org"))
-
 (setq org-capture-templates
       `(("t" "Task" entry
          (file+headline ,(concat org-directory "tasks.org") "Tasks")
          "* TODO %?\n%^t\n%a\n")))
 #+end_src
 
-* Notes (Denote)
+** Notes (Denote)
 
 [[https://protesilaos.com/emacs/denote][Denote]] for structured note-taking, stored alongside org files.
 
@@ -231,7 +226,7 @@ Log a timestamp when a task is marked done.
       :desc "Link note" "l" #'denote-link)
 #+end_src
 
-* Export
+** Export
 
 Global author name used as a fallback when exporting org files.
 
@@ -295,6 +290,7 @@ Use Tree-sitter modes and configure LSP with both =ts-ls= and [[https://biomejs.
                        (and (my/biome-find-root file-name) t))
     :multi-root nil
     :server-id 'biome
+    ;; This seemed to be essential to make it possible to run multiple LSPs
     :add-on? t))
 
   ;; Only allow these two clients

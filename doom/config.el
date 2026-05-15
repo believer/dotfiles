@@ -39,13 +39,19 @@
 (after! diredfl
   (remove-hook 'dired-mode-hook #'diredfl-mode))
 
+;; Org mode directories
 (setq org-directory "~/.orgfiles/")
-(setq org-agenda-files (directory-files-recursively org-directory "\\.org$"))
+(setq org-agenda-files
+      (list
+       (expand-file-name "notes.org" org-directory)
+       (expand-file-name "tasks.org" org-directory)
+       (expand-file-name "projects" org-directory)))
 
+;; Add a timestamp when a task is marked done
 (setq org-log-done 'time)
 
+;; Templates
 (setq org-default-notes-file (concat org-directory "notes.org"))
-
 (setq org-capture-templates
       `(("t" "Task" entry
          (file+headline ,(concat org-directory "tasks.org") "Tasks")
@@ -110,6 +116,7 @@
                        (and (my/biome-find-root file-name) t))
     :multi-root nil
     :server-id 'biome
+    ;; This seemed to be essential to make it possible to run multiple LSPs
     :add-on? t))
 
   ;; Only allow these two clients
