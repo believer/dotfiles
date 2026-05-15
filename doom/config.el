@@ -8,7 +8,8 @@
 
 (setq doom-font (font-spec :family "MonoLisa" :size 12))
 
-(setq doom-theme 'doom-tokyo-night)
+(setq tokyo-night-scale-headings nil)
+(setq doom-theme 'tokyo-night)
 
 (setq display-line-numbers-type 'relative)
 
@@ -29,6 +30,10 @@
 
 (after! dirvish
   (setq dirvish-hide-details t))
+
+;; Disable diredfl since it overrides colors from theme
+(after! diredfl
+  (remove-hook 'dired-mode-hook #'diredfl-mode))
 
 (setq org-directory "~/.orgfiles/")
 (setq org-agenda-files (directory-files-recursively org-directory "\\.org$"))
@@ -92,13 +97,13 @@
                        ;; mirroring what nvim-lspconfig does
                        (let* ((root (my/biome-project-root))
                               (local-bin (and root
-                                             (expand-file-name "node_modules/.bin/biome" root))))
+                                              (expand-file-name "node_modules/.bin/biome" root))))
                          (if (and local-bin (file-executable-p local-bin))
                              (list local-bin "lsp-proxy")
                            '("biome" "lsp-proxy")))))
       :activation-fn (lambda (file-name _mode)
-                     ;; Only activate when the project actually uses Biome
-                     (and (my/biome-find-root file-name) t))
+                       ;; Only activate when the project actually uses Biome
+                       (and (my/biome-find-root file-name) t))
     :multi-root nil
     :server-id 'biome
     :add-on? t))
@@ -109,15 +114,8 @@
 ;; Start LSP in TreeSitter modes
 (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp!)
 
-;; Exclude folders from lsp
-(with-eval-after-load 'lsp-mode
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]node_modules\\'")
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.git\\'")
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]dist\\'")
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]build\\'")
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.next\\'")
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.turbo\\'")
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]coverage\\'"))
+;; Skip file watches to not get a warning in large projects
+(setq lsp-enable-file-watchers nil)
 
 ;; Setup Biome formatting through Apheleia
 (after! apheleia
@@ -131,5 +129,7 @@
   (setf (alist-get 'json-mode apheleia-mode-alist) '(biome)))
 
 (use-package! treesit-auto
+  :custom
+  (treesit-auto-install 'prompt)
   :config
-  (global-treesit-auto-mode))
+  (treesit-auto-add-to-auto-mode-alist 'all))
