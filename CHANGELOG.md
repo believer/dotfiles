@@ -1,3 +1,10 @@
+## [1.177.2](https://github.com/believer/dotfiles/compare/v1.177.1...v1.177.2) (2026-05-15)
+
+
+### Bug Fixes
+
+* **doom:** update biome, treesitter, and lsp ([c346f79](https://github.com/believer/dotfiles/commit/c346f7996b649780ff97b6fd407facb705ef994d))
+
 ## [1.177.1](https://github.com/believer/dotfiles/compare/v1.177.0...v1.177.1) (2026-05-14)
 
 
