@@ -56,3 +56,4 @@
 
 (package! evil-terminal-cursor-changer)
 (package! denote)
+(package! treesit-auto)

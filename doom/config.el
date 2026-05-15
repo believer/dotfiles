@@ -1,11 +1,12 @@
 (defun my/tangle-config ()
-  (when (string-equal (buffer-file-name)
+  ;; file-equal-p resolves symlinks
+  (when (file-equal-p (buffer-file-name)
                       (expand-file-name "config.org" doom-user-dir))
     (org-babel-tangle)))
 
 (add-hook 'after-save-hook #'my/tangle-config)
 
-(setq doom-font (font-spec :family "MonoLisa" :size 11))
+(setq doom-font (font-spec :family "MonoLisa" :size 12))
 
 (setq doom-theme 'doom-tokyo-night)
 
@@ -70,20 +71,65 @@
   (add-to-list 'lsp-language-id-configuration '(typescript-ts-mode . "typescript"))
   (add-to-list 'lsp-language-id-configuration '(tsx-ts-mode . "typescriptreact"))
 
+  (defun my/biome-find-root (file-name)
+  "Walk up from FILE-NAME to find the nearest biome.json/biome.jsonc directory."
+  (locate-dominating-file file-name
+    (lambda (dir)
+      (or (file-exists-p (expand-file-name "biome.json" dir))
+          (file-exists-p (expand-file-name "biome.jsonc" dir))))))
+
+(defun my/biome-project-root ()
+  "Return the nearest biome.json directory for the current buffer, or nil."
+  (when-let* ((buf-file (buffer-file-name)))
+    (my/biome-find-root buf-file)))
+
   ;; Register Biome as an add-on LSP server (runs alongside ts-ls)
   (lsp-register-client
    (make-lsp-client
-    :new-connection (lsp-stdio-connection (lambda () '("biome" "lsp-proxy")))
-    :activation-fn (lsp-activate-on "typescript" "typescriptreact" "javascript")
+    :new-connection (lsp-stdio-connection
+                     (lambda ()
+                       ;; Prefer the local node_modules/.bin/biome over the global one,
+                       ;; mirroring what nvim-lspconfig does
+                       (let* ((root (my/biome-project-root))
+                              (local-bin (and root
+                                             (expand-file-name "node_modules/.bin/biome" root))))
+                         (if (and local-bin (file-executable-p local-bin))
+                             (list local-bin "lsp-proxy")
+                           '("biome" "lsp-proxy")))))
+      :activation-fn (lambda (file-name _mode)
+                     ;; Only activate when the project actually uses Biome
+                     (and (my/biome-find-root file-name) t))
+    :multi-root nil
     :server-id 'biome
     :add-on? t))
 
   ;; Only allow these two clients
-  (setq lsp-enabled-clients '(biome ts-ls))
-
-  ;; Biome is the primary formatter for TS/TSX
-  (setq-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook)
-    +format-with-lsp-provider 'biome))
+  (setq lsp-enabled-clients '(biome ts-ls)))
 
 ;; Start LSP in TreeSitter modes
 (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp!)
+
+;; Exclude folders from lsp
+(with-eval-after-load 'lsp-mode
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]node_modules\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.git\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]dist\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]build\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.next\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.turbo\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]coverage\\'"))
+
+;; Setup Biome formatting through Apheleia
+(after! apheleia
+  (setf (alist-get 'biome apheleia-formatters)
+        ;; Command from conform.nvim. Using check --write also runs actions.
+        '("biome" "check" "--write" "--stdin-file-path" filepath))
+  (setf (alist-get 'tsx-ts-mode apheleia-mode-alist) '(biome))
+  (setf (alist-get 'typescript-ts-mode apheleia-mode-alist) '(biome))
+  (setf (alist-get 'js-ts-mode apheleia-mode-alist) '(biome))
+  (setf (alist-get 'json-ts-mode apheleia-mode-alist) '(biome))
+  (setf (alist-get 'json-mode apheleia-mode-alist) '(biome)))
+
+(use-package! treesit-auto
+  :config
+  (global-treesit-auto-mode))
