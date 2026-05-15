@@ -60,6 +60,16 @@ This tangles the config.org to config.el on save.
 (add-hook 'after-save-hook #'my/tangle-config)
 #+end_src
 
+* Git
+
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "Magit pull from origin/main"
+      "g u" #'(lambda ()
+                (interactive)
+                (magit-pull-from-upstream nil)))
+#+end_src
+
 * Appearance
 
 ** Font

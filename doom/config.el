@@ -6,6 +6,12 @@
 
 (add-hook 'after-save-hook #'my/tangle-config)
 
+(map! :leader
+      :desc "Magit pull from origin/main"
+      "g u" #'(lambda ()
+                (interactive)
+                (magit-pull-from-upstream nil)))
+
 (setq doom-font (font-spec :family "MonoLisa" :size 12))
 
 (setq tokyo-night-scale-headings nil)
