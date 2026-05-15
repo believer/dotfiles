@@ -47,6 +47,7 @@
         (list (expand-file-name (concat org-directory "notes"))))
   (setq denote-dired-directories
         (list (expand-file-name (concat org-directory "notes"))))
+  ;; This enables denote-dired-mode in notes, but I'm not seeing a difference
   (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories))
 
 (map! :leader

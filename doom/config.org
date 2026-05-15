@@ -20,6 +20,7 @@ This tangles the config.org to config.el on save.
 (add-hook 'after-save-hook #'my/tangle-config)
 #+end_src
 
+
 * Appearance
 
 ** Font
@@ -82,7 +83,54 @@ Dirvish wraps dired in Doom. Hide file details by default in the explorer.
   (setq dirvish-hide-details t))
 #+end_src
 
+*** File handling
+
+Start by marking a file with ~m~. From here you could also invert the selection by pressing ~t~ to mark everything that's _not_ this file.
+
+With files selected, do:
+
+- ~C~ to copy
+- ~D~ to delete
+- ~R~ to rename and/or move files
+- ~Z~ to compress
+
+You can also mark files for deletion by pressing ~d~ and then ~x~ to execute.
+
 * Org Mode
+
+** Links
+
+- ~SPC m l l~ to insert/edit a link
+- ~SPC m l t~ to toggle link displays
+
+** Lists
+
+- Similar to how bulleted lists work in other outliners, ~M-arrows~ moves items up/down or increase/decreases indentation
+- Adding a new item of a similar kinds it done by ~C-RET~ in a list. I'm currently using the ~org-autolist~ to enable just doing ~RET~
+- ~S-left~ and ~S-right~ toggle between different bullet styles for an entire list
+
+** Dates
+
+- Toggle a date between active and inactive press ~S-up~ or ~S-down~
+- Using ~S-right~ or ~S-left~ to add or subtract a day in a date
+- To add a scheduled or deadline date to a headline, use ~SPC m d s~ or ~SPC m d d~ respectively. This inserts an _active date_.
+
+** Tasks
+
+- Headline status can be toggled between TODO and DONE by pressing ~RET~ on the line in normal mode
+- Add a TODO status to a headline with ~SPC m t t~ (or use ~SPC m t~ and select another status)
+
+** Task lists [1/3]
+
+- [X] This list has multiple items to complete
+- [ ] By completing one we can indicate how many are done in the headline by adding ~[/]~
+- [-] There's also a built-in syntax for nested items with partial completion
+  - [X] Test 1
+  - [ ] Test 2
+
+** Priority
+
+Tasks, or headlines in general can have a priority associated with them. This is added by pressing ~C-c ,~. This will automatically move to the closest headline above your current position and allow you to enter a priority.
 
 ** Directory & Agenda
 
@@ -121,6 +169,7 @@ Log a timestamp when a task is marked done.
         (list (expand-file-name (concat org-directory "notes"))))
   (setq denote-dired-directories
         (list (expand-file-name (concat org-directory "notes"))))
+  ;; This enables denote-dired-mode in notes, but I'm not seeing a difference
   (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories))
 #+end_src
 
