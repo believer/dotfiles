@@ -9,6 +9,8 @@ Literate Doom Emacs configuration. This file is automatically tangled into
 
 * Installation
 
+** Emacs
+
 Install =emacs-plus= which has worked the best for me of all versions listed in docs.
 
 #+begin_src bash
@@ -16,49 +18,32 @@ brew tap d12frosted/emacs-plus
 brew install emacs-plus
 #+end_src
 
-Create a ~launch.d~ configuration to get the daemon started on startup
+These are from the postinstall instructions of emacs-plus.
 
 #+begin_src bash
-launchctl load -w ~/Library/LaunchAgents/gnu.emacs.daemon.plist
+# Copy apps
+cp -r /opt/homebrew/opt/emacs-plus@30/Emacs.app /Applications/
+cp -r "/opt/homebrew/opt/emacs-plus@30/Emacs Client.app" /Applications/
+
+# Start daemon
+brew services start d12frosted/emacs-plus/emacs-plus@30
 #+end_src
 
-#+begin_src xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
-  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-  <key>Label</key>
-  <string>gnu.emacs.daemon</string>
-  <key>ProgramArguments</key>
-  <array>
-    <string>/Users/rickard/.config/emacs/bin/doom</string>
-    <string>emacs</string>
-    <string>--daemon</string>
-  </array>
-  <key>RunAtLoad</key>
-  <true/>
-  <key>KeepAlive</key>
-  <true/>
-</dict>
-</plist>
-#+end_src
-
-Create an Automator app that uses the =emacsclient=
+** Install Doom
 
 #+begin_src bash
-/opt/homebrew/bin/emacsclient \
-  --create-frame \
-  --alternate-editor="" \
-  --no-wait
+# This is the default config and while take precendence if it exists
+rm -rf ~/.emacs.d
 
-# Set the app frontmost and full screen
-osascript <<'EOF'
-tell application "System Events"
-  set frontmost of (first process whose name is "Emacs") to true
-  keystroke "f" using {control down, command down}
-end tell
-EOF
+# Install Doom
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+~/.config/emacs/bin/doom install
+#+end_src
+
+You might need to symlink the configuration from dotfiles to .doom.d
+
+#+begin_src bash
+ln -s ~/.dotfiles/doom ~/.doom.d
 #+end_src
 
 * Tangle on reload
@@ -74,7 +59,6 @@ This tangles the config.org to config.el on save.
 (add-hook 'after-save-hook #'my/tangle-config)
 #+end_src
 
-
 * Appearance
 
 ** Font
@@ -82,7 +66,7 @@ This tangles the config.org to config.el on save.
 [[https://www.monolisa.dev/][MonoLisa]] as the primary monospace font.
 
 #+begin_src emacs-lisp
-(setq doom-font (font-spec :family "MonoLisa" :size 11))
+(setq doom-font (font-spec :family "MonoLisa" :size 12))
 #+end_src
 
 ** Theme
