@@ -7,6 +7,60 @@
 Literate Doom Emacs configuration. This file is automatically tangled into
 =config.el= on startup. Edit this file instead of =config.el= directly.
 
+* Installation
+
+Install =emacs-plus= which has worked the best for me of all versions listed in docs.
+
+#+begin_src bash
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
+#+end_src
+
+Create a ~launch.d~ configuration to get the daemon started on startup
+
+#+begin_src bash
+launchctl load -w ~/Library/LaunchAgents/gnu.emacs.daemon.plist
+#+end_src
+
+#+begin_src xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>gnu.emacs.daemon</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/rickard/.config/emacs/bin/doom</string>
+    <string>emacs</string>
+    <string>--daemon</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+</dict>
+</plist>
+#+end_src
+
+Create an Automator app that uses the =emacsclient=
+
+#+begin_src bash
+/opt/homebrew/bin/emacsclient \
+  --create-frame \
+  --alternate-editor="" \
+  --no-wait
+
+# Set the app frontmost and full screen
+osascript <<'EOF'
+tell application "System Events"
+  set frontmost of (first process whose name is "Emacs") to true
+  keystroke "f" using {control down, command down}
+end tell
+EOF
+#+end_src
+
 * Tangle on reload
 
 This tangles the config.org to config.el on save.
