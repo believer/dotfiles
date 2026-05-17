@@ -7,10 +7,14 @@
 (add-hook 'after-save-hook #'my/tangle-config)
 
 (map! :leader
-      :desc "Magit pull from origin/main"
+      :desc "Pull from origin"
       "g u" #'(lambda ()
                 (interactive)
-                (magit-pull-from-upstream nil)))
+                (magit-pull-from-upstream nil))
+      :desc "Push to current branch"
+      "g p" #'(lambda ()
+                (interactive)
+                (magit-push-current-to-upstream nil)))
 
 (setq doom-font (font-spec :family "MonoLisa" :size 12))
 

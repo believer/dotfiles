@@ -64,10 +64,14 @@ This tangles the config.org to config.el on save.
 
 #+begin_src emacs-lisp
 (map! :leader
-      :desc "Magit pull from origin/main"
+      :desc "Pull from origin"
       "g u" #'(lambda ()
                 (interactive)
-                (magit-pull-from-upstream nil)))
+                (magit-pull-from-upstream nil))
+      :desc "Push to current branch"
+      "g p" #'(lambda ()
+                (interactive)
+                (magit-push-current-to-upstream nil)))
 #+end_src
 
 * Appearance
