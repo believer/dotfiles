@@ -1,3 +1,10 @@
+# [1.178.0](https://github.com/believer/dotfiles/compare/v1.177.2...v1.178.0) (2026-05-17)
+
+
+### Features
+
+* **doom:** setup templ and go formatting and lsps ([99da128](https://github.com/believer/dotfiles/commit/99da12884c0df7512992be6b0d6c8ff2a8ccde2a))
+
 ## [1.177.2](https://github.com/believer/dotfiles/compare/v1.177.1...v1.177.2) (2026-05-15)
 
 
