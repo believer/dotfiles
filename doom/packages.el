@@ -57,3 +57,7 @@
 (package! evil-terminal-cursor-changer)
 (package! denote)
 (package! treesit-auto)
+(package! denote)
+(package! tokyo-night)
+(package! templ-ts-mode)
+;; (package! rainbow-delimeters)

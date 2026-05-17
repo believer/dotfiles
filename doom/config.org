@@ -15,32 +15,17 @@ Install =emacs-plus= which has worked the best for me of all versions listed in 
 
 #+begin_src bash
 brew tap d12frosted/emacs-plus
-brew install emacs-plus
-#+end_src
-
-These are from the postinstall instructions of emacs-plus.
-
-#+begin_src bash
-# Copy apps
-cp -r /opt/homebrew/opt/emacs-plus@30/Emacs.app /Applications/
-cp -r "/opt/homebrew/opt/emacs-plus@30/Emacs Client.app" /Applications/
-
-# Start daemon
-brew services start d12frosted/emacs-plus/emacs-plus@30
+brew install --cask emacs-plus-app
 #+end_src
 
 ** Install Doom
 
 #+begin_src bash
-# This is the default config and while take precendence if it exists
-rm -rf ~/.emacs.d
-
-# Install Doom
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-~/.config/emacs/bin/doom install
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+~/.emacs.d/bin/doom install
 #+end_src
 
-You might need to symlink the configuration from dotfiles to .doom.d
+You might need to symlink the configuration from dotfiles to ~.doom.d~
 
 #+begin_src bash
 ln -s ~/.dotfiles/doom ~/.doom.d
@@ -93,8 +78,8 @@ A variation of my trusty [[https://github.com/folke/tokyonight.nvim][Tokyo Night
 (setq doom-theme 'tokyo-night)
 
 ;; Use rainbow brackets
-(add-hook 'org-mode-hook #'rainbow-delimiters-mode)
-(add-hook 'typescript-ts-mode-hook #'rainbow-delimiters-mode)
+;; (add-hook 'org-mode-hook #'rainbow-delimiters-mode)
+;; (add-hook 'typescript-ts-mode-hook #'rainbow-delimiters-mode)
 #+end_src
 
 ** Line Numbers
@@ -134,7 +119,7 @@ Display a thin caret in insert mode when running in terminal.
 
 ** Dired / Dirvish
 
-Dirvish wraps dired in Doom. Hide file details by default in the explorer.
+Doom wraps dired in Dirvish. Hide file details by default in the explorer.
 
 #+begin_src emacs-lisp
 (after! dirvish
