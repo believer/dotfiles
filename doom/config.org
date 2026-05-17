@@ -245,21 +245,17 @@ Use =goimports= (a superset of =gofmt=) to format and auto-import on save.
   (add-hook 'before-save-hook #'gofmt-before-save))
 #+end_src
 
-** TypeScript
+** LSP and formatting
 
-Use Tree-sitter modes and configure LSP with both =ts-ls= and [[https://biomejs.dev/][Biome]].
+Setup custom tree-sitter, LSPs, and formatting.
 
 #+begin_src emacs-lisp
-;; Use TreeSitter modes for TypeScript/TSX files
+;; Setup auto adding of language modes
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.templ\\'" . templ-ts-mode))
 
-(after! lsp-mode
-  ;; Map treesitter modes to LSP language IDs
-  (add-to-list 'lsp-language-id-configuration '(typescript-ts-mode . "typescript"))
-  (add-to-list 'lsp-language-id-configuration '(tsx-ts-mode . "typescriptreact"))
-
-  (defun my/biome-find-root (file-name)
+(defun my/biome-find-root (file-name)
   "Walk up from FILE-NAME to find the nearest biome.json/biome.jsonc directory."
   (locate-dominating-file file-name
     (lambda (dir)
@@ -270,6 +266,12 @@ Use Tree-sitter modes and configure LSP with both =ts-ls= and [[https://biomejs.
   "Return the nearest biome.json directory for the current buffer, or nil."
   (when-let* ((buf-file (buffer-file-name)))
     (my/biome-find-root buf-file)))
+
+(after! lsp-mode
+  ;; Map treesitter modes to LSP language IDs
+  (add-to-list 'lsp-language-id-configuration '(typescript-ts-mode . "typescript"))
+  (add-to-list 'lsp-language-id-configuration '(tsx-ts-mode . "typescriptreact"))
+  (add-to-list 'lsp-language-id-configuration '(templ-ts-mode . "templ"))
 
   ;; Register Biome as an add-on LSP server (runs alongside ts-ls)
   (lsp-register-client
@@ -285,32 +287,56 @@ Use Tree-sitter modes and configure LSP with both =ts-ls= and [[https://biomejs.
                              (list local-bin "lsp-proxy")
                            '("biome" "lsp-proxy")))))
       :activation-fn (lambda (file-name _mode)
-                       ;; Only activate when the project actually uses Biome
-                       (and (my/biome-find-root file-name) t))
+                       ;; Only activate when the project actually uses Biome and file extensions match
+                       (and (string-match-p "\\.\\(ts\\|tsx\\|js\\|jsx\\|json\\)\\'" file-name)
+                            (my/biome-find-root file-name)
+                            t))
     :multi-root nil
     :server-id 'biome
-    ;; This seemed to be essential to make it possible to run multiple LSPs
+    ;; This is needed to run ts_ls and biome together
+    :add-on? t))
+
+  ;; Register Templ LSP
+  (lsp-register-client
+    (make-lsp-client
+    :new-connection (lsp-stdio-connection
+                    (lambda ()
+                        '("templ" "lsp")))
+    :major-modes '(templ-ts-mode)
+    :server-id 'templ
+    ;; Same as above for gopls and templ
     :add-on? t))
 
   ;; Only allow these two clients
-  (setq lsp-enabled-clients '(biome ts-ls)))
+  (setq lsp-enabled-clients '(biome ts-ls templ gopls)))
 
 ;; Start LSP in TreeSitter modes
-(add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) #'lsp!)
+(add-hook! '(typescript-ts-mode-hook
+             tsx-ts-mode-hook
+             go-ts-mode-hook
+             templ-ts-mode-hook)
+           #'lsp!)
 
 ;; Skip file watches to not get a warning in large projects
 (setq lsp-enable-file-watchers nil)
 
-;; Setup Biome formatting through Apheleia
+;; Setup formatting through Apheleia
+;; Commands are taken from conform.nvim.
 (after! apheleia
+  ;; Biome
   (setf (alist-get 'biome apheleia-formatters)
-        ;; Command from conform.nvim. Using check --write also runs actions.
+         ;; Using check --write also runs actions.
         '("biome" "check" "--write" "--stdin-file-path" filepath))
   (setf (alist-get 'tsx-ts-mode apheleia-mode-alist) '(biome))
   (setf (alist-get 'typescript-ts-mode apheleia-mode-alist) '(biome))
   (setf (alist-get 'js-ts-mode apheleia-mode-alist) '(biome))
   (setf (alist-get 'json-ts-mode apheleia-mode-alist) '(biome))
-  (setf (alist-get 'json-mode apheleia-mode-alist) '(biome)))
+  (setf (alist-get 'json-mode apheleia-mode-alist) '(biome))
+
+  ;; Templ
+  (setf (alist-get 'templ apheleia-formatters)
+        '("templ" "fmt" "-stdin-filepath" filepath))
+  (setf (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ)))
 #+end_src
 
 ** Treesitter
