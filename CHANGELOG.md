@@ -1,3 +1,16 @@
+# [1.179.0](https://github.com/believer/dotfiles/compare/v1.178.0...v1.179.0) (2026-05-18)
+
+
+### Bug Fixes
+
+* **doom:** add configuration for ts-ls ([cd85d1a](https://github.com/believer/dotfiles/commit/cd85d1abbce203e7897a072fd10926725f45668c))
+* **doom:** setup notes directory for denote ([61b6a53](https://github.com/believer/dotfiles/commit/61b6a53ab4296c1cd8bc474785a74959a4e90146))
+
+
+### Features
+
+* **doom:** add org mode journaling ([659004e](https://github.com/believer/dotfiles/commit/659004e390b1c3037244999446d8024885d9019a))
+
 # [1.178.0](https://github.com/believer/dotfiles/compare/v1.177.2...v1.178.0) (2026-05-17)
 
 
