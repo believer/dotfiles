@@ -1,3 +1,10 @@
+## [1.179.1](https://github.com/believer/dotfiles/compare/v1.179.0...v1.179.1) (2026-05-18)
+
+
+### Bug Fixes
+
+* **doom:** too many parens ([2b86dc9](https://github.com/believer/dotfiles/commit/2b86dc9c2cfa5489ac8231f5fe9093ae1b1c6fae))
+
 # [1.179.0](https://github.com/believer/dotfiles/compare/v1.178.0...v1.179.0) (2026-05-18)
 
 
