@@ -110,6 +110,13 @@
   (add-to-list 'lsp-language-id-configuration '(tsx-ts-mode . "typescriptreact"))
   (add-to-list 'lsp-language-id-configuration '(templ-ts-mode . "templ"))
 
+  ;; Setup preferences for TypeScript
+  (setq lsp-clients-typescript-preferences
+        '(:includeCompletionsForModuleExports t
+          :includeCompletionsForImportStatements t
+          :importModuleSpecifierPreference "non-relative"
+          :importModuleSpecifierEnding "minimal")))
+
   ;; Register Biome as an add-on LSP server (runs alongside ts-ls)
   (lsp-register-client
    (make-lsp-client
