@@ -125,7 +125,7 @@
         '(:includeCompletionsForModuleExports t
           :includeCompletionsForImportStatements t
           :importModuleSpecifierPreference "non-relative"
-          :importModuleSpecifierEnding "minimal")))
+          :importModuleSpecifierEnding "minimal"))
 
   ;; Register Biome as an add-on LSP server (runs alongside ts-ls)
   (lsp-register-client
