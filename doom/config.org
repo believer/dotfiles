@@ -221,6 +221,7 @@ Tasks, or headlines in general can have a priority associated with them. This is
 #+begin_src emacs-lisp
 (use-package! denote
   :config
+  (setq denote-directory (concat org-directory "notes"))
   (setq denote-directories
         (list (expand-file-name (concat org-directory "notes"))))
   (setq denote-dired-directories

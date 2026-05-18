@@ -78,6 +78,7 @@
 
 (use-package! denote
   :config
+  (setq denote-directory (concat org-directory "notes"))
   (setq denote-directories
         (list (expand-file-name (concat org-directory "notes"))))
   (setq denote-dired-directories
