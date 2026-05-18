@@ -67,6 +67,15 @@
          (file+headline ,(concat org-directory "tasks.org") "Tasks")
          "* TODO %?\n%^t\n%a\n")))
 
+(setq org-journal-dir (concat org-directory "journal"))
+(setq org-journal-date-format "%A, %Y-%m-%d")
+
+(map! :leader
+      :prefix "o"
+      :desc "New journal entry" "j e" #'org-journal-new-entry
+      :desc "Next journal entry" "j n" #'org-journal-next-entry
+      :desc "Previous journal entry" "j p" #'org-journal-previous-entry)
+
 (use-package! denote
   :config
   (setq denote-directories
