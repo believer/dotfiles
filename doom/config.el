@@ -67,8 +67,10 @@
          (file+headline ,(concat org-directory "tasks.org") "Tasks")
          "* TODO %?\n%^t\n%a\n")))
 
-(setq org-journal-dir (concat org-directory "journal"))
-(setq org-journal-date-format "%A, %Y-%m-%d")
+(setq
+ org-journal-dir (concat org-directory "journal")
+ org-journal-file-format  "%Y%m%d.org"
+ org-journal-date-format "%A, %Y-%m-%d")
 
 (map! :leader
       :prefix "o"

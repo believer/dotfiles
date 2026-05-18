@@ -204,8 +204,10 @@ Tasks, or headlines in general can have a priority associated with them. This is
 ** Journal
 
 #+begin_src emacs-lisp
-(setq org-journal-dir (concat org-directory "journal"))
-(setq org-journal-date-format "%A, %Y-%m-%d")
+(setq
+ org-journal-dir (concat org-directory "journal")
+ org-journal-file-format  "%Y%m%d.org"
+ org-journal-date-format "%A, %Y-%m-%d")
 
 (map! :leader
       :prefix "o"
