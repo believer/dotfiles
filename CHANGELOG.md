@@ -1,3 +1,10 @@
+# [1.180.0](https://github.com/believer/dotfiles/compare/v1.179.1...v1.180.0) (2026-05-19)
+
+
+### Features
+
+* **doom:** start adding snippets ([104b936](https://github.com/believer/dotfiles/commit/104b93694e1eeef859268b5eac83255ff1e62224))
+
 ## [1.179.1](https://github.com/believer/dotfiles/compare/v1.179.0...v1.179.1) (2026-05-18)
 
 
