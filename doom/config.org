@@ -166,7 +166,7 @@ You can also mark files for deletion by pressing ~d~ and then ~x~ to execute.
 ** Task lists [1/3]
 
 - [X] This list has multiple items to complete
-- [ ] By completing one we can indicate how many are done in the headline by adding ~[/]~
+- [ ] By completing one we can indicate how many are done in the headline by adding ~[/]~. There's also ~[%]~ to display a percentage.
 - [-] There's also a built-in syntax for nested items with partial completion
   - [X] Test 1
   - [ ] Test 2
