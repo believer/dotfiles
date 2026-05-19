@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: React Native component
+# Key: rncmp
+# --
+import { Text, View } from 'react-native'
+
+type ${1:`(pascal-case-file-name)`}Props = {
+}
+
+export function ${1:`(pascal-case-file-name)`}({}: ${1:`(pascal-case-file-name)`}Props) {
+  return (
+    <View>
+      <Text>${1:`(pascal-case-file-name)`}</Text>
+    </View>
+  )
+}

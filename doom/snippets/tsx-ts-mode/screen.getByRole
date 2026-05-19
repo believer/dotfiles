@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: screen.getByRole
+# group: test.ui
+# key: sgr
+# --
+screen.getByRole('$1', { name: '$2' })

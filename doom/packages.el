@@ -61,4 +61,3 @@
 (package! tokyo-night)
 (package! templ-ts-mode)
 (package! org-journal)
-;; (package! rainbow-delimeters)

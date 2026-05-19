@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Assert - toBeOnTheScreen
+# key: exps
+# group: test
+# --
+expect($1)$2.toBeOnTheScreen()$0

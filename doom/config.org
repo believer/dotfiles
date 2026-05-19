@@ -184,6 +184,7 @@ Tasks, or headlines in general can have a priority associated with them. This is
       (list
        (expand-file-name "notes.org" org-directory)
        (expand-file-name "tasks.org" org-directory)
+       (expand-file-name "journal" org-directory)
        (expand-file-name "projects" org-directory)))
 
 ;; Add a timestamp when a task is marked done
@@ -369,4 +370,16 @@ auto mode to not have it run on every file open since I already have all parsers
   (treesit-auto-install 'prompt)
   :config
   (treesit-auto-add-to-auto-mode-alist 'all))
+#+end_src
+
+* Snippets
+
+#+begin_src emacs-lisp
+(require 'cl-lib)
+
+(defun pascal-case-file-name ()
+  "Return the current file name in PascalCase"
+  (let* ((name (file-name-sans-extension (buffer-name)))
+         (parts (split-string name "[-_]")))
+    (mapconcat #'capitalize parts "")))
 #+end_src

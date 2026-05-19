@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: screen.queryBy*
+# group: test.ui
+# key: sqb
+# --
+screen.queryBy${1:Text}('$2')

@@ -51,6 +51,7 @@
       (list
        (expand-file-name "notes.org" org-directory)
        (expand-file-name "tasks.org" org-directory)
+       (expand-file-name "journal" org-directory)
        (expand-file-name "projects" org-directory)))
 
 ;; Add a timestamp when a task is marked done
@@ -195,3 +196,11 @@
   (treesit-auto-install 'prompt)
   :config
   (treesit-auto-add-to-auto-mode-alist 'all))
+
+(require 'cl-lib)
+
+(defun pascal-case-file-name ()
+  "Return the current file name in PascalCase"
+  (let* ((name (file-name-sans-extension (buffer-name)))
+         (parts (split-string name "[-_]")))
+    (mapconcat #'capitalize parts "")))

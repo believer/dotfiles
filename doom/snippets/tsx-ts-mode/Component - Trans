@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Translation component
+# group: ui
+# key: rntr
+# --
+<Trans>$1</Trans>$0
