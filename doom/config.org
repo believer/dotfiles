@@ -76,10 +76,6 @@ A variation of my trusty [[https://github.com/folke/tokyonight.nvim][Tokyo Night
 #+begin_src emacs-lisp
 (setq tokyo-night-scale-headings nil)
 (setq doom-theme 'tokyo-night)
-
-;; Use rainbow brackets
-;; (add-hook 'org-mode-hook #'rainbow-delimiters-mode)
-;; (add-hook 'typescript-ts-mode-hook #'rainbow-delimiters-mode)
 #+end_src
 
 ** Line Numbers

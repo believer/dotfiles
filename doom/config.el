@@ -21,10 +21,6 @@
 (setq tokyo-night-scale-headings nil)
 (setq doom-theme 'tokyo-night)
 
-;; Use rainbow brackets
-;; (add-hook 'org-mode-hook #'rainbow-delimiters-mode)
-;; (add-hook 'typescript-ts-mode-hook #'rainbow-delimiters-mode)
-
 (setq display-line-numbers-type 'relative)
 
 (after! evil
