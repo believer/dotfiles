@@ -1,3 +1,10 @@
+## [1.180.1](https://github.com/believer/dotfiles/compare/v1.180.0...v1.180.1) (2026-05-20)
+
+
+### Bug Fixes
+
+* **doom:** go formatting and tabs ([f718984](https://github.com/believer/dotfiles/commit/f718984893e9410bd344f857b2dcd028511e996f))
+
 # [1.180.0](https://github.com/believer/dotfiles/compare/v1.179.1...v1.180.0) (2026-05-19)
 
 
