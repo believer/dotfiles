@@ -92,9 +92,11 @@
 
 (setq user-full-name "Rickard Natt och Dag")
 
-(after! go-mode
-  (setq gofmt-command "goimports")
-  (add-hook 'before-save-hook #'gofmt-before-save))
+;; Go
+(add-hook 'go-ts-mode-hook
+          (lambda ()
+            (setq tab-width 2)
+            (local-set-key (kbd "TAB") #'tab-to-tab-stop)))
 
 ;; Setup auto adding of language modes
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
@@ -176,7 +178,7 @@
 ;; Setup formatting through Apheleia
 ;; Commands are taken from conform.nvim.
 (after! apheleia
-  ;; Biome
+  ;; Biome (JSON/JS/TS)
   (setf (alist-get 'biome apheleia-formatters)
          ;; Using check --write also runs actions.
         '("biome" "check" "--write" "--stdin-file-path" filepath))
@@ -186,7 +188,8 @@
   (setf (alist-get 'json-ts-mode apheleia-mode-alist) '(biome))
   (setf (alist-get 'json-mode apheleia-mode-alist) '(biome))
 
-  ;; Templ
+  ;; Go and templ
+  (setf (alist-get 'go-ts-mode apheleia-mode-alist) '(goimports))
   (setf (alist-get 'templ apheleia-formatters)
         '("templ" "fmt" "-stdin-filepath" filepath))
   (setf (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ)))

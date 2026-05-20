@@ -252,10 +252,15 @@ Global author name used as a fallback when exporting org files.
 
 Use =goimports= (a superset of =gofmt=) to format and auto-import on save.
 
+Visually use 2 tabs instead of 8 as is default and update how the tab key
+is handled to avoid weird behavior when tabbing from first column in file.
+
 #+begin_src emacs-lisp
-(after! go-mode
-  (setq gofmt-command "goimports")
-  (add-hook 'before-save-hook #'gofmt-before-save))
+;; Go
+(add-hook 'go-ts-mode-hook
+          (lambda ()
+            (setq tab-width 2)
+            (local-set-key (kbd "TAB") #'tab-to-tab-stop)))
 #+end_src
 
 ** LSP and formatting
@@ -343,7 +348,7 @@ Setup custom tree-sitter, LSPs, and formatting.
 ;; Setup formatting through Apheleia
 ;; Commands are taken from conform.nvim.
 (after! apheleia
-  ;; Biome
+  ;; Biome (JSON/JS/TS)
   (setf (alist-get 'biome apheleia-formatters)
          ;; Using check --write also runs actions.
         '("biome" "check" "--write" "--stdin-file-path" filepath))
@@ -353,7 +358,8 @@ Setup custom tree-sitter, LSPs, and formatting.
   (setf (alist-get 'json-ts-mode apheleia-mode-alist) '(biome))
   (setf (alist-get 'json-mode apheleia-mode-alist) '(biome))
 
-  ;; Templ
+  ;; Go and templ
+  (setf (alist-get 'go-ts-mode apheleia-mode-alist) '(goimports))
   (setf (alist-get 'templ apheleia-formatters)
         '("templ" "fmt" "-stdin-filepath" filepath))
   (setf (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ)))
