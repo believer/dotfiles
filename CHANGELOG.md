@@ -1,3 +1,10 @@
+## [1.180.2](https://github.com/believer/dotfiles/compare/v1.180.1...v1.180.2) (2026-05-22)
+
+
+### Bug Fixes
+
+* **doom:** enable org-journal-mode in journal files ([47cd1fa](https://github.com/believer/dotfiles/commit/47cd1fa16070a1768007d492f7bd0180b4c3ab22))
+
 ## [1.180.1](https://github.com/believer/dotfiles/compare/v1.180.0...v1.180.1) (2026-05-20)
 
 
