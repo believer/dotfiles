@@ -69,6 +69,12 @@
  org-journal-file-format  "%Y%m%d.org"
  org-journal-date-format "%A, %Y-%m-%d")
 
+;; Automatically enable org-journal-mode for all files inside the journal folder
+;; This makes it possible to use the key bindings below
+(add-to-list 'auto-mode-alist
+             (cons (concat (regexp-quote (expand-file-name org-journal-dir)) ".*\\.org\\'")
+                   'org-journal-mode))
+
 (map! :leader
       :prefix "o"
       :desc "New journal entry" "j e" #'org-journal-new-entry
