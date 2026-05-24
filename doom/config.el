@@ -62,7 +62,7 @@
 (setq org-capture-templates
       `(("t" "Task" entry
          (file+headline ,(concat org-directory "tasks.org") "Tasks")
-         "* TODO %?\n%^t\n%a\n")))
+         "** TODO %?\n%^t\n%a\n")))
 
 (setq
  org-journal-dir (concat org-directory "journal")
