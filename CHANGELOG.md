@@ -1,3 +1,10 @@
+## [1.180.3](https://github.com/believer/dotfiles/compare/v1.180.2...v1.180.3) (2026-05-24)
+
+
+### Bug Fixes
+
+* **doom:** headline depth in todo capture note ([88c93e9](https://github.com/believer/dotfiles/commit/88c93e9eeb55b9bf54c86a18eb8852c82fcc616d))
+
 ## [1.180.2](https://github.com/believer/dotfiles/compare/v1.180.1...v1.180.2) (2026-05-22)
 
 
