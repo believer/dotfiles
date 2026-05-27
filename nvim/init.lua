@@ -330,7 +330,7 @@ local formatter_settings = {
 		css = { "biome-check" },
 		-- Enable formatting of embedded languages using injected
 		-- For example, sql from queries/go/injections.scm
-		go = { "gofmt", "injected" },
+		go = { "goimports", "injected" },
 		json = { "biome-check" },
 		lua = { "stylua" },
 		markdown = { "prettierd" },
