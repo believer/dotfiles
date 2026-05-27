@@ -1,3 +1,11 @@
+# [1.181.0](https://github.com/believer/dotfiles/compare/v1.180.3...v1.181.0) (2026-05-27)
+
+
+### Features
+
+* **doom:** add olivetti ([b598ad3](https://github.com/believer/dotfiles/commit/b598ad3494eecdf24d7e67d6afcfdfb7db318fce))
+* **nvim:** use goimports for formatting ([f660616](https://github.com/believer/dotfiles/commit/f660616a620b0a6f6103570cd6d8e3d052240eda))
+
 ## [1.180.3](https://github.com/believer/dotfiles/compare/v1.180.2...v1.180.3) (2026-05-24)
 
 
