@@ -1,3 +1,10 @@
+# [1.182.0](https://github.com/believer/dotfiles/compare/v1.181.0...v1.182.0) (2026-05-28)
+
+
+### Features
+
+* add pick commands for buffers ([aae1926](https://github.com/believer/dotfiles/commit/aae1926e48a7dfc9d3ae8278b87005f1f30b6fe9))
+
 # [1.181.0](https://github.com/believer/dotfiles/compare/v1.180.3...v1.181.0) (2026-05-27)
 
 
