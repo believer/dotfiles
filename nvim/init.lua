@@ -455,6 +455,8 @@ map("n", "N", "Nzzzv")
 map("n", "-", ":Oil<CR>")
 map("n", "<leader>;", ":Pick files<CR>") -- Files
 map("n", "<leader>?", ":Pick grep_live<CR>") -- Search in files
+map("n", "<leader>bs", ":Pick buffers<CR>") -- Search in buffers
+map("n", "<leader>bl", ":Pick buf_lines<CR>") -- Search in buffers
 map("n", "<leader>th", ":Pick help<CR>") -- Help files
 map("n", "<leader>tr", ":Pick resume<CR>") -- Resume latest pick
 
