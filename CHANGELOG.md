@@ -1,3 +1,10 @@
+# [1.183.0](https://github.com/believer/dotfiles/compare/v1.182.0...v1.183.0) (2026-05-30)
+
+
+### Features
+
+* **nvim:** re-add org mode ([0fb2acd](https://github.com/believer/dotfiles/commit/0fb2acd70d58fba64d6dddd9d70d77c59e0d06ad))
+
 # [1.182.0](https://github.com/believer/dotfiles/compare/v1.181.0...v1.182.0) (2026-05-28)
 
 
