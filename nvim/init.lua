@@ -395,7 +395,10 @@ vim.api.nvim_create_autocmd("BufLeave", {
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
-		vim.api.nvim_set_hl(0, "@org.keyword.todo", { fg = "#f7768e" })
+		vim.api.nvim_set_hl(0, "@org.headline.level1", { fg = "#b4f9f8" })
+		vim.api.nvim_set_hl(0, "@org.headline.level2", { fg = "#0db9d7" })
+		vim.api.nvim_set_hl(0, "@org.headline.level3", { fg = "#7aa2f7" })
+		vim.api.nvim_set_hl(0, "@org.keyword.todo", { fg = "#ff9e64" })
 		vim.api.nvim_set_hl(0, "@org.keyword.done", { fg = "#9ece6a" })
 	end,
 })
