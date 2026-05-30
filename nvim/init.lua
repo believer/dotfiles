@@ -23,6 +23,7 @@ vim.pack.add({
 	gh("L3MON4D3/LuaSnip"), -- Snippets
 	gh("neovim/nvim-lspconfig"), -- LSP configs
 	gh("mason-org/mason.nvim"), -- LSP installer
+	gh("nvim-orgmode/orgmode"),
 	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" }, -- Treesitter
 	{ src = gh("saghen/blink.cmp"), version = "v1" }, -- Completions
 	{ src = gh("vieitesss/miniharp.nvim"), version = vim.version.range("v*") }, -- Miniharp
@@ -60,6 +61,28 @@ vim.api.nvim_create_autocmd("PackChanged", {
 
 -- Setup plugins
 --------------------------------------------------
+
+-- Orgmode
+local orgfiles = "~/.orgfiles/"
+local notes = "~/.orgfiles/notes"
+
+require("orgmode").setup({
+	org_agenda_files = notes .. "**/*",
+	org_default_notes_file = orgfiles .. "refile.org",
+	org_startup_indented = true,
+	org_capture_templates = {
+		n = {
+			description = "New note",
+			template = "#+TITLE: %^{Title}\n#+AUTHOR: Rickard Natt och Dag\n#+CREATED: %U\n\n%?",
+			target = notes .. "%^{Name}.org",
+		},
+		i = {
+			description = "Inbox",
+			template = "* %^{Title}\n  %U\n  %?",
+			target = notes .. "inbox.org",
+		},
+	},
+})
 
 -- Miniharp
 local miniharp = require("miniharp")
@@ -212,6 +235,7 @@ vim.lsp.enable({
 	"stylua",
 	"templ",
 	"tsgo",
+	"org",
 	-- "ts_ls",
 	"yamlfmt",
 	"yamlls",
@@ -355,6 +379,27 @@ end
 require("conform").setup(formatter_settings)
 
 -- Color scheme
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "*.org",
+	callback = function()
+		-- Remove background color for folds in OrgMode
+		vim.api.nvim_set_hl(0, "Folded", { bg = "NONE" })
+	end,
+})
+vim.api.nvim_create_autocmd("BufLeave", {
+	pattern = "*.org",
+	callback = function()
+		vim.api.nvim_set_hl(0, "Folded", {}) -- resets to colorscheme default
+	end,
+})
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "@org.keyword.todo", { fg = "#f7768e" })
+		vim.api.nvim_set_hl(0, "@org.keyword.done", { fg = "#9ece6a" })
+	end,
+})
+
 vim.cmd.colorscheme("tokyonight-night")
 
 -- Custom plugins (must run after color scheme to get correct colors)
