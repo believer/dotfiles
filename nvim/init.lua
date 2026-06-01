@@ -12,6 +12,7 @@ g.maplocalleader = " "
 
 -- Install plugins
 vim.pack.add({
+	gh("folke/zen-mode.nvim"), -- Zen
 	gh("folke/tokyonight.nvim"), -- Color scheme
 	gh("tpope/vim-surround"), -- Actions on surrounding context
 	gh("tpope/vim-fugitive"), -- Git
@@ -23,7 +24,7 @@ vim.pack.add({
 	gh("L3MON4D3/LuaSnip"), -- Snippets
 	gh("neovim/nvim-lspconfig"), -- LSP configs
 	gh("mason-org/mason.nvim"), -- LSP installer
-	gh("nvim-orgmode/orgmode"),
+	gh("nvim-orgmode/orgmode"), -- Org mode
 	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" }, -- Treesitter
 	{ src = gh("saghen/blink.cmp"), version = "v1" }, -- Completions
 	{ src = gh("vieitesss/miniharp.nvim"), version = vim.version.range("v*") }, -- Miniharp
