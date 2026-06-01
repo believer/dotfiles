@@ -1,3 +1,10 @@
+## [1.183.1](https://github.com/believer/dotfiles/compare/v1.183.0...v1.183.1) (2026-06-01)
+
+
+### Bug Fixes
+
+* **nvim:** update org agenda files location ([c51e26b](https://github.com/believer/dotfiles/commit/c51e26b1d9c9bbccd87f5af4b0b62f17d627d4c3))
+
 # [1.183.0](https://github.com/believer/dotfiles/compare/v1.182.0...v1.183.0) (2026-05-30)
 
 
