@@ -68,7 +68,11 @@ local orgfiles = "~/.orgfiles/"
 local notes = "~/.orgfiles/notes"
 
 require("orgmode").setup({
-	org_agenda_files = notes .. "**/*",
+	org_agenda_files = {
+		orgfiles .. "/*",
+		orgfiles .. "/projects/**/*",
+		orgfiles .. "/journal/**/*",
+	},
 	org_default_notes_file = orgfiles .. "refile.org",
 	org_startup_indented = true,
 	org_capture_templates = {
