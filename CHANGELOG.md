@@ -1,3 +1,11 @@
+# [1.185.0](https://github.com/believer/dotfiles/compare/v1.184.0...v1.185.0) (2026-06-02)
+
+
+### Features
+
+* **doom:** add quick commands for compilation ([379d523](https://github.com/believer/dotfiles/commit/379d52320f5720a32da3927aa29f6750c779759a))
+* **doom:** focus new window when opened ([488fe99](https://github.com/believer/dotfiles/commit/488fe9959f7e90379ebfb9b452a95ba14196f503))
+
 # [1.184.0](https://github.com/believer/dotfiles/compare/v1.183.1...v1.184.0) (2026-06-02)
 
 
