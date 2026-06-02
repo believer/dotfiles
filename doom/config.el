@@ -28,6 +28,10 @@
     (require 'evil-terminal-cursor-changer)
     (evil-terminal-cursor-changer-activate)))
 
+(setq
+ evil-split-window-below t
+ evil-vsplit-window-right t)
+
 ;; Skip confirm to exit message
 (setq confirm-kill-emacs nil)
 
