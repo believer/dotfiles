@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (defun my/tangle-config ()
   ;; file-equal-p resolves symlinks
   (when (file-equal-p (buffer-file-name)
@@ -41,6 +43,49 @@
 ;; Move files to trash when deleting in dired
 (setq delete-by-moving-to-trash t
       trash-directory "~/.Trash")
+
+;; Tell projectile to look for package.json and look from the file up
+(after! projectile
+  (add-to-list 'projectile-project-root-files-bottom-up "package.json"))
+
+;; Use projectile to run commands
+(defun my/run-command (command)
+  "Run COMMAND in a compilation buffer with live output."
+  (let* ((default-directory (projectile-project-root))
+         (buf (compilation-start command 'compilation-mode
+                                 (lambda (_) (concat "*" command "*")))))
+    ;; Focus new buffer
+    (pop-to-buffer buf)))
+
+(defun my/yarn-typecheck ()
+  "Run type check"
+  (interactive)
+  (my/run-command "yarn typecheck"))
+
+(defun my/yarn-test ()
+  "Run affected tests"
+  (interactive)
+  (my/run-command "yarn test -o"))
+
+;; This runs in async mode in the background
+(defun my/yarn-dev-server ()
+  "Run React Native Dev Server"
+  (interactive)
+  (let ((name "*rn-dev-server*"))
+    (if (get-buffer-process name)
+        (pop-to-buffer name)
+      ;; Start server
+      (projectile-run-async-shell-command-in-root "yarn start --reset-cache" name)
+      ;; Focus buffer
+      (pop-to-buffer name)
+      ;; Hide buffer after three seconds
+      (run-with-timer 3 nil #'delete-windows-on (get-buffer name)))))
+
+(map! :leader
+      :prefix "d"
+      :desc "Yarn dev server" "s" #'my/yarn-dev-server
+      :desc "Yarn typecheck" "y" #'my/yarn-typecheck
+      :desc "Yarn test (only changed)" "t" #'my/yarn-test)
 
 (after! dirvish
   (setq dirvish-hide-details t))
