@@ -1,3 +1,10 @@
+# [1.184.0](https://github.com/believer/dotfiles/compare/v1.183.1...v1.184.0) (2026-06-02)
+
+
+### Features
+
+* **doom:** bind hyphen to dired ([87e5699](https://github.com/believer/dotfiles/commit/87e5699278edc4ec110499f745a00d70ef08c985))
+
 ## [1.183.1](https://github.com/believer/dotfiles/compare/v1.183.0...v1.183.1) (2026-06-01)
 
 
