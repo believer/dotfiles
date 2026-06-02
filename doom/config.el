@@ -45,6 +45,8 @@
 (after! diredfl
   (remove-hook 'dired-mode-hook #'diredfl-mode))
 
+(map! :nv "-" #'dired-jump)
+
 ;; Org mode directories
 (setq org-directory "~/.orgfiles/")
 (setq org-agenda-files
