@@ -1,3 +1,10 @@
+# [1.186.0](https://github.com/believer/dotfiles/compare/v1.185.0...v1.186.0) (2026-06-03)
+
+
+### Features
+
+* **doom:** add go to definition in split ([b567101](https://github.com/believer/dotfiles/commit/b567101e9089c6984f9eff764605ab47e4ee3e9e))
+
 # [1.185.0](https://github.com/believer/dotfiles/compare/v1.184.0...v1.185.0) (2026-06-02)
 
 
