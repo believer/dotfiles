@@ -172,9 +172,12 @@ When a new window is opened, focus it. Similar to how it works in Neovim.
       :desc "Yarn test (only changed)" "t" #'my/yarn-test)
 #+end_src
 
-** Dired / Dirvish
+** Dired and Vertico
 
 Doom wraps dired in Dirvish. Hide file details by default in the explorer.
+
+- =g O= inside a Dired buffer opens the file in a vertical split
+- =C-; o= opens a file in a Vertico (search like =SPC SPC=) in a vertical split. =C-;= is an action menu using Embark.
 
 #+begin_src emacs-lisp
 (after! dirvish
