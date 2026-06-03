@@ -33,7 +33,7 @@ ln -s ~/.dotfiles/doom ~/.doom.d
 
 * Tangle on reload
 
-This tangles the config.org to config.el on save.
+This tangles the config.org to config.el on save. Tangling is the process of taking all src blocks of a certain type and outputting them to a file. In the header of this file I've specified that all ~emacs-lisp~ blocks should be tangled.
 
 #+begin_src emacs-lisp
 ;; -*- lexical-binding: t; -*-
@@ -48,6 +48,8 @@ This tangles the config.org to config.el on save.
 #+end_src
 
 * Git
+
+Some quick maps to common commands.
 
 #+begin_src emacs-lisp
 (map! :leader
@@ -117,14 +119,15 @@ When a new window is opened, focus it. Similar to how it works in Neovim.
 ;; Skip confirm to exit message
 (setq confirm-kill-emacs nil)
 
-;; Calendars start on Monday
-(setq calendar-week-start-day 1)
-
 ;; Move files to trash when deleting in dired
 (setq delete-by-moving-to-trash t
       trash-directory "~/.Trash")
+#+end_src
 
-;; Tell projectile to look for package.json and look from the file up
+** Projects
+
+#+begin_src emacs-lisp
+;; Tell projectile to also look for package.json
 (after! projectile
   (add-to-list 'projectile-project-root-files-bottom-up "package.json"))
 
@@ -161,6 +164,7 @@ When a new window is opened, focus it. Similar to how it works in Neovim.
       ;; Hide buffer after three seconds
       (run-with-timer 3 nil #'delete-windows-on (get-buffer name)))))
 
+;; Key maps for dev commands
 (map! :leader
       :prefix "d"
       :desc "Yarn dev server" "s" #'my/yarn-dev-server
@@ -180,10 +184,13 @@ Doom wraps dired in Dirvish. Hide file details by default in the explorer.
 (after! diredfl
   (remove-hook 'dired-mode-hook #'diredfl-mode))
 
+;; Open dired more like Oil.nvim
 (map! :nv "-" #'dired-jump)
 #+end_src
 
 *** File handling
+
+Create new files with =C-x C-f=.
 
 Start by marking a file with ~m~. From here you could also invert the selection by pressing ~t~ to mark everything that's _not_ this file.
 
@@ -196,7 +203,11 @@ With files selected, do:
 
 You can also mark files for deletion by pressing ~d~ and then ~x~ to execute.
 
-* Org Mode
+* Org mode
+
+** Headlines
+
+Headlines are a big part of Org mode. Commands below related to headlines will affect the closest headline above, so no need to navigate to the headline row first.
 
 ** Links
 
@@ -206,7 +217,7 @@ You can also mark files for deletion by pressing ~d~ and then ~x~ to execute.
 ** Lists
 
 - Similar to how bulleted lists work in other outliners, ~M-arrows~ moves items up/down or increase/decreases indentation
-- Adding a new item of a similar kinds it done by ~C-RET~ in a list. I'm currently using the ~org-autolist~ to enable just doing ~RET~
+- Adding a new item of a similar kinds it done by ~C-RET~ in a list.
 - ~S-left~ and ~S-right~ toggle between different bullet styles for an entire list
 
 ** Dates
@@ -219,6 +230,7 @@ You can also mark files for deletion by pressing ~d~ and then ~x~ to execute.
 
 - Headline status can be toggled between TODO and DONE by pressing ~RET~ on the line in normal mode
 - Add a TODO status to a headline with ~SPC m t t~ (or use ~SPC m t~ and select another status)
+- Add a note to a task with =C-c C-z=
 
 ** Task lists [1/3]
 
@@ -235,6 +247,9 @@ Tasks, or headlines in general can have a priority associated with them. This is
 ** Config
 
 #+begin_src emacs-lisp
+;; Calendars start on Monday
+(setq calendar-week-start-day 1)
+
 ;; Org mode directories
 (setq org-directory "~/.orgfiles/")
 (setq org-agenda-files
@@ -290,11 +305,7 @@ Tasks, or headlines in general can have a priority associated with them. This is
         (list (expand-file-name (concat org-directory "notes"))))
   ;; This enables denote-dired-mode in notes, but I'm not seeing a difference
   (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories))
-#+end_src
 
-** Keybindings
-
-#+begin_src emacs-lisp
 (map! :leader
       :prefix "n"
       :desc "New note"  "n" #'denote
@@ -315,7 +326,7 @@ Global author name used as a fallback when exporting org files.
 
 Use =goimports= (a superset of =gofmt=) to format and auto-import on save.
 
-Visually use 2 tabs instead of 8 as is default and update how the tab key
+Visually use 2 tabs, instead of 8 as is default, and update how the tab key
 is handled to avoid weird behavior when tabbing from first column in file.
 
 #+begin_src emacs-lisp
@@ -332,9 +343,10 @@ Setup custom tree-sitter, LSPs, and formatting.
 
 #+begin_src emacs-lisp
 ;; Setup auto adding of language modes
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
-(add-to-list 'auto-mode-alist '("\\.templ\\'" . templ-ts-mode))
+(dolist (mapping '(("\\.ts\\'" . typescript-ts-mode)
+                   ("\\.tsx\\'" . tsx-ts-mode)
+                   ("\\.templ\\'" . templ-ts-mode)))
+  (add-to-list 'auto-mode-alist mapping))
 
 (defun my/lookup-definition-vsplit ()
   "Go to definition in new vertical split"
@@ -358,9 +370,10 @@ Setup custom tree-sitter, LSPs, and formatting.
 
 (after! lsp-mode
   ;; Map treesitter modes to LSP language IDs
-  (add-to-list 'lsp-language-id-configuration '(typescript-ts-mode . "typescript"))
-  (add-to-list 'lsp-language-id-configuration '(tsx-ts-mode . "typescriptreact"))
-  (add-to-list 'lsp-language-id-configuration '(templ-ts-mode . "templ"))
+  (dolist (id-config '((typescript-ts-mode . "typescript")
+                     (tsx-ts-mode . "typescriptreact")
+                     (templ-ts-mode . "templ")))
+    (add-to-list 'lsp-language-id-configuration id-config))
 
   ;; Setup preferences for TypeScript
   (setq lsp-clients-typescript-preferences
@@ -395,15 +408,13 @@ Setup custom tree-sitter, LSPs, and formatting.
   ;; Register Templ LSP
   (lsp-register-client
     (make-lsp-client
-    :new-connection (lsp-stdio-connection
-                    (lambda ()
-                        '("templ" "lsp")))
+    :new-connection (lsp-stdio-connection '("templ" "lsp"))
     :major-modes '(templ-ts-mode)
     :server-id 'templ
     ;; Same as above for gopls and templ
     :add-on? t))
 
-  ;; Only allow these two clients
+  ;; Only allow these clients
   (setq lsp-enabled-clients '(biome ts-ls templ gopls)))
 
 ;; Start LSP in TreeSitter modes
@@ -419,27 +430,22 @@ Setup custom tree-sitter, LSPs, and formatting.
 ;; Setup formatting through Apheleia
 ;; Commands are taken from conform.nvim.
 (after! apheleia
-  ;; Biome (JSON/JS/TS)
-  (setf (alist-get 'biome apheleia-formatters)
-         ;; Using check --write also runs actions.
-        '("biome" "check" "--write" "--stdin-file-path" filepath))
-  (setf (alist-get 'tsx-ts-mode apheleia-mode-alist) '(biome))
-  (setf (alist-get 'typescript-ts-mode apheleia-mode-alist) '(biome))
-  (setf (alist-get 'js-ts-mode apheleia-mode-alist) '(biome))
-  (setf (alist-get 'json-ts-mode apheleia-mode-alist) '(biome))
-  (setf (alist-get 'json-mode apheleia-mode-alist) '(biome))
+  ;; Formatters
+  (setf (alist-get 'biome apheleia-formatters) '("biome" "check" "--write" "--stdin-file-path" filepath) ; Using check --write also runs actions.
+        (alist-get 'templ apheleia-formatters) '("templ" "fmt" "-stdin-filepath" filepath))
+
+  ;; Biome
+  (dolist (mode '(typescript-ts-mode tsx-ts-mode js-ts-mode json-ts-mode json-mode))
+    (setf (alist-get mode apheleia-mode-alist) '(biome)))
 
   ;; Go and templ
-  (setf (alist-get 'go-ts-mode apheleia-mode-alist) '(goimports))
-  (setf (alist-get 'templ apheleia-formatters)
-        '("templ" "fmt" "-stdin-filepath" filepath))
-  (setf (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ)))
+  (setf (alist-get 'go-ts-mode apheleia-mode-alist) '(goimports)
+        (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ))
 #+end_src
 
 ** Treesitter
 
-I'm using =treesit-auto= and have installed all available parsers. But, I've disabled the
-auto mode to not have it run on every file open since I already have all parsers.
+I'm using =treesit-auto= and have installed all available parsers.
 
 #+begin_src emacs-lisp
 (use-package! treesit-auto

@@ -37,14 +37,11 @@
 ;; Skip confirm to exit message
 (setq confirm-kill-emacs nil)
 
-;; Calendars start on Monday
-(setq calendar-week-start-day 1)
-
 ;; Move files to trash when deleting in dired
 (setq delete-by-moving-to-trash t
       trash-directory "~/.Trash")
 
-;; Tell projectile to look for package.json and look from the file up
+;; Tell projectile to also look for package.json
 (after! projectile
   (add-to-list 'projectile-project-root-files-bottom-up "package.json"))
 
@@ -81,6 +78,7 @@
       ;; Hide buffer after three seconds
       (run-with-timer 3 nil #'delete-windows-on (get-buffer name)))))
 
+;; Key maps for dev commands
 (map! :leader
       :prefix "d"
       :desc "Yarn dev server" "s" #'my/yarn-dev-server
@@ -94,7 +92,11 @@
 (after! diredfl
   (remove-hook 'dired-mode-hook #'diredfl-mode))
 
+;; Open dired more like Oil.nvim
 (map! :nv "-" #'dired-jump)
+
+;; Calendars start on Monday
+(setq calendar-week-start-day 1)
 
 ;; Org mode directories
 (setq org-directory "~/.orgfiles/")
@@ -156,9 +158,10 @@
             (local-set-key (kbd "TAB") #'tab-to-tab-stop)))
 
 ;; Setup auto adding of language modes
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
-(add-to-list 'auto-mode-alist '("\\.templ\\'" . templ-ts-mode))
+(dolist (mapping '(("\\.ts\\'" . typescript-ts-mode)
+                   ("\\.tsx\\'" . tsx-ts-mode)
+                   ("\\.templ\\'" . templ-ts-mode)))
+  (add-to-list 'auto-mode-alist mapping))
 
 (defun my/lookup-definition-vsplit ()
   "Go to definition in new vertical split"
@@ -182,9 +185,10 @@
 
 (after! lsp-mode
   ;; Map treesitter modes to LSP language IDs
-  (add-to-list 'lsp-language-id-configuration '(typescript-ts-mode . "typescript"))
-  (add-to-list 'lsp-language-id-configuration '(tsx-ts-mode . "typescriptreact"))
-  (add-to-list 'lsp-language-id-configuration '(templ-ts-mode . "templ"))
+  (dolist (id-config '((typescript-ts-mode . "typescript")
+                     (tsx-ts-mode . "typescriptreact")
+                     (templ-ts-mode . "templ")))
+    (add-to-list 'lsp-language-id-configuration id-config))
 
   ;; Setup preferences for TypeScript
   (setq lsp-clients-typescript-preferences
@@ -219,15 +223,13 @@
   ;; Register Templ LSP
   (lsp-register-client
     (make-lsp-client
-    :new-connection (lsp-stdio-connection
-                    (lambda ()
-                        '("templ" "lsp")))
+    :new-connection (lsp-stdio-connection '("templ" "lsp"))
     :major-modes '(templ-ts-mode)
     :server-id 'templ
     ;; Same as above for gopls and templ
     :add-on? t))
 
-  ;; Only allow these two clients
+  ;; Only allow these clients
   (setq lsp-enabled-clients '(biome ts-ls templ gopls)))
 
 ;; Start LSP in TreeSitter modes
@@ -243,21 +245,17 @@
 ;; Setup formatting through Apheleia
 ;; Commands are taken from conform.nvim.
 (after! apheleia
-  ;; Biome (JSON/JS/TS)
-  (setf (alist-get 'biome apheleia-formatters)
-         ;; Using check --write also runs actions.
-        '("biome" "check" "--write" "--stdin-file-path" filepath))
-  (setf (alist-get 'tsx-ts-mode apheleia-mode-alist) '(biome))
-  (setf (alist-get 'typescript-ts-mode apheleia-mode-alist) '(biome))
-  (setf (alist-get 'js-ts-mode apheleia-mode-alist) '(biome))
-  (setf (alist-get 'json-ts-mode apheleia-mode-alist) '(biome))
-  (setf (alist-get 'json-mode apheleia-mode-alist) '(biome))
+  ;; Formatters
+  (setf (alist-get 'biome apheleia-formatters) '("biome" "check" "--write" "--stdin-file-path" filepath) ; Using check --write also runs actions.
+        (alist-get 'templ apheleia-formatters) '("templ" "fmt" "-stdin-filepath" filepath))
+
+  ;; Biome
+  (dolist (mode '(typescript-ts-mode tsx-ts-mode js-ts-mode json-ts-mode json-mode))
+    (setf (alist-get mode apheleia-mode-alist) '(biome)))
 
   ;; Go and templ
-  (setf (alist-get 'go-ts-mode apheleia-mode-alist) '(goimports))
-  (setf (alist-get 'templ apheleia-formatters)
-        '("templ" "fmt" "-stdin-filepath" filepath))
-  (setf (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ)))
+  (setf (alist-get 'go-ts-mode apheleia-mode-alist) '(goimports)
+        (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ))
 
 (use-package! treesit-auto
   :custom
