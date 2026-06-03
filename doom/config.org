@@ -336,6 +336,14 @@ Setup custom tree-sitter, LSPs, and formatting.
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.templ\\'" . templ-ts-mode))
 
+(defun my/lookup-definition-vsplit ()
+  "Go to definition in new vertical split"
+  (interactive)
+  (evil-window-vsplit)
+  (+lookup/definition (point)))
+
+(map! :n "g V" #'my/lookup-definition-vsplit)
+
 (defun my/biome-find-root (file-name)
   "Walk up from FILE-NAME to find the nearest biome.json/biome.jsonc directory."
   (locate-dominating-file file-name
