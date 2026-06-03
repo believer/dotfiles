@@ -3,6 +3,9 @@
   email = rickard@nattochdag.dev
 	signingkey = 5C0DD50A48389EA4
 
+[includeIf "gitdir:~/code/seb/"]
+  path = ~/.dotfiles/git/work
+
 [credential]
   helper = osxkeychain
 
