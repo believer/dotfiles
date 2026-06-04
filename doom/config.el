@@ -41,30 +41,65 @@
 (setq delete-by-moving-to-trash t
       trash-directory "~/.Trash")
 
+(defun my/find-related-test-file ()
+  "Return the path of the test file related to the current buffer or nil if not found"
+    (let* ((current-file (buffer-file-name))
+         (file-name (file-name-nondirectory current-file))
+         (dir (file-name-directory current-file))
+         (base (file-name-sans-extension file-name)))
+      (if (string-match-p "\\.spec\\.tsx?$" file-name)
+          current-file
+        (cl-find-if #'file-exists-p
+                    (list (concat dir base ".spec.ts")
+                           (concat dir base ".spec.tsx")
+                           (concat dir "__tests__/" base ".spec.ts")
+                           (concat dir "__tests__/" base ".spec.tsx"))))))
+
 (defun my/open-related-test-file ()
-  "Open a test file related to the current buffer.
-Looks for a .spec.ts/tsx file that's either co-located or in a __tests__ subdirectory"
+  "Open a test file related to the current buffer. Looks for a .spec.ts/tsx file that's
+either co-located or in a __tests__ subdirectory. If in a test file, open related code file."
   (interactive)
-  (let* ((current-file (buffer-file-name))
+  (if (string-match-p "\\.spec\\.tsx?$" (buffer-file-name))
+      (let* ((current-file (buffer-file-name))
+             (base (replace-regexp-in-string "\\.spec\\(\\.tsx?\\)$" "\\1" current-file))
+             (candidates (list base
+                               (replace-regexp-in-string "/__tests__/" "/" base))))
+        (if-let ((found (seq-find #'file-exists-p candidates)))
+            (progn
+              (evil-window-vsplit)
+              (windmove-left)
+              (find-file found))
+          (message "No related source file found for %s" (file-name-nondirectory current-file))))
+    (let* ((current-file (buffer-file-name))
          (file-name (file-name-nondirectory current-file))
          (ext (file-name-extension current-file))
          (dir (file-name-directory current-file))
-         (base (file-name-sans-extension (file-name-nondirectory current-file)))
-         (candidates (list (concat dir base ".spec.ts")
-                           (concat dir base ".spec.tsx")
-                           (concat dir "__tests__/" base ".spec.ts")
-                           (concat dir "__tests__/" base ".spec.tsx"))))
-    (if-let ((found (cl-find-if #'file-exists-p candidates)))
+         (base (file-name-sans-extension file-name))
+         (found (my/find-related-test-file)))
+    (if found
         (progn
           (evil-window-vsplit)
           (find-file found))
       (when (yes-or-no-p (format "No tests found for %s. Create one? " file-name))
         (evil-window-vsplit)
-        (find-file (concat dir base ".spec." ext))))))
+        (find-file (concat dir base ".spec." ext)))))))
+
+(defun my/run-related-tests ()
+  "Run tests related to current buffer"
+  (interactive)
+  (let* ((current-file (buffer-file-name))
+         (file-name (file-name-nondirectory current-file))
+         (test-file (my/find-related-test-file)))
+    (if test-file
+        (compilation-start (concat "yarn test " test-file) 'compilation-mode
+                           (lambda (_) (concat "*yarn test " test-file "*")))
+      (message "No test file found for %s" file-name))))
 
 (map! :leader
       :desc "Open related test file in vsplit"
-      "t t" #'my/open-related-test-file)
+      "t t" #'my/open-related-test-file
+      :desc "Run tests on file"
+      "t w" #'my/run-related-tests)
 
 ;; Tell projectile to also look for package.json
 (after! projectile
