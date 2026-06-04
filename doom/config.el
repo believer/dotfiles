@@ -48,11 +48,9 @@
 ;; Use projectile to run commands
 (defun my/run-command (command)
   "Run COMMAND in a compilation buffer with live output."
-  (let* ((default-directory (projectile-project-root))
-         (buf (compilation-start command 'compilation-mode
-                                 (lambda (_) (concat "*" command "*")))))
-    ;; Focus new buffer
-    (pop-to-buffer buf)))
+  (let ((default-directory (projectile-project-root)))
+    (compilation-start command 'compilation-mode
+                       (lambda (_) (concat "*" command "*")))))
 
 (defun my/yarn-typecheck ()
   "Run type check"
@@ -73,8 +71,6 @@
         (pop-to-buffer name)
       ;; Start server
       (projectile-run-async-shell-command-in-root "yarn start --reset-cache" name)
-      ;; Focus buffer
-      (pop-to-buffer name)
       ;; Hide buffer after three seconds
       (run-with-timer 3 nil #'delete-windows-on (get-buffer name)))))
 
