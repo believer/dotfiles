@@ -443,7 +443,7 @@ Setup custom tree-sitter, LSPs, and formatting.
 
   ;; Go and templ
   (setf (alist-get 'go-ts-mode apheleia-mode-alist) '(goimports)
-        (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ))
+        (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ)))
 #+end_src
 
 ** Treesitter

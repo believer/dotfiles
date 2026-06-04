@@ -255,7 +255,7 @@
 
   ;; Go and templ
   (setf (alist-get 'go-ts-mode apheleia-mode-alist) '(goimports)
-        (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ))
+        (alist-get 'templ-ts-mode apheleia-mode-alist) '(templ)))
 
 (use-package! treesit-auto
   :custom
