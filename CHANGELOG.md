@@ -1,3 +1,10 @@
+# [1.187.0](https://github.com/believer/dotfiles/compare/v1.186.1...v1.187.0) (2026-06-04)
+
+
+### Features
+
+* **doom:** open related test file or create it ([c31bcc1](https://github.com/believer/dotfiles/commit/c31bcc16486a35fd7dc00608462d37d67511e0e3))
+
 ## [1.186.1](https://github.com/believer/dotfiles/compare/v1.186.0...v1.186.1) (2026-06-04)
 
 
