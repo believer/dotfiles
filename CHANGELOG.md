@@ -1,3 +1,10 @@
+## [1.186.1](https://github.com/believer/dotfiles/compare/v1.186.0...v1.186.1) (2026-06-04)
+
+
+### Bug Fixes
+
+* **doom:** broken parens ([881170d](https://github.com/believer/dotfiles/commit/881170d51ee89ec47bfee60c18cb162a9d45c27b))
+
 # [1.186.0](https://github.com/believer/dotfiles/compare/v1.185.0...v1.186.0) (2026-06-03)
 
 
