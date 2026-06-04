@@ -41,6 +41,31 @@
 (setq delete-by-moving-to-trash t
       trash-directory "~/.Trash")
 
+(defun my/open-related-test-file ()
+  "Open a test file related to the current buffer.
+Looks for a .spec.ts/tsx file that's either co-located or in a __tests__ subdirectory"
+  (interactive)
+  (let* ((current-file (buffer-file-name))
+         (file-name (file-name-nondirectory current-file))
+         (ext (file-name-extension current-file))
+         (dir (file-name-directory current-file))
+         (base (file-name-sans-extension (file-name-nondirectory current-file)))
+         (candidates (list (concat dir base ".spec.ts")
+                           (concat dir base ".spec.tsx")
+                           (concat dir "__tests__/" base ".spec.ts")
+                           (concat dir "__tests__/" base ".spec.tsx"))))
+    (if-let ((found (cl-find-if #'file-exists-p candidates)))
+        (progn
+          (evil-window-vsplit)
+          (find-file found))
+      (when (yes-or-no-p (format "No tests found for %s. Create one? " file-name))
+        (evil-window-vsplit)
+        (find-file (concat dir base ".spec." ext))))))
+
+(map! :leader
+      :desc "Open related test file in vsplit"
+      "t t" #'my/open-related-test-file)
+
 ;; Tell projectile to also look for package.json
 (after! projectile
   (add-to-list 'projectile-project-root-files-bottom-up "package.json"))
