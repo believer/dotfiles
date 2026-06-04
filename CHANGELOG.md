@@ -1,3 +1,10 @@
+# [1.188.0](https://github.com/believer/dotfiles/compare/v1.187.0...v1.188.0) (2026-06-04)
+
+
+### Features
+
+* **doom:** add test quick commands ([9f2bf72](https://github.com/believer/dotfiles/commit/9f2bf725b8167dc35253a698fa24837fd56365b5))
+
 # [1.187.0](https://github.com/believer/dotfiles/compare/v1.186.1...v1.187.0) (2026-06-04)
 
 
