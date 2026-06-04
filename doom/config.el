@@ -74,6 +74,19 @@
       ;; Hide buffer after three seconds
       (run-with-timer 3 nil #'delete-windows-on (get-buffer name)))))
 
+(defvar my/auto-close-compilation-buffers
+  '("*yarn typecheck*" "*yarn test -o*")
+  "Compilation buffers to auto-close on success.")
+
+(defun my/close-compilation-buffer-if-successful (buffer string)
+  "Close compilation buffer automatically if it was successful"
+  (when (and (string-match "finished" string)
+             (not (string-match "warning" string))
+             (member (buffer-name buffer) my/auto-close-compilation-buffers))
+    (run-with-timer 1.5 nil #'kill-buffer buffer)))
+
+(add-hook 'compilation-finish-functions #'my/close-compilation-buffer-if-successful)
+
 ;; Key maps for dev commands
 (map! :leader
       :prefix "d"
