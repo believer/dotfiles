@@ -34,6 +34,21 @@
  evil-split-window-below t
  evil-vsplit-window-right t)
 
+(use-package doom-modeline-now-playing
+  :after doom-modeline
+  :config
+  (doom-modeline-now-playing-timer))
+
+(with-eval-after-load 'doom-modeline-now-playing
+  (doom-modeline-def-segment my-separator
+    (propertize " | " 'face 'doom-modeline))
+  (doom-modeline-def-modeline 'main
+    '(bar workspace-name window-number matches buffer-info)
+    '(now-playing my-separator lsp minor-modes major-mode vcs)))
+
+;; Longer names
+(setq doom-modeline-now-playing-max-length 60)
+
 ;; Skip confirm to exit message
 (setq confirm-kill-emacs nil)
 

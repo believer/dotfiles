@@ -111,6 +111,27 @@ When a new window is opened, focus it. Similar to how it works in Neovim.
  evil-vsplit-window-right t)
 #+end_src
 
+** Now playing
+
+This uses [[https://github.com/ungive/media-control][=media-control=]] under the hood.
+
+#+begin_src emacs-lisp
+(use-package doom-modeline-now-playing
+  :after doom-modeline
+  :config
+  (doom-modeline-now-playing-timer))
+
+(with-eval-after-load 'doom-modeline-now-playing
+  (doom-modeline-def-segment my-separator
+    (propertize " | " 'face 'doom-modeline))
+  (doom-modeline-def-modeline 'main
+    '(bar workspace-name window-number matches buffer-info)
+    '(now-playing my-separator lsp minor-modes major-mode vcs)))
+
+;; Longer names
+(setq doom-modeline-now-playing-max-length 60)
+#+end_src
+
 * Behaviour
 
 ** Misc
