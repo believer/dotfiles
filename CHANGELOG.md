@@ -1,3 +1,10 @@
+# [1.190.0](https://github.com/believer/dotfiles/compare/v1.189.0...v1.190.0) (2026-06-05)
+
+
+### Features
+
+* **doom:** use org roam for daily notes ([b1c7712](https://github.com/believer/dotfiles/commit/b1c77126f77948ba031388156e632bd13f659347))
+
 # [1.189.0](https://github.com/believer/dotfiles/compare/v1.188.0...v1.189.0) (2026-06-05)
 
 
