@@ -188,6 +188,8 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
       (list
        (expand-file-name "notes.org" org-directory)
        (expand-file-name "tasks.org" org-directory)
+       (expand-file-name "projects.org" org-directory)
+       (expand-file-name "todo.org" org-directory)
        (expand-file-name "journal" org-directory)
        (expand-file-name "projects" org-directory)))
 
@@ -196,27 +198,6 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 
 ;; Templates
 (setq org-default-notes-file (concat org-directory "notes.org"))
-(setq org-capture-templates
-      `(("t" "Task" entry
-         (file+headline ,(concat org-directory "tasks.org") "Tasks")
-         "** TODO %?\n%^t\n%a\n")))
-
-(setq
- org-journal-dir (concat org-directory "journal")
- org-journal-file-format  "%Y%m%d.org"
- org-journal-date-format "%A, %Y-%m-%d")
-
-;; Automatically enable org-journal-mode for all files inside the journal folder
-;; This makes it possible to use the key bindings below
-(add-to-list 'auto-mode-alist
-             (cons (concat (regexp-quote (expand-file-name org-journal-dir)) ".*\\.org\\'")
-                   'org-journal-mode))
-
-(map! :leader
-      :prefix "o"
-      :desc "New journal entry" "j e" #'org-journal-new-entry
-      :desc "Next journal entry" "j n" #'org-journal-next-entry
-      :desc "Previous journal entry" "j p" #'org-journal-previous-entry)
 
 (setq org-roam-directory (concat org-directory "notes"))
 (org-roam-db-autosync-mode)
