@@ -218,20 +218,8 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
       :desc "Next journal entry" "j n" #'org-journal-next-entry
       :desc "Previous journal entry" "j p" #'org-journal-previous-entry)
 
-(use-package! denote
-  :config
-  (setq denote-directory (concat org-directory "notes"))
-  (setq denote-directories
-        (list (expand-file-name (concat org-directory "notes"))))
-  (setq denote-dired-directories
-        (list (expand-file-name (concat org-directory "notes"))))
-  ;; This enables denote-dired-mode in notes, but I'm not seeing a difference
-  (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories))
-
-(map! :leader
-      :prefix "n"
-      :desc "New note"  "n" #'denote
-      :desc "Link note" "l" #'denote-link)
+(setq org-roam-directory (concat org-directory "notes"))
+(org-roam-db-autosync-mode)
 
 (setq user-full-name "Rickard Natt och Dag")
 
