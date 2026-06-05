@@ -1,3 +1,10 @@
+# [1.189.0](https://github.com/believer/dotfiles/compare/v1.188.0...v1.189.0) (2026-06-05)
+
+
+### Features
+
+* **doom:** add now playing ([4bcdf0c](https://github.com/believer/dotfiles/commit/4bcdf0c0ce743189a2eadf9155bec8344ac0a902))
+
 # [1.188.0](https://github.com/believer/dotfiles/compare/v1.187.0...v1.188.0) (2026-06-04)
 
 
