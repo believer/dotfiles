@@ -134,6 +134,15 @@ This uses [[https://github.com/ungive/media-control][=media-control=]] under the
 
 * Behaviour
 
+** Bookmarks
+
+Bookmarks seem like a more convenient way of managing marks that regular Vim marks. I believe they could also be used as something similar to Harpoon.
+
+- =SPC b m= :: Set bookmark. Add a name for better findability.
+- =SPC b M= :: Remove bookmark. Can be used from anywhere.
+- =SPC RET= :: Go to bookmark
+- =M-x bookmark-delete-all= :: Remove all bookmarks
+
 ** Misc
 
 #+begin_src emacs-lisp
