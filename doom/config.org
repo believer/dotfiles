@@ -480,17 +480,27 @@ Setup custom tree-sitter, LSPs, and formatting.
     ;; This is needed to run ts_ls and biome together
     :add-on? t))
 
-  ;; Register Templ LSP
+  ;; Templ
   (lsp-register-client
-    (make-lsp-client
+   (make-lsp-client
     :new-connection (lsp-stdio-connection '("templ" "lsp"))
     :major-modes '(templ-ts-mode)
     :server-id 'templ
-    ;; Same as above for gopls and templ
     :add-on? t))
 
+  ;; Yaml schemas
+  (let ((schemas (make-hash-table :test 'equal)))
+    (puthash "https://raw.githubusercontent.com/nexlabstudio/maestro-workbench/refs/heads/dev/schema/schema.v0.json"
+             ["/apps/blackbird/.maestro/**/*"]
+             schemas)
+    (puthash "https://json.schemastore.org/github-workflow.json"
+             ["/.github/workflows/*"]
+             schemas)
+    (setq lsp-yaml-schemas schemas))
+
   ;; Only allow these clients
-  (setq lsp-enabled-clients '(biome ts-ls templ gopls)))
+  ;; JSON and YAML LSPs come from built-in
+  (setq lsp-enabled-clients '(biome ts-ls templ gopls json-ls yamlls)))
 
 ;; Start LSP in TreeSitter modes
 (add-hook! '(typescript-ts-mode-hook
