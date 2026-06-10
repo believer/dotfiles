@@ -338,17 +338,17 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
          (parts (split-string name "[-_]")))
     (mapconcat #'capitalize parts "")))
 
+(defun pace-to-seconds (pace)
+  "Convert running pace (min/km) to seconds"
+  (let ((parts (mapcar 'string-to-number (split-string pace ":"))))
+    (+ (* 60 (car parts)) (cadr parts))))
+
 (defun pace-diff (target actual)
   "Return difference in seconds between two mm:ss pace strings.
 Negative means faster than target, positive means slower."
-  (if (string-match "^[0-9]" target)
-      (let* ((parse (lambda (s)
-                      (let ((parts (mapcar 'string-to-number (split-string s ":"))))
-                        (+ (* 60 (car parts)) (cadr parts)))))
-             (s-target (funcall parse target))
-             (s-actual (funcall parse actual)))
-        (- s-actual s-target))
-    nil))
+  (when (and (stringp target) (string-match-p "^[0-9]" target))
+    (- (pace-to-seconds actual)
+       (pace-to-seconds target))))
 
 (defun pace-diff-fmt (target actual)
   "Return formatted mm:ss difference between two pace strings.
@@ -359,3 +359,17 @@ Negative means faster than target, positive means slower."
               (if (< d 0) "-" "+")
               (/ (abs d) 60)
               (mod (abs d) 60)))))
+
+(defun pace-distance-fmt (pace distance)
+  "Return formatted time (x h x min) for a given pace (min/km) and distance"
+  (let* ((pace-total-sec (pace-to-seconds pace))
+         (total-sec (* pace-total-sec (string-to-number distance)))
+         (hours (/ total-sec 3600))
+         (minutes (/ (mod total-sec 3600) 60))
+         (seconds (mod total-sec 60)))
+    (mapconcat #'identity
+               (seq-filter #'identity
+                           (list (when (> hours 0)   (format "%d h" hours))
+                                 (when (> minutes 0) (format "%d min" minutes))
+                                 (when (> seconds 0) (format "%d sec" seconds))))
+               " ")))
