@@ -34,6 +34,10 @@
  evil-split-window-below t
  evil-vsplit-window-right t)
 
+(map! :leader
+      :prefix "o"
+      :desc "Toggle Olivetti mode" "l" #'olivetti-mode)
+
 (use-package doom-modeline-now-playing
   :after doom-modeline
   :config
