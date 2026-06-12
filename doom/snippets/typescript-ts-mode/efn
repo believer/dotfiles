@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Exported function
+# uuid:
+# key: efn
+# condition: t
+# --
+
+export function $1() {
+       $2
+}$0
