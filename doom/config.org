@@ -220,15 +220,7 @@ Run tests for current buffer from either the source file or the test file.
         (compilation-start (concat "yarn test " test-file) 'compilation-mode
                            (lambda (_) (concat "*yarn test " test-file "*")))
       (message "No test file found for %s" file-name))))
-
-(map! :leader
-      :desc "Open related test file in vsplit"
-      "t t" #'my/open-related-test-file
-      :desc "Run tests on file"
-      "t w" #'my/run-related-tests)
 #+end_src
-
-** Projects
 
 #+begin_src emacs-lisp
 ;; Tell projectile to also look for package.json
@@ -279,10 +271,12 @@ Run tests for current buffer from either the source file or the test file.
 
 ;; Key maps for dev commands
 (map! :leader
-      :prefix "d"
+      :prefix "t"
+      :desc "Yarn typecheck" "c" #'my/yarn-typecheck
+      :desc "Yarn test (only changed)" "o" #'my/yarn-test
       :desc "Yarn dev server" "s" #'my/yarn-dev-server
-      :desc "Yarn typecheck" "y" #'my/yarn-typecheck
-      :desc "Yarn test (only changed)" "t" #'my/yarn-test)
+      :desc "Open related test file in vsplit" "t" #'my/open-related-test-file
+      :desc "Run tests on file" "w" #'my/run-related-tests)
 #+end_src
 
 ** Dired and Vertico

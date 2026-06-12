@@ -114,12 +114,6 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
                            (lambda (_) (concat "*yarn test " test-file "*")))
       (message "No test file found for %s" file-name))))
 
-(map! :leader
-      :desc "Open related test file in vsplit"
-      "t t" #'my/open-related-test-file
-      :desc "Run tests on file"
-      "t w" #'my/run-related-tests)
-
 ;; Tell projectile to also look for package.json
 (after! projectile
   (add-to-list 'projectile-project-root-files-bottom-up "package.json"))
@@ -168,10 +162,12 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 
 ;; Key maps for dev commands
 (map! :leader
-      :prefix "d"
+      :prefix "t"
+      :desc "Yarn typecheck" "c" #'my/yarn-typecheck
+      :desc "Yarn test (only changed)" "o" #'my/yarn-test
       :desc "Yarn dev server" "s" #'my/yarn-dev-server
-      :desc "Yarn typecheck" "y" #'my/yarn-typecheck
-      :desc "Yarn test (only changed)" "t" #'my/yarn-test)
+      :desc "Open related test file in vsplit" "t" #'my/open-related-test-file
+      :desc "Run tests on file" "w" #'my/run-related-tests)
 
 (after! dirvish
   (setq dirvish-hide-details t))
