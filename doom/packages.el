@@ -60,3 +60,4 @@
 (package! templ-ts-mode)
 (package! olivetti)
 (package! doom-modeline-now-playing)
+(package! diredfl :disable t)

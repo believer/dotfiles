@@ -312,16 +312,13 @@ Run tests for current buffer from either the source file or the test file.
 
 Doom wraps dired in Dirvish. Hide file details by default in the explorer.
 
-- =g O= inside a Dired buffer opens the file in a vertical split
-- =C-; o= opens a file in a Vertico (search like =SPC SPC=) in a vertical split. =C-;= is an action menu using Embark.
+- =g O= :: Open the file in a vertical split
+- =C-; o= :: Open a file in a Vertico (search like =SPC SPC=) in a vertical split. =C-;= is an action menu using Embark.
+- =SPC m h= :: Toggle showing hidden files (omit mode)
 
 #+begin_src emacs-lisp
 (after! dirvish
   (setq dirvish-hide-details t))
-
-;; Disable diredfl since it overrides colors from theme
-(after! diredfl
-  (remove-hook 'dired-mode-hook #'diredfl-mode))
 
 ;; Open dired more like Oil.nvim
 (map! :nv "-" #'dired-jump)
@@ -329,7 +326,7 @@ Doom wraps dired in Dirvish. Hide file details by default in the explorer.
 
 *** File handling
 
-Create new files with =C-x C-f=.
+Create new files with =C-x C-f=. Rename files by pressing =i=, then edit the buffer and save.
 
 Start by marking a file with ~m~. From here you could also invert the selection by pressing ~t~ to mark everything that's _not_ this file.
 

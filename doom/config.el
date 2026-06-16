@@ -201,10 +201,6 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 (after! dirvish
   (setq dirvish-hide-details t))
 
-;; Disable diredfl since it overrides colors from theme
-(after! diredfl
-  (remove-hook 'dired-mode-hook #'diredfl-mode))
-
 ;; Open dired more like Oil.nvim
 (map! :nv "-" #'dired-jump)
 
