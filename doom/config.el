@@ -23,6 +23,9 @@
 (setq tokyo-night-scale-headings nil)
 (setq doom-theme 'tokyo-night)
 
+;; Get color output in compilation windows
+(setenv "FORCE_COLOR" "1")
+
 (setq display-line-numbers-type 'relative)
 
 (after! evil
@@ -130,10 +133,34 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
   (interactive)
   (my/run-command "yarn typecheck"))
 
-(defun my/yarn-test ()
+(defun my/yarn-test-affected ()
   "Run affected tests"
   (interactive)
   (my/run-command "yarn test -o"))
+
+(defun my/run-in-vterm-sidebar (buf-name command)
+  (let* ((buf (get-buffer buf-name))
+         (root (projectile-project-root)))
+    (cond
+      ((and buf (get-buffer-window buf))
+       (delete-window (get-buffer-window buf)))
+      (buf (pop-to-buffer buf))
+      (t (set-popup-rule! buf-name :side 'right :width 0.4 :quit nil :ttl nil)
+         (vterm buf-name)
+         (run-with-timer 0.3 nil
+           (lambda ()
+             (with-current-buffer buf-name
+               (process-send-string
+                (get-buffer-process (current-buffer))
+                (format "cd %s && %s\n" root command)))))))))
+
+(defun my/test-watch ()
+  (interactive)
+  (my/run-in-vterm-sidebar "*test:runner*" "yarn test"))
+
+(defun my/typecheck-watch ()
+  (interactive)
+  (my/run-in-vterm-sidebar "*typecheck:runner*" "yarn typecheck --watch"))
 
 ;; This runs in async mode in the background
 (defun my/yarn-dev-server ()
@@ -164,10 +191,12 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 (map! :leader
       :prefix "t"
       :desc "Yarn typecheck" "c" #'my/yarn-typecheck
-      :desc "Yarn test (only changed)" "o" #'my/yarn-test
+      :desc "Yarn typecheck (watch)" "C" #'my/typecheck-watch
+      :desc "Yarn test (affected)" "a" #'my/yarn-test-affected
       :desc "Yarn dev server" "s" #'my/yarn-dev-server
       :desc "Open related test file in vsplit" "t" #'my/open-related-test-file
-      :desc "Run tests on file" "w" #'my/run-related-tests)
+      :desc "Run file tests" "f" #'my/run-related-tests
+      :desc "Run tests (watch)" "w" #'my/test-watch)
 
 (after! dirvish
   (setq dirvish-hide-details t))
