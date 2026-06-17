@@ -122,21 +122,21 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
   (add-to-list 'projectile-project-root-files-bottom-up "package.json"))
 
 ;; Use projectile to run commands
-(defun my/run-command (command)
+(defun my/run-command (buf-name command)
   "Run COMMAND in a compilation buffer with live output."
   (let ((default-directory (projectile-project-root)))
     (compilation-start command 'compilation-mode
-                       (lambda (_) (concat "*" command "*")))))
+                       (lambda (_) (concat "*" buf-name "*")))))
 
 (defun my/yarn-typecheck ()
   "Run type check"
   (interactive)
-  (my/run-command "yarn typecheck"))
+  (my/run-command "typecheck" "yarn typecheck"))
 
 (defun my/yarn-test-affected ()
   "Run affected tests"
   (interactive)
-  (my/run-command "yarn test -o"))
+  (my/run-command "test:affected" "yarn test -o"))
 
 (defun my/run-in-vterm-sidebar (buf-name command)
   (let* ((buf (get-buffer buf-name))
@@ -156,11 +156,11 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 
 (defun my/test-watch ()
   (interactive)
-  (my/run-in-vterm-sidebar "*test:runner*" "yarn test"))
+  (my/run-in-vterm-sidebar "*test:watch*" "yarn test --watch"))
 
 (defun my/typecheck-watch ()
   (interactive)
-  (my/run-in-vterm-sidebar "*typecheck:runner*" "yarn typecheck --watch"))
+  (my/run-in-vterm-sidebar "*typecheck:watch*" "yarn typecheck --watch"))
 
 ;; This runs in async mode in the background
 (defun my/yarn-dev-server ()
@@ -174,9 +174,9 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
       ;; Hide buffer after three seconds
       (run-with-timer 3 nil #'delete-windows-on (get-buffer name)))))
 
+;; Compilation buffers to auto-close on success.
 (defvar my/auto-close-compilation-buffers
-  '("*yarn typecheck*" "*yarn test -o*")
-  "Compilation buffers to auto-close on success.")
+  '("*typecheck*" "*test:affected*"))
 
 (defun my/close-compilation-buffer-if-successful (buffer string)
   "Close compilation buffer automatically if it was successful"
@@ -190,8 +190,8 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 ;; Key maps for dev commands
 (map! :leader
       :prefix "t"
-      :desc "Yarn typecheck" "c" #'my/yarn-typecheck
-      :desc "Yarn typecheck (watch)" "C" #'my/typecheck-watch
+      :desc "Yarn typecheck" "C" #'my/yarn-typecheck
+      :desc "Yarn typecheck (watch)" "c" #'my/typecheck-watch
       :desc "Yarn test (affected)" "a" #'my/yarn-test-affected
       :desc "Yarn dev server" "s" #'my/yarn-dev-server
       :desc "Open related test file in vsplit" "t" #'my/open-related-test-file
