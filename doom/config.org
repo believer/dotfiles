@@ -454,8 +454,9 @@ Setup custom tree-sitter, LSPs, and formatting.
 (defun my/lookup-definition-vsplit ()
   "Go to definition in new vertical split"
   (interactive)
-  (evil-window-vsplit)
-  (+lookup/definition (point)))
+  (let ((sym (thing-at-point 'symbol t)))
+    (evil-window-vsplit)
+    (+lookup/definition sym)))
 
 (map! :n "g V" #'my/lookup-definition-vsplit)
 
@@ -528,7 +529,8 @@ Setup custom tree-sitter, LSPs, and formatting.
 
   ;; Only allow these clients
   ;; JSON and YAML LSPs come from built-in
-  (setq lsp-enabled-clients '(biome ts-ls templ gopls json-ls yamlls)))
+  ;; (setq lsp-enabled-clients '(biome ts-ls templ gopls json-ls yamlls))
+  )
 
 ;; Start LSP in TreeSitter modes
 (add-hook! '(typescript-ts-mode-hook
