@@ -65,17 +65,17 @@
 
 (defun my/find-related-test-file ()
   "Return the path of the test file related to the current buffer or nil if not found"
-  (let* ((current-file (buffer-file-name))
+    (let* ((current-file (buffer-file-name))
          (file-name (file-name-nondirectory current-file))
          (dir (file-name-directory current-file))
          (base (file-name-sans-extension file-name)))
-    (if (string-match-p "\\.spec\\.tsx?$" file-name)
-        current-file
-      (cl-find-if #'file-exists-p
-                  (list (concat dir base ".spec.ts")
-                        (concat dir base ".spec.tsx")
-                        (concat dir "__tests__/" base ".spec.ts")
-                        (concat dir "__tests__/" base ".spec.tsx"))))))
+      (if (string-match-p "\\.spec\\.tsx?$" file-name)
+          current-file
+        (cl-find-if #'file-exists-p
+                    (list (concat dir base ".spec.ts")
+                           (concat dir base ".spec.tsx")
+                           (concat dir "__tests__/" base ".spec.ts")
+                           (concat dir "__tests__/" base ".spec.tsx"))))))
 
 (defun my/open-related-test-file ()
   "Open a test file related to the current buffer. Looks for a .spec.ts/tsx file that's
@@ -93,18 +93,18 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
               (find-file found))
           (message "No related source file found for %s" (file-name-nondirectory current-file))))
     (let* ((current-file (buffer-file-name))
-           (file-name (file-name-nondirectory current-file))
-           (ext (file-name-extension current-file))
-           (dir (file-name-directory current-file))
-           (base (file-name-sans-extension file-name))
-           (found (my/find-related-test-file)))
-      (if found
-          (progn
-            (evil-window-vsplit)
-            (find-file found))
-        (when (yes-or-no-p (format "No tests found for %s. Create one? " file-name))
+         (file-name (file-name-nondirectory current-file))
+         (ext (file-name-extension current-file))
+         (dir (file-name-directory current-file))
+         (base (file-name-sans-extension file-name))
+         (found (my/find-related-test-file)))
+    (if found
+        (progn
           (evil-window-vsplit)
-          (find-file (concat dir base ".spec." ext)))))))
+          (find-file found))
+      (when (yes-or-no-p (format "No tests found for %s. Create one? " file-name))
+        (evil-window-vsplit)
+        (find-file (concat dir base ".spec." ext)))))))
 
 (defun my/run-related-tests ()
   "Run tests related to current buffer"
@@ -138,21 +138,26 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
   (interactive)
   (my/run-command "test:affected" "yarn test -o"))
 
+(defun my/knip ()
+  "Run knip"
+  (interactive)
+  (my/run-command "knip" "yarn knip"))
+
 (defun my/run-in-vterm-sidebar (buf-name command)
   (let* ((buf (get-buffer buf-name))
          (root (projectile-project-root)))
     (cond
-     ((and buf (get-buffer-window buf))
-      (delete-window (get-buffer-window buf)))
-     (buf (pop-to-buffer buf))
-     (t (set-popup-rule! buf-name :side 'right :width 0.4 :quit nil :ttl nil)
-        (vterm buf-name)
-        (run-with-timer 0.3 nil
-                        (lambda ()
-                          (with-current-buffer buf-name
-                            (process-send-string
-                             (get-buffer-process (current-buffer))
-                             (format "cd %s && %s\n" root command)))))))))
+      ((and buf (get-buffer-window buf))
+       (delete-window (get-buffer-window buf)))
+      (buf (pop-to-buffer buf))
+      (t (set-popup-rule! buf-name :side 'right :width 0.4 :quit nil :ttl nil)
+         (vterm buf-name)
+         (run-with-timer 0.3 nil
+           (lambda ()
+             (with-current-buffer buf-name
+               (process-send-string
+                (get-buffer-process (current-buffer))
+                (format "cd %s && %s\n" root command)))))))))
 
 (defun my/test-watch ()
   (interactive)
@@ -176,7 +181,7 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 
 ;; Compilation buffers to auto-close on success.
 (defvar my/auto-close-compilation-buffers
-  '("*typecheck*" "*test:affected*"))
+  '("*typecheck*" "*test:affected*" "*knip*"))
 
 (defun my/close-compilation-buffer-if-successful (buffer string)
   "Close compilation buffer automatically if it was successful"
@@ -190,12 +195,13 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 ;; Key maps for dev commands
 (map! :leader
       :prefix "t"
+      :desc "Yarn test (affected)" "a" #'my/yarn-test-affected
       :desc "Yarn typecheck" "C" #'my/yarn-typecheck
       :desc "Yarn typecheck (watch)" "c" #'my/typecheck-watch
-      :desc "Yarn test (affected)" "a" #'my/yarn-test-affected
+      :desc "Run file tests" "f" #'my/run-related-tests
+      :desc "Knip" "k" #'my/knip
       :desc "Yarn dev server" "s" #'my/yarn-dev-server
       :desc "Open related test file in vsplit" "t" #'my/open-related-test-file
-      :desc "Run file tests" "f" #'my/run-related-tests
       :desc "Run tests (watch)" "w" #'my/test-watch)
 
 (after! dirvish
@@ -203,6 +209,10 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 
 ;; Open dired more like Oil.nvim
 (map! :nv "-" #'dired-jump)
+
+(map! :leader
+      :prefix "d"
+      :desc "List flycheck errors" "e" #'flycheck-list-errors)
 
 ;; Calendars start on Monday
 (setq calendar-week-start-day 1)
@@ -253,9 +263,9 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 (defun my/biome-find-root (file-name)
   "Walk up from FILE-NAME to find the nearest biome.json/biome.jsonc directory."
   (locate-dominating-file file-name
-                          (lambda (dir)
-                            (or (file-exists-p (expand-file-name "biome.json" dir))
-                                (file-exists-p (expand-file-name "biome.jsonc" dir))))))
+    (lambda (dir)
+      (or (file-exists-p (expand-file-name "biome.json" dir))
+          (file-exists-p (expand-file-name "biome.jsonc" dir))))))
 
 (defun my/biome-project-root ()
   "Return the nearest biome.json directory for the current buffer, or nil."
@@ -265,8 +275,8 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 (after! lsp-mode
   ;; Map treesitter modes to LSP language IDs
   (dolist (id-config '((typescript-ts-mode . "typescript")
-                       (tsx-ts-mode . "typescriptreact")
-                       (templ-ts-mode . "templ")))
+                     (tsx-ts-mode . "typescriptreact")
+                     (templ-ts-mode . "templ")))
     (add-to-list 'lsp-language-id-configuration id-config))
 
   ;; Setup preferences for TypeScript
@@ -289,11 +299,11 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
                          (if (and local-bin (file-executable-p local-bin))
                              (list local-bin "lsp-proxy")
                            '("biome" "lsp-proxy")))))
-    :activation-fn (lambda (file-name _mode)
-                     ;; Only activate when the project actually uses Biome and file extensions match
-                     (and (string-match-p "\\.\\(ts\\|tsx\\|js\\|jsx\\|json\\)\\'" file-name)
-                          (my/biome-find-root file-name)
-                          t))
+      :activation-fn (lambda (file-name _mode)
+                       ;; Only activate when the project actually uses Biome and file extensions match
+                       (and (string-match-p "\\.\\(ts\\|tsx\\|js\\|jsx\\|json\\)\\'" file-name)
+                            (my/biome-find-root file-name)
+                            t))
     :multi-root nil
     :server-id 'biome
     ;; This is needed to run ts_ls and biome together
@@ -319,7 +329,8 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 
   ;; Only allow these clients
   ;; JSON and YAML LSPs come from built-in
-  (setq lsp-enabled-clients '(biome ts-ls templ gopls json-ls yamlls)))
+  ;; (setq lsp-enabled-clients '(biome ts-ls templ gopls json-ls yamlls))
+  )
 
 ;; Start LSP in TreeSitter modes
 (add-hook! '(typescript-ts-mode-hook

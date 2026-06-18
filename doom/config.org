@@ -145,6 +145,11 @@ This uses [[https://github.com/ungive/media-control][=media-control=]] under the
 
 * Behaviour
 
+** Search
+
+- =C-; E= :: =embark-export= to get a buffer of search results. This can be filtered using =consult-keep-lines=.
+- =C-; S= :: =embark-collect= displays a list of results
+
 ** Bookmarks
 
 Bookmarks seem like a more convenient way of managing marks that regular Vim marks. I believe they could also be used as something similar to Harpoon.
@@ -251,6 +256,11 @@ Run tests for current buffer from either the source file or the test file.
   (interactive)
   (my/run-command "test:affected" "yarn test -o"))
 
+(defun my/knip ()
+  "Run knip"
+  (interactive)
+  (my/run-command "knip" "yarn knip"))
+
 (defun my/run-in-vterm-sidebar (buf-name command)
   (let* ((buf (get-buffer buf-name))
          (root (projectile-project-root)))
@@ -289,7 +299,7 @@ Run tests for current buffer from either the source file or the test file.
 
 ;; Compilation buffers to auto-close on success.
 (defvar my/auto-close-compilation-buffers
-  '("*typecheck*" "*test:affected*"))
+  '("*typecheck*" "*test:affected*" "*knip*"))
 
 (defun my/close-compilation-buffer-if-successful (buffer string)
   "Close compilation buffer automatically if it was successful"
@@ -303,12 +313,13 @@ Run tests for current buffer from either the source file or the test file.
 ;; Key maps for dev commands
 (map! :leader
       :prefix "t"
+      :desc "Yarn test (affected)" "a" #'my/yarn-test-affected
       :desc "Yarn typecheck" "C" #'my/yarn-typecheck
       :desc "Yarn typecheck (watch)" "c" #'my/typecheck-watch
-      :desc "Yarn test (affected)" "a" #'my/yarn-test-affected
+      :desc "Run file tests" "f" #'my/run-related-tests
+      :desc "Knip" "k" #'my/knip
       :desc "Yarn dev server" "s" #'my/yarn-dev-server
       :desc "Open related test file in vsplit" "t" #'my/open-related-test-file
-      :desc "Run file tests" "f" #'my/run-related-tests
       :desc "Run tests (watch)" "w" #'my/test-watch)
 #+end_src
 
@@ -328,6 +339,10 @@ Doom wraps dired in Dirvish. Hide file details by default in the explorer.
 (map! :nv "-" #'dired-jump)
 #+end_src
 
+*** Sorting
+
+To make Dired sort folders first, install =brew install coreutils= and set it on the path. This use GNU based tools instead of Mac's BSD based.
+
 *** File handling
 
 Create new files with =C-x C-f=. Rename files by pressing =i=, then edit the buffer and save.
@@ -342,6 +357,14 @@ With files selected, do:
 - ~Z~ to compress
 
 You can also mark files for deletion by pressing ~d~ and then ~x~ to execute.
+
+** Flycheck
+
+#+begin_src emacs-lisp
+(map! :leader
+      :prefix "d"
+      :desc "List flycheck errors" "e" #'flycheck-list-errors)
+#+end_src
 
 * Org mode
 
