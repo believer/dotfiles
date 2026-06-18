@@ -18,6 +18,7 @@ brew install ripgrep
 brew install the_silver_searcher
 brew install tmux
 brew install tmuxinator
+brew install coreutils
 
 echo "Setting up GPG"
 brew install gnupg # gpg
