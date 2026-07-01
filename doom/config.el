@@ -329,7 +329,7 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
 
   ;; Only allow these clients
   ;; JSON and YAML LSPs come from built-in
-  ;; (setq lsp-enabled-clients '(biome ts-ls templ gopls json-ls yamlls))
+  (setq lsp-enabled-clients '(biome ts-ls templ gopls json-ls yamlls))
   )
 
 ;; Start LSP in TreeSitter modes
