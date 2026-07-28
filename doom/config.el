@@ -41,6 +41,8 @@
       :prefix "o"
       :desc "Toggle Olivetti mode" "l" #'olivetti-mode)
 
+(setq default-input-method "swedish-postfix")
+
 (use-package doom-modeline-now-playing
   :after doom-modeline
   :config
@@ -245,6 +247,11 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
             (setq tab-width 2)
             (local-set-key (kbd "TAB") #'tab-to-tab-stop)))
 
+(add-hook 'css-ts-mode-hook
+          (lambda ()
+            (setq tab-width 2)
+            (local-set-key (kbd "TAB") #'tab-to-tab-stop)))
+
 ;; Setup auto adding of language modes
 (dolist (mapping '(("\\.ts\\'" . typescript-ts-mode)
                    ("\\.tsx\\'" . tsx-ts-mode)
@@ -350,7 +357,7 @@ either co-located or in a __tests__ subdirectory. If in a test file, open relate
         (alist-get 'templ apheleia-formatters) '("templ" "fmt" "-stdin-filepath" filepath))
 
   ;; Biome
-  (dolist (mode '(typescript-ts-mode tsx-ts-mode js-ts-mode json-ts-mode json-mode))
+  (dolist (mode '(typescript-ts-mode tsx-ts-mode js-ts-mode json-ts-mode json-mode css-ts-mode))
     (setf (alist-get mode apheleia-mode-alist) '(biome)))
 
   ;; Go and templ
