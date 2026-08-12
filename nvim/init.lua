@@ -15,7 +15,6 @@ vim.pack.add({
 	gh("folke/zen-mode.nvim"), -- Zen
 	gh("folke/tokyonight.nvim"), -- Color scheme
 	gh("tpope/vim-surround"), -- Actions on surrounding context
-	gh("tpope/vim-fugitive"), -- Git
 	gh("stevearc/oil.nvim"), -- File explorer
 	gh("nvim-tree/nvim-web-devicons"), -- Icons in file explorer
 	gh("stevearc/conform.nvim"), -- Formatter
@@ -25,9 +24,14 @@ vim.pack.add({
 	gh("neovim/nvim-lspconfig"), -- LSP configs
 	gh("mason-org/mason.nvim"), -- LSP installer
 	gh("nvim-orgmode/orgmode"), -- Org mode
+
 	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" }, -- Treesitter
 	{ src = gh("saghen/blink.cmp"), version = "v1" }, -- Completions
 	{ src = gh("vieitesss/miniharp.nvim"), version = vim.version.range("v*") }, -- Miniharp
+
+	-- Neogit
+	gh("sindrets/diffview.nvim"),
+	gh("NeogitOrg/neogit"),
 })
 
 -- Postinstall hooks
@@ -62,6 +66,11 @@ vim.api.nvim_create_autocmd("PackChanged", {
 
 -- Setup plugins
 --------------------------------------------------
+
+-- Neogit
+require("neogit").setup({
+	disable_hint = true,
+})
 
 -- Orgmode
 local orgfiles = "~/.orgfiles/"
@@ -514,8 +523,9 @@ map("n", "<leader>th", ":Pick help<CR>") -- Help files
 map("n", "<leader>tr", ":Pick resume<CR>") -- Resume latest pick
 
 -- Git
-map("n", "<leader>gp", ":Git push<CR>")
-map("n", "<leader>gs", ":Git<CR>")
+map("n", "<leader>gp", ":Neogit push<CR>")
+map("n", "<leader>gg", ":Neogit<CR>")
+map("n", "<leader>gs", ":Neogit<CR>")
 map("n", "<leader>gu", ":!git up<CR>")
 map("n", "<leader>gz", ":Gitsigns toggle_current_line_blame<CR>")
 map("n", "<leader>gcb", ":Pick git_commits path='%'<CR>") -- Commits for current buffer
