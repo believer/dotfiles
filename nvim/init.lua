@@ -609,3 +609,76 @@ local autocommands = {
 }
 
 utils.add_autocommands(autocommands)
+
+-- Special key maps
+--------------------------------------------------
+
+local function open_or_focus_target(target_path)
+	local target_bufnr = vim.fn.bufnr(target_path)
+
+	-- Check if the buffer is already displayed in a window in the current tab
+	if target_bufnr ~= -1 then
+		local target_winid = vim.fn.bufwinid(target_bufnr)
+		if target_winid ~= -1 then
+			vim.api.nvim_set_current_win(target_winid)
+			return
+		end
+	end
+
+	-- If not currently visible, open in a new split on the right
+	vim.cmd("rightbelow vsplit " .. vim.fn.fnameescape(target_path))
+end
+
+local function open_related_test_split()
+	local current_file = vim.api.nvim_buf_get_name(0)
+	if current_file == "" then
+		return
+	end
+
+	local target_file = nil
+
+	-- 1. If inside a test file -> target source file
+	if current_file:match("%.spec%.") or current_file:match("%.test%.") then
+		local source_path = current_file:gsub("%.spec%.", "."):gsub("%.test%.", ".")
+		source_path = source_path:gsub("/__tests__/", "/"):gsub("^tests/", ""):gsub("^test/", "")
+
+		target_file = source_path
+
+	-- 2. If inside a source file -> search for test file locations
+	else
+		local dir, filename, ext = current_file:match("(.-)([^/]+)%.([^.]+)$")
+		if not filename or not ext then
+			return
+		end
+
+		local candidates = {
+			-- Co-located .spec or .test
+			string.format("%s%s.spec.%s", dir, filename, ext),
+			string.format("%s%s.test.%s", dir, filename, ext),
+			-- Local __tests__ subfolder
+			string.format("%s__tests__/%s.spec.%s", dir, filename, ext),
+			string.format("%s__tests__/%s.test.%s", dir, filename, ext),
+			-- Top-level tests/ or test/ directory mirrors
+			current_file:gsub("^src/", "tests/"):gsub("%.([^.]+)$", ".spec.%1"),
+			current_file:gsub("^src/", "tests/"):gsub("%.([^.]+)$", ".test.%1"),
+		}
+
+		for _, path in ipairs(candidates) do
+			if vim.fn.filereadable(path) == 1 then
+				target_file = path
+				break
+			end
+		end
+
+		if not target_file then
+			target_file = candidates[1]
+		end
+	end
+
+	open_or_focus_target(target_file)
+end
+
+map("n", "<leader>tt", open_related_test_split, {
+	desc = "Open related test file in right split",
+	silent = true,
+})
