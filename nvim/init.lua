@@ -248,9 +248,8 @@ vim.lsp.enable({
 	"prettierd",
 	"stylua",
 	"templ",
-	"tsgo",
+	"tsc",
 	"org",
-	-- "ts_ls",
 	"yamlfmt",
 	"yamlls",
 })
