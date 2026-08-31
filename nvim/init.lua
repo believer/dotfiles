@@ -161,7 +161,7 @@ vim.diagnostic.config({
 
 require("mason").setup()
 
-vim.lsp.config.tsgo = {
+vim.lsp.config.tsc = {
 	settings = {
 		typescript = {
 			preferences = {
@@ -173,17 +173,6 @@ vim.lsp.config.tsgo = {
 				autoImports = true,
 				includeCompletionsForImportStatements = true,
 			},
-		},
-	},
-}
-
-vim.lsp.config.ts_ls = {
-	init_options = {
-		preferences = {
-			includeCompletionsForModuleExports = true,
-			includeCompletionsForImportStatements = true,
-			importModuleSpecifierPreference = "non-relative",
-			importModuleSpecifierEnding = "minimal",
 		},
 	},
 }
