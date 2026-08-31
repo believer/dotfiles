@@ -40,6 +40,28 @@ export function {}() {{
 			{ i(1), i(2) }
 		)
 	),
+	s(
+		{ trig = "afn", condition = conds.line_begin },
+		fmt(
+			[[
+async function {}() {{
+  {}
+}}
+  ]],
+			{ i(1), i(2) }
+		)
+	),
+	s(
+		{ trig = "eafn", condition = conds.line_begin },
+		fmt(
+			[[
+export async function {}() {{
+  {}
+}}
+  ]],
+			{ i(1), i(2) }
+		)
+	),
 }
 
 -- Auto
