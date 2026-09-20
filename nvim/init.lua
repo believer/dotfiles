@@ -120,6 +120,7 @@ local ensureInstalled = {
 	"lua",
 	"rust",
 	"scss",
+	"swift",
 	"templ",
 	"tsx",
 	"typescript",
@@ -153,8 +154,8 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
---- LSP
---- Display diagnostic messages inline
+-- LSP
+-- Display diagnostic messages inline
 vim.diagnostic.config({
 	virtual_text = { current_line = true },
 })
@@ -235,6 +236,7 @@ vim.lsp.enable({
 	"jsonls",
 	"lua_ls",
 	"prettierd",
+	"sourcekit",
 	"stylua",
 	"templ",
 	"tsc",
@@ -363,6 +365,7 @@ local formatter_settings = {
 		ruby = { "rubyfmt" },
 		rust = { "rustfmt" },
 		sql = { "pg_format" },
+		swift = { "swiftformat" },
 		yaml = { "yamlfmt" },
 	},
 }
