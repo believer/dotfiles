@@ -12,22 +12,22 @@ g.maplocalleader = " "
 
 -- Install plugins
 vim.pack.add({
-	gh("folke/zen-mode.nvim"), -- Zen
+	gh("L3MON4D3/LuaSnip"), -- Snippets
 	gh("folke/tokyonight.nvim"), -- Color scheme
-	gh("tpope/vim-surround"), -- Actions on surrounding context
-	gh("stevearc/oil.nvim"), -- File explorer
+	gh("folke/zen-mode.nvim"), -- Zen
+	gh("lewis6991/gitsigns.nvim"), -- Git signs in gutter
+	gh("mason-org/mason.nvim"), -- LSP installer
+	gh("neovim/nvim-lspconfig"), -- LSP configs
+	gh("nvim-mini/mini.nvim"), -- Mini pickers
+	gh("nvim-orgmode/orgmode"), -- Org mode
 	gh("nvim-tree/nvim-web-devicons"), -- Icons in file explorer
 	gh("stevearc/conform.nvim"), -- Formatter
-	gh("lewis6991/gitsigns.nvim"), -- Git signs in gutter
-	gh("nvim-mini/mini.nvim"), -- Mini pickers
-	gh("L3MON4D3/LuaSnip"), -- Snippets
-	gh("neovim/nvim-lspconfig"), -- LSP configs
-	gh("mason-org/mason.nvim"), -- LSP installer
-	gh("nvim-orgmode/orgmode"), -- Org mode
+	gh("stevearc/oil.nvim"), -- File explorer
+	gh("stevearc/overseer.nvim"), -- Task runner
+	gh("tpope/vim-surround"), -- Actions on surrounding context
 
 	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" }, -- Treesitter
 	{ src = gh("saghen/blink.cmp"), version = "v1" }, -- Completions
-	{ src = gh("vieitesss/miniharp.nvim"), version = vim.version.range("v*") }, -- Miniharp
 
 	-- Neogit
 	gh("sindrets/diffview.nvim"),
@@ -67,6 +67,12 @@ vim.api.nvim_create_autocmd("PackChanged", {
 -- Setup plugins
 --------------------------------------------------
 
+-- Overseer
+require("overseer").setup()
+
+map("n", "<leader>or", ":OverseerRun<CR>", { desc = "Overseer Run" })
+map("n", "<leader>ot", ":OverseerToggle<CR>", { desc = "Overseer Toggle" })
+
 -- Neogit
 require("neogit").setup({
 	disable_hint = true,
@@ -97,17 +103,6 @@ require("orgmode").setup({
 		},
 	},
 })
-
--- Miniharp
-local miniharp = require("miniharp")
-
-miniharp.setup()
-
-map("n", "<leader>m", miniharp.toggle_file, { desc = "miniharp: toggle file mark" })
-map("n", "<C-n>", miniharp.next, { desc = "miniharp: next file mark" })
-map("n", "<C-p>", miniharp.prev, { desc = "miniharp: prev file mark" })
-map("n", "<leader>l", miniharp.enter_list, { desc = "miniharp: toggle marks list" })
-map("n", "<leader>mc", miniharp.clear, { desc = "miniharp: clear list" })
 
 -- Treesitter
 -- Install parsers
@@ -530,7 +525,7 @@ map("n", "<leader>at", ":TSOrganizeImports<CR>")
 map("n", "<leader>ai", ":TSAddImports<CR>")
 map("n", "<leader>uu", ":Undotree<CR>")
 
--- LSP
+-- LSP key bindings
 map("n", "gd", vim.lsp.buf.definition) -- Go to definition
 map("n", "gD", vim.lsp.buf.declaration) -- Go to declaration
 map("n", "gV", ":vert winc ]<CR>") -- Open definition in vertical split
@@ -561,6 +556,14 @@ map("n", "<Up>", "<Nop>")
 map("n", "<Down>", "<Nop>")
 map("n", "<Left>", "<Nop>")
 map("n", "<Right>", "<Nop>")
+
+-- Restart
+local session_file = vim.fn.stdpath("state") .. "/session.vim"
+
+vim.keymap.set("n", "<leader>qr", function()
+	vim.cmd("mks! " .. vim.fn.fnameescape(session_file))
+	vim.cmd("restart source " .. vim.fn.fnameescape(session_file))
+end, { desc = "Restart nvim and restore session" })
 
 local augroup = vim.api.nvim_create_augroup("UserConfig", {})
 
