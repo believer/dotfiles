@@ -323,7 +323,17 @@ require("blink.cmp").setup({
 -- Mini
 require("mini.extra").setup()
 require("mini.pairs").setup()
-require("mini.pick").setup()
+
+local MiniPick = require("mini.pick")
+MiniPick.setup()
+
+--- Delete buffers from pickers
+local pick_buffers = function()
+	local wipeout_cur = function()
+		vim.api.nvim_buf_delete(MiniPick.get_picker_matches().current.bufnr, {})
+	end
+	MiniPick.builtin.buffers({}, { mappings = { wipeout = { char = "<C-d>", func = wipeout_cur } } })
+end
 
 -- Oil
 local oil = require("oil")
@@ -503,7 +513,7 @@ map("n", "N", "Nzzzv")
 map("n", "-", ":Oil<CR>")
 map("n", "<leader>;", ":Pick files<CR>") -- Files
 map("n", "<leader>?", ":Pick grep_live<CR>") -- Search in files
-map("n", "<leader>bs", ":Pick buffers<CR>") -- Search in buffers
+map("n", "<leader>bs", pick_buffers) -- Search in buffers
 map("n", "<leader>bl", ":Pick buf_lines<CR>") -- Search in buffers
 map("n", "<leader>th", ":Pick help<CR>") -- Help files
 map("n", "<leader>tr", ":Pick resume<CR>") -- Resume latest pick
