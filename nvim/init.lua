@@ -658,13 +658,14 @@ local function open_related_test_split()
 		local candidates = {
 			-- Co-located .spec or .test
 			string.format("%s%s.spec.%s", dir, filename, ext),
+			string.format("%s%s.spec.%sx", dir, filename, ext),
 			string.format("%s%s.test.%s", dir, filename, ext),
+			string.format("%s%s.test.%sx", dir, filename, ext),
 			-- Local __tests__ subfolder
 			string.format("%s__tests__/%s.spec.%s", dir, filename, ext),
+			string.format("%s__tests__/%s.spec.%sx", dir, filename, ext),
 			string.format("%s__tests__/%s.test.%s", dir, filename, ext),
-			-- Top-level tests/ or test/ directory mirrors
-			current_file:gsub("^src/", "tests/"):gsub("%.([^.]+)$", ".spec.%1"),
-			current_file:gsub("^src/", "tests/"):gsub("%.([^.]+)$", ".test.%1"),
+			string.format("%s__tests__/%s.test.%sx", dir, filename, ext),
 		}
 
 		for _, path in ipairs(candidates) do
