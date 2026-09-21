@@ -47,7 +47,7 @@
       "version": "'main'"
     },
     "nvim-web-devicons": {
-      "rev": "914decffe650296c87312c53b7933ecb86718499",
+      "rev": "58447c1fca354bbf184425e4a8d01deecbd6f3c4",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
@@ -65,10 +65,6 @@
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"
-    },
-    "vim-fugitive": {
-      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
-      "src": "https://github.com/tpope/vim-fugitive"
     },
     "vim-surround": {
       "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",

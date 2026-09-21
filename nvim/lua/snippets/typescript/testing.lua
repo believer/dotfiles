@@ -80,6 +80,25 @@ local regular = {
 
 	-- Test setup
 	s(
+		"tsetup",
+		fmt(
+			[[import {{ screen, userEvent }} from '@testing-library/react-native'
+import {{ settle }} from '#/test-setup/settle'
+import {{ renderWithProviders }} from '#/test-setup/test-wrapper'
+
+async function setup() {{
+  const {{ queryClient }} = await renderWithProviders({component})
+  await settle(queryClient)
+}}
+
+test('What does it test?', async () => {{
+  {content} 
+}})
+    ]],
+			{ component = i(1), content = i(2) }
+		)
+	),
+	s(
 		"desc",
 		fmt([[describe('{name}', () => {{{content}}})]], { name = i(1, "What does it describe?"), content = i(2) })
 	),
@@ -87,6 +106,39 @@ local regular = {
 	s("testa", test_block(true)),
 	s("desct", describe_block(false)),
 	s("descat", describe_block(true)),
+	s(
+		{ trig = "beach", condition = conds.line_begin },
+		fmt(
+			[[
+beforeEach(() => {{
+  {}
+}})
+  ]],
+			{ i(1) }
+		)
+	),
+	s(
+		{ trig = "aeach", condition = conds.line_begin },
+		fmt(
+			[[
+afterEach(() => {{
+  {}
+}})
+  ]],
+			{ i(1) }
+		)
+	),
+	s(
+		{ trig = "aall", condition = conds.line_begin },
+		fmt(
+			[[
+afterAll(() => {{
+  {}
+}})
+  ]],
+			{ i(1) }
+		)
+	),
 
 	-- Testing Library
 	s("sdbg", t("screen.debug()")),

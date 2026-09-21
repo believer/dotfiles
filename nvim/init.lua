@@ -73,6 +73,12 @@ require("overseer").setup()
 map("n", "<leader>or", ":OverseerRun<CR>", { desc = "Overseer Run" })
 map("n", "<leader>ot", ":OverseerToggle<CR>", { desc = "Overseer Toggle" })
 
+-- Use Neovim's new UI
+require("vim._core.ui2").enable()
+
+-- Deeplinking support for apps
+require("deeplinks").setup()
+
 -- Neogit
 require("neogit").setup({
 	disable_hint = true,
@@ -226,6 +232,7 @@ vim.lsp.config.yamlls = {
 
 vim.lsp.enable({
 	"biome",
+	"clangd",
 	"cssls",
 	"gopls",
 	"jsonls",
@@ -361,6 +368,7 @@ local formatter_settings = {
 	},
 	formatters_by_ft = {
 		css = { "biome-check" },
+		cpp = { "clang-format" },
 		-- Enable formatting of embedded languages using injected
 		-- For example, sql from queries/go/injections.scm
 		go = { "goimports", "injected" },
@@ -542,6 +550,10 @@ map("n", "gV", ":vert winc ]<CR>") -- Open definition in vertical split
 map("n", "<leader>ih", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
+
+-- Deeplinks
+map("n", "<leader>dl", ":DeepLink<CR>")
+map("n", "<leader>dr", ":DeepLinkReload<CR>")
 
 -- Packages
 map("n", "<leader>pu", vim.pack.update)
