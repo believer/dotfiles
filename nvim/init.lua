@@ -542,6 +542,7 @@ map("n", "<leader>ar", ":TSRemoveUnused<CR>")
 map("n", "<leader>at", ":TSOrganizeImports<CR>")
 map("n", "<leader>ai", ":TSAddImports<CR>")
 map("n", "<leader>uu", ":Undotree<CR>")
+map("n", "<leader>bd", [[:silent! execute "%bd|e#|bd#"<CR>]])
 
 -- LSP key bindings
 map("n", "gd", vim.lsp.buf.definition) -- Go to definition
