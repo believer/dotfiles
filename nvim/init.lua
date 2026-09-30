@@ -125,6 +125,7 @@ local ensureInstalled = {
 	"templ",
 	"tsx",
 	"typescript",
+	"yaml",
 }
 
 -- Only install parsers that aren't already installed
