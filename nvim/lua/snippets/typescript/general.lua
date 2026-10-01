@@ -1,6 +1,11 @@
 -- Regular
 
+local function iso_date()
+	return os.date("%Y-%m-%dT%TZ")
+end
+
 local regular = {
+	s("now", fmt([["{date}"]], { date = iso_date() })),
 	s({
 		trig = "clog",
 		name = "Console.log",
