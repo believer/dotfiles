@@ -536,6 +536,10 @@ map("n", "<leader>gz", ":Gitsigns toggle_current_line_blame<CR>")
 map("n", "<leader>gcb", ":Pick git_commits path='%'<CR>") -- Commits for current buffer
 map("n", "<leader>gcc", ":Pick git_commits<CR>") -- Commits
 map("n", "<leader>ghr", ":Gitsigns reset_hunk<CR>")
+map("n", "<leader>ghn", ":Gitsigns next_hunk<CR>")
+map("n", "<leader>ghp", ":Gitsigns prev_hunk<CR>")
+map("n", "<leader>ghc", ":Gitsigns preview_hunk<CR>")
+map("n", "<leader>ghs", ":Gitsigns stage_hunk<CR>")
 
 -- Custom
 map("n", "<leader>ad", 'diwxda"<CR>') -- Remove HTML attributes
