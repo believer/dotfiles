@@ -531,10 +531,18 @@ map("n", "<leader>tr", ":Pick resume<CR>") -- Resume latest pick
 map("n", "<leader>gp", ":Neogit push<CR>")
 map("n", "<leader>gg", ":Neogit<CR>")
 map("n", "<leader>gs", ":Neogit<CR>")
+map("n", "<leader>gl", ":NeogitLogCurrent<CR>")
 map("n", "<leader>gu", ":!git up<CR>")
 map("n", "<leader>gz", ":Gitsigns toggle_current_line_blame<CR>")
 map("n", "<leader>gcb", ":Pick git_commits path='%'<CR>") -- Commits for current buffer
 map("n", "<leader>gcc", ":Pick git_commits<CR>") -- Commits
+
+--- Diffs
+map("n", "<leader>gd", ":DiffviewOpen<CR>")
+map("n", "<leader>gdc", ":DiffviewClose<CR>")
+map("n", "<leader>gdt", ":DiffviewFileHistory %<CR>")
+
+--- Hunk management
 map("n", "<leader>ghr", ":Gitsigns reset_hunk<CR>")
 map("n", "<leader>ghn", ":Gitsigns next_hunk<CR>")
 map("n", "<leader>ghp", ":Gitsigns prev_hunk<CR>")
